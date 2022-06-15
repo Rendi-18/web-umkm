@@ -16,7 +16,7 @@
 
                         {{ __('You are logged in!') }}
 
-                        {{-- ATOM --}}
+                        {{-- xxxx --}}
                     </div>
                 </div>
             </div>
