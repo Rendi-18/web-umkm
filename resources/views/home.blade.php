@@ -17,6 +17,7 @@
                         {{ __('You are logged in!') }}
 
                         {{-- SSH --}}
+                        pp
 
                     </div>
                 </div>
