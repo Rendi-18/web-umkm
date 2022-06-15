@@ -15,8 +15,7 @@
                         @endif
 
                         {{ __('You are logged in!') }}
-{{-- tomi --}}
-                        
+
                     </div>
                 </div>
             </div>
