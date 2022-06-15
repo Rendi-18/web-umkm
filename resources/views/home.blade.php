@@ -16,7 +16,6 @@
 
                         {{ __('You are logged in!') }}
 
-                        {{-- CWW --}}
                     </div>
                 </div>
             </div>
