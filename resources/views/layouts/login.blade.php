@@ -31,12 +31,8 @@
 </head>
 
 <body>
-
     @yield('content')
-
-
     @include('configs.js')
-
 </body>
 
 </html>
