@@ -28,6 +28,7 @@
             <!-- Registeration Form -->
             <div class="col-md-7 col-lg-6 ml-auto">
 
+                <!-- LOGIN -->
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                         <form action="#" class="">
@@ -57,10 +58,7 @@
                                         <input id="password" type="password" name="password" placeholder="Password"
                                             class="form-control bg-white border-0 ">
                                     </div>
-
                                 </div>
-
-
 
                                 <!-- Submit Button -->
                                 <div class="form-group col-lg-12 mx-auto mb-0">
@@ -80,6 +78,8 @@
                             </div>
                         </form>
                     </div>
+
+                    <!-- REGISTRASION -->
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                         <form action="#" class="">
                             <div class="row">
