@@ -1,38 +1,6 @@
 /*
 *
 * ==========================================
-* CUSTOM UTIL CLASSES
-* ==========================================
-*
-*/
-
-.border-md {
-    border-width: 2px;
-}
-
-.btn-facebook {
-    background: #405D9D;
-    border: none;
-}
-
-.btn-facebook:hover, .btn-facebook:focus {
-    background: #314879;
-}
-
-.btn-twitter {
-    background: #42AEEC;
-    border: none;
-}
-
-.btn-twitter:hover, .btn-twitter:focus {
-    background: #1799e4;
-}
-
-
-
-/*
-*
-* ==========================================
 * FOR DEMO PURPOSES
 * ==========================================
 *
@@ -56,6 +24,43 @@ select.form-control {
     font-weight: bold;
     font-size: 0.9rem;
 }
+
 .form-control:focus {
     box-shadow: none;
+}
+
+.border-md {
+    border-width: 2px;
+}
+
+.shadow-in-log {
+    box-shadow: 0 .1rem 0.5rem rgba(0, 0, 0, .30) !important
+}
+
+.bx_ic {
+    width: 60px;
+}
+
+.btn-submit {
+    background-color: var(--teal) !important;
+}
+
+.btn-submit:hover {
+    background-color: #1ba37a !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    border-bottom: solid 2px var(--teal) !important;
+    color: var(--teal) !important;
+}
+
+.nav-link {
+    font-weight: bold !important;
+    font-size: 0.9rem !important;
+}
+
+.comp-name {
+    font-weight: bold;
+    color: var(--teal);
 }
