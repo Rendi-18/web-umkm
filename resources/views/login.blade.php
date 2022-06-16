@@ -17,7 +17,7 @@
         <div class="row py-5 mt-4 align-items-center">
             <!-- For Demo Purpose -->
             <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-                <img src="public\img\illustrasion-regist.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
+                <img src="/img/illustrasion-regist.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
                 <h1>Create an Account</h1>
                 <p class="font-italic text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut dolorum
                     porro magni incidunt beatae delectus saepe, laboriosam non perferendis nam odio earum perspiciatis,
