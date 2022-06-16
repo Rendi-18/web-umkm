@@ -31,7 +31,38 @@
 </head>
 
 <body>
-    @yield('content')
+    <!-- Navbar-->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container">
+                <!-- Navbar Brand -->
+                <a href="#" class="navbar-brand">
+                    <h1 class="comp-name">SIBADU</h1>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row py-5 mt-4 align-items-center">
+            <!-- For Demo Purpose -->
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                <img src="/img/illustrasion-regist.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
+                <h1>Create an Account</h1>
+                <p class="font-italic text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                    dolorum
+                    porro magni incidunt beatae delectus saepe, laboriosam non perferendis nam odio earum perspiciatis,
+                    quibusdam placeat sapiente, atque architecto similique voluptatum.</p>
+            </div>
+
+            <!-- Registeration Form -->
+            <div class="col-md-7 col-lg-6 ml-auto">
+                <div class="tab-content" id="pills-tabContent">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
+    </div>
+
     @include('configs.js')
 </body>
 

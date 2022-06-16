@@ -1,77 +1,141 @@
-@extends('layouts.app')
-
+@extends('Layouts.login')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+    <!-- REGISTRASION -->
+    <div class="" id="pills-profile">
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <div class="row">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+                <!-- Username -->
+                <div class="col-lg-6 mb-4">
+                    <div class="shadow-in-log input-group">
+                        <div class="bx_ic input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="username" type="text" name="username" placeholder="Username"
+                            class="border-0 form-control bg-white border-0 @error('username') is-invalid @enderror"
+                            value="{{ old('username') }}" required autocomplete="username">
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                        @error('username')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <!-- Name -->
+                <div class=" col-lg-6 mb-4">
+                    <div class="shadow-in-log input-group">
+                        <div class=" input-group-prepend">
+                            <span class="input-group-text bg-white px-4  border-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="name" type="text" name="name" placeholder="Name"
+                            class="border-0 form-control bg-white border-0 @error('name') is-invalid @enderror"
+                            value="{{ old('name') }}" required autocomplete="name">
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <!-- Email Address -->
+                <div class=" col-lg-12 mb-4">
+                    <div class="shadow-in-log input-group">
+                        <div class="bx_ic input-group-prepend">
+                            <span class="input-group-text bg-white px-4  border-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="email" type="email" name="email" placeholder="Email Address"
+                            class="border-0 form-control bg-white border-0 @error('email') is-invalid @enderror"
+                            value="{{ old('email') }}" required autocomplete="email">
+
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="col-lg-12 mb-4">
+                    <div class="shadow-in-log input-group">
+                        <div class="bx_ic input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-0">
+                                <i class="fa fa-phone-square text-muted"></i>
+                            </span>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                        <input id="phonenumber" type="number" name="phonenumber" placeholder="Phone Number"
+                            class="border-0 form-control bg-white border-0 @error('phonenumber') is-invalid @enderror"
+                            value="{{ old('phonenumber') }}" required autocomplete="phonenumber">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                        @error('phonenumber')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                <!-- Password -->
+                <div class="input-group col-lg-6 mb-4">
+                    <div class="shadow-in-log input-group">
+                        <div class="bx_ic input-group-prepend">
+                            <span class="input-group-text bg-white px-4  border-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
                         </div>
+                        <input id="password" type="password" name="password" placeholder="Password"
+                            class="border-0 form-control bg-white border-0 @error('password') is-invalid @enderror"
+                            value="{{ old('password') }}" required autocomplete="new-password">
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                </div>
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                <!-- Password Confirmation -->
+                <div class="input-group col-lg-6 mb-4">
+                    <div class="shadow-in-log input-group">
+                        <div class="bx_ic input-group-prepend">
+                            <span class="input-group-text bg-white px-4  border-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
                         </div>
+                        <input id="password-confirm" type="password" name="password_confirmation"
+                            placeholder="Confirm Password" class="form-control bg-white border-0" required
+                            autocomplete="new-password">
+                    </div>
+                </div>
 
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                <!-- Submit Button -->
+                <div class="form-group col-lg-12 mx-auto mb-0">
+                    <button type="submit" class="btn btn-primary btn-submit btn-block py-2 border-0 font-weight-bold">
+                        Register
+                    </button>
+                </div>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                <!-- Already Registered -->
+                <div class="text-center w-100 mt-3">
+                    <p class="text-muted font-weight-bold">Already Registered?
+                        <a class="text-primary ml-2 btl" id="pills-home-tab" href="/login">Login</a>
+                    </p>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
-</div>
 @endsection
