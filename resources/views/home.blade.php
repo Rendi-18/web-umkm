@@ -16,7 +16,12 @@
 
                         {{ __('You are logged in!') }}
 
-                        {{-- SSH --}}
+                        @if (Auth::user()->isAdmin)
+                            <h1>Aku adalaha admin</h1>
+                        @else
+                            <h1>aku bukan admin</h1>
+                        @endif
+                        <h1>{{ Auth::user()->name }}</h1>
 
                     </div>
                 </div>
