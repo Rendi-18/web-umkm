@@ -35,7 +35,7 @@
             <div class="container">
 
                 <!-- Navbar Brand -->
-                <a href="#" class="navbar-brand">
+                <a href="/" class="navbar-brand">
                     <h1 class="comp-name">SIBADU</h1>
                 </a>
             </div>

@@ -2,7 +2,9 @@
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-        <h1 class="logo me-auto"><a href="index.html">SIBADU</a></h1>
+        <h1 class="logo me-auto">
+            <a href="/">SIBADU</a>
+        </h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -54,10 +56,11 @@
                 @endauth
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
-
+        </nav>
+        <!-- .navbar -->
     </div>
-</header><!-- End Header -->
+</header>
+<!-- End Header -->
 
 {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">

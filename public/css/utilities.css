@@ -1,0 +1,4 @@
+.input-no-border:active,
+.input-no-border:focus {
+    outline: none !important;
+}
