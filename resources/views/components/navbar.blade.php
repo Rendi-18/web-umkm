@@ -32,7 +32,26 @@
                     </li> -->
                 <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
-                <li><a class="getstarted scrollto" href="#about">Login</a></li>
+                @auth
+                    <li>
+                        <a class="getstarted scrollto" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                    </li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                    <li>
+                        <a class="getstarted scrollto" href="/dashboard">
+                            {{ Auth::user()->username }}
+                        </a>
+                    </li>
+                @else
+                    <li>
+                        <a class="getstarted scrollto" href="/login">Login</a>
+                    </li>
+                @endauth
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -79,15 +98,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
                         </div>
                     </li>
                 @endguest
