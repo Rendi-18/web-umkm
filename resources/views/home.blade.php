@@ -3,6 +3,7 @@
 @section('content')
     <main id="main">
         @include('components.search')
+        <p>welcome</p>
     </main><!-- End #main -->
     {{-- <div class="container">
         <div class="row justify-content-center">
