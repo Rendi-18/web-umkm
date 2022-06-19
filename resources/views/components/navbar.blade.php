@@ -34,7 +34,7 @@
                 <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
                 @auth
                     <li>
-                        <a class="getstarted scrollto" href="{{ route('logout') }}"
+                        <a class="getstarted" href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
@@ -43,13 +43,13 @@
                         @csrf
                     </form>
                     <li>
-                        <a class="getstarted scrollto" href="/dashboard">
+                        <a class="getstarted" href="/dashboard">
                             {{ Auth::user()->username }}
                         </a>
                     </li>
                 @else
                     <li>
-                        <a class="getstarted scrollto" href="/login">Login</a>
+                        <a class="getstarted" href="/login">Login</a>
                     </li>
                 @endauth
             </ul>
