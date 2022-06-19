@@ -1,9 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('components.hero')
     <main id="main">
+
         @include('components.search')
-        <p>welcome</p>
+        @include('components.about')
+        @include('components.service')
+        @include('components.umkm')
+        @include('components.structure')
+        @include('components.contact')
+
+
     </main><!-- End #main -->
     {{-- <div class="container">
         <div class="row justify-content-center">

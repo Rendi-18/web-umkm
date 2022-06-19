@@ -8,14 +8,14 @@
                 <h1>Sistem Basis Data Utama</h1>
                 <h2>Koperasi & UMKM Provinsi Lampung</h2>
                 <div class="d-flex justify-content-center justify-content-lg-start">
-                    <img src="assets\img\logo-lampung.png" class="img-logo-d" alt="">
-                    <img src="assets\img\logo-koperasi.png" class="img-logo-d" alt="">
+                    <img src="\img\logo-lampung.png" class="img-logo-d" alt="">
+                    <img src="\img\logo-koperasi.png" class="img-logo-d" alt="">
                     <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
                     <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
                 </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+                <img src="/img/hero-img.png" class="img-fluid animated" alt="">
             </div>
         </div>
     </div>

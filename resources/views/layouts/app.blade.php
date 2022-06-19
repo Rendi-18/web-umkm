@@ -20,9 +20,9 @@
 <body>
     <div id="app">
         @include('components.navbar')
-        <main class="py-4">
-            @yield('content')
-        </main>
+
+        @yield('content')
+
     </div>
 
     @include('configs.js')
