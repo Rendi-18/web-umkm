@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Umkm;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,10 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.home');
+        return view('pages.home', [
+            'umkms' => Umkm::all()
+        ]);
     }
     public function search()
     {
-        return view('pages.search');
+        return view('pages.search', [
+            'umkms' => Umkm::orderBy('created_at', 'desc')->paginate(6)
+        ]);
     }
 }

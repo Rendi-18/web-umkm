@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Umkm;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,5 @@ class UmkmSeeder extends Seeder
      */
     public function run()
     {
-        //
     }
 }

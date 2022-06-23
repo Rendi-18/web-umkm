@@ -30,116 +30,38 @@
                 <section id="card-um" class="card-um">
                     <div class="row card-um-container" data-aos="fade-up" data-aos-delay="200">
 
-                        <div class="col-lg-4 col-6 c0 card-um-item filter-app">
-                            <div class="card-um-img"><img src="/img/portfolio/portfolio-2.jpg" class="img-fluid"
-                                    alt="">
+                        @foreach ($umkms as $umkm)
+                            <div class="col-lg-4 col-6 c0 card-um-item filter-app">
+                                <div class="card-um-img"><img src="/img/portfolio/portfolio-2.jpg" class="img-fluid"
+                                        alt="">
+                                </div>
+                                <div class="card-um-info">
+                                    <h4>UMKM 1</h4>
+                                    <p>Bandar Lampung</p>
+                                    <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
+                                        class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                            class="bx bx-link"></i></a>
+                                </div>
                             </div>
+                            {{-- <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid"
+                                    alt="">
+                            </div> --}}
                             <div class="card-um-info">
-                                <h4>UMKM 1</h4>
-                                <p>Bandar Lampung</p>
+                                <h4>{{ $umkm->name }}</h4>
+                                <p>{{ $umkm->category->category }}</p>
                                 <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
                                     class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-6 c0 card-um-item filter-app">
-                            <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid"
-                                    alt="">
-                            </div>
-                            <div class="card-um-info">
-                                <h4>UMKM 1</h4>
-                                <p>Bandar Lampung</p>
-                                <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 c0 card-um-item filter-app">
-                            <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid"
-                                    alt="">
-                            </div>
-                            <div class="card-um-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
-                                <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 c0 card-um-item filter-app">
-                            <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid"
-                                    alt="">
-                            </div>
-                            <div class="card-um-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
-                                <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 c0 card-um-item filter-app">
-                            <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid"
-                                    alt="">
-                            </div>
-                            <div class="card-um-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
-                                <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 c0 card-um-item filter-app">
-                            <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid"
-                                    alt="">
-                            </div>
-                            <div class="card-um-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
-                                <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 c0 card-um-item filter-app">
-                            <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid"
-                                    alt="">
-                            </div>
-                            <div class="card-um-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
-                                <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 c0 card-um-item filter-app">
-                            <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid"
-                                    alt="">
-                            </div>
-                            <div class="card-um-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
-                                <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
-                </section><!-- End Portfolio Section -->
             </div>
-
-
-            </div>
+        </section><!-- End Portfolio Section -->
+        <div class="d-flex justify-content-center pt-3">
+            {{ $umkms->links('Components.Paginator') }}
+        </div>
         </section><!-- End Breadcrumbs -->
 
 

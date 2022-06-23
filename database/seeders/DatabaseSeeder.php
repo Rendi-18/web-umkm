@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Umkm;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +16,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            CategorySeeder::class
+        ]);
+        User::create([
+            'username' => 'ADMIN',
+            'name' => 'ADMINSTRATOR',
+            'phonenumber' => '08080808',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('12345678')
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Umkm::factory(50)->create();
     }
 }
