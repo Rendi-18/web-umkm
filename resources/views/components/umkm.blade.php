@@ -1,5 +1,5 @@
-<!-- ======= Portfolio Section ======= -->
-<section id="portfolio" class="portfolio">
+<!-- ======= card-um Section ======= -->
+<section id="card-um" class="card-um">
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -9,94 +9,94 @@
                 fuga tempore?</p>
         </div>
 
-        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <ul id="card-um-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-app">UMKM</li>
             <li data-filter=".filter-web">KOPERASI</li>
         </ul>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row card-um-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-6 c0 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            <div class="col-lg-4 col-6 c0 card-um-item filter-app">
+                <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
-                <div class="portfolio-info">
+                <div class="card-um-info">
                     <h4>App 1</h4>
                     <p>App</p>
                     <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                        class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                        class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
                     <a href="portfolio-details.html" class="details-link" title="More Details"><i
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-6 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            <div class="col-lg-4 col-6 card-um-item filter-app">
+                <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
-                <div class="portfolio-info">
+                <div class="card-um-info">
                     <h4>App 1</h4>
                     <p>App</p>
                     <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                        class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                        class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
                     <a href="portfolio-details.html" class="details-link" title="More Details"><i
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-6 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            <div class="col-lg-4 col-6 card-um-item filter-app">
+                <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
-                <div class="portfolio-info">
+                <div class="card-um-info">
                     <h4>App 1</h4>
                     <p>App</p>
                     <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                        class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                        class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
                     <a href="portfolio-details.html" class="details-link" title="More Details"><i
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-6 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            <div class="col-lg-4 col-6 card-um-item filter-app">
+                <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="portfolio-info">
                     <h4>App 1</h4>
                     <p>App</p>
                     <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                        class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                        class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
                     <a href="portfolio-details.html" class="details-link" title="More Details"><i
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-6 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            <div class="col-lg-4 col-6 card-um-item filter-app">
+                <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="portfolio-info">
                     <h4>App 1</h4>
                     <p>App</p>
                     <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                        class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                        class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
                     <a href="portfolio-details.html" class="details-link" title="More Details"><i
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-6 portfolio-item filter-web">
-                <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            <div class="col-lg-4 col-6 card-um-item filter-web">
+                <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
-                <div class="portfolio-info">
+                <div class="card-um-info">
                     <h4>App 1</h4>
                     <p>App</p>
                     <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                        class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                        class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
                     <a href="portfolio-details.html" class="details-link" title="More Details"><i
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-6 portfolio-item filter-web">
-                <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid"
-                        alt=""></div>
-                <div class="portfolio-info">
+            <div class="col-lg-4 col-6 card-um-item filter-web">
+                <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="card-um-info">
                     <h4>App 1</h4>
                     <p>App</p>
                     <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                        class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                        class="card-um-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
                     <a href="portfolio-details.html" class="details-link" title="More Details"><i
                             class="bx bx-link"></i></a>
                 </div>

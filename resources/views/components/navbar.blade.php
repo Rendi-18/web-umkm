@@ -1,5 +1,5 @@
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top ">
+<header id="header" class="fixed-top {{ Request::is('search') ? 'header-search' : '' }}">
     <div class="container d-flex align-items-center">
 
         <h1 class="logo me-auto">

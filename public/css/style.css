@@ -1,10 +1,3 @@
-/**
-* Template Name: Arsha - v4.7.1
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -146,12 +139,18 @@ h6 {
   max-height: 40px;
 }
 
+.header-search {
+  background: #008080;
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
 * Desktop Navigation 
 */
+
+
 .navbar {
   padding: 0;
 }
@@ -582,6 +581,12 @@ section {
   margin-bottom: 0;
 }
 
+@media(max-width: 992px) {
+  section {
+    padding: 30px 0;
+  }
+}
+
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
@@ -957,14 +962,18 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Portfolio
+# card-um
 --------------------------------------------------------------*/
-.portfolio #portfolio-flters {
+/* #card-um {
+  background: #fff;
+} */
+
+.card-um #card-um-flters {
   list-style: none;
   margin-bottom: 20px;
 }
 
-.portfolio #portfolio-flters li {
+.card-um #card-um-flters li {
   cursor: pointer;
   display: inline-block;
   margin: 10px 5px;
@@ -978,25 +987,30 @@ section {
   font-family: "Poppins", sans-serif;
 }
 
-.portfolio #portfolio-flters li:hover,
-.portfolio #portfolio-flters li.filter-active {
+.card-um #card-um-flters li:hover,
+.card-um #card-um-flters li.filter-active {
   background: #47b2e4;
   color: #fff;
 }
 
-.portfolio .portfolio-item {
+.card-um .card-um-item {
   margin-bottom: 30px;
+  /* width: 356px;
+  height: 356px; */
 }
 
-.portfolio .portfolio-item .portfolio-img {
+.card-um .card-um-item .card-um-img {
   overflow: hidden;
+  width: 100%;
+  height: 50%;
 }
 
-.portfolio .portfolio-item .portfolio-img img {
+.card-um .card-um-item .card-um-img img {
   transition: all 0.6s;
+  size: cover;
 }
 
-.portfolio .portfolio-item .portfolio-info {
+.card-um .card-um-item .card-um-info {
   opacity: 0;
   position: absolute;
   left: 15px;
@@ -1008,7 +1022,7 @@ section {
   padding: 10px 15px;
 }
 
-.portfolio .portfolio-item .portfolio-info h4 {
+.card-um .card-um-item .card-um-info h4 {
   font-size: 18px;
   color: #fff;
   font-weight: 600;
@@ -1016,14 +1030,14 @@ section {
   margin-bottom: 0px;
 }
 
-.portfolio .portfolio-item .portfolio-info p {
+.card-um .card-um-item .card-um-info p {
   color: #f9fcfe;
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.portfolio .portfolio-item .portfolio-info .preview-link,
-.portfolio .portfolio-item .portfolio-info .details-link {
+.card-um .card-um-item .card-um-info .preview-link,
+.card-um .card-um-item .card-um-info .details-link {
   position: absolute;
   right: 40px;
   font-size: 24px;
@@ -1032,40 +1046,40 @@ section {
   transition: 0.3s;
 }
 
-.portfolio .portfolio-item .portfolio-info .preview-link:hover,
-.portfolio .portfolio-item .portfolio-info .details-link:hover {
+.card-um .card-um-item .card-um-info .preview-link:hover,
+.card-um .card-um-item .card-um-info .details-link:hover {
   color: #47b2e4;
 }
 
-.portfolio .portfolio-item .portfolio-info .details-link {
+.card-um .card-um-item .card-um-info .details-link {
   right: 10px;
 }
 
-.portfolio .portfolio-item:hover .portfolio-img img {
+.card-um .card-um-item:hover .card-um-img img {
   transform: scale(1.15);
 }
 
-.portfolio .portfolio-item:hover .portfolio-info {
+.card-um .card-um-item:hover .card-um-info {
   opacity: 1;
 }
 
 /*--------------------------------------------------------------
-# Portfolio Details
+# card-um Details
 --------------------------------------------------------------*/
-.portfolio-details {
+.card-um-details {
   padding-top: 40px;
 }
 
-.portfolio-details .portfolio-details-slider img {
+.card-um-details .card-um-details-slider img {
   width: 100%;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination {
+.card-um-details .card-um-details-slider .swiper-pagination {
   margin-top: 20px;
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.card-um-details .card-um-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -1073,16 +1087,16 @@ section {
   border: 1px solid #47b2e4;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.card-um-details .card-um-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #47b2e4;
 }
 
-.portfolio-details .portfolio-info {
+.card-um-details .card-um-info {
   padding: 30px;
   box-shadow: 0px 0 30px rgba(55, 81, 126, 0.08);
 }
 
-.portfolio-details .portfolio-info h3 {
+.card-um-details .card-um-info h3 {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -1090,27 +1104,27 @@ section {
   border-bottom: 1px solid #eee;
 }
 
-.portfolio-details .portfolio-info ul {
+.card-um-details .card-um-info ul {
   list-style: none;
   padding: 0;
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.card-um-details .card-um-info ul li+li {
   margin-top: 10px;
 }
 
-.portfolio-details .portfolio-description {
+.card-um-details .card-um-description {
   padding-top: 30px;
 }
 
-.portfolio-details .portfolio-description h2 {
+.card-um-details .card-um-description h2 {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-.portfolio-details .portfolio-description p {
+.card-um-details .card-um-description p {
   padding: 0;
 }
 
@@ -1717,6 +1731,12 @@ section {
 
 #search .container form input[type=submit]:hover {
   background: #008080;
+}
+
+@media (max-width: 991px) {
+  #search p {
+    font-size: 14px;
+  }
 }
 
 /*--------------------------------------------------------------
