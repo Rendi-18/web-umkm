@@ -17,7 +17,7 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="col-lg-4 col-6 c0 portfolio-item filter-app">
                 <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="portfolio-info">
@@ -29,7 +29,7 @@
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="col-lg-4 col-6 portfolio-item filter-app">
                 <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="portfolio-info">
@@ -41,7 +41,7 @@
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="col-lg-4 col-6 portfolio-item filter-app">
                 <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="portfolio-info">
@@ -53,7 +53,7 @@
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="col-lg-4 col-6 portfolio-item filter-app">
                 <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="portfolio-info">
@@ -65,7 +65,7 @@
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="col-lg-4 col-6 portfolio-item filter-app">
                 <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="portfolio-info">
@@ -77,7 +77,7 @@
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="col-lg-4 col-6 portfolio-item filter-web">
                 <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="portfolio-info">
@@ -89,7 +89,7 @@
                             class="bx bx-link"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="col-lg-4 col-6 portfolio-item filter-web">
                 <div class="portfolio-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid"
                         alt=""></div>
                 <div class="portfolio-info">
@@ -102,7 +102,7 @@
                 </div>
             </div>
             <!--
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="col-lg-4 col-6 portfolio-item filter-web">
                         <div class="portfolio-img"><img src="/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
                         <div class="portfolio-info">
                             <h4>Web 3</h4>
