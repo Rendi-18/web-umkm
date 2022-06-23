@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function search()
     {
         return view('pages.search', [
-            'umkms' => Umkm::orderBy('created_at', 'desc')->paginate(6)
+            'umkms' => Umkm::orderBy('created_at', 'desc')->paginate(4)
         ]);
     }
 }
