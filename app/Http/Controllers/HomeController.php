@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('pages.home', [
-            'umkms' => Umkm::all()
+            'umkms' => Umkm::orderBy('created_at', 'desc')->take(6)->get()
         ]);
     }
     public function search()
