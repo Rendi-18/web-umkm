@@ -31,7 +31,7 @@
                     <div class="row card-um-container" data-aos="fade-up" data-aos-delay="200">
 
                         @foreach ($umkms as $umkm)
-                            <div class="col-lg-4 col-6 c0 card-um-item filter-app">
+                            <div class="col-xl-3 col-6 c0 card-um-item filter-app">
                                 <div class="card-um-img"><img src="/img/portfolio/portfolio-2.jpg" class="img-fluid"
                                         alt="">
                                 </div>
