@@ -50,7 +50,7 @@
             </div>
         </section><!-- End Portfolio Section -->
         <div class="d-flex justify-content-center pt-3">
-            {{ $umkms->links('Components.Paginator') }}
+            {{ $umkms->links('Components.paginator') }}
         </div>
         </section><!-- End Breadcrumbs -->
 
