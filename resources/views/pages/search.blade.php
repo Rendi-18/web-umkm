@@ -31,7 +31,7 @@
                                         <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
                                             class="card-um-lightbox preview-link" title="{{ $umkm->description }}"><i
                                                 class="bx bx-plus"></i></a>
-                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                        <a href="/umkm/{{ $umkm->slug }}" class="details-link" title="More Details"><i
                                                 class="bx bx-link"></i></a>
                                     </div>
                                 </div>
