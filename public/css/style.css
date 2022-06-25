@@ -1956,10 +1956,39 @@ section {
 --------------------------------------------------------------*/
 
 #identity {
-  padding: 15px 0;
+  padding: 30px 0;
   background: #f3f5fa;
   min-height: 40px;
   margin-top: 72px;
 }
 
-.identity {}
+#identity .translate-middle-img {
+  transform: translate(-25%, -50%) !important;
+  left: 23% !important;
+}
+
+#identity .describ .row {
+  margin: 2% 0 !important;
+}
+
+#identity span .val {
+  font-weight: 600;
+  color: #008080;
+}
+
+.identity .image-identity {
+  overflow: hidden;
+  width: 100%;
+  height: 300px !important;
+}
+
+.identity .image-identity img {
+  transition: all 0.6s;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.identity .image-identity img:hover {
+  transform: scale(1.15);
+}

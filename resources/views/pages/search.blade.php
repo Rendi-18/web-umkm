@@ -40,11 +40,11 @@
                     @else
                         <h1 class="text-center">Not Found :(</h1>
                     @endif
-                </section><!-- End Portfolio Section -->
+                </section>
                 <div class="d-flex justify-content-center pt-3">
                     {{ $umkms->links('components.paginator') }}
                 </div>
-        </section><!-- End Breadcrumbs -->
+        </section>
 
 
     </main><!-- End #main -->
