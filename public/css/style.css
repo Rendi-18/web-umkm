@@ -1950,3 +1950,16 @@ section {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
+/*--------------------------------------------------------------
+# identity
+--------------------------------------------------------------*/
+
+#identity {
+  padding: 15px 0;
+  background: #f3f5fa;
+  min-height: 40px;
+  margin-top: 72px;
+}
+
+.identity {}
