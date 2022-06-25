@@ -1992,3 +1992,13 @@ section {
 .identity .image-identity img:hover {
   transform: scale(1.15);
 }
+
+/*--------------------------------------------------------------
+# Product
+--------------------------------------------------------------*/
+.product .product-card {
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+  padding: 50px 30px;
+  transition: all ease-in-out 0.4s;
+  background: #fff;
+}

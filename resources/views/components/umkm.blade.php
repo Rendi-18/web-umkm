@@ -18,7 +18,7 @@
         <div class="row card-um-container" data-aos="fade-up" data-aos-delay="200">
             @foreach ($umkms as $umkm)
                 <div
-                    class="col-lg-4 col-6 card-um-item @if ($umkm->category->category == 'UMKM') , filter-umkm @else filter-koperasi @endif">
+                    class="col-lg-3 col-6 card-um-item @if ($umkm->category->category == 'UMKM') filter-umkm @else filter-koperasi @endif">
                     <div class="card-um-img"><img src="/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="card-um-info">

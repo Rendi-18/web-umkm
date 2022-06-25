@@ -37,32 +37,66 @@
                 </div>
             </div>
         </section>
-        <section id="card-um" class="card-um">
+        <section id="product" class="product">
             @if ($umkm->product->count())
-                <div class="row card-um-container" data-aos="fade-up" data-aos-delay="200">
-                    @foreach ($umkm->product as $product)
-                        {{-- <div
-                            class="col-xl-3 col-6 c0 card-um-item filter-app @if ($umkm->category->category == 'UMKM') , filter-umkm @else filter-koperasi @endif">
-                            <div class="card-um-img"><img src="/img/portfolio/portfolio-2.jpg" class="img-fluid"
-                                    alt="">
+                <div class="container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                        <div class="row prod-container col-12">
+                            <div class="row">
+                                <div class="col-6 justify-conten-start">
+                                    <h5>Product Terlaris</h5>
+                                </div>
+                                <div class="col-6 justify-conten-end">
+                                    <a href="">show all-></a>
+                                </div>
                             </div>
-                            <div class="card-um-info">
-                                <h4>{{ $umkm->name }}</h4>
-                                <p>{{ $umkm->category->category }}</p>
-                                <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="card-um-lightbox preview-link" title="{{ $umkm->description }}"><i
-                                        class="bx bx-plus"></i></a>
-                                <a href="/umkm/{{ $umkm->slug }}" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                            </div>
-                        </div> --}}
-
-                        <div class="mb-2">
+                            @foreach ($umkm->product as $product)
+                                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+                                    data-aos-delay="100">
+                                    <div class="product-card">
+                                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                                        <h4><a href="">{{ $product->name }}</a></h4>
+                                        <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                                    </div>
+                                </div>
+                                {{-- <div class="mb-2">
                             {{ $product->name }}
                             {{ $product->weight }}
 
+                        </div> --}}
+                            @endforeach
                         </div>
-                    @endforeach
+                        <div class="row prod-container col-12">
+                            <div class="row">
+                                <div class="col-6 justify-conten-right">
+                                    <h5>Product Terbaru</h5>
+                                </div>
+                                <div class="col-6 justify-conten-left">
+                                    <a href="">show all-></a>
+                                </div>
+                            </div>
+                            @foreach ($umkm->product as $product)
+                                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+                                    data-aos-delay="100">
+                                    <div class="product-card">
+                                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                                        <h4><a href="">{{ $product->name }}</a></h4>
+                                        <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                                    </div>
+                                </div>
+                                {{-- <div class="mb-2">
+                            {{ $product->name }}
+                            {{ $product->weight }}
+                        </div> --}}
+                            @endforeach
+                        </div>
+
+
+
+
+
+                    </div>
+
                 </div>
             @else
                 <h1 class="text-center">Not Found :(</h1>
