@@ -42,4 +42,11 @@ class HomeController extends Controller
             'umkms' => $umkms->paginate(12)->withQueryString()
         ]);
     }
+    public function umkm(Umkm $umkm)
+    {
+
+        return view('pages.umkm', [
+            'umkm' => $umkm
+        ]);
+    }
 }

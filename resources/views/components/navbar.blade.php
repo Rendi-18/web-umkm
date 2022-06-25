@@ -1,5 +1,5 @@
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top {{ Request::is('search') ? 'header-search' : '' }}">
+<header id="header" class="fixed-top {{ Request::is('home') ? '' : 'header-search' }}">
     <div class="container d-flex align-items-center">
 
         <h1 class="logo me-auto">
@@ -13,7 +13,7 @@
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                <li><a class="nav-link scrollto" href="#portfolio">UMKM</a></li>
+                <li><a class="nav-link scrollto" href="#card-um">UMKM</a></li>
                 <li><a class="nav-link scrollto" href="#team">Struktur</a></li>
                 <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
