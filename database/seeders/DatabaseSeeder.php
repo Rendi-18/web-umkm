@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Product;
 use App\Models\Umkm;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -28,5 +29,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Umkm::factory(50)->create();
+        Product::factory(250)->create();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
 
@@ -44,9 +45,8 @@ class HomeController extends Controller
     }
     public function umkm(Umkm $umkm)
     {
-
         return view('pages.umkm', [
-            'umkm' => $umkm
+            'umkm' => $umkm,
         ]);
     }
 }

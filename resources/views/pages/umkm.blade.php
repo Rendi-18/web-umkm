@@ -38,15 +38,10 @@
             </div>
         </section>
         <section id="card-um" class="card-um">
-            <ul id="card-um-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-umkm">UMKM</li>
-                <li data-filter=".filter-koperasi">KOPERASI</li>
-            </ul>
-            @if ($umkms->count())
+            @if ($umkm->product->count())
                 <div class="row card-um-container" data-aos="fade-up" data-aos-delay="200">
-                    @foreach ($umkms as $umkm)
-                        <div
+                    @foreach ($umkm->product as $product)
+                        {{-- <div
                             class="col-xl-3 col-6 c0 card-um-item filter-app @if ($umkm->category->category == 'UMKM') , filter-umkm @else filter-koperasi @endif">
                             <div class="card-um-img"><img src="/img/portfolio/portfolio-2.jpg" class="img-fluid"
                                     alt="">
@@ -60,6 +55,12 @@
                                 <a href="/umkm/{{ $umkm->slug }}" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
+                        </div> --}}
+
+                        <div class="mb-2">
+                            {{ $product->name }}
+                            {{ $product->weight }}
+
                         </div>
                     @endforeach
                 </div>
