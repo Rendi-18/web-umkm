@@ -30,8 +30,16 @@ class HomeController extends Controller
     }
     public function search()
     {
+        $umkms = Umkm::latest();
+
+        if (request('search')) {
+            $umkms->where('name', 'like', '%' . request('search') . '%')
+                ->orwhere('description', 'like', '%' . request('search') . '%')
+                ->orwhere('address', 'like', '%' . request('search') . '%');
+        }
+
         return view('pages.search', [
-            'umkms' => Umkm::orderBy('created_at', 'desc')->paginate(6)
+            'umkms' => $umkms->paginate(8)->withQueryString()
         ]);
     }
 }

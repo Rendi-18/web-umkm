@@ -22,7 +22,7 @@
                     @if ($page == $paginator->currentPage())
                         <option selected>{{ $page }}</option>
                     @else
-                        <option value="{{ $url }}#berita">
+                        <option value="{{ $url }}">
                             {{ $page }}
                         </option>
                     @endif
@@ -34,7 +34,7 @@
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
                 <li class="page-item">
-                    <a class="page-link border-0 rounded shadow-sm" href="{{ $paginator->nextPageUrl() }}#berita"
+                    <a class="page-link border-0 rounded shadow-sm" href="{{ $paginator->nextPageUrl() }}"
                         rel="next" aria-label="@lang('pagination.next')">Next <i
                             class="bi bi-chevron-double-right"></i></a>
                 </li>
