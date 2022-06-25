@@ -39,7 +39,7 @@ class HomeController extends Controller
         }
 
         return view('pages.search', [
-            'umkms' => $umkms->paginate(8)->withQueryString()
+            'umkms' => $umkms->paginate(12)->withQueryString()
         ]);
     }
 }
