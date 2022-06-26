@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -24,4 +25,4 @@ Route::get('/search', [HomeController::class, 'search'])->name('search');
 Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
 
 //  Dashboard
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('Auth');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
