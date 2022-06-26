@@ -22,3 +22,6 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
+
+//  Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('Auth');
