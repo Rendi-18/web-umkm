@@ -46,9 +46,7 @@
                                 <div class="col-6 justify-conten-start">
                                     <h5>Product Terlaris</h5>
                                 </div>
-                                <div class="col-6 justify-conten-end">
-                                    <a href="">show all-></a>
-                                </div>
+
                             </div>
                             @foreach ($umkm->product as $product)
                                 <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
@@ -67,12 +65,12 @@
                             @endforeach
                         </div>
                         <div class="row prod-container col-12">
-                            <div class="row">
+                            <div class="row jdl">
                                 <div class="col-6 justify-conten-right">
                                     <h5>Product Terbaru</h5>
                                 </div>
-                                <div class="col-6 justify-conten-left">
-                                    <a href="">show all-></a>
+                                <div class="col-6 link-all">
+                                    <a href="">Tampilkan Semua Product -></a>
                                 </div>
                             </div>
                             @foreach ($umkm->product as $product)

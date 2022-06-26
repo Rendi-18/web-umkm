@@ -2002,3 +2002,16 @@ section {
   transition: all ease-in-out 0.4s;
   background: #fff;
 }
+
+.prod-container {
+  margin-bottom: 1.5%;
+}
+
+.prod-container .link-all {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.prod-container .jdl {
+  margin: 1.2% 0;
+}
