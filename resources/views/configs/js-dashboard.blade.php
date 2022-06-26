@@ -10,7 +10,7 @@
 <script src="/vendor/apex-charts/apexcharts.js"></script>
 
 <!-- Main JS -->
-<script src="/js/main.js"></script>
+<script src="/js/main-dashboard.js"></script>
 
 <!-- Page JS -->
 <script src="/js/dashboards-analytics.js"></script>
