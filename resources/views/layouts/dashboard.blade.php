@@ -13,7 +13,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    @include('configs.css')
+    @include('configs.css-dashboard')
 
 </head>
 
@@ -26,7 +26,7 @@
         <i class="bi bi-arrow-up-short"></i>
     </a>
 
-    @include('configs.js')
+    @include('configs.js-dashboard')
 
 </body>
 
