@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\DashboardUmkmController;
 
 
 /*
@@ -27,9 +28,11 @@ Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
 
 //  Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
-Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');
-Route::resource('/dashboard/umkm', DashboardUserController::class)->middleware('auth');
-Route::resource('/dashboard/koperasi', DashboardUserController::class)->middleware('auth');
+Route::get('/dashboard/umkm/{umkm:id}/umkm-product', [DashboardController::class, 'umkmProduct'])->name('dashboard')->middleware('auth');
+Route::get('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardController::class, 'umkmProfile'])->name('dashboard')->middleware('auth');
+// Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');
+Route::resource('/dashboard/umkm', DashboardUmkmController::class)->middleware('auth');
+// Route::resource('/dashboard/koperasi', DashboardKoperasiController::class)->middleware('auth');
 
 //Dashboard User
-Route::get('/', [DashboardController::class, 'index'])->name('home');
+// Route::get('/', [DashboardController::class, 'index'])->name('home');

@@ -17,7 +17,7 @@ class UmkmFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => 1,
+            'user_id' => mt_rand(1, 6),
             'slug' => $this->faker->slug(),
             'name' => $this->faker->sentence(mt_rand(1, 3)),
             'category_id' => mt_rand(1, 2),

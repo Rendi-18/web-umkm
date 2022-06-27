@@ -14,8 +14,8 @@ class DashboardUmkmController extends Controller
      */
     public function index()
     {
-        //
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +46,7 @@ class DashboardUmkmController extends Controller
      */
     public function show(Umkm $umkm)
     {
-        //
+        return view('dashboard.pages.umkm-profile');
     }
 
     /**
