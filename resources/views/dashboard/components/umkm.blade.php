@@ -1,6 +1,6 @@
 <!-- Table User -->
 <div class="row">
-    <hr class="my-5" />
+
     @if (session()->has('successUser'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('successUser') }}
@@ -9,37 +9,27 @@
     @endif
     <div class="col-lg tabel-user">
         <div class="card mb-4">
-            <h5 class="card-header">Hoverable rows</h5>
+            <h5 class="card-header">Tabel UMKM </h5>
             <div class="table-responsive text-nowrap">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>user</th>
-                            <th>Email</th>
-                            <th>Profile</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Alamat</th>
+                            <th>Owner</th>
+                            <th>Jumlah Product</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        @foreach ($users as $user)
+                        @foreach ($umkms as $umkm)
                             <tr>
                                 <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
-                                    <strong>{{ $user->name }}</strong>
+                                    <strong>{{ $umkm->name }}</strong>
                                 </td>
-                                <td>{{ $user->email }}</td>
-                                <td>
-                                    <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                            class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                                            <img src="/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                        </li>
-                                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                            class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                                            <img src="/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                        </li>
-
-                                    </ul>
-                                </td>
+                                <td>{{ $umkm->address }}</td>
+                                <td>{{ $umkm->user->name }}</td>
                                 <td><span class="badge bg-label-primary me-1">Active</span></td>
                                 <td>
                                     <div class="dropdown">
@@ -51,7 +41,7 @@
                                             <a class="dropdown-item" href="javascript:void(0);"><i
                                                     class="bx bx-edit-alt me-1"></i>
                                                 Edit</a>
-                                            <form id="userDelete-form" action="/dashboard/user/{{ $user->id }}"
+                                            <form id="userDelete-form" action="/dashboard/user/{{ $umkm->id }}"
                                                 method="post">
                                                 @method('delete')
                                                 @csrf

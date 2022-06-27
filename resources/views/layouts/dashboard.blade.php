@@ -16,7 +16,33 @@
 
 <body>
     <div id="app">
-        @yield('content')
+        <div id="main">
+            <!-- Layout wrapper -->
+            <div class="layout-wrapper layout-content-navbar">
+                <div class="layout-container">
+                    <!-- Menu -->
+
+                    @include('dashboard.components.menu')
+                    <!-- / Menu -->
+
+                    <!-- Layout container -->
+                    <div class="layout-page">
+                        <!-- Navbar -->
+
+                        @include('dashboard.components.nav')
+
+                        <!-- / Navbar -->
+
+                        @yield('content')
+                    </div>
+                    <!-- / Layout page -->
+                </div>
+
+                <!-- Overlay -->
+                <div class="layout-overlay layout-menu-toggle"></div>
+            </div>
+            <!-- / Layout wrapper -->
+        </div>
     </div>
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center">

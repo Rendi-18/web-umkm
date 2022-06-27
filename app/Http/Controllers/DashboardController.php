@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Umkm;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -10,9 +11,10 @@ class DashboardController extends Controller
     public function index()
     {
         return view(
-            'dashboard.index',
+            'dashboard.pages.index',
             [
-                'users' => User::latest()->where('isAdmin', 0)->get()
+
+                'umkms' => Umkm::latest()->get()
             ]
         );
     }
