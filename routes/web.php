@@ -28,3 +28,5 @@ Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
 //  Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');
+Route::resource('/dashboard/umkm', DashboardUserController::class)->middleware('auth');
+Route::resource('/dashboard/koperasi', DashboardUserController::class)->middleware('auth');

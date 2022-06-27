@@ -6,7 +6,7 @@
         <!-- Content -->
 
         <div class="container-xxl flex-grow-1 container-p-y">
-            <div id="users" class="d-none">
+            <div id="users">
                 @include('dashboard.components.user', ['users' => $users])
             </div>
         </div>

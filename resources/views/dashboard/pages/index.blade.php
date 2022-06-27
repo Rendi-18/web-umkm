@@ -9,7 +9,7 @@
             <div id="dashboard" class="d-none">
                 @include('dashboard.components.comp1')
             </div>
-            <div id="users" class="d-none">
+            {{-- <div id="users" class="d-none">
                 @include('dashboard.components.user', ['users' => $users])
             </div>
             <div id="umkm">
@@ -17,7 +17,7 @@
             </div>
             <div id="koperasi">
                 @include('dashboard.components.koperasi')
-            </div>
+            </div> --}}
         </div>
         <!-- / Content -->
         @include('dashboard.components.footer')
