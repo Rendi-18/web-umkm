@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardUserController;
 
 
 /*
@@ -26,3 +27,4 @@ Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
 
 //  Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');

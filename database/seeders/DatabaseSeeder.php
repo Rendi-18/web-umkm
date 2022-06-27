@@ -30,5 +30,6 @@ class DatabaseSeeder extends Seeder
 
         Umkm::factory(50)->create();
         Product::factory(250)->create();
+        User::factory(20)->create();
     }
 }

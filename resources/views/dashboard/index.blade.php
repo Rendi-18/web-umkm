@@ -25,7 +25,7 @@
                         <div class="container-xxl flex-grow-1 container-p-y">
 
                             @include('dashboard.components.comp1')
-                            @include('dashboard.components.comp2')
+                            @include('dashboard.components.comp2', ['users' => $users])
 
                         </div>
                         <!-- / Content -->
