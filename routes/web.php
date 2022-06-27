@@ -30,3 +30,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');
 Route::resource('/dashboard/umkm', DashboardUserController::class)->middleware('auth');
 Route::resource('/dashboard/koperasi', DashboardUserController::class)->middleware('auth');
+
+//Dashboard User
+Route::get('/', [DashboardController::class, 'index'])->name('home');
