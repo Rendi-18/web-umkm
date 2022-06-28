@@ -17,3 +17,10 @@
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+{{-- Trix --}}
+<script>
+    document.addEventListener('trix-file-accept', function(e) {
+        e.preventDefault()
+    })
+</script>

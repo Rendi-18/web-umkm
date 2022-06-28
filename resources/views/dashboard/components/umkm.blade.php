@@ -1,6 +1,5 @@
 <!-- Table User -->
 <div class="row">
-
     @if (session()->has('successUser'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('successUser') }}

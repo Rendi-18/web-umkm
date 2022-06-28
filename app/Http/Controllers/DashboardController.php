@@ -17,24 +17,4 @@ class DashboardController extends Controller
             ]
         );
     }
-
-    public function umkmProfile(Umkm $umkm)
-    {
-        return view(
-            'dashboard.pages.umkm-profile',
-            [
-                'umkms' => $umkm
-            ]
-        );
-    }
-
-    public function umkmProduct(Umkm $umkm)
-    {
-        return view(
-            'dashboard.pages.umkm-product',
-            [
-                'products' => $umkm->product
-            ]
-        );
-    }
 }

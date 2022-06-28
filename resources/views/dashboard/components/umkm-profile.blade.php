@@ -57,7 +57,7 @@
     </div>
 </section>
 
-<section id="form-edit"class="d-none">
+<section id="form-edit" class="">
     <h4 class="col-6 fw-bold py-3 mb-4"><span class="text-muted fw-light">From/</span> Edit profile</h4>
 
 
