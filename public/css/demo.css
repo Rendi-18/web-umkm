@@ -111,3 +111,7 @@
   text-align: center;
   margin-top: 1rem;
 }
+
+.card .img-pr {
+  max-width: 100%;
+}
