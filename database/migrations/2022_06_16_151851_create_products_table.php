@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('price');
             $table->string('weight');
             $table->string('description');
+            $table->boolean('isUnggulan')->default(false);
             $table->timestamps();
         });
     }

@@ -20,6 +20,7 @@ class UmkmFactory extends Factory
             'user_id' => mt_rand(1, 6),
             'slug' => $this->faker->slug(),
             'name' => $this->faker->sentence(mt_rand(1, 3)),
+            'phonenumber' => $this->faker->phoneNumber(),
             'category_id' => mt_rand(1, 2),
             'description' => $this->faker->paragraph(mt_rand(5, 9)),
             'address' => $this->faker->sentence(mt_rand(5, 9)),

@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DashboardUmkmController;
 use App\Http\Controllers\DashboardUserUmkmController;
+use App\Http\Controllers\DashboardUserProductController;
 
 
 /*
@@ -22,7 +23,7 @@ use App\Http\Controllers\DashboardUserUmkmController;
 // Auntentikasi
 Auth::routes();
 
-
+// Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
@@ -30,15 +31,22 @@ Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
 //  Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
-// Dashboard UMKM Product
-Route::get('/dashboard/umkm/{umkm:id}/umkm-product', [DashboardUserUmkmController::class, 'index'])->middleware('auth');
-Route::post('/dashboard/umkm/{umkm:id}/umkm-product', [DashboardUserUmkmController::class, 'store'])->middleware('auth');
-Route::get('/dashboard/umkm/{umkm:id}/umkm-product/create', [DashboardUserUmkmController::class, 'create'])->middleware('auth');
-Route::put('/dashboard/umkm-product/{product:id}', [DashboardUserUmkmController::class, 'update'])->middleware('auth');
-Route::delete('/dashboard/umkm-product/{product:id}', [DashboardUserUmkmController::class, 'destroy'])->middleware('auth');
-Route::get('/dashboard/umkm-product/{product:id}/edit', [DashboardUserUmkmController::class, 'edit'])->middleware('auth');
+// Dashboard User UMKM Product
+Route::get('/dashboard/umkm/{umkm:id}/umkm-product', [DashboardUserProductController::class, 'index'])->middleware('auth');
+Route::post('/dashboard/umkm/{umkm:id}/umkm-product', [DashboardUserProductController::class, 'store'])->middleware('auth');
+Route::get('/dashboard/umkm/{umkm:id}/umkm-product/create', [DashboardUserProductController::class, 'create'])->middleware('auth');
+Route::put('/dashboard/umkm-product/{product:id}', [DashboardUserProductController::class, 'update'])->middleware('auth');
+Route::put('/dashboard/umkm-product/{product:id}/unggulan', [DashboardUserProductController::class, 'isUnggulan'])->middleware('auth');
+Route::delete('/dashboard/umkm-product/{product:id}', [DashboardUserProductController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/umkm-product/{product:id}/edit', [DashboardUserProductController::class, 'edit'])->middleware('auth');
 
-Route::get('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardController::class, 'umkmProfile'])->name('dashboard')->middleware('auth');
+// Dashboard User UMKM Profile
+Route::get('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/umkm/{umkm:id}/umkm-profile/edit', [DashboardUserUmkmController::class, 'edit'])->middleware('auth');
+Route::put('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmController::class, 'update'])->middleware('auth');
+
+
+
 // Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');
 Route::resource('/dashboard/umkm', DashboardUmkmController::class)->middleware('auth');
 // Route::resource('/dashboard/koperasi', DashboardKoperasiController::class)->middleware('auth');

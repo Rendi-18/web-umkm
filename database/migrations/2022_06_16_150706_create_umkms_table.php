@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('name')->unique();
             $table->text('description');
+            $table->string('phonenumber');
             $table->string('address');
             $table->boolean('isActive')->default(false);
             $table->timestamps();

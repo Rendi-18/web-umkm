@@ -44,7 +44,7 @@
                                 <label class="col-sm-2 col-form-label" for="name">Nama Product</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                        id="name" placeholder="Harga" name="name" value="{{ old('name') }}"
+                                        id="name" placeholder="Nama" name="name" value="{{ old('name') }}"
                                         required>
                                     @error('name')
                                         <div class="invalid-feedback">

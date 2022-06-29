@@ -3,64 +3,47 @@
         <div class="col-6">
             <h4 class="fw-bold">Produk Unggulan</h4>
         </div>
-        <div class="col-6 d-flex ">
+        {{-- <div class="col-6 d-flex ">
             <button type="button" class="btn btn-primary ms-auto">
                 <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Produk Unggulan
             </button>
-        </div>
+        </div> --}}
     </div>
 
     </div>
+    @if (session()->has('successUnggulan'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('successUnggulan') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <div class="row">
-        <div class="col-3">
-            <div class="card h-100">
-                <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Nama Product</h5>
-                    <p class="card-text">Total jumlah</p>
-                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck2"><i class='bx bxl-product-hunt'></i>
-                        Unggulan</label>
+        @if ($products->where('isUnggulan')->count())
+            @foreach ($products->where('isUnggulan') as $product)
+                <div class="col-3">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $product->name }}</h5>
+                            <p class="card-text">{{ $product->price }}</p>
+                            <form action="/dashboard/umkm-product/{{ $product->id }}/unggulan" method="post">
+                                @method('put')
+                                @csrf
+                                <input type="hidden" class="btn-check" id="btncheck2" value="0" name="isUnggulan"
+                                    autocomplete="off">
+                                <button class="btn btn-outline-primary" for="btncheck2"><i
+                                        class='bx bxl-product-hunt'></i>
+                                    Hilangkan
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card h-100">
-                <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">nama Product</h5>
-                    <p class="card-text">Total jumlah</p>
-                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck2"><i class='bx bxl-product-hunt'></i>
-                        Unggulan</label>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card h-100">
-                <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">nama Product</h5>
-                    <p class="card-text">Total jumlah</p>
-                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck2"><i class='bx bxl-product-hunt'></i>
-                        Unggulan</label>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card h-100">
-                <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">nama Product</h5>
-                    <p class="card-text">Total jumlah</p>
-                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck2"><i class='bx bxl-product-hunt'></i>
-                        Unggulan</label>
-                </div>
-            </div>
-        </div>
-
+            @endforeach
+        @else
+            <h4 class="text-center">Belum ada product unggulan :)</h4>
+        @endif
+    </div>
 
 </section>
 <hr class="my-5">
@@ -99,7 +82,7 @@
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                    @foreach ($products as $product)
+                    @foreach ($products->where('isUnggulan', false) as $product)
                         <tr>
                             <td>{{ $product->id }}</td>
                             <td>
@@ -127,11 +110,22 @@
                                             action="/dashboard/umkm-product/{{ $product->id }}" method="post">
                                             @method('delete')
                                             @csrf
-                                            <button class="dropdown-item"
-                                                onclick="return confirm('Apa anda yakin user dinonaktifkan secara permanen?')">
-                                                <i class="bx bx-trash me-1"></i> Nonaktikan
+                                            <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
+                                                <i class="bx bx-trash me-1"></i> Hapus
                                             </button>
                                         </form>
+                                        @if ($product->umkm->product->where('isUnggulan')->count() < 4)
+                                            <form action="/dashboard/umkm-product/{{ $product->id }}/unggulan"
+                                                method="post">
+                                                @method('put')
+                                                @csrf
+                                                <input type="hidden" name="isUnggulan" value="1">
+                                                <button class="dropdown-item"
+                                                    onclick="return confirm('Apa anda yakin?')">
+                                                    <i class="bx bx-trash me-1"></i> Unggulkan
+                                                </button>
+                                            </form>
+                                        @endif
                                     </div>
                                 </div>
                             </td>
@@ -139,64 +133,6 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
-    </div>
-</section>
-<section id="product-form-edit" class="">
-    <h4 class="fw-bold py-3 mb-4">
-        <span class="text-muted fw-light">Product /</span> Form Edit
-    </h4>
-    <div class="col-xxl">
-        <div class="card mb-4">
-            <div class="card-header d-flex align-items-center justify-content-between">
-                <h5 class="mb-0">Form Edit Product</h5> <small class="text-muted float-end">Default label</small>
-            </div>
-            <div class="card-body">
-                <form>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="basic-default-name">Nama Product</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="basic-default-name"
-                                placeholder="Nama Product">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="basic-default-price">Harga</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" id="basic-default-price" placeholder="Rp.">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="basic-default-email">Berat Product</label>
-                        <div class="col-sm-10">
-                            <div class="input-group input-group-merge">
-                                <input type="number" id="basic-default-weight" class="form-control"
-                                    placeholder="Kg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="basic-default-img">Foto Product</label>
-                        <div class="col-sm-10">
-                            <div class="input-group input-group-merge">
-                                <input class="form-control" type="file" id="formFileMultiple" multiple="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="basic-default-message">describtion</label>
-                        <div class="col-sm-10">
-                            <textarea id="basic-default-describtion" class="form-control" placeholder="Hi, Do you have a moment to talk Joe?"
-                                aria-label="Deskripsi Product"></textarea>
-                        </div>
-                    </div>
-                    <div class="row justify-content-end">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Send</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
         </div>
     </div>
 </section>
