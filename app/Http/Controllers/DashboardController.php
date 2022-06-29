@@ -17,4 +17,11 @@ class DashboardController extends Controller
             ]
         );
     }
+    public function profile()
+    {
+        return view(
+            'dashboard.pages.profile',
+            []
+        );
+    }
 }

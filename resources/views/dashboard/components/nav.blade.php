@@ -16,14 +16,12 @@
                                 </div>
                             </div>
                             <!-- /Search --> --}}
-
+        <div class="align-items-start">
+            <h4 class="fw-bold mb-0">Dashboard</h4>
+        </div>
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             <!-- Place this tag where you want the button to render. -->
-            <li class="nav-item lh-1 me-3">
-                <a class="github-button" href="https://github.com/themeselection/sneat-html-admin-template-free"
-                    data-icon="octicon-star" data-size="large" data-show-count="true"
-                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">Star</a>
-            </li>
+            <h5 class="mb-0 me-2">Jhon Doe</h5>
 
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -53,26 +51,13 @@
                     </li>
                     <li>
                         <a class="dropdown-item" href="#">
-                            <i class="bx bx-user me-2"></i>
-                            <span class="align-middle">My Profile</span>
+                            <i class="bx bx-globe me-2"></i>
+                            <span class="align-middle">Website</span>
+                            <i class='bx bxs-arrow-from-left ms-3'></i>
+
                         </a>
                     </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bx bx-cog me-2"></i>
-                            <span class="align-middle">Settings</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <span class="d-flex align-items-center align-middle">
-                                <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                                <span class="flex-grow-1 align-middle">Billing</span>
-                                <span
-                                    class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                            </span>
-                        </a>
-                    </li>
+
                     <li>
                         <div class="dropdown-divider"></div>
                     </li>

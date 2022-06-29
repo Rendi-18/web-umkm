@@ -124,6 +124,19 @@
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
+        <li class="menu-item {{ Request::is('dashboard/profile') ? 'active open' : '' }}">
+            <a href="/dashboard/profile" class="menu-link menu-toggle ">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Account Settings">Account Settings</div>
+            </a>
+            <ul class="menu-sub ">
+                <li class="menu-item {{ Request::is('dashboard/profile') ? 'active' : '' }}">
+                    <a href="/dashboard/profile" class="menu-link ">
+                        <div data-i18n="Account">Account</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
 
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">UMKM</span>

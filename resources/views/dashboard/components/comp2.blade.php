@@ -4,7 +4,7 @@
     </div>
     <div class="col-6 d-flex">
         <button type="button" class="btn btn-primary ms-auto">
-            <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah UMKM
+            <span class="tf-icons bx bx-plus"></span>&nbsp; Daftarkan UMKM
         </button>
     </div>
 </div>

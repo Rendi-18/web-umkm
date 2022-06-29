@@ -30,6 +30,8 @@ Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
 
 //  Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->name('dashboard')->middleware('auth');
+
 
 // Dashboard User UMKM Product
 Route::get('/dashboard/umkm/{umkm:id}/umkm-product', [DashboardUserProductController::class, 'index'])->middleware('auth');
