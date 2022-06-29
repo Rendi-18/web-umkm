@@ -6,10 +6,10 @@
         <!-- Content -->
 
         <div class="container-xxl flex-grow-1 container-p-y">
-            <div id="dashboard" class="d-none">
+            <div id="dashboard" class="">
                 @include('dashboard.components.comp1')
             </div>
-            <div id="dashboard" class="">
+            <div id="dashboard" class="d-none">
                 @include('dashboard.components.comp2')
             </div>
 

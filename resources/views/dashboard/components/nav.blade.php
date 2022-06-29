@@ -50,7 +50,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="../">
                             <i class="bx bx-globe me-2"></i>
                             <span class="align-middle">Website</span>
                             <i class='bx bxs-arrow-from-left ms-3'></i>

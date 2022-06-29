@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
+        <a href="../" class="app-brand-link">
             <span class="app-brand-logo demo">
                 <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -55,7 +55,7 @@
 
     <div class="menu-inner-shadow"></div>
 
-    <ul class="menu-inner py-1 d-none">
+    <ul class="menu-inner py-1">
         <!-- Dashboard -->
         <li class="menu-item {{ Request::is('dashboard') ? 'active' : '' }}">
             <a href="/dashboard" class="menu-link">
@@ -81,7 +81,7 @@
             </ul>
         </li>
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">UMKM</span>
+            <span class="menu-header-text">UMKM & KOPERASI</span>
         </li>
 
         <li class="menu-item {{ Request::is('dashboard/umkm*') ? 'active open' : '' }}">
@@ -96,9 +96,6 @@
                     </a>
                 </li>
             </ul>
-        </li>
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">KOPERASI</span>
         </li>
         <li class="menu-item  {{ Request::is('dashboard/koperasi*') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -116,7 +113,8 @@
         </li>
 
     </ul>
-    <ul class="menu-inner py-1">
+
+    <ul class="menu-inner py-1 d-none">
         <!-- Dashboard -->
         <li class="menu-item {{ Request::is('dashboard') ? 'active' : '' }}">
             <a href="/dashboard" class="menu-link">
