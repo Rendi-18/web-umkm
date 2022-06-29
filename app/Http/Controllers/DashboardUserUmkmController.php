@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardUserUmkmController extends Controller
 {
     public function index(Umkm $umkm)
     {
+        $this->authorize(ability: 'view', arguments: $umkm);
         return view(
             'dashboard.pages.umkm-profile.index',
             [
@@ -20,6 +22,7 @@ class DashboardUserUmkmController extends Controller
 
     public function edit(Umkm $umkm)
     {
+        $this->authorize(ability: 'view', arguments: $umkm);
         return view(
             'dashboard.pages.umkm-profile.edit',
             [

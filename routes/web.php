@@ -48,10 +48,10 @@ Route::get('/dashboard/umkm/{umkm:id}/umkm-profile/edit', [DashboardUserUmkmCont
 Route::put('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmController::class, 'update'])->middleware('auth');
 
 
-
-// Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');
-Route::resource('/dashboard/umkm', DashboardUmkmController::class)->middleware('auth');
-// Route::resource('/dashboard/koperasi', DashboardKoperasiController::class)->middleware('auth');
+// Dashboard Admin
+Route::resource('/dashboard/user', DashboardUserController::class)->middleware('admin');
+Route::resource('/dashboard/umkm', DashboardUmkmController::class)->middleware('admin');
+Route::resource('/dashboard/koperasi', DashboardKoperasiController::class)->middleware('admin');
 
 //Dashboard User
 // Route::get('/', [DashboardController::class, 'index'])->name('home');

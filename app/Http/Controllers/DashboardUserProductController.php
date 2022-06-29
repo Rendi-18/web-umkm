@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardUserProductController extends Controller
 {
     // Read GET
     public function index(Umkm $umkm)
     {
+        $this->authorize(ability: 'view', arguments: $umkm);
         return view(
             'dashboard.pages.umkm-product.index',
             [
@@ -22,6 +24,7 @@ class DashboardUserProductController extends Controller
     // Create GET
     public function create(Umkm $umkm)
     {
+        $this->authorize(ability: 'view', arguments: $umkm);
         return view(
             'dashboard.pages.umkm-product.create',
             [
@@ -55,6 +58,7 @@ class DashboardUserProductController extends Controller
     // Edit GET
     public function edit(Product $product)
     {
+        $this->authorize(ability: 'view', arguments: $product);
         return view('dashboard.pages.umkm-product.edit', [
             'product' => $product
         ]);

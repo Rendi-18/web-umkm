@@ -2,11 +2,12 @@
 
 namespace App\Policies;
 
-use App\Models\UMKM;
+use App\Models\Umkm;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Support\Facades\Auth;
 
-class UMKMPolicy
+class UmkmPolicy
 {
     use HandlesAuthorization;
 
@@ -18,7 +19,6 @@ class UMKMPolicy
      */
     public function viewAny(User $user)
     {
-        //
     }
 
     /**
@@ -28,9 +28,9 @@ class UMKMPolicy
      * @param  \App\Models\UMKM  $uMKM
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, UMKM $uMKM)
+    public function view(User $user, Umkm $umkm)
     {
-        //
+        return $user->id == $umkm->user_id;
     }
 
     /**
@@ -48,10 +48,10 @@ class UMKMPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\UMKM  $uMKM
+     * @param  \App\Models\Umkm  $umkm
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, UMKM $uMKM)
+    public function update(User $user, Umkm $umkm)
     {
         //
     }
@@ -60,10 +60,10 @@ class UMKMPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\UMKM  $uMKM
+     * @param  \App\Models\Umkm  $umkm
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, UMKM $uMKM)
+    public function delete(User $user, Umkm $umkm)
     {
         //
     }
@@ -72,10 +72,10 @@ class UMKMPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\UMKM  $uMKM
+     * @param  \App\Models\Umkm  $umkm
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, UMKM $uMKM)
+    public function restore(User $user, Umkm $umkm)
     {
         //
     }
@@ -84,10 +84,10 @@ class UMKMPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\UMKM  $uMKM
+     * @param  \App\Models\Umkm  $umkm
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, UMKM $uMKM)
+    public function forceDelete(User $user, Umkm $umkm)
     {
         //
     }
