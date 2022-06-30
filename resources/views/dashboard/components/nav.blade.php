@@ -21,16 +21,17 @@
         </div>
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             <!-- Place this tag where you want the button to render. -->
-            <h5 class="mb-0 me-2">{{ auth()->user()->name  }}</h5>
+            <h5 class="mb-0 me-2">{{ auth()->user()->name }}</h5>
 
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                        @if ( auth()->user()->image )
-                        <img src="{{asset('storage/'.auth()->user()->image)}}" alt class="w-px-40 h-auto rounded-circle" />
+                        @if (auth()->user()->image)
+                            <img src="{{ asset('storage/' . auth()->user()->image) }}" alt
+                                class="w-px-40 h-auto rounded-circle" />
                         @else
-                        <img src="/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                            <img src="/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                         @endif
                     </div>
                 </a>
@@ -40,7 +41,12 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
-                                        <img src="/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                        @if (auth()->user()->image)
+                                            <img src="{{ asset('storage/' . auth()->user()->image) }}" alt
+                                                class="w-px-40 h-auto rounded-circle" />
+                                        @else
+                                            <img src="/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
