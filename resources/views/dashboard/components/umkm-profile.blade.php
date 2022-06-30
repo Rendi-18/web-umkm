@@ -5,11 +5,16 @@
             <div class="card">
                 <div class="row">
                     <div class="col-4 py-5 px-5 pl-5">
-                        <img src="/img/elements/2.jpg" class="img-pr h-auto rounded-circle img-fluid">
+                        @if ($umkm->image)
+                            <img src="{{ asset('storage/' . $umkm->image) }}"
+                                class="img-pr h-auto rounded-circle img-fluid">
+                        @else
+                            <img src="/img/elements/2.jpg" class="img-pr h-auto rounded-circle img-fluid">
+                        @endif
                     </div>
                     <div class="col-8 py-5 px-5 pl-5">
                         <h3>{{ $umkm->name }}</h3>
-                        <h6>{{ $umkm->description }}</h6>
+                        <h6>{!! $umkm->description !!}</h6>
                         <div class="row">
                             <div class="col-4">
                                 <h6><i class="bx bx-phone"></i> : {{ $umkm->phonenumber }}</h6>

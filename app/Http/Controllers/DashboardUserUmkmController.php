@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardUserUmkmController extends Controller
 {
@@ -15,7 +16,8 @@ class DashboardUserUmkmController extends Controller
         return view(
             'dashboard.pages.umkm-profile.index',
             [
-                'umkm' => $umkm
+                'umkm' => $umkm,
+                'title' => 'profile'
             ]
         );
     }
@@ -26,7 +28,8 @@ class DashboardUserUmkmController extends Controller
         return view(
             'dashboard.pages.umkm-profile.edit',
             [
-                'umkm' => $umkm
+                'umkm' => $umkm,
+                'title' => 'profile'
             ]
         );
     }
@@ -34,16 +37,26 @@ class DashboardUserUmkmController extends Controller
     // Edit PUT
     public function update(Request $request, Umkm $umkm)
     {
+        $file_name = $request->image->getClientOriginalName();
+
         $rules = [
             'name' => 'required',
             'phonenumber' => 'required',
             'address' => 'required',
             'description' => 'required',
+            'image' => 'image|file|max:800',
         ];
 
         $validatedData['user_id'] = auth()->user()->id;
 
         $validatedData = $request->validate($rules);
+
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->storeAs('img/' . $umkm->user->username . '/umkm', $file_name);
+        }
 
 
         Umkm::where('id', $umkm->id)

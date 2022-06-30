@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('phonenumber');
             $table->string('address');
+            $table->string('image')->nullable();
             $table->boolean('isActive')->default(false);
             $table->timestamps();
         });

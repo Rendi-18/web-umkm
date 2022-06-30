@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'ADMINSTRATOR',
             'phonenumber' => '08080808',
             'email' => 'admin@gmail.com',
-            'password' => bcrypt('12345678')
+            'password' => bcrypt('12345678'),
+            'address' => "SBW"
         ]);
 
         User::factory(5)->create();

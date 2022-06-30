@@ -22,7 +22,12 @@
             @foreach ($products->where('isUnggulan') as $product)
                 <div class="col-3">
                     <div class="card h-100">
-                        <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
+                        @if ($product->image)
+                            <img class="card-img-top" src="{{ asset('storage/' . $product->image) }}"
+                                alt="Card image cap">
+                        @else
+                            <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
+                        @endif
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->name }}</h5>
                             <p class="card-text">{{ $product->price }}</p>
@@ -31,8 +36,8 @@
                                 @csrf
                                 <input type="hidden" class="btn-check" id="btncheck2" value="0" name="isUnggulan"
                                     autocomplete="off">
-                                <button class="btn btn-outline-primary" for="btncheck2"><i
-                                        class='bx bxl-product-hunt'></i>
+                                <button class="btn btn-outline-primary" for="btncheck2"
+                                    onclick="return confirm('Apa anda yakin?')"><i class='bx bxl-product-hunt'></i>
                                     Hilangkan
                                 </button>
                             </form>
@@ -82,7 +87,7 @@
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                    @foreach ($products->where('isUnggulan', false) as $product)
+                    @foreach ($products as $product)
                         <tr>
                             <td>{{ $product->id }}</td>
                             <td>
@@ -95,7 +100,11 @@
                                     </li>
                                 </ul>
                             </td>
-                            <td><span class="badge bg-label-primary me-1">{{ $product->name }}</span></td>
+                            <td><span class="badge bg-label-primary me-1">{{ $product->name }}</span>
+                                @if ($product->isUnggulan)
+                                    <span class="badge bg-label-danger me-1">Unggulan</span>
+                                @endif
+                            </td>
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->weight }} Kg</td>
                             <td>
@@ -114,7 +123,7 @@
                                                 <i class="bx bx-trash me-1"></i> Hapus
                                             </button>
                                         </form>
-                                        @if ($product->umkm->product->where('isUnggulan')->count() < 4)
+                                        @if ($product->umkm->product->where('isUnggulan')->count() < 4 && !$product->isUnggulan)
                                             <form action="/dashboard/umkm-product/{{ $product->id }}/unggulan"
                                                 method="post">
                                                 @method('put')

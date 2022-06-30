@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('name');
             $table->string('price');
+            $table->string('image')->nullable();
             $table->string('weight');
             $table->string('description');
             $table->boolean('isUnggulan')->default(false);

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -13,15 +15,75 @@ class DashboardController extends Controller
         return view(
             'dashboard.pages.index',
             [
-                'umkms' => Umkm::latest()->get()
+                'umkms' => Umkm::latest()->get(),
+                'title' => ''
             ]
         );
     }
-    public function profile()
+
+
+    // Setting Profile
+    public function edit()
     {
         return view(
-            'dashboard.pages.profile',
-            []
+            'dashboard.pages.profile.edit',
+            [
+                'user' => Auth::user(),
+                'title' => ''
+            ]
         );
+    }
+
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+        // $file_name = $request->image->getClientOriginalName();
+
+        $rules = [
+            'name' => 'required',
+            'username' => 'required',
+            'phonenumber' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'image' => 'image|file|max:1024',
+        ];
+
+        if ($request->email != $user->email) {
+            $rules['email'] = 'required|unique:users';
+        }
+
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+
+        $validatedData = $request->validate($rules);
+
+        // Image
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('img/' . $user->username . '/profile');
+        }
+
+
+        User::where('id', $user->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard')->with('success', 'Profile has been Updated');
+    }
+
+    // Delete DELETE
+    public function destroy()
+    {
+        $umkmImage = Auth::user()->umkm;
+        $user = Auth::user();
+        if ($user->image) {
+            Storage::delete($user->image);
+        }
+
+
+        User::destroy($user->id);
+        return redirect('/')->with('success', 'User telah dihapus');
     }
 }

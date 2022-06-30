@@ -30,7 +30,9 @@ Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
 
 //  Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
-Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->name('dashboard')->middleware('auth');
+Route::get('/dashboard/profile', [DashboardController::class, 'edit'])->middleware('auth');
+Route::put('/dashboard/profile/edit', [DashboardController::class, 'update'])->middleware('auth');
+Route::delete('/dashboard/profile', [DashboardController::class, 'destroy'])->middleware('auth');
 
 
 // Dashboard User UMKM Product

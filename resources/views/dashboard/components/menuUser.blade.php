@@ -32,7 +32,10 @@
             </a>
             <ul class="menu-sub">
                 <li
-                    class="menu-item {{ Request::is('dashboard/umkm/' . $umkm->id . '/umkm-profile') ? 'active' : '' }}">
+                    class="menu-item
+                    {{ Request::is('dashboard/umkm/' . $umkm->id . '/umkm-profile') ? 'active' : '' }}
+                    {{ $title == 'profile' ? 'active' : '' }}
+                    ">
                     <a href="/dashboard/umkm/{{ $umkm->id }}/umkm-profile" class="menu-link">
                         <div data-i18n="Without menu">Profile</div>
                     </a>
@@ -40,7 +43,10 @@
             </ul>
             <ul class="menu-sub">
                 <li
-                    class="menu-item {{ Request::is('dashboard/umkm/' . $umkm->id . '/umkm-product') ? 'active' : '' }}">
+                    class="menu-item
+                    {{ Request::is('dashboard/umkm/' . $umkm->id . '/umkm-product') ? 'active' : '' }}
+                    {{ $title == 'product' ? 'active' : '' }}
+                    ">
                     <a href="/dashboard/umkm/{{ $umkm->id }}/umkm-product" class="menu-link">
                         <div data-i18n="Without menu">Product</div>
                     </a>

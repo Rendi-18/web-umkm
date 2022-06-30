@@ -12,7 +12,8 @@
                         <h5 class="mb-0">Form Tambah Product</h5> <small class="text-muted float-end">Default label</small>
                     </div>
                     <div class="card-body">
-                        <form action="/dashboard/umkm/{{ $umkm->id }}/umkm-product" method="POST">
+                        <form action="/dashboard/umkm/{{ $umkm->id }}/umkm-product" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="umkm_id">Id UMKM</label>
@@ -73,6 +74,20 @@
                                         id="weight" placeholder="Berat" name="weight" value="{{ old('weight') }}"
                                         required>
                                     @error('weight')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="image">Foto UMKM</label>
+                                <div class="col-sm-10">
+                                    <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                        id="image" placeholder="Foto" name="image" value="{{ old('image') }}"
+                                        required onchange="previewImage()">
+                                    <img src="" class="mt-3 img-fluid img-preview" alt="">
+                                    @error('image')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

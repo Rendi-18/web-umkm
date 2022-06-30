@@ -13,42 +13,43 @@
                         masukkan benar</small>
                 </div>
                 <div class="card-body">
-                    <form action="/dashboard/umkm/{{ $umkm->id }}/umkm-profile" method="POST">
+                    <form action="/dashboard/umkm/{{ $umkm->id }}/umkm-profile" method="POST"
+                        enctype="multipart/form-data">
                         @method('put')
                         @csrf
-                        {{-- <div class="col-3 py-3 px-3 pl-5">
-                            <img src="/img/elements/2.jpg" class="img-pr h-auto rounded-circle img-fluid">
-                        </div> --}}
+
+                        {{-- Image --}}
                         <div class="py-3 px-3 pl-5">
                             <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                <img src="/img/elements/2.jpg" alt="user-avatar" class="d-block rounded-circle"
-                                    height="100" width="100" id="uploadedAvatar">
+                                @if ($umkm->image)
+                                    <img src="{{ asset('storage/' . $umkm->image) }}" alt="user-avatar"
+                                        class="d-block rounded-circle img-preview" height="100" width="100"
+                                        id="uploadedAvatar">
+                                @else
+                                    <img src="/img/elements/2.jpg" alt="user-avatar"
+                                        class="d-block rounded-circle img-preview" height="100" width="100"
+                                        id="uploadedAvatar">
+                                @endif
                                 <div class="button-wrapper">
                                     <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                         <span class="d-none d-sm-block">Upload new photo</span>
                                         <i class="bx bx-upload d-block d-sm-none"></i>
-                                        <input type="file" id="upload" class="account-file-input" hidden=""
-                                            accept="image/png, image/jpeg">
+                                        <input type="hidden" name="oldImage" value="{{ $umkm->image }}">
+                                        <input type="file" id="upload"
+                                            class="account-file-input @error('image') is-invalid @enderror"
+                                            accept="image/png, image/jpeg" name="image" hidden
+                                            onchange="previewImageUmkm()">
+                                        @error('image')
+                                            <div class="invalid-feedback text-light">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </label>
-                                    <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
-                                        <i class="bx bx-reset d-block d-sm-none"></i>
-                                        <span class="d-none d-sm-block">Reset</span>
-                                    </button>
-
                                     <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
                                 </div>
                             </div>
                         </div>
                         <hr class="my-0 mb-3">
-                        {{-- <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="inputGroupFile02">Foto Profile</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <input type="file" class="form-control" id="inputGroupFile02">
-                                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                                </div>
-                            </div>
-                        </div> --}}
 
                         {{-- Name --}}
                         <div class="row mb-3">

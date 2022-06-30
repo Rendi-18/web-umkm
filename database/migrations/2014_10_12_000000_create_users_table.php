@@ -18,6 +18,8 @@ return new class extends Migration
             $table->boolean('isAdmin')->default(false);
             $table->string('username')->unique();
             $table->string('name');
+            $table->string('image')->nullable();
+            $table->string('address');
             $table->string('phonenumber')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
