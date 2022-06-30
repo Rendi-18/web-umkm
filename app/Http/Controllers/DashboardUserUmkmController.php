@@ -47,9 +47,9 @@ class DashboardUserUmkmController extends Controller
             'image' => 'image|file|max:800',
         ];
 
-        $validatedData['user_id'] = auth()->user()->id;
 
         $validatedData = $request->validate($rules);
+        $validatedData['user_id'] = auth()->user()->id;
 
         if ($request->file('image')) {
             if ($request->oldImage) {

@@ -58,10 +58,7 @@ class DashboardUserProductController extends Controller
             $validatedData['image'] = $request->file('image')->storeAs('product-image', $file_name);
         }
 
-
-
         $validatedData['user_id'] = auth()->user()->id;
-
         Product::create($validatedData);
 
         return redirect('/dashboard/umkm/' . $umkm->id . '/umkm-product')->with('success', 'New Product has been added!');
@@ -94,11 +91,8 @@ class DashboardUserProductController extends Controller
             $rules['slug'] = 'required|unique:products';
         }
 
-
-        $validatedData['user_id'] = auth()->user()->id;
-
-
         $validatedData = $request->validate($rules);
+        $validatedData['umkm_id'] = $product->umkm->id;
 
         // Image
         if ($request->file('image')) {
@@ -122,9 +116,8 @@ class DashboardUserProductController extends Controller
             'isUnggulan' => 'required',
         ];
 
-        $validatedData['user_id'] = auth()->user()->id;
-
         $validatedData = $request->validate($rules);
+        $validatedData['umkm_id'] = $product->umkm->id;
 
         Product::where('id', $product->id)
             ->update($validatedData);

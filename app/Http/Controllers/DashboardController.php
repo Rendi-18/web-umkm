@@ -52,11 +52,8 @@ class DashboardController extends Controller
             $rules['email'] = 'required|unique:users';
         }
 
-
-        $validatedData['user_id'] = auth()->user()->id;
-
-
         $validatedData = $request->validate($rules);
+        $validatedData['id'] = auth()->user()->id;
 
         // Image
         if ($request->file('image')) {
@@ -65,7 +62,6 @@ class DashboardController extends Controller
             }
             $validatedData['image'] = $request->file('image')->store('img/' . $user->username . '/profile');
         }
-
 
         User::where('id', $user->id)
             ->update($validatedData);
@@ -76,12 +72,10 @@ class DashboardController extends Controller
     // Delete DELETE
     public function destroy()
     {
-        $umkmImage = Auth::user()->umkm;
         $user = Auth::user();
         if ($user->image) {
             Storage::delete($user->image);
         }
-
 
         User::destroy($user->id);
         return redirect('/')->with('success', 'User telah dihapus');
