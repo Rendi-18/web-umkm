@@ -13,15 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('umkms', function (Blueprint $table) {
+        Schema::create('koperasis', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            // $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreignId('category_koperasi_id')->references('id')->on('category_koperasis')->onDelete('cascade');
             $table->string('name')->unique();
-            $table->string('NIB');
+            $table->string('NIK');
             $table->text('description');
             $table->string('phonenumber');
             $table->string('address');
+            $table->string('city');
             $table->string('image')->nullable();
             $table->boolean('isActive')->default(false);
             $table->timestamps();
@@ -35,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('umkms');
+        Schema::dropIfExists('koperasis');
     }
 };

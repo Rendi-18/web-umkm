@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Umkm;
-use Illuminate\Http\Request;
+use App\Models\Koperasi;
+use App\Http\Requests\StoreKoperasiRequest;
+use App\Http\Requests\UpdateKoperasiRequest;
 
-class DashboardKoperasiController extends Controller
+class KoperasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,20 +15,7 @@ class DashboardKoperasiController extends Controller
      */
     public function index()
     {
-
-        $umkms = Umkm::latest();
-
-        if (request('search')) {
-            $umkms->where('name', 'like', '%' . request('search') . '%')->get();
-        }
-
-        return view(
-            'dashboard.pages.koperasi',
-            [
-                'umkms' => $umkms,
-                'title' => ''
-            ]
-        );
+        //
     }
 
     /**
@@ -43,10 +31,10 @@ class DashboardKoperasiController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreKoperasiRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreKoperasiRequest $request)
     {
         //
     }
@@ -54,21 +42,21 @@ class DashboardKoperasiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Umkm  $umkm
+     * @param  \App\Models\Koperasi  $koperasi
      * @return \Illuminate\Http\Response
      */
-    public function show(Umkm $umkm)
+    public function show(Koperasi $koperasi)
     {
-        // return view('dashboard.pages.umkm-profile');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Umkm  $umkm
+     * @param  \App\Models\Koperasi  $koperasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Umkm $umkm)
+    public function edit(Koperasi $koperasi)
     {
         //
     }
@@ -76,11 +64,11 @@ class DashboardKoperasiController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Umkm  $umkm
+     * @param  \App\Http\Requests\UpdateKoperasiRequest  $request
+     * @param  \App\Models\Koperasi  $koperasi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Umkm $umkm)
+    public function update(UpdateKoperasiRequest $request, Koperasi $koperasi)
     {
         //
     }
@@ -88,10 +76,10 @@ class DashboardKoperasiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Umkm  $umkm
+     * @param  \App\Models\Koperasi  $koperasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Umkm $umkm)
+    public function destroy(Koperasi $koperasi)
     {
         //
     }

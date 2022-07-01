@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DashboardUmkmController;
+use App\Http\Controllers\DashboardKoperasiController;
 use App\Http\Controllers\DashboardUserUmkmController;
 use App\Http\Controllers\DashboardUserProductController;
 

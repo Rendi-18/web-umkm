@@ -14,10 +14,17 @@ class DashboardUmkmController extends Controller
      */
     public function index()
     {
+
+        $umkms = Umkm::latest();
+
+        if (request('search')) {
+            $umkms->where('name', 'like', '%' . request('search') . '%')->get();
+        }
+
         return view(
             'dashboard.pages.umkm',
             [
-                'umkms' => Umkm::latest()->get(),
+                'umkms' => $umkms->get(),
                 'title' => ''
             ]
         );

@@ -14,10 +14,16 @@ class DashboardUserController extends Controller
      */
     public function index()
     {
+
+        $users = User::latest()->where('isAdmin', 0);
+
+        if (request('search')) {
+            $users->where('name', 'like', '%' . request('search') . '%')->get();
+        }
         return view(
             'dashboard.pages.user',
             [
-                'users' => User::latest()->where('isAdmin', 0)->get(),
+                'users' => $users->get(),
             ]
         );
     }
