@@ -131,7 +131,7 @@
                                                 <input type="hidden" name="isUnggulan" value="1">
                                                 <button class="dropdown-item"
                                                     onclick="return confirm('Apa anda yakin?')">
-                                                    <i class="bx bx-trash me-1"></i> Unggulkan
+                                                    <i class="bx bxl-product-hunt me-1"></i> Unggulkan
                                                 </button>
                                             </form>
                                         @endif

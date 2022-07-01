@@ -52,7 +52,7 @@
                         <small class="text-success fw-semibold">
                             <div class="spinner-border-sm spinner-grow text-success" role="status">
                                 <span class="visually-hidden">Loading... </span>
-                            </div> <span class="ps-2">6000</span>
+                            </div> <span class="ps-2">{{ $umkms->count() }}</span>
                         </small>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+{{-- component umkm --}}
 <div class="row">
     <div class="col-lg-8 mb-4 order-0">
         <div class="card justify-content-end h-100">
@@ -27,11 +28,13 @@
     <div class="col-lg-4 col-md-4 order-1">
         <div class="row">
             <div class="col-lg-6 col-md-12 col-6 mb-4">
-                <div class="card">
+                <div class="card h-100">
                     <div class="card-body">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
-                                <img src="/img/icons/unicons/chart-success.png" alt="chart success" class="rounded" />
+                                <div class="icon-alt bg-label-success rounded">
+                                    <i class="bx bx-store text-success"></i>
+                                </div>
                             </div>
                             <div class="dropdown">
                                 <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
@@ -45,18 +48,24 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="fw-semibold d-block mb-1">Profit</span>
-                        <h3 class="card-title mb-2">$12,628</h3>
-                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
+
+                        <span class="fw-semibold d-block mb-1">UMKM & Koperasi</span>
+                        <small class="text-success fw-semibold">
+                            <div class="spinner-border-sm spinner-grow text-success" role="status">
+                                <span class="visually-hidden">Loading... </span>
+                            </div> <span class="ps-2">6000</span>
+                        </small>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-6 mb-4">
-                <div class="card">
+                <div class="card h-100">
                     <div class="card-body">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
-                                <img src="/img/icons/unicons/wallet-info.png" alt="Credit Card" class="rounded" />
+                                <div class="icon-alt bg-label-info rounded">
+                                    <i class='bx bx-package text-info'></i>
+                                </div>
                             </div>
                             <div class="dropdown">
                                 <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
@@ -70,9 +79,13 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="fw-semibold d-block mb-1">Sales</span>
-                        <h3 class="card-title mb-2">$4,679</h3>
-                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
+                        <span class="fw-semibold d-block mb-1">Produk</span>
+                        <h3 class="card-title mb-2">Total</h3>
+                        <small class="text-info fw-semibold">
+                            <div class="spinner-border-sm spinner-grow text-info" role="status">
+                                <span class="visually-hidden">Loading... </span>
+                            </div> <span class="ps-2">6000</span>
+                        </small>
                     </div>
                 </div>
             </div>
@@ -81,7 +94,7 @@
 </div>
 
 
-<!-- Table User -->
+<!-- Table UMKM -->
 <div class="row">
     @if (session()->has('successUser'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -103,7 +116,7 @@
                         <tr>
                             <th>NIB</th>
                             <th>Name</th>
-                            <th>Alamat</th>
+                            <th>Kabupaten</th>
                             <th>Owner</th>
                             <th>Status</th>
                             <th>Actions</th>
@@ -159,6 +172,3 @@
         </div>
     </div>
 </div>
-
-
-<!--/ Hoverable Table rows -->

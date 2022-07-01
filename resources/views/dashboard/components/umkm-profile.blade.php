@@ -23,6 +23,12 @@
                                 <h6><i class="bx bx-map-alt"></i> : {{ $umkm->address }}</h6>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <h6><i class="bx bx-buildings"></i> : Bandar Lampung</h6>
+                            </div>
+                        </div>
+                        <hr>
                         <a class="btn rounded-pill btn-primary"
                             href="/dashboard/umkm/{{ $umkm->id }}/umkm-profile/edit">
                             <span class="tf-icons bx bx-edit"></span>&nbsp; Edit

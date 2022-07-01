@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('koperasis', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreignId('category_koperasi_id')->references('id')->on('category_koperasis')->onDelete('cascade');
+            $table->foreignId('category_koperasi_id');
             $table->string('name')->unique();
             $table->string('NIK');
             $table->text('description');

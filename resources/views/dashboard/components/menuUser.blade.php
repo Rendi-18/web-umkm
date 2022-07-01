@@ -19,6 +19,26 @@
             </li>
         </ul>
     </li>
+    <li class="menu-item {{ Request::is('dashboard/profile') ? 'active open' : '' }}">
+        <a href="/dashboard/profile" class="menu-link menu-toggle ">
+            <i class="menu-icon tf-icons bx bx-paper-plane"></i>
+            <div data-i18n="Pengajuan">Pengajuan</div>
+        </a>
+        <ul class="menu-sub ">
+            <li class="menu-item {{ Request::is('dashboard/profile') ? 'active' : '' }}">
+                <a href="/dashboard/profile" class="menu-link ">
+                    <div data-i18n="Pengajuan Surat">Pengajuan Surat</div>
+                </a>
+            </li>
+        </ul>
+        <ul class="menu-sub ">
+            <li class="menu-item {{ Request::is('dashboard/profile') ? 'active' : '' }}">
+                <a href="/dashboard/profile" class="menu-link ">
+                    <div data-i18n="Pengajuan Surat">Pengajuan UMKM</div>
+                </a>
+            </li>
+        </ul>
+    </li>
 
     <li class="menu-header small text-uppercase">
         <span class="menu-header-text">UMKM</span>
@@ -27,7 +47,7 @@
     @foreach (Auth::user()->umkm as $umkm)
         <li class="menu-item {{ Request::is('dashboard/umkm/' . $umkm->id . '*') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <i class="menu-icon tf-icons bx bx-store"></i>
                 <div data-i18n="Account Settings">U{{ $umkm->name }}</div>
             </a>
             <ul class="menu-sub">
@@ -54,4 +74,46 @@
             </ul>
         </li>
     @endforeach
+    <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Koperasi</span>
+    </li>
+    <li class="menu-item {{ Request::is('dashboard/umkm/' . $umkm->id . '*') ? 'active open' : '' }}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-store-alt"></i>
+            <div>{{ $umkm->name }}</div>
+        </a>
+        <ul class="menu-sub">
+            <li
+                class="menu-item
+                    {{ Request::is('dashboard/umkm/' . $umkm->id . '/umkm-profile') ? 'active' : '' }}
+                    {{ $title == 'profile' ? 'active' : '' }}
+                    ">
+                <a href="/dashboard/umkm/{{ $umkm->id }}/umkm-profile" class="menu-link">
+                    <div data-i18n="Without menu">Profile</div>
+                </a>
+            </li>
+        </ul>
+        <ul class="menu-sub">
+            <li
+                class="menu-item
+                    {{ Request::is('dashboard/umkm/' . $umkm->id . '/umkm-product') ? 'active' : '' }}
+                    {{ $title == 'product' ? 'active' : '' }}
+                    ">
+                <a href="/dashboard/umkm/{{ $umkm->id }}/umkm-product" class="menu-link">
+                    <div data-i18n="Without menu">Product</div>
+                </a>
+            </li>
+        </ul>
+        <ul class="menu-sub">
+            <li
+                class="menu-item
+                    {{ Request::is('dashboard/umkm/' . $umkm->id . '/umkm-product') ? 'active' : '' }}
+                    {{ $title == 'product' ? 'active' : '' }}
+                    ">
+                <a href="/dashboard/umkm/{{ $umkm->id }}/umkm-product" class="menu-link">
+                    <div data-i18n="Without menu">Layanan</div>
+                </a>
+            </li>
+        </ul>
+    </li>
 </ul>

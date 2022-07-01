@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="image">Foto UMKM</label>
+                                <label class="col-sm-2 col-form-label" for="image">Foto Produk</label>
                                 <div class="col-sm-10">
                                     <input type="file" class="form-control @error('image') is-invalid @enderror"
                                         id="image" placeholder="Foto" name="image" value="{{ old('image') }}"

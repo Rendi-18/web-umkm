@@ -140,3 +140,7 @@
   display: flex;
   align-items: center;
 }
+
+.readonly .input-group-text {
+  background-color: #eceef1;
+}

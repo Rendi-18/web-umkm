@@ -52,7 +52,6 @@
                 </a>
             </li>
         </ul>
-
     </li>
     <li class="menu-item {{ Request::is('dashboard/pengajuan*') ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -61,7 +60,7 @@
         </a>
         <ul class="menu-sub">
             <li class="menu-item {{ Request::is('dashboard/pengajuan*') ? 'active' : '' }}">
-                <a href="/dashboard/umkm" class="menu-link">
+                <a href="/dashboard/pengajuan" class="menu-link">
                     <div data-i18n="Without menu">Data Pengajuan</div>
                 </a>
             </li>
