@@ -8,7 +8,7 @@
     </li>
     <li class="menu-item {{ Request::is('dashboard/profile') ? 'active open' : '' }}">
         <a href="/dashboard/profile" class="menu-link menu-toggle ">
-            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <i class="menu-icon tf-icons bx bx-user"></i>
             <div data-i18n="Account Settings">Account Settings</div>
         </a>
         <ul class="menu-sub ">

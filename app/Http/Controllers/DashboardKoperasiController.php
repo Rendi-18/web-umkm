@@ -14,7 +14,13 @@ class DashboardKoperasiController extends Controller
      */
     public function index()
     {
-        //
+        return view(
+            'dashboard.pages.koperasi',
+            [
+                'umkms' => Umkm::latest()->get(),
+                'title' => ''
+            ]
+        );
     }
 
     /**
@@ -46,7 +52,7 @@ class DashboardKoperasiController extends Controller
      */
     public function show(Umkm $umkm)
     {
-        //
+        // return view('dashboard.pages.umkm-profile');
     }
 
     /**

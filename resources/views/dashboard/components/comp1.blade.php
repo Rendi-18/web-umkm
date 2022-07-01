@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-8 mb-4 order-0">
-        <div class="card">
+        <div class="card justify-content-end h-100">
             <div class="d-flex align-items-end row">
                 <div class="col-sm-7">
                     <div class="card-body">
@@ -31,7 +31,9 @@
                     <div class="card-body">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
-                                <img src="/img/icons/unicons/chart-success.png" alt="chart success" class="rounded" />
+                                <div class="icon-alt bg-label-success rounded">
+                                    <i class="bx bx-store text-success"></i>
+                                </div>
                             </div>
                             <div class="dropdown">
                                 <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
@@ -45,9 +47,13 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="fw-semibold d-block mb-1">Profit</span>
-                        <h3 class="card-title mb-2">$12,628</h3>
-                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
+                        <span class="fw-semibold d-block mb-1">Total</span>
+                        <h4 class="card-title mb-2">UMKM</h4>
+                        <small class="text-success fw-semibold">
+                            <div class="spinner-border-sm spinner-grow text-success" role="status">
+                                <span class="visually-hidden">Loading... </span>
+                            </div> <span class="ps-2">6000</span>
+                        </small>
                     </div>
                 </div>
             </div>
@@ -56,7 +62,9 @@
                     <div class="card-body">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
-                                <img src="/img/icons/unicons/wallet-info.png" alt="Credit Card" class="rounded" />
+                                <div class="icon-alt bg-label-info rounded">
+                                    <i class="bx bx-store-alt text-info"></i>
+                                </div>
                             </div>
                             <div class="dropdown">
                                 <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
@@ -70,9 +78,13 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="fw-semibold d-block mb-1">Sales</span>
-                        <h3 class="card-title mb-2">$4,679</h3>
-                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
+                        <span class="fw-semibold d-block mb-1">Total</span>
+                        <h4 class="card-title mb-2">Koperasi</h4>
+                        <small class="text-info fw-semibold">
+                            <div class="spinner-border-sm spinner-grow text-info" role="status">
+                                <span class="visually-hidden">Loading... </span>
+                            </div> <span class="ps-2">6000</span>
+                        </small>
                     </div>
                 </div>
             </div>
@@ -82,7 +94,7 @@
 <div class="row">
     <!-- Total Revenue -->
     <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
-        <div class="card">
+        <div class="card h-100">
             <div class="row row-bordered g-0">
                 <div class="col-md-8">
                     <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
@@ -141,7 +153,9 @@
                     <div class="card-body">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
-                                <img src="/img/icons/unicons/paypal.png" alt="Credit Card" class="rounded" />
+                                <div class="icon-alt bg-label-danger rounded">
+                                    <i class="bx bx-user text-danger"></i>
+                                </div>
                             </div>
                             <div class="dropdown">
                                 <button class="btn p-0" type="button" id="cardOpt4" data-bs-toggle="dropdown"
@@ -155,9 +169,13 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="d-block mb-1">Payments</span>
-                        <h3 class="card-title text-nowrap mb-2">$2,456</h3>
-                        <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
+                        <span class="d-block mb-1">Total</span>
+                        <h4 class="card-title text-nowrap mb-2">User</h4>
+                        <small class="text-danger fw-semibold">
+                            <div class="spinner-border-sm spinner-grow text-danger" role="status">
+                                <span class="visually-hidden">Loading... </span>
+                            </div> <span class="ps-2">6000</span>
+                        </small>
                     </div>
                 </div>
             </div>
@@ -166,7 +184,9 @@
                     <div class="card-body">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
-                                <img src="/img/icons/unicons/cc-primary.png" alt="Credit Card" class="rounded" />
+                                <div class="icon-alt bg-label-primary rounded">
+                                    <i class="bx bx-time text-primary"></i>
+                                </div>
                             </div>
                             <div class="dropdown">
                                 <button class="btn p-0" type="button" id="cardOpt1" data-bs-toggle="dropdown"
@@ -180,9 +200,13 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="fw-semibold d-block mb-1">Transactions</span>
-                        <h3 class="card-title mb-2">$14,857</h3>
-                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
+                        <span class="fw-semibold d-block mb-1">Total</span>
+                        <h4 class="card-title mb-2">Pendaftar</h4>
+                        <small class="text-primary fw-semibold">
+                            <div class="spinner-border-sm spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading... </span>
+                            </div> <span class="ps-2">6000</span>
+                        </small>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-<section id="prfile">
+<section id="profile">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">UMKM/</span> Edit profile</h4>
     <div class="row g-4 mb-5">
         <div class="col-lg-12">

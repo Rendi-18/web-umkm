@@ -9,7 +9,11 @@
     @endif
     <div class="col-lg tabel-user">
         <div class="card mb-4">
-            <h5 class="card-header">Hoverable rows</h5>
+            <h5 class="card-header">Tabel User</h5>
+            <form class="d-flex mx-4 mb-2" onsubmit="return false">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
             <div class="table-responsive text-nowrap">
                 <table class="table table-hover">
                     <thead>
@@ -23,7 +27,7 @@
                     <tbody class="table-border-bottom-0">
                         @foreach ($users as $user)
                             <tr>
-                                <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
+                                <td>
                                     <strong>{{ $user->name }}</strong>
                                 </td>
                                 <td>{{ $user->email }}</td>
@@ -33,11 +37,6 @@
                                             class="avatar avatar-xs pull-up" title="Lilian Fuller">
                                             <img src="/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
                                         </li>
-                                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                            class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                                            <img src="/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                        </li>
-
                                     </ul>
                                 </td>
                                 <td><span class="badge bg-label-primary me-1">Active</span></td>

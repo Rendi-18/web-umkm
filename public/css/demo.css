@@ -115,3 +115,28 @@
 .card .img-pr {
   max-width: 100%;
 }
+
+.icon-alt {
+  width: 100%;
+  vertical-align: middle;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-alt i {
+  font-size: 1.50rem !important;
+}
+
+.card-body small div {
+  width: 1rem;
+  height: 1rem;
+  animation-duration: 1s;
+}
+
+.card-body small {
+  display: flex;
+  align-items: center;
+}

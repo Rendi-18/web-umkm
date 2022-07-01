@@ -6,20 +6,29 @@
         <!-- Content -->
 
         <div class="container-xxl flex-grow-1 container-p-y">
-            <div id="dashboard" class="">
-                @include('dashboard.components.comp1')
-            </div>
-            <div id="dashboard" class="d-none">
-                @include('dashboard.components.comp2')
-            </div>
+            @can('admin')
+                <div id="dashboard" class="">
+                    @include('dashboard.components.comp1')
+                </div>
+                <div id="dashboard" class="">
+                    @include('dashboard.components.comp2')
+                </div>
+            @else
+                <div id="umkm">
+                    @include('dashboard.components.umkm', ['umkms' => $umkms])
+                </div>
+            @endcan
+
+
+
 
             {{-- <div id="users" class="d-none">
                 @include('dashboard.components.user', ['users' => $users])
             </div>
             <div id="umkm">
                 @include('dashboard.components.umkm', ['umkms' => $umkms])
-            </div>
-            <div id="koperasi">
+            </div> --}}
+            {{-- <div id="koperasi">
                 @include('dashboard.components.koperasi')
             </div> --}}
         </div>

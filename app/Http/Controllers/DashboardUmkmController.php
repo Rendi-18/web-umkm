@@ -14,6 +14,13 @@ class DashboardUmkmController extends Controller
      */
     public function index()
     {
+        return view(
+            'dashboard.pages.umkm',
+            [
+                'umkms' => Umkm::latest()->get(),
+                'title' => ''
+            ]
+        );
     }
 
 

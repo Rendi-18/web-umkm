@@ -10,6 +10,12 @@
             <div id="umkm">
                 @include('dashboard.components.umkm', ['umkms' => $umkms])
             </div>
+            {{-- <div id="koperasi">
+                @include('dashboard.components.koperasi', ['umkms' => $umkms])
+            </div> --}}
+            {{-- <div id="pengajuan">
+                @include('dashboard.components.pengajuan', ['umkms' => $umkms])
+            </div> --}}
         </div>
         <!-- / Content -->
         @include('dashboard.components.footer')

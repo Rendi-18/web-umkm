@@ -2,8 +2,8 @@
     <div class="col-6">
         <h4 class="fw-bold">Daftar UMKM</h4>
     </div>
-    <div class="col-6 d-flex">
-        <button type="button" class="btn btn-primary ms-auto">
+    <div class="col-6 d-flex ms-auto justify-content-end">
+        <button type="button" class="btn btn-primary ">
             <span class="tf-icons bx bx-plus"></span>&nbsp; Daftarkan UMKM
         </button>
     </div>
