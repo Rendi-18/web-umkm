@@ -5,20 +5,33 @@
         <div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1" style="display: none;"
             aria-modal="false" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
-                <form class="modal-content">
+                <form class="modal-content" enctype="multipart/form-data" method="POST"
+                    action="/dashboard/pengajuan/{{ $izin->id }}/izin">
+                    @method('put')
+                    @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="backDropModalTitle">Masukkan Surat Perizinan</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="formFileMultiple" class="form-label">Surat Perizinan</label>
-                            <input class="form-control" type="file" id="formFileMultiple" multiple="">
+                            <label for="file" class="form-label">Surat Perizinan</label>
+                            <input class="form-control @error('file') is-invalid @enderror" type="file"
+                                id="file" name="file">
+                            <input class="form-control" type="hidden" id="oldDoc" multiple="" name="oldDoc"
+                                value="{{ $izin->file }}">
+                            <input class="form-control" type="hidden" id="status" multiple="" name="status"
+                                value="1">
+                            @error('file')
+                                <div class="invalid-feedback text-light">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancle</button>
-                        <button type="button" class="btn btn-primary"> <i class="bx bx-mail-send me-1"></i>
+                        <button type="submit" class="btn btn-primary"> <i class="bx bx-mail-send me-1"></i>
                             Send</button>
                     </div>
                 </form>

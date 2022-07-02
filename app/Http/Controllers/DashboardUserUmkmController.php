@@ -64,4 +64,7 @@ class DashboardUserUmkmController extends Controller
 
         return redirect('/dashboard/umkm/' . $umkm->id . '/umkm-profile')->with('success', 'Profile has been Updated');
     }
+
+
+    
 }

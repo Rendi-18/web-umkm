@@ -18,10 +18,10 @@ class UmkmFactory extends Factory
     {
         return [
             'user_id' => mt_rand(1, 6),
-            'NIB' => '12345678',
+            'nib' => '12345678',
             'name' => $this->faker->sentence(mt_rand(1, 3)),
             'phonenumber' => $this->faker->phoneNumber(),
-            'category_id' => mt_rand(1, 2),
+            'city' => $this->faker->city(),
             'description' => $this->faker->paragraph(mt_rand(5, 9)),
             'address' => $this->faker->sentence(mt_rand(5, 9)),
         ];

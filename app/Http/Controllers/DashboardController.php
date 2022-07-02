@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Izin;
 use App\Models\User;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
@@ -15,7 +16,6 @@ class DashboardController extends Controller
         return view(
             'dashboard.pages.index',
             [
-                'umkms' => Umkm::latest()->get(),
                 'title' => ''
             ]
         );

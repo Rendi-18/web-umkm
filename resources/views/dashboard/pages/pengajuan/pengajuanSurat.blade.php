@@ -24,38 +24,51 @@
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <tr>
-                            <td>00223</td>
-                            <td><strong>80808008</strong></td>
-                            <td>TOKO Choky</td>
-                            <td>085689562314</td>
-                            <td><span class="badge bg-label-primary me-1"><strong>Izin Usaha</strong></span></td>
-                            <td>Izin Mencintaimu</td>
-                            <td>
-                                <div class="spinner-border spinner-border-sm text-warning" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div><span class="ms-2 badge bg-label-warning me-1">Pending</span>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-
-                                        <button type="button" class="dropdown-item" data-bs-toggle="modal"
-                                            data-bs-target="#backDropModal">
-                                            <i class="bx bx-check me-1"></i>Aprove
+                        @foreach ($izins as $izin)
+                            <tr>
+                                <td>{{ $izin->id }}</td>
+                                <td><strong>{{ $izin->nib }}</strong></td>
+                                <td>{{ $izin->name }}</td>
+                                <td>{{ $izin->phonenumber }}</td>
+                                <td><span
+                                        class="badge bg-label-primary me-1"><strong>{{ $izin->category->category }}</strong></span>
+                                </td>
+                                <td>Izin Mencintaimu</td>
+                                <td>
+                                    @if ($izin->status == 0)
+                                        <div class="spinner-border spinner-border-sm text-warning" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div><span class="ms-2 badge bg-label-warning me-1">Pending</span>
+                                    @elseif ($izin->status == 1)
+                                        <span class="text-info"><strong><i class="bx bx-check me-1"></i></strong></span>
+                                        <span class="badge bg-label-info me-1">Aproved</span>
+                                    @else
+                                        <span class="text-danger"><strong>
+                                                <i class="bx bx-x me-1"></i></strong></span>
+                                        <span class="badge bg-label-danger me-1">Ditolak</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                            data-bs-toggle="dropdown">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
                                         </button>
+                                        <div class="dropdown-menu">
 
-                                        <button class="dropdown-item" href="#"><i class='bx bx-x me-1'></i>
-                                            Tolak</button>
+                                            <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#backDropModal">
+                                                <i class="bx bx-check me-1"></i>Aprove
+                                            </button>
+
+                                            <button class="dropdown-item" href="#"><i class='bx bx-x me-1'></i>
+                                                Tolak</button>
+                                        </div>
                                     </div>
-                                </div>
-                                @include('dashboard.components.modalsformSurat')
-                            </td>
-                        </tr>
+                                    @include('dashboard.components.modalsformSurat')
+                                </td>
+                            </tr>
+                        @endforeach
                         <tr>
                             <td>00223</td>
                             <td><strong>80808008</strong></td>

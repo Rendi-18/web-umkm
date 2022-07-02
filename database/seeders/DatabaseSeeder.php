@@ -17,9 +17,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call([
-        //     CategorySeeder::class
-        // ]);
+        $this->call([
+            CategoryKoperasiSeeder::class,
+            CategoryIzinSeeder::class,
+        ]);
         User::create([
             'username' => 'ADMIN',
             'name' => 'ADMINSTRATOR',

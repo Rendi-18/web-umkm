@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreignId('category_koperasi_id');
             $table->string('name')->unique();
-            $table->string('NIK');
+            $table->string('nik');
             $table->text('description');
             $table->string('phonenumber');
             $table->string('address');

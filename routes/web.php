@@ -8,6 +8,8 @@ use App\Http\Controllers\DashboardUmkmController;
 use App\Http\Controllers\DashboardKoperasiController;
 use App\Http\Controllers\DashboardUserUmkmController;
 use App\Http\Controllers\DashboardUserProductController;
+use App\Http\Controllers\DashboardUserIzinController;
+use App\Http\Controllers\DashboardPengajuanController;
 
 
 /*
@@ -35,6 +37,13 @@ Route::get('/dashboard/profile', [DashboardController::class, 'edit'])->middlewa
 Route::put('/dashboard/profile/edit', [DashboardController::class, 'update'])->middleware('auth');
 Route::delete('/dashboard/profile', [DashboardController::class, 'destroy'])->middleware('auth');
 
+Route::get('/dashboard/izin/surat', [DashboardUserIzinController::class, 'surat'])->middleware('auth');
+Route::post('/dashboard/izin/surat', [DashboardUserIzinController::class, 'suratStore'])->middleware('auth');
+Route::delete('/dashboard/izin/surat/{izin}', [DashboardUserIzinController::class, 'suratDestroy'])->middleware('auth');
+
+
+
+Route::get('/dashboard/izin/register', [DashboardUserIzinController::class, 'register'])->middleware('auth');
 
 // Dashboard User UMKM Product
 Route::get('/dashboard/umkm/{umkm:id}/umkm-product', [DashboardUserProductController::class, 'index'])->middleware('auth');
@@ -51,10 +60,25 @@ Route::get('/dashboard/umkm/{umkm:id}/umkm-profile/edit', [DashboardUserUmkmCont
 Route::put('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmController::class, 'update'])->middleware('auth');
 
 
+
+
+
 // Dashboard Admin
 Route::resource('/dashboard/user', DashboardUserController::class)->middleware('admin');
 Route::resource('/dashboard/umkm', DashboardUmkmController::class)->middleware('admin');
 Route::resource('/dashboard/koperasi', DashboardKoperasiController::class)->middleware('admin');
+
+
+Route::get('/dashboard/pengajuan', [DashboardPengajuanController::class, 'index'])->middleware('admin');
+
+
+// Pengajuan UMKM
+Route::put('/dashboard/pengajuan/umkm/{umkm}', [DashboardPengajuanController::class, 'aproved'])->middleware('admin');
+Route::put('/dashboard/pengajuan/{izin}/izin', [DashboardPengajuanController::class, 'izin'])->middleware('admin');
+
+
+
+// Route::resource('/dashboard/pengajuan', DashboardKoperasiController::class)->middleware('admin');
 
 //Dashboard User
 // Route::get('/', [DashboardController::class, 'index'])->name('home');

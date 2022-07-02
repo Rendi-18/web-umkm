@@ -37,110 +37,7 @@
                                         masukkan benar</small>
                                 </div>
                                 <div class="card-body">
-                                    <form action="" method="POST" enctype="multipart/form-data">
-                                        @method('put')
-                                        @csrf
 
-                                        {{-- NIB/NIK --}}
-                                        <div class="row mb-3">
-                                            <label class="col-sm-2 col-form-label" for="nib">NIB</label>
-                                            <div class="col-sm-10">
-                                                <div class="input-group input-group-merge">
-                                                    <span class="input-group-text "><i class="bx bx-barcode"></i></span>
-                                                    <input type="text" name="nib" class="form-control"
-                                                        id="nib" placeholder="Nomor Induk Berusaha" value=""
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        {{-- Name --}}
-                                        <div class="row mb-3">
-                                            <label class="col-sm-2 col-form-label" for="name">Nama UMKM</label>
-                                            <div class="col-sm-10">
-                                                <div class="input-group input-group-merge">
-                                                    <span class="input-group-text "><i
-                                                            class="bx bx-store-alt"></i></span>
-                                                    <input type="text" name="name" class="form-control "
-                                                        id="name" placeholder="Nama UMKM"
-                                                        aria-describedby="basic-icon-default-fullname2" value=""
-                                                        required>
-                                                    @error('name')
-                                                        <div class="invalid-feedback">
-                                                            {{ $message }}
-                                                        </div>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        {{-- Phonenumber --}}
-                                        <div class="row mb-3">
-                                            <label class="col-sm-2 col-form-label" for="phonenumber">Phone No</label>
-                                            <div class="col-sm-10">
-                                                <div class="input-group input-group-merge">
-                                                    <span id="basic-icon-default-phone2" class="input-group-text"><i
-                                                            class="bx bx-phone"></i></span>
-                                                    <input type="text" name="phonenumber" id="phonenumber"
-                                                        class="form-control phone-mask @error('phonenumber') is-invalid @enderror"
-                                                        placeholder="+62" aria-label="658 799 8941"
-                                                        aria-describedby="basic-icon-default-phone2" value=""
-                                                        required>
-                                                    @error('phonenumber')
-                                                        <div class="invalid-feedback">
-                                                            {{ $message }}
-                                                        </div>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {{-- Kategori Surat Izin --}}
-                                        <div class="row mb-3">
-                                            <label class="col-sm-2 col-form-label" for="name-koperasi">Kategori
-                                                Perizinan</label>
-                                            <div class="col-sm-10">
-                                                <div class="input-group input-group-merge">
-                                                    <span class="input-group-text "><i class='bx bx-receipt'></i></span>
-                                                    <select class="form-select" id="name-koperasi">
-                                                        <option selected="">Kategori Perizinan</option>
-                                                        <option value="Akta Pendirian">Akta Pendirian</option>
-                                                        <option value="Izin Usaha">Izin Usaha</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {{-- tambahan --}}
-                                        <div class="row mb-3">
-                                            <label class="col-sm-2 col-form-label" for="description">Izin lain</label>
-                                            <div class="col-sm-10">
-                                                <div class="input-group input-group-merge">
-                                                    <input type="hidden" name="description" id="description"
-                                                        class="form-control phone-mask @error('description') is-invalid @enderror"
-                                                        placeholder="Tulis disini izin lain yang anda butuhkan"
-                                                        aria-describedby="basic-icon-default-address" value=""
-                                                        required>
-                                                    <trix-editor input="description"></trix-editor>
-                                                    @error('description')
-                                                        <div class="invalid-feedback">
-                                                            {{ $message }}
-                                                        </div>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="row justify-content-end">
-                                            <div class="col-sm-10">
-                                                <button type="submit" class="btn btn-primary"><span
-                                                        class='bx bx-mail-send'></span> &nbsp; Send</button>
-                                            </div>
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -160,8 +57,7 @@
                         <div class="col-xxl">
                             <div class="card mb-4">
                                 <div class="card-header d-flex align-items-center justify-content-between">
-                                    <h5 class="mb-0">Pengajuan Surat</h5> <small
-                                        class="text-muted float-end">Pastikan
+                                    <h5 class="mb-0">Pengajuan Surat</h5> <small class="text-muted float-end">Pastikan
                                         data yang anda
                                         masukkan benar</small>
                                 </div>
@@ -175,11 +71,10 @@
                                             <label class="col-sm-2 col-form-label" for="nib">NIK</label>
                                             <div class="col-sm-10">
                                                 <div class="input-group input-group-merge">
-                                                    <span class="input-group-text "><i
-                                                            class="bx bx-barcode"></i></span>
+                                                    <span class="input-group-text "><i class="bx bx-barcode"></i></span>
                                                     <input type="text" name="nib" class="form-control"
-                                                        id="nib" placeholder="Nomor Induk Koperasi"
-                                                        value="" required>
+                                                        id="nib" placeholder="Nomor Induk Koperasi" value=""
+                                                        required>
                                                 </div>
                                             </div>
                                         </div>
@@ -305,101 +200,58 @@
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <tr>
-                            <td>00223</td>
-                            <td><strong>80808008</strong></td>
-                            <td>TOKO Choky</td>
-                            <td>085689562314</td>
-                            <td><span class="badge bg-label-primary me-1"><strong>Izin Usaha</strong></span></td>
-                            <td>Izin Mencintaimu</td>
-                            <td>
-                                <div class="spinner-border spinner-border-sm text-warning" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div><span class="ms-2 badge bg-label-warning me-1">Pending</span>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-
-                                        <form id="userDelete-form" action="" method="post">
-                                            <button class="dropdown-item"
-                                                onclick="return confirm('Apa anda yakin user dinonaktifkan secara permanen?')">
-                                                <i class="bx bx-x me-1"></i> Batalkan
-                                            </button>
-                                        </form>
-                                        <button class="dropdown-item" disabled href=""><i
-                                                class='bx bx-down-arrow-circle'></i>
-                                            Download</button>
+                        @foreach (Auth::user()->izin as $izin)
+                            <tr>
+                                <td>{{ $izin->id }}</td>
+                                <td><strong>{{ $izin->nib }}</strong></td>
+                                <td>{{ $izin->name }}</td>
+                                <td>{{ $izin->phonenumber }}</td>
+                                <td><span
+                                        class="badge bg-label-primary me-1"><strong>{{ $izin->category->category }}</strong></span>
+                                </td>
+                                <td>{!! $izin->description !!}</td>
+                                <td>
+                                    @if ($izin->status == 0)
+                                        <div class="spinner-border spinner-border-sm text-warning" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div><span class="ms-2 badge bg-label-warning me-1">Pending</span>
+                                    @elseif ($izin->status == 1)
+                                        <span class="text-info"><strong><i
+                                                    class="bx bx-check me-1"></i></strong></span>
+                                        <span class="badge bg-label-info me-1">Aproved</span>
+                                    @else
+                                        <span class="text-danger"><strong>
+                                                <i class="bx bx-x me-1"></i></strong></span>
+                                        <span class="badge bg-label-danger me-1">Ditolak</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                            data-bs-toggle="dropdown">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <form id="userDelete-form"
+                                                action="/dashboard/izin/surat/{{ $izin->id }}" method="post">
+                                                @method('delete')
+                                                @csrf
+                                                <button class="dropdown-item"
+                                                    onclick="return confirm('Apa anda yakin?')">
+                                                    <i class="bx bx-x me-1"></i> Batalkan
+                                                </button>
+                                            </form>
+                                            <a class="dropdown-item" target="_blank"
+                                                @if ($izin->file) @else
+                                                disabled @endif
+                                                href="{{ asset('storage/' . $izin->file) }}"><i
+                                                    class='bx bx-down-arrow-circle'></i>
+                                                Download</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>00223</td>
-                            <td><strong>80808008</strong></td>
-                            <td>TOKO Choky</td>
-                            <td>085689562314</td>
-                            <td><span class="badge bg-label-primary me-1"><strong>Izin Usaha</strong></span></td>
-                            <td>Izin Mencintaimu</td>
-                            <td><span class="text-info"><strong><i class="bx bx-check me-1"></i></strong></span>
-                                <span class="badge bg-label-info me-1">Aproved</span>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-
-                                        <form id="userDelete-form" action="" method="post">
-                                            <button class="dropdown-item" disabled
-                                                onclick="return confirm('Apa anda yakin user dinonaktifkan secara permanen?')">
-                                                <i class="bx bx-x me-1"></i> Batalkan
-                                            </button>
-                                        </form>
-                                        <button class="dropdown-item" href=""><i
-                                                class='bx bx-down-arrow-circle'></i>
-                                            Download</button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>00223</td>
-                            <td><strong>80808008</strong></td>
-                            <td>TOKO Choky</td>
-                            <td>085689562314</td>
-                            <td><span class="badge bg-label-primary me-1"><strong>Izin Usaha</strong></span></td>
-                            <td>Izin Mencintaimu</td>
-                            <td><span class="text-danger"><strong><i class="bx bx-x me-1"></i></strong></span>
-                                <span class="badge bg-label-danger me-1">Ditolak</span>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-
-                                        <form id="userDelete-form" action="" method="post">
-                                            <button class="dropdown-item"
-                                                onclick="return confirm('Apa anda yakin user dinonaktifkan secara permanen?')">
-                                                <i class="bx bx-x me-1"></i> Batalkan
-                                            </button>
-                                        </form>
-                                        <button class="dropdown-item" disabled href=""><i
-                                                class='bx bx-down-arrow-circle'></i>
-                                            Download</button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

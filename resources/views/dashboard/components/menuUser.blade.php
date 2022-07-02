@@ -25,15 +25,15 @@
             <div data-i18n="Pengajuan">Pengajuan</div>
         </a>
         <ul class="menu-sub ">
-            <li class="menu-item {{ Request::is('dashboard/profile') ? 'active' : '' }}">
-                <a href="/dashboard/profile" class="menu-link ">
+            <li class="menu-item {{ Request::is('dashboard/izin*') ? 'active' : '' }}">
+                <a href="/dashboard/izin/surat" class="menu-link ">
                     <div data-i18n="Pengajuan Surat">Pengajuan Surat</div>
                 </a>
             </li>
         </ul>
         <ul class="menu-sub ">
-            <li class="menu-item {{ Request::is('dashboard/profile') ? 'active' : '' }}">
-                <a href="/dashboard/profile" class="menu-link ">
+            <li class="menu-item {{ Request::is('dashboard/izin*') ? 'active' : '' }}">
+                <a href="/dashboard/izin/register" class="menu-link ">
                     <div data-i18n="Pengajuan Surat">Pengajuan UMKM</div>
                 </a>
             </li>
