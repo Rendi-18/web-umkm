@@ -23,6 +23,14 @@ class DashboardController extends Controller
         );
     }
 
+    public function comp()
+    {
+        return view(
+            'dashboard.pages.test',
+            []
+        );
+    }
+
 
     // Setting Profile
     public function edit()

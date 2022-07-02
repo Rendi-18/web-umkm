@@ -70,6 +70,7 @@ Route::resource('/dashboard/koperasi', DashboardKoperasiController::class)->midd
 
 
 Route::get('/dashboard/pengajuan', [DashboardPengajuanController::class, 'index'])->middleware('admin');
+Route::get('/dashboard/comp', [DashboardController::class, 'comp'])->middleware('admin');
 
 
 // Pengajuan UMKM
