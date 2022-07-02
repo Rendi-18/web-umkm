@@ -17,15 +17,18 @@
                         <h6>{!! $umkm->description !!}</h6>
                         <div class="row">
                             <div class="col-4">
-                                <h6><i class="bx bx-phone"></i> : {{ $umkm->phonenumber }}</h6>
+                                <h6><i class="bx bx-barcode"></i> : 8008808056</h6>
                             </div>
                             <div class="col-8">
-                                <h6><i class="bx bx-map-alt"></i> : {{ $umkm->address }}</h6>
+                                <h6><i class="bx bx-phone"></i> : {{ $umkm->phonenumber }}</h6>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-4">
                                 <h6><i class="bx bx-buildings"></i> : Bandar Lampung</h6>
+                            </div>
+                            <div class="col-8">
+                                <h6><i class="bx bx-map-alt"></i> : {{ $umkm->address }}</h6>
                             </div>
                         </div>
                         <hr>

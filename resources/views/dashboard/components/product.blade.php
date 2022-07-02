@@ -74,6 +74,11 @@
     </div>
     <div class="card">
         <h5 class="card-header">Hoverable rows</h5>
+        <form action="/dashboard/umkm" method="get" class="d-flex mx-4 mb-2">
+            <input class="form-control me-2" type="text" name="search" id="search" placeholder="Search"
+                aria-label="Search" value="{{ request('search') }}">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
         <div class="table-responsive text-nowrap">
             <table class="table table-hover">
                 <thead>

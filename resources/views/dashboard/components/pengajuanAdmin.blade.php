@@ -1,5 +1,6 @@
 <section id="pengajuan">
-    <h4 class="fw-bold py-3 mb-4"><span class="fw-bold">Pengajuan</span></h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pengajuan/</span>Pengajuan
+        UMKM & Koperasi</h4>
     <div class="row g-4 mb-5">
         <div class="col-lg-12">
             <div class="row">

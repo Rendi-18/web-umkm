@@ -1,8 +1,6 @@
 <section id="form-regist-umkmt" class="container">
     <h4 class="col-6 fw-bold py-3 mb-4"><span class="text-muted fw-light">From/</span> Registrasi</h4>
 
-
-
     <div class="col-xxl">
         <div class="card mb-4">
             <div class="card-header d-flex align-items-center justify-content-between">

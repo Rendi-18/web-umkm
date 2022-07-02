@@ -32,10 +32,16 @@
                 @include('dashboard.components.koperasi')
             </div> --}}
 
-            {{-- <div id="pengajuan">
-                @include('dashboard.components.pengajuan')
-            </div> --}}
+            {{-- ADMIN --}}
+            <div id="pengajuansuratadmin">
+                @include('dashboard.components.pengajuanSuratAdmin')
+            </div>
+            <div id="pengajuanadmin">
+                @include('dashboard.components.pengajuanAdmin')
+            </div>
 
+
+            {{-- USER --}}
             {{-- <div id="regist-umkm">
                 @include('dashboard.components.registUmkm')
             </div> --}}
@@ -43,9 +49,9 @@
                 @include('dashboard.components.registKoperasi')
             </div> --}}
 
-            <div id="regist-koperasi" class="">
+            {{-- <div id="regist-koperasi" class="">
                 @include('dashboard.components.pengajuanSurat')
-            </div>
+            </div> --}}
 
         </div>
         {{-- footer --}}

@@ -1,5 +1,5 @@
-<section id="form-pengajuan-surat" class="container">
-    <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Form/</span> Pengajuan Surat</h4>
+<section id="form-pengajuan-surat">
+    <h4 class="col-6 fw-bold py-3 mb-2"> Pengajuan Surat</h4>
     <div class="col-12">
         <div class="card mb-4">
 
@@ -285,6 +285,11 @@
         <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Data/</span> Pengajuan Surat</h4>
         <div class="card">
             <h5 class="card-header">Tabel Pengajuan Perizinan</h5>
+            <form action="/dashboard/umkm" method="get" class="d-flex mx-4 mb-2">
+                <input class="form-control me-2" type="text" name="search" id="search" placeholder="Search"
+                    aria-label="Search" value="{{ request('search') }}">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
             <div class="table-responsive text-nowrap">
                 <table class="table table-hover">
                     <thead>
