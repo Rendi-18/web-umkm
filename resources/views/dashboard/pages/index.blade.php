@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Content wrapper -->
-    <div class="content-wrapper">
+    <div class="content-wrapper ">
         <!-- Content -->
 
         <div class="container-xxl flex-grow-1 container-p-y">
@@ -36,10 +36,6 @@
                 @include('dashboard.components.pengajuan')
             </div> --}}
 
-            {{-- <div id="pengajuan">
-                @include('dashboard.components.pengajuan')
-            </div> --}}
-
             {{-- <div id="regist-umkm">
                 @include('dashboard.components.registUmkm')
             </div> --}}
@@ -47,14 +43,17 @@
                 @include('dashboard.components.registKoperasi')
             </div> --}}
 
-            <div id="regist-koperasi">
+            <div id="regist-koperasi" class="">
                 @include('dashboard.components.pengajuanSurat')
             </div>
+
         </div>
-        <!-- / Content -->
+        {{-- footer --}}
         @include('dashboard.components.footer')
 
         <div class="content-backdrop fade"></div>
     </div>
+
+
     <!-- Content wrapper -->
 @endsection
