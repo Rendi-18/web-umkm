@@ -10,7 +10,7 @@ class DashboardUserIzinController extends Controller
 {
     public function surat()
     {
-        return view('dashboard.pages.izin.surat', [
+        return view('dashboard.pages.izin.index', [
             'title' => '',
             'categories' => CategoryIzin::all()
         ]);

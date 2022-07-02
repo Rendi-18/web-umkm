@@ -6,18 +6,21 @@
         <!-- Content -->
 
         <div class="container-xxl flex-grow-1 container-p-y">
-            {{-- @can('admin')
+            @can('admin')
                 <div id="dashboard" class="">
-                    @include('dashboard.components.comp1')
+                    @include('dashboard.components.comp1', [
+                        'umkms' => $umkms,
+                        'users' => $users,
+                    ])
                 </div>
                 <div id="dashboard" class="">
                     @include('dashboard.components.comp2')
                 </div>
             @else
                 <div id="umkm">
-                    @include('dashboard.components.umkm', ['umkms' => $umkms])
+                    @include('dashboard.components.comp3', ['umkms' => Auth::user()->umkm])
                 </div>
-            @endcan --}}
+            @endcan
 
 
 
@@ -32,19 +35,19 @@
                 @include('dashboard.components.koperasi')
             </div> --}}
 
-            {{-- ADMIN --}}
 
             {{-- USER --}}
             {{-- <div id="regist-umkm">
                 @include('dashboard.components.registUmkm')
-            </div> --}}
-            {{-- <div id="regist-koperasi">
+            </div>
+            <div id="regist-koperasi">
                 @include('dashboard.components.registKoperasi')
             </div> --}}
 
-            <div id="regist-koperasi" class="">
+
+            {{-- <div id="regist-koperasi" class="">
                 @include('dashboard.components.pengajuanSurat')
-            </div>
+            </div> --}}
 
         </div>
         {{-- footer --}}

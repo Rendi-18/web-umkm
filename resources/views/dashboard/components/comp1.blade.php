@@ -52,7 +52,7 @@
                         <small class="text-success fw-semibold">
                             <div class="spinner-border-sm spinner-grow text-success" role="status">
                                 <span class="visually-hidden">Loading... </span>
-                            </div> <span class="ps-2">{{ $umkms->count() }}</span>
+                            </div> <span class="ps-2">{{ $umkms->where('status', 1)->count() }}</span>
                         </small>
                     </div>
                 </div>
@@ -174,7 +174,7 @@
                         <small class="text-danger fw-semibold">
                             <div class="spinner-border-sm spinner-grow text-danger" role="status">
                                 <span class="visually-hidden">Loading... </span>
-                            </div> <span class="ps-2">6000</span>
+                            </div> <span class="ps-2">{{ $users->count() }}</span>
                         </small>
                     </div>
                 </div>
@@ -205,7 +205,7 @@
                         <small class="text-primary fw-semibold">
                             <div class="spinner-border-sm spinner-border text-primary" role="status">
                                 <span class="visually-hidden">Loading... </span>
-                            </div> <span class="ps-2">6000</span>
+                            </div> <span class="ps-2">{{ $umkms->where('status', 0)->count() }}</span>
                         </small>
                     </div>
                 </div>
