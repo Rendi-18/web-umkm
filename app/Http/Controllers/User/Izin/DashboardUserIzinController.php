@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User\Izin;
 
+use App\Http\Controllers\Controller;
 use App\Models\CategoryIzin;
 use App\Models\Izin;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ class DashboardUserIzinController extends Controller
     public function surat()
     {
         return view('dashboard.pages.izin.index', [
-            'title' => '',
+            // 'title' => '',
             'categories' => CategoryIzin::all()
         ]);
     }

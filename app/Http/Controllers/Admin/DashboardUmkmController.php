@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
 
-class DashboardKoperasiController extends Controller
+class DashboardUmkmController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,13 +23,14 @@ class DashboardKoperasiController extends Controller
         }
 
         return view(
-            'dashboard.pages.koperasi',
+            'dashboard.pages.umkm',
             [
-                'umkms' => $umkms,
-                'title' => ''
+                'umkms' => $umkms->get(),
+                // 'title' => ''
             ]
         );
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -59,7 +61,7 @@ class DashboardKoperasiController extends Controller
      */
     public function show(Umkm $umkm)
     {
-        // return view('dashboard.pages.umkm-profile');
+        return view('dashboard.pages.umkm-profile');
     }
 
     /**

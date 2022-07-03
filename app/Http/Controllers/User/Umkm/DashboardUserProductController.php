@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User\Umkm;
 
+use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class DashboardUserProductController extends Controller
             'dashboard.pages.umkm-product.index',
             [
                 'products' => $umkm->product,
-                'title' => 'product'
+                // 'title' => 'product'
             ]
         );
     }
@@ -31,7 +32,7 @@ class DashboardUserProductController extends Controller
             'dashboard.pages.umkm-product.create',
             [
                 'umkm' => $umkm,
-                'title' => 'product'
+                // 'title' => 'product'
             ]
         );
     }
@@ -70,7 +71,7 @@ class DashboardUserProductController extends Controller
         $this->authorize(ability: 'view', arguments: $product);
         return view('dashboard.pages.umkm-product.edit', [
             'product' => $product,
-            'title' => 'product'
+            // 'title' => 'product'
         ]);
     }
 

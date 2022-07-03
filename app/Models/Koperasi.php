@@ -15,8 +15,20 @@ class Koperasi extends Model
     {
         return $this->belongsTo(CategoryKoperasi::class, 'category_koperasi_id');
     }
+
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function product()
+    {
+        return $this->hasMany(ProductKoperasi::class, 'koperasi_id');
+    }
+
+    public function jasa()
+    {
+        return $this->hasMany(JasaKoperasi::class, 'koperasi_id');
     }
 }

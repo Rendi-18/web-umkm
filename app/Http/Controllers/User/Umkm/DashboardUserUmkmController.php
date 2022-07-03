@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User\Umkm;
 
+use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class DashboardUserUmkmController extends Controller
             'dashboard.pages.umkm-profile.index',
             [
                 'umkm' => $umkm,
-                'title' => 'profile'
+                // 'title' => 'profile'
             ]
         );
     }
@@ -29,7 +30,7 @@ class DashboardUserUmkmController extends Controller
             'dashboard.pages.umkm-profile.edit',
             [
                 'umkm' => $umkm,
-                'title' => 'profile'
+                // 'title' => 'profile'
             ]
         );
     }

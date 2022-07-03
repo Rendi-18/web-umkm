@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Umkm;
-use Illuminate\Http\Request;
+use App\Models\ProductKoperasi;
+use App\Http\Requests\StoreProductKoperasiRequest;
+use App\Http\Requests\UpdateProductKoperasiRequest;
 
-class DashboardUmkmController extends Controller
+class ProductKoperasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,22 +15,8 @@ class DashboardUmkmController extends Controller
      */
     public function index()
     {
-
-        $umkms = Umkm::latest();
-
-        if (request('search')) {
-            $umkms->where('name', 'like', '%' . request('search') . '%')->get();
-        }
-
-        return view(
-            'dashboard.pages.umkm',
-            [
-                'umkms' => $umkms->get(),
-                'title' => ''
-            ]
-        );
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -44,10 +31,10 @@ class DashboardUmkmController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreProductKoperasiRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProductKoperasiRequest $request)
     {
         //
     }
@@ -55,21 +42,21 @@ class DashboardUmkmController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Umkm  $umkm
+     * @param  \App\Models\ProductKoperasi  $productKoperasi
      * @return \Illuminate\Http\Response
      */
-    public function show(Umkm $umkm)
+    public function show(ProductKoperasi $productKoperasi)
     {
-        return view('dashboard.pages.umkm-profile');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Umkm  $umkm
+     * @param  \App\Models\ProductKoperasi  $productKoperasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Umkm $umkm)
+    public function edit(ProductKoperasi $productKoperasi)
     {
         //
     }
@@ -77,11 +64,11 @@ class DashboardUmkmController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Umkm  $umkm
+     * @param  \App\Http\Requests\UpdateProductKoperasiRequest  $request
+     * @param  \App\Models\ProductKoperasi  $productKoperasi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Umkm $umkm)
+    public function update(UpdateProductKoperasiRequest $request, ProductKoperasi $productKoperasi)
     {
         //
     }
@@ -89,10 +76,10 @@ class DashboardUmkmController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Umkm  $umkm
+     * @param  \App\Models\ProductKoperasi  $productKoperasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Umkm $umkm)
+    public function destroy(ProductKoperasi $productKoperasi)
     {
         //
     }

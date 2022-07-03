@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\User;
+use App\Http\Controllers\Controller;
+use App\Models\Umkm;
 use Illuminate\Http\Request;
 
-class DashboardUserController extends Controller
+class DashboardKoperasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,15 +16,17 @@ class DashboardUserController extends Controller
     public function index()
     {
 
-        $users = User::latest()->where('isAdmin', 0);
+        $umkms = Umkm::latest();
 
         if (request('search')) {
-            $users->where('name', 'like', '%' . request('search') . '%')->get();
+            $umkms->where('name', 'like', '%' . request('search') . '%')->get();
         }
+
         return view(
-            'dashboard.pages.user',
+            'dashboard.pages.koperasi',
             [
-                'users' => $users->get(),
+                'umkms' => $umkms,
+                // 'title' => ''
             ]
         );
     }
@@ -52,21 +55,21 @@ class DashboardUserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Umkm  $umkm
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Umkm $umkm)
     {
-        //
+        // return view('dashboard.pages.umkm-profile');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Umkm  $umkm
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Umkm $umkm)
     {
         //
     }
@@ -75,10 +78,10 @@ class DashboardUserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Umkm  $umkm
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Umkm $umkm)
     {
         //
     }
@@ -86,13 +89,11 @@ class DashboardUserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Umkm  $umkm
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Umkm $umkm)
     {
-        User::destroy($user->id);
-
-        return redirect('/dashboard')->with('successUser', $user->name . ' telah dinonaktifkan');
+        //
     }
 }

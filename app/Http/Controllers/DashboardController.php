@@ -16,7 +16,7 @@ class DashboardController extends Controller
         return view(
             'dashboard.pages.index',
             [
-                'title' => '',
+                // 'title' => '',
                 'umkms' => Umkm::latest()->get(),
                 'users' => User::latest()->get(),
             ]
