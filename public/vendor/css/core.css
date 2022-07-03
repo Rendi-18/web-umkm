@@ -17102,7 +17102,7 @@ html:not(.layout-footer-fixed) .content-wrapper {
   height: 100% !important;
 }
 
-.avatar .img-fit {
+.img-fit {
   object-fit: cover;
   object-position: center center;
 }

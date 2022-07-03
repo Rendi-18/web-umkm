@@ -5,12 +5,14 @@
             <div class="card">
                 <div class="row">
                     <div class="col-4 py-5 px-5 pl-5">
-                        @if ($umkm->image)
-                            <img src="{{ asset('storage/' . $umkm->image) }}"
-                                class="img-pr h-auto rounded-circle img-fluid">
-                        @else
-                            <img src="/img/elements/2.jpg" class="img-pr h-auto rounded-circle img-fluid">
-                        @endif
+                        <div class="img-container img-container-md rounded-circle">
+                            @if ($umkm->image)
+                                <img src="{{ asset('storage/' . $umkm->image) }}" class="img-pr img-fluid img-fit">
+                            @else
+                                <img src="/img/portfolio/portfolio-7.jpg" class="img-pr img-fluid img-fit">
+                            @endif
+                        </div>
+
                     </div>
                     <div class="col-8 py-5 px-5 pl-5">
                         <h3>{{ $umkm->name }}</h3>
@@ -56,13 +58,29 @@
             @foreach ($umkm->product->where('isUnggulan') as $product)
                 <div class="col-3">
                     <div class="card h-100">
-                        <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
+                        <div class="img-container img-container-prd card-img-top">
+                            @if ($product->image)
+                                <img class="" src="{{ asset('storage/' . $product->image) }}"
+                                    alt="Card image cap">
+                            @else
+                                <img class="card-img-top" src="/img/portfolio/portfolio-7.jpg" alt="Card image cap">
+                            @endif
+                        </div>
+
                         <div class="card-body">
-                            <h5 class="card-title">nama Product</h5>
-                            <p class="card-text">Total jumlah</p>
-                            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btncheck2"><i class='bx bxl-product-hunt'></i>
-                                Unggulan</label>
+                            <h5 class="card-title">{{ $product->name }}</h5>
+                            <p class="card-text"><span class="text-success"><i class="bx bx-money"></i>
+                                </span>{{ $product->price }}</p>
+                            <form action="/dashboard/umkm-product/{{ $product->id }}/unggulan" method="post">
+                                @method('put')
+                                @csrf
+                                <input type="hidden" class="btn-check" id="btncheck2" value="0" name="isUnggulan"
+                                    autocomplete="off">
+                                <button class="btn btn-outline-primary" for="btncheck2"
+                                    onclick="return confirm('Apa anda yakin?')"><i class='bx bxl-product-hunt'></i>
+                                    Hilangkan
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

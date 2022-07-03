@@ -22,15 +22,19 @@
             @foreach ($products->where('isUnggulan') as $product)
                 <div class="col-3">
                     <div class="card h-100">
-                        @if ($product->image)
-                            <img class="card-img-top" src="{{ asset('storage/' . $product->image) }}"
-                                alt="Card image cap">
-                        @else
-                            <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
-                        @endif
+                        <div class="img-container img-container-prd card-img-top">
+                            @if ($product->image)
+                                <img class="" src="{{ asset('storage/' . $product->image) }}"
+                                    alt="Card image cap">
+                            @else
+                                <img class="card-img-top" src="/img/portfolio/portfolio-7.jpg" alt="Card image cap">
+                            @endif
+                        </div>
+
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->name }}</h5>
-                            <p class="card-text">{{ $product->price }}</p>
+                            <p class="card-text"><span class="text-success"><i class="bx bx-money"></i>
+                                </span>{{ $product->price }}</p>
                             <form action="/dashboard/umkm-product/{{ $product->id }}/unggulan" method="post">
                                 @method('put')
                                 @csrf
@@ -73,7 +77,7 @@
         </div>
     </div>
     <div class="card">
-        <h5 class="card-header">Hoverable rows</h5>
+        <h5 class="card-header">Tabel Produk</h5>
         <form action="/dashboard/umkm" method="get" class="d-flex mx-4 mb-2">
             <input class="form-control me-2" type="text" name="search" id="search" placeholder="Search"
                 aria-label="Search" value="{{ request('search') }}">
@@ -96,12 +100,17 @@
                         <tr>
                             <td>{{ $product->id }}</td>
                             <td>
-                                {{-- <img src="/img/avatars/5.png" alt=""> --}}
                                 <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
                                     <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-xs pull-up" title=""
-                                        data-bs-original-title="Lilian Fuller">
-                                        <img src="/img/avatars/5.png" alt="Avatar" class="rounded">
+                                        class="avatar avatar-xs pull-up img-container rounded" title=""
+                                        data-bs-original-title="{{ $product->name }}">
+                                        @if ($product->image)
+                                            <img src="{{ asset('storage/' . $product->image) }}" alt="Avatar"
+                                                class="img-fluid img-fi border-0t">
+                                        @else
+                                            <img src="/img/portfolio/portfolio-7.jpg" alt="Avatar"
+                                                class="img-fluid img-fit border-0">
+                                        @endif
                                     </li>
                                 </ul>
                             </td>

@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-6 mb-4">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
                                 <div class="icon-alt bg-label-success rounded">
@@ -49,7 +49,7 @@
                         </div>
                         <span class="fw-semibold d-block mb-1">Total</span>
                         <h4 class="card-title mb-2">UMKM</h4>
-                        <small class="text-success fw-semibold">
+                        <small class="text-success fw-semibold mb-0 mt-auto">
                             <div class="spinner-border-sm spinner-grow text-success" role="status">
                                 <span class="visually-hidden">Loading... </span>
                             </div> <span class="ps-2">{{ $umkms->where('status', 1)->count() }}</span>
@@ -59,7 +59,7 @@
             </div>
             <div class="col-lg-6 col-md-12 col-6 mb-4">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
                                 <div class="icon-alt bg-label-info rounded">
@@ -80,7 +80,7 @@
                         </div>
                         <span class="fw-semibold d-block mb-1">Total</span>
                         <h4 class="card-title mb-2">Koperasi</h4>
-                        <small class="text-info fw-semibold">
+                        <small class="text-info fw-semibold mb-0 mt-auto">
                             <div class="spinner-border-sm spinner-grow text-info" role="status">
                                 <span class="visually-hidden">Loading... </span>
                             </div> <span class="ps-2">6000</span>
@@ -150,7 +150,7 @@
         <div class="row">
             <div class="col-6 mb-4">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
                                 <div class="icon-alt bg-label-danger rounded">
@@ -171,7 +171,7 @@
                         </div>
                         <span class="d-block mb-1">Total</span>
                         <h4 class="card-title text-nowrap mb-2">User</h4>
-                        <small class="text-danger fw-semibold">
+                        <small class="text-danger fw-semibold mb-0 mt-auto">
                             <div class="spinner-border-sm spinner-grow text-danger" role="status">
                                 <span class="visually-hidden">Loading... </span>
                             </div> <span class="ps-2">{{ $users->count() }}</span>
@@ -181,7 +181,7 @@
             </div>
             <div class="col-6 mb-4">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
                                 <div class="icon-alt bg-label-primary rounded">
@@ -202,7 +202,7 @@
                         </div>
                         <span class="fw-semibold d-block mb-1">Total</span>
                         <h4 class="card-title mb-2">Pendaftar</h4>
-                        <small class="text-primary fw-semibold">
+                        <small class="text-primary fw-semibold mb-0 mt-auto">
                             <div class="spinner-border-sm spinner-border text-primary" role="status">
                                 <span class="visually-hidden">Loading... </span>
                             </div> <span class="ps-2">{{ $umkms->where('status', 0)->count() }}</span>

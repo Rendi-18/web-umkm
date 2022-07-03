@@ -27,7 +27,9 @@ class DashboardController extends Controller
     {
         return view(
             'dashboard.pages.test',
-            []
+            [
+                'umkms' => Umkm::latest()->get()
+            ]
         );
     }
 

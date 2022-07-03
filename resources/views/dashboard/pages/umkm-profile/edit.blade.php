@@ -21,14 +21,14 @@
                         {{-- Image --}}
                         <div class="py-3 px-3 pl-5">
                             <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                <div class="img-container rounded-circle">
+                                <div class="img-container img-container-sm rounded-circle">
                                     @if ($umkm->image)
                                         <img src="{{ asset('storage/' . $umkm->image) }}" alt="user-avatar"
-                                            class="d-block rounded-circle img-preview" height="100" width="100"
+                                            class="d-block img-fluid img-fit img-preview mx-auto d-block"
                                             id="uploadedAvatar">
                                     @else
-                                        <img src="/img/portfolio/portfolio-3.jpg" alt="user-avatar"
-                                            class="d-block rounded-circle img-preview" height="100" width="100"
+                                        <img src="/img/portfolio/portfolio-7.jpg" alt="user-avatar"
+                                            class="d-block img-fluid img-fit img-preview mx-auto d-block"
                                             id="uploadedAvatar">
                                     @endif
                                 </div>

@@ -16,12 +16,14 @@
                     <div class="card-body">
                         <div class="d-flex align-items-start align-items-sm-center gap-4 ">
                             {{-- Image --}}
-                            <div class="img-container rounded-circle">
+                            <div class="img-container img-container-sm rounded-circle">
                                 @if ($user->image)
                                     <img src="{{ asset('storage/' . $user->image) }}" alt="user-avatar"
-                                        class="d-block img-fluid" id="uploadedAvatar">
+                                        class="d-block img-fluid img-fit img-preview mx-auto d-block"
+                                        id="uploadedAvatar">
                                 @else
-                                    <img src="/img/elements/2.jpg" alt="user-avatar" class="d-block img-fluid"
+                                    <img src="/img/elements/2.jpg" alt="user-avatar"
+                                        class="img-preview d-block img-fluid img-fit mx-auto d-block"
                                         id="uploadedAvatar">
                                 @endif
                             </div>
@@ -49,7 +51,6 @@
                     <div class="card-body">
 
                         <div class="row">
-
                             {{-- Username --}}
                             <div class="mb-3 col-md-6">
                                 <label for="username" class="form-label">User Name</label>

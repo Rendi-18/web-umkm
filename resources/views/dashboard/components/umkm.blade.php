@@ -37,7 +37,7 @@
                                     <td>
                                         <strong>{{ $umkm->name }}</strong>
                                     </td>
-                                    <td class="d-inline-block ">{{ $umkm->address }}</td>
+                                    <td>{{ $umkm->address }}</td>
                                     <td>{{ $umkm->user->name }}</td>
                                     <td><span class="badge bg-label-primary me-1">Active</span></td>
                                     <td>

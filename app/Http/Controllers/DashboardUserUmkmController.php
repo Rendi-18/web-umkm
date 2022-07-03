@@ -37,6 +37,7 @@ class DashboardUserUmkmController extends Controller
     // Edit PUT
     public function update(Request $request, Umkm $umkm)
     {
+        $request->image;
         $file_name = $request->image->getClientOriginalName();
 
         $rules = [
@@ -64,7 +65,4 @@ class DashboardUserUmkmController extends Controller
 
         return redirect('/dashboard/umkm/' . $umkm->id . '/umkm-profile')->with('success', 'Profile has been Updated');
     }
-
-
-    
 }

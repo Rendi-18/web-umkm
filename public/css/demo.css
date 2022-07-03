@@ -149,14 +149,32 @@ Temp
   background-color: #eceef1;
 }
 
+
+/* img container */
+
 .img-container {
   position: relative;
+  overflow: hidden;
+}
+
+.img-container-sm {
   width: 6.375rem;
   height: 6.375rem;
-  overflow: hidden;
+}
+
+.img-container-md {
+  width: 12.375rem;
+  height: 12.375rem;
+}
+
+.img-container-prd {
+  width: 13.03975rem;
+  height: 13.03975rem;
 }
 
 .img-container img {
   object-fit: cover;
   object-position: center center;
+  height: 100%;
+  width: 100%;
 }
