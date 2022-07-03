@@ -112,6 +112,10 @@
   margin-top: 1rem;
 }
 
+/*
+Temp
+*****************************************************************************
+*/
 .card .img-pr {
   max-width: 100%;
 }
@@ -143,4 +147,16 @@
 
 .readonly .input-group-text {
   background-color: #eceef1;
+}
+
+.img-container {
+  position: relative;
+  width: 6.375rem;
+  height: 6.375rem;
+  overflow: hidden;
+}
+
+.img-container img {
+  object-fit: cover;
+  object-position: center center;
 }

@@ -21,15 +21,18 @@
                         {{-- Image --}}
                         <div class="py-3 px-3 pl-5">
                             <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                @if ($umkm->image)
-                                    <img src="{{ asset('storage/' . $umkm->image) }}" alt="user-avatar"
-                                        class="d-block rounded-circle img-preview" height="100" width="100"
-                                        id="uploadedAvatar">
-                                @else
-                                    <img src="/img/elements/2.jpg" alt="user-avatar"
-                                        class="d-block rounded-circle img-preview" height="100" width="100"
-                                        id="uploadedAvatar">
-                                @endif
+                                <div class="img-container rounded-circle">
+                                    @if ($umkm->image)
+                                        <img src="{{ asset('storage/' . $umkm->image) }}" alt="user-avatar"
+                                            class="d-block rounded-circle img-preview" height="100" width="100"
+                                            id="uploadedAvatar">
+                                    @else
+                                        <img src="/img/portfolio/portfolio-3.jpg" alt="user-avatar"
+                                            class="d-block rounded-circle img-preview" height="100" width="100"
+                                            id="uploadedAvatar">
+                                    @endif
+                                </div>
+
                                 <div class="button-wrapper">
                                     <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                         <span class="d-none d-sm-block">Upload new photo</span>
