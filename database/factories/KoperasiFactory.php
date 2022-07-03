@@ -17,7 +17,14 @@ class KoperasiFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => mt_rand(1, 6),
+            'nik' => '12345678',
+            'name' => $this->faker->sentence(mt_rand(1, 4)),
+            'category_koperasi_id' => mt_rand(1, 3),
+            'phonenumber' => $this->faker->phoneNumber(),
+            'city' => $this->faker->city(),
+            'description' => $this->faker->paragraph(mt_rand(5, 9)),
+            'address' => $this->faker->sentence(mt_rand(5, 9)),
         ];
     }
 }

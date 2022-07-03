@@ -50,6 +50,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Umkm::class, 'user_id');
     }
+    public function koperasi()
+    {
+        return $this->hasMany(Koperasi::class, 'user_id');
+    }
 
     public function izin()
     {

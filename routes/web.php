@@ -29,7 +29,8 @@ Auth::routes();
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
-Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
+Route::get('/umkm/{umkm}', [HomeController::class, 'umkm'])->name('umkm');
+Route::get('/koperasi/{koperasi}', [HomeController::class, 'koperasi'])->name('koperasi');
 
 //  Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');

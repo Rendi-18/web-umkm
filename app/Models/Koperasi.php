@@ -15,4 +15,8 @@ class Koperasi extends Model
     {
         return $this->belongsTo(CategoryKoperasi::class, 'category_koperasi_id');
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

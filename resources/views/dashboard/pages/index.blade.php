@@ -18,7 +18,10 @@
                 </div>
             @else
                 <div id="umkm">
-                    @include('dashboard.components.comp3', ['umkms' => Auth::user()->umkm])
+                    @include('dashboard.components.comp3', [
+                        'umkms' => Auth::user()->umkm,
+                        'koperasis' => Auth::user()->koperasi,
+                    ])
                 </div>
             @endcan
 

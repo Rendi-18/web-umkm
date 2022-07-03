@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Koperasi;
 use App\Models\Product;
 use App\Models\Umkm;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -32,6 +33,7 @@ class DatabaseSeeder extends Seeder
 
         User::factory(5)->create();
         Umkm::factory(50)->create();
+        Koperasi::factory(50)->create();
         Product::factory(250)->create();
     }
 }
