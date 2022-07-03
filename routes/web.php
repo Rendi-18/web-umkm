@@ -60,9 +60,19 @@ Route::get('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmControlle
 Route::get('/dashboard/umkm/{umkm:id}/umkm-profile/edit', [DashboardUserUmkmController::class, 'edit'])->middleware('auth');
 Route::put('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmController::class, 'update'])->middleware('auth');
 
+// Dashboard User Koperasi Profile
+Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-profile', [DashboardUserKoperasiController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-profile/edit', [DashboardUserKoperasiController::class, 'edit'])->middleware('auth');
+Route::put('/dashboard/koperasi/{koperasi:id}/koperasi-profile', [DashboardUserKoperasiController::class, 'update'])->middleware('auth');
 
-
-
+// Dashboard User Koperasi Product
+Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-product', [DashboardProductKoperasiController::class, 'index'])->middleware('auth');
+Route::post('/dashboard/koperasi/{koperasi:id}/koperasi-product', [DashboardProductKoperasiController::class, 'store'])->middleware('auth');
+Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-product/create', [DashboardProductKoperasiController::class, 'create'])->middleware('auth');
+Route::put('/dashboard/koperasi-product/{product:id}', [DashboardProductKoperasiController::class, 'update'])->middleware('auth');
+Route::put('/dashboard/koperasi-product/{product:id}/unggulan', [DashboardProductKoperasiController::class, 'isUnggulan'])->middleware('auth');
+Route::delete('/dashboard/koperasi-product/{product:id}', [DashboardProductKoperasiController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/koperasi-product/{product:id}/edit', [DashboardProductKoperasiController::class, 'edit'])->middleware('auth');
 
 // Dashboard Admin
 Route::resource('/dashboard/user', DashboardUserController::class)->middleware('admin');
