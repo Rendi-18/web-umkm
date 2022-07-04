@@ -4,8 +4,10 @@
     <!-- Content wrapper -->
     <div class="content-wrapper ">
         <!-- Content -->
-        <div class="container">
-            <h1>Koperasi Profile</h1>
+        <div class="container-xxl flex-grow-1 container-p-y">
+            <div id="dashboard" class="">
+                @include('dashboard.components.koperasi-profile', ['koperasi' => $koperasi])
+            </div>
         </div>
         {{-- footer --}}
         @include('dashboard.components.footer')

@@ -1,12 +1,12 @@
 <section id="pengajuan">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pengajuan/</span>Pengajuan
-        UMKM & Koperasi</h4>
-    <div class="row g-4 mb-5">
+        UMKM</h4>
+    <div class="row g-4">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-lg mb-4">
                     <div class="card mb-4">
-                        <h5 class="card-header">Tabel Pengajuan</h5>
+                        <h5 class="card-header">Tabel Pengajuan UMKM</h5>
                         <form class="d-flex mx-4 mb-2" onsubmit="return false">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-primary" type="submit">Search</button>
@@ -15,7 +15,7 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>NIK/NIB</th>
+                                        <th>NIB</th>
                                         <th>Jenis</th>
                                         <th>Name</th>
                                         <th>Owner</th>
@@ -27,10 +27,10 @@
                                     @foreach ($umkms as $umkm)
                                         <tr>
                                             <td>
-                                                <strong>20202056</strong>
+                                                <strong>{{ $umkm->nib }}</strong>
                                             </td>
                                             <td>
-                                                <strong>Koperasi</strong>
+                                                <strong>{{ $umkm->jenis }}</strong>
                                             </td>
                                             <td>
                                                 <strong>{{ $umkm->name }}</strong>

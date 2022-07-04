@@ -6,6 +6,33 @@
             <div data-i18n="Analytics">Dashboard</div>
         </a>
     </li>
+    <li class="menu-item  {{ Request::is('dashboard/website*') ? 'active open' : '' }} ">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-globe"></i>
+            <div data-i18n="Website Setting">Website</div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item {{ Request::is('dashboard/website*') ? 'active' : '' }}"">
+                <a href="/dashboard/website" class="menu-link">
+                    <div data-i18n="Without menu">Website Setting</div>
+                </a>
+            </li>
+        </ul>
+        <ul class="menu-sub">
+            <li class="menu-item {{ Request::is('dashboard/website*') ? 'active' : '' }}"">
+                <a href="/dashboard/website" class="menu-link">
+                    <div data-i18n="Without menu">Agenda</div>
+                </a>
+            </li>
+        </ul>
+        <ul class="menu-sub">
+            <li class="menu-item {{ Request::is('dashboard/website*') ? 'active' : '' }}"">
+                <a href="/dashboard/website" class="menu-link">
+                    <div data-i18n="Without menu">Content</div>
+                </a>
+            </li>
+        </ul>
+    </li>
 
     <li class="menu-header small text-uppercase ">
         <span class="menu-header-text">User</span>
@@ -23,6 +50,7 @@
             </li>
         </ul>
     </li>
+
     <li class="menu-header small text-uppercase">
         <span class="menu-header-text">UMKM & KOPERASI</span>
     </li>

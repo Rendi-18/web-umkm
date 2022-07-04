@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('jasa_koperasis', function (Blueprint $table) {
             $table->id();
-            $table->sating('jasa');
+            $table->string('jasa');
             $table->foreignId('koperasi_id')->references('id')->on('koperasis')->onDelete('cascade');
             $table->timestamps();
         });

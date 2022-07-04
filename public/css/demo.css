@@ -16,7 +16,7 @@
 .app-brand-text.demo {
   font-size: 1.75rem;
   letter-spacing: -0.5px;
-  text-transform: lowercase;
+  text-transform: UPPERCASE;
 }
 
 /* ! For .layout-navbar-fixed added fix padding top tpo .layout-page */
@@ -167,9 +167,14 @@ Temp
   height: 12.375rem;
 }
 
+.img-container-kp {
+  width: 19.25rem;
+  height: 19.25rem;
+}
+
 .img-container-prd {
-  width: 13.03975rem;
-  height: 13.03975rem;
+  width: auto;
+  height: 13.3975rem;
 }
 
 .img-container img {
@@ -177,4 +182,11 @@ Temp
   object-position: center center;
   height: 100%;
   width: 100%;
+}
+
+
+/* Table */
+.table-responsive {
+  min-height: 17rem;
+  max-height: 25rem;
 }

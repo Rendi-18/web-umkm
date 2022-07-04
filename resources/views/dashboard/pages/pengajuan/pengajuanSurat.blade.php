@@ -1,7 +1,6 @@
 <section id="form-pengajuan-surat">
     <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Pengajuan/</span>Pengajuan Surat</h4>
     <div class="col-12 mb-5">
-        <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Pengajuan/</span> Pengajuan Surat</h4>
         <div class="card">
             <h5 class="card-header">Tabel Pengajuan Perizinan</h5>
             <form action="/dashboard/umkm" method="get" class="d-flex mx-4 mb-2">

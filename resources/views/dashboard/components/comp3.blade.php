@@ -157,13 +157,13 @@
                                                 <a class="dropdown-item" href="javascript:void(0);"><i
                                                         class="bx bx-edit-alt me-1"></i>
                                                     Edit</a>
-                                                <form id="userDelete-form"
-                                                    action="/dashboard/user/{{ $umkm->id }}" method="post">
+                                                <form id="umkmDelete-form"
+                                                    action="/dashboard/umkm/{{ $umkm->id }}" method="post">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="dropdown-item"
-                                                        onclick="return confirm('Apa anda yakin user dinonaktifkan secara permanen?')">
-                                                        <i class="bx bx-trash me-1"></i> Nonaktikan
+                                                        onclick="return confirm('Apa anda yakin umkm akan dihapus secara permanen?')">
+                                                        <i class="bx bx-trash me-1"></i> Delete
                                                     </button>
                                                 </form>
                                             </div>

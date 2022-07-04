@@ -26,17 +26,17 @@
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        @foreach ($umkms as $umkm)
+                        @foreach ($koperasi as $koperasi)
                             <tr>
                                 <td>
                                     <strong>20202056</strong>
 
                                 </td>
                                 <td>
-                                    <strong>{{ $umkm->name }}</strong>
+                                    <strong>{{ $koperasi->name }}</strong>
                                 </td>
-                                <td>{{ $umkm->address }}</td>
-                                <td>{{ $umkm->user->name }}</td>
+                                <td>{{ $koperasi->address }}</td>
+                                <td>{{ $koperasi->user->name }}</td>
                                 <td><span class="badge bg-label-primary me-1">Active</span></td>
                                 <td>
                                     <div class="dropdown">
