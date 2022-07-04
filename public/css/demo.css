@@ -191,6 +191,11 @@ Temp
   width: auto;
 }
 
+#identity .img-container {
+  padding: 0.5rem;
+  box-shadow: inset 0px 0px 10px 0px #00000038;
+}
+
 
 /* Table */
 .table-responsive {
