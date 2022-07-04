@@ -6,7 +6,7 @@
         <!-- Content -->
 
         <div class="container-xxl flex-grow-1 container-p-y">
-            @can('admin')
+            {{-- @can('admin')
                 <div id="dashboard" class="">
                     @include('dashboard.components.comp1', [
                         'umkms' => $umkms,
@@ -23,7 +23,7 @@
                         'koperasis' => Auth::user()->koperasi,
                     ])
                 </div>
-            @endcan
+            @endcan --}}
 
 
 
@@ -51,6 +51,10 @@
             {{-- <div id="regist-koperasi" class="">
                 @include('dashboard.components.pengajuanSurat')
             </div> --}}
+
+            <div id="website" class="">
+                @include('dashboard\pages\website\index')
+            </div>
 
         </div>
         {{-- footer --}}

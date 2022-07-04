@@ -110,6 +110,7 @@ Route::put('/dashboard/pengajuan/{izin}/izin', [DashboardPengajuanController::cl
 
 
 
+
 // Route::resource('/dashboard/pengajuan', DashboardKoperasiController::class)->middleware('admin');
 
 //Dashboard User
