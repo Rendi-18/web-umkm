@@ -52,6 +52,13 @@
                 </a>
             </li>
         </ul>
+        <ul class="menu-sub">
+            <li class="menu-item {{ Request::is('dashboard/website*') ? 'active' : '' }}"">
+                <a href="/dashboard/website" class="menu-link">
+                    <div data-i18n="Without menu">Pesan Pengunjung</div>
+                </a>
+            </li>
+        </ul>
     </li>
 
     <li class="menu-header small text-uppercase ">

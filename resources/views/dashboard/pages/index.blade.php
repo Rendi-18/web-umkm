@@ -68,8 +68,12 @@
                 @include('dashboard.pages.agenda.agenda')
             </div> --}}
 
-            {{-- pesan --}}
-            <div id="agenda" class="">
+            {{-- pesan
+            <div id="detail-pesan" class="">
+                @include('dashboard.pages.pesan.detail-pesan')
+            </div> --}}
+
+            <div id="pesan" class="mt-3">
                 @include('dashboard.pages.pesan.pesan')
             </div>
 

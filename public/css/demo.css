@@ -155,7 +155,9 @@ Temp
 }
 
 
-/* img container */
+/* img container 
+*****************************************************************************
+*/
 
 .img-container {
   position: relative;
@@ -202,8 +204,14 @@ Temp
 }
 
 
-/* Table */
+/* Table 
+*****************************************************************************
+*/
 .table-responsive {
   min-height: 17rem;
   max-height: 25rem;
+}
+
+td .text-truncate {
+  max-width: 100vh;
 }

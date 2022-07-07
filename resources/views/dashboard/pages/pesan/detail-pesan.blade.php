@@ -8,7 +8,7 @@
                     <p class="card-text">Lorem Ipsum</p>
                 </div>
                 <div class="col-md-6">
-                    <h6 class="mb-1">Email pengirim</h6>
+                    <h6 class="mb-1">Email Pengirim</h6>
                     <p class="card-text">mail@gmail.com</p>
                 </div>
             </div>
@@ -23,6 +23,15 @@
                 <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, nemo laudantium libero
                     ad ut at dignissimos voluptates quae repudiandae, animi illum hic voluptatum repellendus. Assumenda
                     velit dolor aspernatur placeat labore.</p>
+            </div>
+
+            <div class="mb-4">
+                <a class="btn btn-primary"
+                    href="https://mail.google.com/mail/u/axtomy9@gmail.com/?view=cm&to=axzxx99@gmail.com&su=SUBJECT&body=BODY"
+                    target="_blank"><span>
+                        <i class="bx bx-mail-send "></i>&nbsp; Balas pesan
+                    </span>
+                </a>
             </div>
 
         </div>
