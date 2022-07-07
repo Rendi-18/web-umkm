@@ -6,6 +6,19 @@
             <div data-i18n="Analytics">Dashboard</div>
         </a>
     </li>
+    <li class="menu-item {{ Request::is('dashboard/profile') ? 'active open' : '' }}">
+        <a href="/dashboard/profile" class="menu-link menu-toggle ">
+            <i class="menu-icon tf-icons bx bx-user"></i>
+            <div data-i18n="Account Settings">Account Settings</div>
+        </a>
+        <ul class="menu-sub ">
+            <li class="menu-item {{ Request::is('dashboard/profile') ? 'active' : '' }}">
+                <a href="/dashboard/profile" class="menu-link ">
+                    <div data-i18n="Account">Account</div>
+                </a>
+            </li>
+        </ul>
+    </li>
     <li class="menu-item  {{ Request::is('dashboard/website*') ? 'active open' : '' }} ">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-globe"></i>
@@ -25,10 +38,17 @@
                 </a>
             </li>
         </ul>
-        <ul class="menu-sub">
+        {{-- <ul class="menu-sub">
             <li class="menu-item {{ Request::is('dashboard/website*') ? 'active' : '' }}"">
                 <a href="/dashboard/website" class="menu-link">
                     <div data-i18n="Without menu">Content</div>
+                </a>
+            </li>
+        </ul> --}}
+        <ul class="menu-sub">
+            <li class="menu-item {{ Request::is('dashboard/website*') ? 'active' : '' }}"">
+                <a href="/dashboard/website" class="menu-link">
+                    <div data-i18n="Without menu">Pegawai</div>
                 </a>
             </li>
         </ul>

@@ -13,6 +13,11 @@
   height: 38px;
 }
 
+.app-brand-logo.demo svg {
+  width: 22px;
+  height: 38px;
+}
+
 .app-brand-text.demo {
   font-size: 1.75rem;
   letter-spacing: -0.5px;

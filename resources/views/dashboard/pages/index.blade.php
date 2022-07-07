@@ -52,9 +52,23 @@
                 @include('dashboard.components.pengajuanSurat')
             </div> --}}
 
-            <div id="website" class="">
+            {{-- <div id="website" class="">
                 @include('dashboard\pages\website\index')
+            </div> --}}
+
+
+
+            {{-- Pegawai --}}
+            {{-- <div class="container-xxl flex-grow-1 container-p-y">
+                @include('dashboard.pages.pegawai.pegawai')
+            </div> --}}
+
+            {{-- Agenda --}}
+            <div id="agenda" class="">
+                @include('dashboard.pages.agenda.agenda')
             </div>
+
+
 
         </div>
         {{-- footer --}}
