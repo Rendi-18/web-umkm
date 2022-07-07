@@ -77,13 +77,50 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="image">Foto Pegawai</label>
+                            <label class="col-sm-2 col-form-label" for="description">Foto Agenda</label>
+                            <div class="col-sm-10 px-3 pl-5">
+                                <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                    <div class="img-container img-container-sm rounded">
+                                        {{-- @if ($umkm->image)
+                                                <img src="{{ asset('storage/' . $umkm->image) }}" alt="user-avatar"
+                                                    class="d-block img-fluid img-fit img-preview mx-auto d-block"
+                                                    id="uploadedAvatar">
+                                            @else --}}
+                                        <img src="/img/portfolio/portfolio-7.jpg" alt="user-avatar"
+                                            class="d-block img-fluid img-fit img-preview mx-auto d-block"
+                                            id="uploadedAvatar">
+                                        {{-- @endif --}}
+                                    </div>
+
+                                    <div class="button-wrapper">
+                                        <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                            <span class="d-none d-sm-block">Upload new photo</span>
+                                            <i class="bx bx-upload d-block d-sm-none"></i>
+                                            <input type="hidden" name="oldImage" value="">
+                                            <input type="file" id="upload"
+                                                class="account-file-input @error('image') is-invalid @enderror"
+                                                accept="image/png, image/jpeg" name="image" hidden
+                                                onchange="previewImageUmkm()">
+                                            @error('image')
+                                                <div class="invalid-feedback text-light">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </label>
+                                        <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-divider">Social</div>
+
+                        {{-- Social --}}
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="facebook">Facebook</label>
                             <div class="col-sm-10">
-                                <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                    id="image" placeholder="Foto" name="image" value="#" required
-                                    onchange="previewImage()">
-                                <img src="" class="mt-3 img-fluid img-preview" alt="">
-                                {{-- @error('image')
+                                <input type="text" class="form-control @error('facebook') is-invalid @enderror"
+                                    id="facebook" placeholder="facebook" name="facebook" value="" required>
+                                {{-- @error('facebook')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -91,14 +128,46 @@
                             </div>
                         </div>
 
-                        {{-- <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-img">Foto Product</label>
-                                <div class="col-sm-10">
-                                    <div class="input-group input-group-merge">
-                                        <input class="form-control" type="file" id="formFileMultiple" multiple="">
-                                    </div>
-                                </div>
-                            </div> --}}
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="instagram">Instagram</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control @error('instagram') is-invalid @enderror"
+                                    id="instagram" placeholder="@ " name="instagram" value="" required>
+                                {{-- @error('instagram')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror --}}
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="tweet">Tweet</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control @error('tweet') is-invalid @enderror"
+                                    id="tweet" placeholder="@ " name="tweet" value="" required>
+                                {{-- @error('tweet')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror --}}
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="whatsapp">whatsapp</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control @error('whatsapp') is-invalid @enderror"
+                                    id="whatsapp" placeholder="+62" name="whatsapp" value="" required>
+                                {{-- @error('whatsapp')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror --}}
+                            </div>
+                        </div>
+
+
                         <div class="row justify-content-end">
                             <div class="col-sm-10">
                                 <button type="submit" class="btn btn-primary">Send</button>
