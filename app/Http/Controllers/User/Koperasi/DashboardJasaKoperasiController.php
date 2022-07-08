@@ -58,7 +58,7 @@ class DashboardJasaKoperasiController extends Controller
     // Edit GET
     public function edit(JasaKoperasi $jasaKoperasi)
     {
-        // $this->authorize(ability: 'view', arguments: $productKoperasi);
+        $this->authorize(ability: 'view', arguments: $jasaKoperasi);
         return view('dashboard.pages.koperasi-jasa.edit', [
             'service' => $jasaKoperasi,
         ]);

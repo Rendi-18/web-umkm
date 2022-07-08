@@ -30,13 +30,13 @@ class DashboardUserIzinController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
         Izin::create($validatedData);
 
-        return redirect('/dashboard')->with('success', 'New Surat has been added!');
+        return redirect('/dashboard/izin/surat')->with('success', 'New Surat has been added!');
     }
 
     // Delete DELETE
     public function suratDestroy(Izin $izin)
     {
         Izin::destroy($izin->id);
-        return redirect('/dashboard')->with('success', 'Surat telah dihapus');
+        return redirect('/dashboard/izin/surat')->with('success', 'Surat telah dihapus');
     }
 }
