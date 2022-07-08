@@ -26,7 +26,7 @@
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        @foreach ($koperasi as $koperasi)
+                        @foreach ($koperasis as $koperasi)
                             <tr>
                                 <td>
                                     <strong>20202056</strong>
@@ -48,7 +48,7 @@
                                             <a class="dropdown-item" href="javascript:void(0);"><i
                                                     class="bx bx-edit-alt me-1"></i>
                                                 Edit</a>
-                                            <form id="userDelete-form" action="/dashboard/user/{{ $umkm->id }}"
+                                            <form id="userDelete-form" action="/dashboard/user/{{ $koperasi->id }}"
                                                 method="post">
                                                 @method('delete')
                                                 @csrf

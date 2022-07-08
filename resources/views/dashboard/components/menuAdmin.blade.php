@@ -47,7 +47,7 @@
         </ul> --}}
         <ul class="menu-sub">
             <li class="menu-item {{ Request::is('dashboard/website*') ? 'active' : '' }}"">
-                <a href="/dashboard/website" class="menu-link">
+                <a href="/dashboard/pegawai" class="menu-link">
                     <div data-i18n="Without menu">Pegawai</div>
                 </a>
             </li>

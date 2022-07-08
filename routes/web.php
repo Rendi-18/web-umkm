@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\DashboardUserController;
 use App\Http\Controllers\Admin\DashboardUmkmController;
 use App\Http\Controllers\Admin\DashboardKoperasiController;
 use App\Http\Controllers\Admin\DashboardPengajuanController;
+use App\Http\Controllers\Admin\DashboardPegawaiController;
+use App\Http\Controllers\Admin\DashboardWebsiteController;
 
 // User Umkm
 use App\Http\Controllers\User\Umkm\DashboardUserUmkmController;
@@ -108,6 +110,17 @@ Route::get('/dashboard/comp', [DashboardController::class, 'comp'])->middleware(
 Route::put('/dashboard/pengajuan/umkm/{umkm}', [DashboardPengajuanController::class, 'aproved'])->middleware('admin');
 Route::put('/dashboard/pengajuan/{izin}/izin', [DashboardPengajuanController::class, 'izin'])->middleware('admin');
 
+// Pegawai
+Route::get('/dashboard/pegawai', [DashboardPegawaiController::class, 'index'])->middleware('admin');
+Route::get('/dashboard/pegawai/create', [DashboardPegawaiController::class, 'create'])->middleware('admin');
+Route::post('/dashboard/pegawai', [DashboardPegawaiController::class, 'store'])->middleware('admin');
+Route::get('/dashboard/pegawai/{pegawai:id}/edit', [DashboardPegawaiController::class, 'edit'])->middleware('admin');
+Route::put('/dashboard/pegawai/{pegawai:id}', [DashboardPegawaiController::class, 'update'])->middleware('admin');
+Route::delete('/dashboard/pegawai/{pegawai:id}', [DashboardPegawaiController::class, 'destroy'])->middleware('admin');
+
+// Website
+Route::get('/dashboard/website', [DashboardWebsiteController::class, 'edit'])->middleware('admin');
+Route::put('/dashboard/website/{website}', [DashboardWebsiteController::class, 'update'])->middleware('admin');
 
 
 

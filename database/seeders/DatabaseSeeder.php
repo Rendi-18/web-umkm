@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\JasaKoperasi;
 use App\Models\Koperasi;
+use App\Models\Pegawai;
 use App\Models\Product;
 use App\Models\ProductKoperasi;
 use App\Models\Umkm;
@@ -39,5 +40,6 @@ class DatabaseSeeder extends Seeder
         Product::factory(250)->create();
         ProductKoperasi::factory(250)->create();
         JasaKoperasi::factory(250)->create();
+        Pegawai::factory(10)->create();
     }
 }

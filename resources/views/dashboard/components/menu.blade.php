@@ -2,7 +2,7 @@
     <div class="app-brand demo">
         <a href="../" class="app-brand-link">
             <span class="app-brand-logo demo">
-                <img src="../img/favicon/icon.svg" alt="">
+                <img src="/img/favicon/icon.svg" alt="">
             </span>
 
 

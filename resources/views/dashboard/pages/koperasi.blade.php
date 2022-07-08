@@ -6,7 +6,7 @@
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
             <div id="koperasi">
-                @include('dashboard.components.koperasi', ['koperasi' => $koperasi])
+                @include('dashboard.components.koperasi', ['koperasis' => $koperasi])
             </div>
         </div>
         <!-- / Content -->

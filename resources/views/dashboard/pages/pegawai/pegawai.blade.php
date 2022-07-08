@@ -4,7 +4,7 @@
             <h4 class="fw-bold">Tabel Pegawai</h4>
         </div>
         <div class="col-6 d-flex ">
-            <a class="ms-auto" href="#">
+            <a class="ms-auto" href="/dashboard/pegawai/create">
                 <button type="button" class="btn btn-primary ">
                     <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Data Pegawai
                 </button>
@@ -32,46 +32,50 @@
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                    {{-- @foreach ($products as $product) --}}
-                    <tr>
-                        <td>ID</td>
-                        <td>
-                            <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                    class="avatar avatar-xs pull-up img-container rounded" title=""
-                                    data-bs-original-title="#">
-                                    {{-- @if ($product->image)
-                                            <img src="{{ asset('storage/' . $product->image) }}" alt="Avatar"
+                    @foreach ($pegawais as $pegawai)
+                        <tr>
+                            <td>{{ $pegawai->id }}</td>
+                            <td>
+                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
+                                        class="avatar avatar-xs pull-up img-container rounded" title=""
+                                        data-bs-original-title="#">
+                                        @if ($pegawai->image)
+                                            <img src="{{ asset('storage/' . $pegawai->image) }}" alt="Avatar"
                                                 class="img-fluid img-fi border-0t">
-                                        @else --}}
-                                    <img src="../img/avatars/5.png" alt="Avatar" class="img-fluid img-fit border-0">
-                                    {{-- @endif --}}
-                                </li>
-                            </ul>
-                        </td>
-                        <td><span class="badge bg-label-primary me-1">Klasifikasi</span>
-                        </td>
-                        <td>NIP</td>
-                        <td>Nama Pegawai</td>
-                        <td>Jabatan/Golongan</td>
-                        <td>
-                            <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                    data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                    <form id="userDelete-form" action="#" method="post">
-                                        {{-- @method('delete's --}}
-                                        <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
-                                            <i class="bx bx-trash me-1"></i> Hapus
-                                        </button>
-                                    </form>
-
+                                        @else
+                                            <img src="../img/avatars/5.png" alt="Avatar"
+                                                class="img-fluid img-fit border-0">
+                                        @endif
+                                    </li>
+                                </ul>
+                            </td>
+                            <td><span class="badge bg-label-primary me-1">{{ $pegawai->classification }}</span>
+                            </td>
+                            <td>{{ $pegawai->nip }}</td>
+                            <td>{{ $pegawai->name }}</td>
+                            <td>{{ $pegawai->position }}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                        data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="/dashboard/pegawai/{{ $pegawai->id }}/edit"><i
+                                                class="bx bx-edit-alt me-1"></i>
+                                            Edit</a>
+                                        <form id="userDelete-form" action="/dashboard/pegawai/{{ $pegawai->id }}"
+                                            method="post">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
+                                                <i class="bx bx-trash me-1"></i> Hapus
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                    {{-- @endforeach --}}
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
