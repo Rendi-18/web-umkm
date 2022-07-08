@@ -41,7 +41,7 @@ class DashboardUserProductController extends Controller
     public function store(Request $request, Umkm $umkm)
     {
         // Image Name
-        $file_name = $request->image->getClientOriginalName();
+        // $file_name = $request->image->getClientOriginalName();
 
         // return $request;
         $validatedData = $request->validate([
@@ -56,10 +56,10 @@ class DashboardUserProductController extends Controller
 
         // Image
         if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->storeAs('product-image', $file_name);
+            $validatedData['image'] = $request->file('image')->store('img/' . $umkm->user->username . '/product');
         }
 
-        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['umkm_id'] = $umkm->id;
         Product::create($validatedData);
 
         return redirect('/dashboard/umkm/' . $umkm->id . '/umkm-product')->with('success', 'New Product has been added!');
@@ -78,8 +78,6 @@ class DashboardUserProductController extends Controller
     // Edit PUT
     public function update(Request $request, Product $product)
     {
-        $file_name = $request->image->getClientOriginalName();
-
         $rules = [
             'name' => 'required',
             'price' => 'required',
@@ -100,7 +98,7 @@ class DashboardUserProductController extends Controller
             if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
-            $validatedData['image'] = $request->file('image')->storeAs('img/' . $product->umkm->user->username . '/product', $file_name);
+            $validatedData['image'] = $request->file('image')->store('img/' . $product->umkm->user->username . '/product');
         }
 
 

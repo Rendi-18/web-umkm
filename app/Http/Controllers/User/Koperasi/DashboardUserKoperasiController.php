@@ -21,7 +21,7 @@ class DashboardUserKoperasiController extends Controller
 
     public function edit(Koperasi $koperasi)
     {
-        // $this->authorize(ability: 'view', arguments: $koperasi);
+        $this->authorize(ability: 'view', arguments: $koperasi);
         return view(
             'dashboard.pages.koperasi-profile.edit',
             [
@@ -34,14 +34,16 @@ class DashboardUserKoperasiController extends Controller
     // Edit PUT
     public function update(Request $request, Koperasi $koperasi)
     {
-        $request->image;
-        $file_name = $request->image->getClientOriginalName();
+        // $request->image;
+        // $file_name = $request->image->getClientOriginalName();
 
         $rules = [
             'name' => 'required',
             'phonenumber' => 'required',
             'address' => 'required',
             'description' => 'required',
+            'employee' => '',
+            'member' => '',
             'image' => 'image|file|max:800',
         ];
 
@@ -53,7 +55,7 @@ class DashboardUserKoperasiController extends Controller
             if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
-            $validatedData['image'] = $request->file('image')->storeAs('img/' . $koperasi->user->username . '/koperasi', $file_name);
+            $validatedData['image'] = $request->file('image')->store('img/' . $koperasi->user->username . '/koperasi');
         }
 
 

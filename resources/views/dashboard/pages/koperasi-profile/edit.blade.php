@@ -42,7 +42,7 @@
                                         <input type="file" id="upload"
                                             class="account-file-input @error('image') is-invalid @enderror"
                                             accept="image/png, image/jpeg" name="image" hidden
-                                            onchange="previewImagekoperasi()">
+                                            onchange="previewImageUmkm()">
                                         @error('image')
                                             <div class="invalid-feedback text-light">
                                                 {{ $message }}
@@ -57,12 +57,20 @@
 
                         {{-- NIB/NIK --}}
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="name">NIK</label>
+                            <label class="col-sm-2 col-form-label" for="nik">NIK</label>
                             <div class="col-sm-10">
-                                <div class="input-group input-group-merge readonly">
+                                <div class="input-group input-group-merge">
                                     <span class="input-group-text "><i class="bx bx-barcode"></i></span>
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Name" aria-label="John Doe" value="808080808080" readonly="">
+                                    <input type="text" name="nik"
+                                        class="form-control @error('nik') is-invalid @enderror" id="nik"
+                                        placeholder="Name" aria-label="John Doe"
+                                        aria-describedby="basic-icon-default-fullname2"
+                                        value="{{ old('nik', $koperasi->nik) }}" required>
+                                    @error('nik')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -159,7 +167,8 @@
                                     <input type="text" name="member" id="member"
                                         class="form-control phone-mask @error('member') is-invalid @enderror"
                                         placeholder="member" aria-label="member"
-                                        aria-describedby="basic-icon-default-member" value="50 !!sampel" required>
+                                        aria-describedby="basic-icon-default-member"
+                                        value="{{ old('member', $koperasi->member) }}" required>
                                     @error('member')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -171,16 +180,17 @@
 
                         {{-- Employed --}}
                         <div class="row mb-3">
-                            <label class="col-sm-2 form-label" for="employed">Karyawan</label>
+                            <label class="col-sm-2 form-label" for="employee">Karyawan</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-merge">
-                                    <span id="basic-icon-default-employed" class="input-group-text"><i
+                                    <span id="basic-icon-default-employee" class="input-group-text"><i
                                             class="bx bx-map-alt"></i></span>
-                                    <input type="text" name="employed" id="employed"
-                                        class="form-control phone-mask @error('employed') is-invalid @enderror"
+                                    <input type="text" name="employee" id="employee"
+                                        class="form-control phone-mask @error('employee') is-invalid @enderror"
                                         placeholder="Karyawan" aria-label="658 799 8941"
-                                        aria-describedby="basic-icon-default-employed" value="20 !!sampel" required>
-                                    @error('employed')
+                                        aria-describedby="basic-icon-default-employee"
+                                        value="{{ old('employee', $koperasi->employee) }}" required>
+                                    @error('employee')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

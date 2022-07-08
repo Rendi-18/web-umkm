@@ -56,12 +56,20 @@
 
                         {{-- NIB/NIK --}}
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="name">NIB</label>
+                            <label class="col-sm-2 col-form-label" for="nib">NIB</label>
                             <div class="col-sm-10">
-                                <div class="input-group input-group-merge readonly">
+                                <div class="input-group input-group-merge">
                                     <span class="input-group-text "><i class="bx bx-barcode"></i></span>
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Name" aria-label="John Doe" value="808080808080" readonly="">
+                                    <input type="text" name="nib"
+                                        class="form-control @error('nib') is-invalid @enderror" id="nib"
+                                        placeholder="Name" aria-label="John Doe"
+                                        aria-describedby="basic-icon-default-fullname2"
+                                        value="{{ old('nib', $umkm->nib) }}" required>
+                                    @error('nib')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -69,7 +77,7 @@
 
                         {{-- Name --}}
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="name">Nama</label>
+                            <label class="col-sm-2 col-form-label" for="nib">Nama</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text "><i class="bx bx-store-alt"></i></span>

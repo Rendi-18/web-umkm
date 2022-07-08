@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('phonenumber');
             $table->string('address');
             $table->string('city');
+            $table->string('member')->nullable();
+            $table->string('employee')->nullable();
             $table->string('image')->nullable();
             $table->boolean('isActive')->default(false);
             $table->timestamps();

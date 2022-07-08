@@ -18,7 +18,6 @@ class ProductKoperasiPolicy
      */
     public function viewAny(User $user)
     {
-        //
     }
 
     /**
@@ -30,7 +29,7 @@ class ProductKoperasiPolicy
      */
     public function view(User $user, ProductKoperasi $productKoperasi)
     {
-        //
+        return $user->id == $productKoperasi->koperasi->user_id;
     }
 
     /**

@@ -1,7 +1,7 @@
 <section id="jasa-card" class="">
     <div class="row py-3 mb-4">
         <div class="col-6">
-            <h4 class="fw-bold">Layanan Unggulan ->nama koperasi<- </h4>
+            <h4 class="fw-bold">Layanan Unggulan {{ $services[0]->koperasi->name }} </h4>
         </div>
         <div class="col-6 d-flex ">
             <button type="button" class="btn btn-primary ms-auto">
@@ -10,52 +10,53 @@
         </div>
     </div>
 
-    {{-- @if (session()->has('successUnggulan'))
+    @if (session()->has('successUnggulan'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('successUnggulan') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    @endif --}}
+    @endif
     <div class="row">
-        {{-- @if ($products->where('isUnggulan')->count())
-            @foreach ($products->where('isUnggulan') as $product) --}}
-        <div class="col-3">
-            <div class="card h-100">
-                <div class="img-container img-container-prd card-img-top">
-                    {{-- @if ($product->image)
-                                <img class="" src="{{ asset('storage/' . $product->image) }}"
+        @if ($services->where('isUnggulan')->count())
+            @foreach ($services->where('isUnggulan') as $service)
+                <div class="col-3">
+                    <div class="card h-100">
+                        <div class="img-container img-container-prd card-img-top">
+                            @if ($service->image)
+                                <img class="" src="{{ asset('storage/' . $service->image) }}"
                                     alt="Card image cap">
-                            @else --}}
-                    <img class="card-img-top img-fluid" src="/img/portfolio/portfolio-7.jpg" alt="Card image cap">
-                    {{-- @endif --}}
-                </div>
+                            @else
+                                <img class="card-img-top img-fluid" src="/img/portfolio/portfolio-7.jpg"
+                                    alt="Card image cap">
+                            @endif
+                        </div>
 
-                <div class="card-body">
-                    {{-- <h5 class="card-title">{{ $product->name }}</h5> --}}
-                    <h5 class="card-title">Layanan Name</h5>
-                    <p class="card-text">
-                        <span class="text-success">
-                            <i class="bx bx-layer"></i>
-                        </span>
-                        Layanan
-                    </p>
-                    {{-- <form action="/dashboard/umkm-product/{{ $product->id }}/unggulan" method="post">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $service->name }}</h5>
+                            <h5 class="card-title">Layanan Name</h5>
+                            <p class="card-text">
+                                <span class="text-success">
+                                    <i class="bx bx-layer"></i>
+                                </span>
+                                Layanan
+                            </p>
+                            <form action="/dashboard/umkm-service/{{ $service->id }}/unggulan" method="post">
                                 @method('put')
                                 @csrf
                                 <input type="hidden" class="btn-check" id="btncheck2" value="0" name="isUnggulan"
-                                    autocomplete="off"> --}}
-                    <button class="btn btn-outline-primary" for="btncheck2"
-                        onclick="return confirm('Apa anda yakin?')"><i class='bx bxl-product-hunt'></i>
-                        Hilangkan
-                    </button>
-                    {{-- </form> --}}
+                                    autocomplete="off">
+                                <button class="btn btn-outline-primary" for="btncheck2"
+                                    onclick="return confirm('Apa anda yakin?')"><i class='bx bxl-service-hunt'></i>
+                                    Hilangkan
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        {{-- @endforeach --}}
-        {{-- @else --}}
-        <h4 class="text-center">Belum ada Layanan unggulan :)</h4>
-        {{-- @endif --}}
+            @endforeach
+        @else
+            <h4 class="text-center">Belum ada Layanan unggulan :)</h4>
+        @endif
     </div>
 
 </section>
@@ -73,7 +74,7 @@
             <h4 class="fw-bold">Tabel Layanan</h4>
         </div>
         <div class="col-6 d-flex ">
-            <a class="ms-auto" href="#">
+            <a class="ms-auto" href="/dashboard/koperasi/{{ $services[0]->koperasi->id }}/koperasi-jasa/create">
                 <button type="button" class="btn btn-primary ">
                     <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Layanan
                 </button>
@@ -101,72 +102,66 @@
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                    {{-- @foreach ($products as $product) --}}
-                    <tr>
-                        {{-- <td>{{ $product->id }}</td> --}}
-                        <td>Product ID</td>
-                        <td>
-                            <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                    class="avatar avatar-xs pull-up img-container rounded" title=""
-                                    data-bs-original-title="">
-                                    {{-- @if ($product->image)
-                                            <img src="{{ asset('storage/' . $product->image) }}" alt="Avatar"
+                    @foreach ($services as $service)
+                        <tr>
+                            <td>{{ $service->id }}</td>
+                            <td>
+                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
+                                        class="avatar avatar-xs pull-up img-container rounded" title=""
+                                        data-bs-original-title="">
+                                        @if ($service->image)
+                                            <img src="{{ asset('storage/' . $service->image) }}" alt="Avatar"
                                                 class="img-fluid img-fi border-0t">
-                                        @else --}}
-                                    <img src="/img/portfolio/portfolio-7.jpg" alt="Avatar"
-                                        class="img-fluid img-fit border-0">
-                                    {{-- @endif --}}
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            {{-- <span class="badge bg-label-primary me-1">{{ $product->name }}</span> --}}
-                            <span class="badge bg-label-primary me-1">Layanan Name</span>
-                            {{-- @if ($product->isUnggulan)
+                                        @else
+                                            <img src="/img/portfolio/portfolio-7.jpg" alt="Avatar"
+                                                class="img-fluid img-fit border-0">
+                                        @endif
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <span class="badge bg-label-primary me-1">{{ $service->name }}</span>
+                                @if ($service->isUnggulan)
                                     <span class="badge bg-label-danger me-1">Unggulan</span>
-                                @endif --}}
-                        </td>
-                        {{-- <td>{{ $product->price }}</td> --}}
-                        <td>Layanan</td>
-                        {{-- <td>{{ $product->weight }} Kg</td> --}}
-                        <td>Kebutuhan Layanan</td>
-                        <td>Deskripsi</td>
-                        <td>
-                            <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                    data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                                <div class="dropdown-menu">
-                                    {{-- <a class="dropdown-item"
-                                            href="/dashboard/umkm-product/{{ $product->id }}/edit"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a> --}}
-                                    <a class="dropdown-item" href="#"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                    {{-- <form id="userDelete-form"
-                                            action="/dashboard/umkm-product/{{ $product->id }}" method="post"> --}}
-                                    <form id="userDelete-form" action="#" method="post">
-                                        {{-- @method('delete')
-                                            @csrf --}}
-                                        <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
-                                            <i class="bx bx-trash me-1"></i> Hapus
-                                        </button>
-                                    </form>
-                                    {{-- @if ($product->umkm->product->where('isUnggulan')->count() < 4 && !$product->isUnggulan)
-                                            <form action="/dashboard/umkm-product/{{ $product->id }}/unggulan"
+                                @endif
+                            </td>
+                            <td>{{ $service->service }}</td>
+                            <td>{{ $service->needs }}</td>
+                            <td>{!! $service->description !!}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                        data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item"
+                                            href="/dashboard/koperasi-jasa/{{ $service->id }}/edit"><i
+                                                class="bx bx-edit-alt me-1"></i> Edit</a>
+                                        <form id="userDelete-form"
+                                            action="/dashboard/koperasi-jasa/{{ $service->id }}" method="post">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
+                                                <i class="bx bx-trash me-1"></i> Hapus
+                                            </button>
+                                        </form>
+                                        @if ($service->koperasi->jasa->where('isUnggulan')->count() < 4 && !$service->isUnggulan)
+                                            <form action="/dashboard/koperasi-jasa/{{ $service->id }}/unggulan"
                                                 method="post">
                                                 @method('put')
                                                 @csrf
                                                 <input type="hidden" name="isUnggulan" value="1">
                                                 <button class="dropdown-item"
                                                     onclick="return confirm('Apa anda yakin?')">
-                                                    <i class="bx bxl-product-hunt me-1"></i> Unggulkan
+                                                    <i class="bx bxl-service-hunt me-1"></i> Unggulkan
                                                 </button>
                                             </form>
-                                        @endif --}}
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                    {{-- @endforeach --}}
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

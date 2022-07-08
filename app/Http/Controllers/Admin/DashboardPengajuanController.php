@@ -35,7 +35,7 @@ class DashboardPengajuanController extends Controller
 
     public function izin(Request $request, Izin $izin)
     {
-        $file_name = $request->file->getClientOriginalName();
+        // $file_name = $request->file->getClientOriginalName();
 
         $rules = [
             'status' => 'required',
@@ -49,7 +49,7 @@ class DashboardPengajuanController extends Controller
             if ($request->oldDoc) {
                 Storage::delete($request->oldDoc);
             }
-            $validatedData['file'] = $request->file('file')->storeAs('doc/' . $izin->user->username, $file_name);
+            $validatedData['file'] = $request->file('file')->store('doc/' . $izin->user->username);
         }
 
         Izin::where('id', $izin->id)

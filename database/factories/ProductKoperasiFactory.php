@@ -17,7 +17,12 @@ class ProductKoperasiFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'koperasi_id' => mt_rand(1, 50),
+            'slug' => $this->faker->slug(),
+            'name' => $this->faker->sentence(mt_rand(1, 3)),
+            'price' => "100.000",
+            'weight' => mt_rand(5, 40),
+            'description' => $this->faker->sentence(mt_rand(5, 9)),
         ];
     }
 }

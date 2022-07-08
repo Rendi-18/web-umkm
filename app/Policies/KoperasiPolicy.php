@@ -30,7 +30,7 @@ class KoperasiPolicy
      */
     public function view(User $user, Koperasi $koperasi)
     {
-        //
+        return $user->id == $koperasi->user_id;
     }
 
     /**

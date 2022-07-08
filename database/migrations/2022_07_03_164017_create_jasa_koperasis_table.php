@@ -15,8 +15,14 @@ return new class extends Migration
     {
         Schema::create('jasa_koperasis', function (Blueprint $table) {
             $table->id();
-            $table->string('jasa');
             $table->foreignId('koperasi_id')->references('id')->on('koperasis')->onDelete('cascade');
+            $table->string('slug')->unique();
+            $table->string('service');
+            $table->string('name');
+            $table->string('description');
+            $table->string('image')->nullable();
+            $table->string('needs');
+            $table->boolean('isUnggulan')->default(false);
             $table->timestamps();
         });
     }

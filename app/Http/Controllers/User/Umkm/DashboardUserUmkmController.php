@@ -38,8 +38,8 @@ class DashboardUserUmkmController extends Controller
     // Edit PUT
     public function update(Request $request, Umkm $umkm)
     {
-        $request->image;
-        $file_name = $request->image->getClientOriginalName();
+        // $request->image;
+        // $file_name = $request->image->getClientOriginalName();
 
         $rules = [
             'name' => 'required',
@@ -57,7 +57,7 @@ class DashboardUserUmkmController extends Controller
             if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
-            $validatedData['image'] = $request->file('image')->storeAs('img/' . $umkm->user->username . '/umkm', $file_name);
+            $validatedData['image'] = $request->file('image')->store('img/' . $umkm->user->username . '/umkm');
         }
 
 

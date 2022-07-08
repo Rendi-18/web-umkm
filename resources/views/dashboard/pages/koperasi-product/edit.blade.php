@@ -1,3 +1,6 @@
+@extends('layouts.dashboard')
+
+@section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
         <section id="product-form-create" class="">
             <h4 class="fw-bold py-3 mb-4">
@@ -122,9 +125,8 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="description">Deskripsi</label>
                                 <div class="col-sm-10">
-                                    <input type="hidden"
-                                        class="form-control @error('description') is-invalid @enderror" id="description"
-                                        placeholder="Deskripsi" name="description"
+                                    <input type="hidden" class="form-control @error('description') is-invalid @enderror"
+                                        id="description" placeholder="Deskripsi" name="description"
                                         value="{{ old('description', $product->description) }}" required>
                                     <trix-editor input="description"></trix-editor>
                                     @error('description')
@@ -146,3 +148,4 @@
             </div>
         </section>
     </div>
+@endsection

@@ -6,14 +6,9 @@
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
             <div id="dashboard" class="">
-                @include('dashboard.components.koperasi-product')
+                @include('dashboard.components.koperasi-product', ['products' => $products])
             </div>
         </div>
-
-        <!-- tatarok sini karna routenya gabisa-->
-        @include('dashboard.pages.koperasi-product.create')
-        @include('dashboard.pages.koperasi-product.edit')
-
         {{-- footer --}}
         @include('dashboard.components.footer')
 
