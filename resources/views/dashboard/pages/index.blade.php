@@ -71,9 +71,9 @@
             </div> --}}
 
             {{-- Agenda --}}
-            <div id="agenda" class="">
+            {{-- <div id="agenda" class="">
                 @include('dashboard.pages.agenda.agenda')
-            </div>
+            </div> --}}
 
             {{-- pesan
             <div id="detail-pesan" class="">

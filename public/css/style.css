@@ -1729,7 +1729,7 @@ section {
 #search .container form input[type=text] {
   border: 0;
   padding: 4px 8px;
-  width: calc(100% - 100px);
+  width: calc(98.395% - 100px);
 }
 
 #search .container form input[type=submit] {

@@ -9,9 +9,10 @@
         <div class="row content">
             <div class="col-lg-6">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore
-                    magna aliqua.
+                    Dinas Koperasi, Usaha Kecil dan Menengah Provinsi Lampung mempunyai tugas melaksanakan sebagian
+                    urusan Pemerintahan Provinsi di bidang Koperasi, Usaha Kecil dan Menengah berdasarkan azas otonomi
+                    yang menjadi kewenangan, tugas dekonsentrasi dan pembantuan serta tugas lain sesuai dengan kebijakan
+                    yang ditetapkan oleh Gubernur berdasarkan peraturan perundang-undangan yang berlaku.
                 </p>
                 <ul>
                     <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>

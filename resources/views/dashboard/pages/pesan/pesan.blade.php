@@ -40,8 +40,11 @@
                                             <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
                                                 <i class="bx bx-trash me-1"></i> Hapus Pesan
                                             </button>
-                                            <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
-                                                <i class="bx bx-envelope me-1"></i> Detail
+                                            <button class="dropdown-item">
+                                                <a href="">
+                                                    <i class="bx bx-envelope me-1"></i> Detail
+                                                </a>
+
                                             </button>
                                         </form>
 

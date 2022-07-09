@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\DashboardPengajuanController;
 use App\Http\Controllers\Admin\DashboardPegawaiController;
 use App\Http\Controllers\Admin\DashboardWebsiteController;
 use App\Http\Controllers\Admin\DashboardAgendaController;
+use App\Http\Controllers\Admin\DashboardPesanController;
+
 
 // User Umkm
 use App\Http\Controllers\User\Umkm\DashboardUserUmkmController;
@@ -129,6 +131,10 @@ Route::post('/dashboard/agenda', [DashboardAgendaController::class, 'store'])->m
 Route::get('/dashboard/agenda/{agenda:id}/edit', [DashboardAgendaController::class, 'edit'])->middleware('admin');
 Route::put('/dashboard/agenda/{agenda:id}', [DashboardAgendaController::class, 'update'])->middleware('admin');
 Route::delete('/dashboard/agenda/{agenda:id}', [DashboardAgendaController::class, 'destroy'])->middleware('admin');
+
+//Pesan
+Route::get('/dashboard/pesan', [DashboardPesanController::class, 'index'])->middleware('admin');
+Route::get('/dashboard/pesan/{pesan:id}', [DashboardPesanController::class, 'view'])->middleware('admin');
 
 // Route::resource('/dashboard/pengajuan', DashboardKoperasiController::class)->middleware('admin');
 

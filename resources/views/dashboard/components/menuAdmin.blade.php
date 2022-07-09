@@ -19,7 +19,12 @@
             </li>
         </ul>
     </li>
-    <li class="menu-item  {{ Request::is('dashboard/website*') ? 'active open' : '' }} ">
+    <li
+        class="menu-item  
+    {{ Request::is('dashboard/website*') ? 'active open' : '' }}
+    {{ Request::is('dashboard/agenda*') ? 'active open' : '' }} 
+    {{ Request::is('dashboard/pegawai*') ? 'active open' : '' }}
+    {{ Request::is('dashboard/pesan*') ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-globe"></i>
             <div data-i18n="Website Setting">Website</div>
@@ -32,7 +37,7 @@
             </li>
         </ul>
         <ul class="menu-sub">
-            <li class="menu-item {{ Request::is('dashboard/agenda*') ? 'active' : '' }}"">
+            <li class="menu-item {{ Request::is('dashboard/agenda*') ? 'active' : '' }}">
                 <a href="/dashboard/agenda" class="menu-link">
                     <div data-i18n="Without menu">Agenda</div>
                 </a>
@@ -46,14 +51,14 @@
             </li>
         </ul> --}}
         <ul class="menu-sub">
-            <li class="menu-item {{ Request::is('dashboard/pegawai*') ? 'active' : '' }}"">
+            <li class="menu-item {{ Request::is('dashboard/pegawai*') ? 'active' : '' }}">
                 <a href="/dashboard/pegawai" class="menu-link">
                     <div data-i18n="Without menu">Pegawai</div>
                 </a>
             </li>
         </ul>
         <ul class="menu-sub">
-            <li class="menu-item {{ Request::is('dashboard/pesan*') ? 'active' : '' }}"">
+            <li class="menu-item {{ Request::is('dashboard/pesan*') ? 'active' : '' }}">
                 <a href="/dashboard/pesan" class="menu-link">
                     <div data-i18n="Without menu">Pesan Pengunjung</div>
                 </a>

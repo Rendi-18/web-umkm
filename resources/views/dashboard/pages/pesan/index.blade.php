@@ -10,6 +10,10 @@
             <div id="pesan">
                 @include('dashboard.pages.pesan.pesan')
             </div>
+            <div id="detail-pesan">
+                @include('dashboard.pages.pesan.detail-pesan')
+            </div>
+
         </div>
         <!-- / Content -->
         @include('dashboard.components.footer')
