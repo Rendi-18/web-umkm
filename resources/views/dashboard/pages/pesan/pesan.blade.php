@@ -21,13 +21,12 @@
                             <td><strong>Nama Pengunjung</strong></td>
                             <td>Email</td>
                             <td><span class="d-inline-block text-truncate align-middle">Subject</span></td>
-                            <td><span class="d-inline-block text-truncate align-middle">Lorem
-                                    ipsum dolor
-                                    sit amet consectetur
-                                    adipisicing elit. Vero dolore minima
+                            <td><span class="d-inline-block text-truncate align-middle">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolore minima
                                     repellendus nesciunt, omnis ducimus porro asperiores incidunt ipsa voluptatibus
                                     aliquid, doloribus quam temporibus ipsam veniam hic perspiciatis dolores cumque.
-                                </span> </td>
+                                </span>
+                            </td>
                             <td>
                                 <div class="dropdown">
                                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
