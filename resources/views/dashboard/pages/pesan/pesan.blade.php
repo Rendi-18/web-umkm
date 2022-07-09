@@ -16,42 +16,48 @@
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <tr>
-                            <td>ID</td>
-                            <td><strong>Nama Pengunjung</strong></td>
-                            <td>Email</td>
-                            <td><span class="d-inline-block text-truncate align-middle">Subject</span></td>
-                            <td><span class="d-inline-block text-truncate align-middle">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolore minima
-                                    repellendus nesciunt, omnis ducimus porro asperiores incidunt ipsa voluptatibus
-                                    aliquid, doloribus quam temporibus ipsam veniam hic perspiciatis dolores cumque.
-                                </span>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <form id="mail" action="#}" method="post">
-                                            @method('delete')
-                                            @csrf
-                                            <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
-                                                <i class="bx bx-trash me-1"></i> Hapus Pesan
+                        @if ($pesans->count())
+                            @foreach ($pesans as $pesan)
+                                <tr>
+                                    <td>{{ $pesan->id }}</td>
+                                    <td><strong>{{ $pesan->name }}</strong></td>
+                                    <td>{{ $pesan->email }}</td>
+                                    <td><span
+                                            class="d-inline-block text-truncate align-middle">{{ $pesan->subject }}</span>
+                                    </td>
+                                    <td><span class="d-inline-block text-truncate align-middle">
+                                            {{ $pesan->message }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                                data-bs-toggle="dropdown">
+                                                <i class="bx bx-dots-vertical-rounded"></i>
                                             </button>
-                                            <button class="dropdown-item">
-                                                <a href="">
+                                            <div class="dropdown-menu">
+                                                <form id="mail" action="/dashboard/pesan/{{ $pesan->id }}"
+                                                    method="post">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button class="dropdown-item"
+                                                        onclick="return confirm('Apa anda yakin?')">
+                                                        <i class="bx bx-trash me-1"></i> Hapus Pesan
+                                                    </button>
+                                                </form>
+                                                <a class="dropdown-item" href="/dashboard/pesan/{{ $pesan->id }}">
                                                     <i class="bx bx-envelope me-1"></i> Detail
                                                 </a>
-
-                                            </button>
-                                        </form>
-
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <h1 class="text-center mt-5 mb-5">
+                                Pesan not found :)
+                            </h1>
+                        @endif
                     </tbody>
                 </table>
             </div>

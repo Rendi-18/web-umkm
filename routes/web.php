@@ -135,7 +135,9 @@ Route::delete('/dashboard/agenda/{agenda:id}', [DashboardAgendaController::class
 //Pesan
 Route::get('/dashboard/pesan', [DashboardPesanController::class, 'index'])->middleware('admin');
 Route::get('/dashboard/pesan/{pesan:id}', [DashboardPesanController::class, 'view'])->middleware('admin');
+Route::delete('/dashboard/pesan/{pesan:id}', [DashboardPesanController::class, 'destroy'])->middleware('admin');
 
+Route::post('/', [DashboardPesanController::class, 'store']);
 // Route::resource('/dashboard/pengajuan', DashboardKoperasiController::class)->middleware('admin');
 
 //Dashboard User

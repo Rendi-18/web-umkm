@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Koperasi;
 use App\Models\Product;
 use App\Models\Umkm;
+use App\Models\Website;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,8 @@ class HomeController extends Controller
     {
         return view('pages.home', [
             'umkms' => Umkm::orderBy('created_at', 'desc')->take(8)->get(),
-            'koperasis' => Koperasi::orderBy('created_at', 'desc')->take(8)->get()
+            'koperasis' => Koperasi::orderBy('created_at', 'desc')->take(8)->get(),
+            'website' => Website::latest()->get()
         ]);
     }
     public function search()
