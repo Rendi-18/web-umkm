@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\DashboardKoperasiController;
 use App\Http\Controllers\Admin\DashboardPengajuanController;
 use App\Http\Controllers\Admin\DashboardPegawaiController;
 use App\Http\Controllers\Admin\DashboardWebsiteController;
+use App\Http\Controllers\Admin\DashboardAgendaController;
 
 // User Umkm
 use App\Http\Controllers\User\Umkm\DashboardUserUmkmController;
@@ -122,7 +123,13 @@ Route::delete('/dashboard/pegawai/{pegawai:id}', [DashboardPegawaiController::cl
 Route::get('/dashboard/website', [DashboardWebsiteController::class, 'edit'])->middleware('admin');
 Route::put('/dashboard/website/{website}', [DashboardWebsiteController::class, 'update'])->middleware('admin');
 
-
+// Agenda
+Route::get('/dashboard/agenda', [DashboardAgendaController::class, 'index'])->middleware('admin');
+Route::get('/dashboard/agenda', [DashboardAgendaController::class, 'create'])->middleware('admin');
+Route::post('/dashboard/agenda', [DashboardAgendaController::class, 'store'])->middleware('admin');
+Route::get('/dashboard/agenda/{agenda:id}/edit', [DashboardAgendaController::class, 'edit'])->middleware('admin');
+Route::put('/dashboard/agenda/{agenda:id}', [DashboardAgendaController::class, 'update'])->middleware('admin');
+Route::delete('/dashboard/agenda/{agenda:id}', [DashboardAgendaController::class, 'destroy'])->middleware('admin');
 
 // Route::resource('/dashboard/pengajuan', DashboardKoperasiController::class)->middleware('admin');
 
