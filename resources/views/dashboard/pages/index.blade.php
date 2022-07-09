@@ -59,9 +59,9 @@
                 @include('dashboard.components.pengajuanSurat')
             </div> --}}
 
-            <div id="website" class="">
+            {{-- <div id="website" class="">
                 @include('dashboard\pages\website\index')
-            </div>
+            </div> --}}
 
 
 
