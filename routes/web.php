@@ -125,7 +125,6 @@ Route::put('/dashboard/website/{website}', [DashboardWebsiteController::class, '
 
 // Agenda
 Route::get('/dashboard/agenda', [DashboardAgendaController::class, 'index'])->middleware('admin');
-Route::get('/dashboard/agenda', [DashboardAgendaController::class, 'create'])->middleware('admin');
 Route::post('/dashboard/agenda', [DashboardAgendaController::class, 'store'])->middleware('admin');
 Route::get('/dashboard/agenda/{agenda:id}/edit', [DashboardAgendaController::class, 'edit'])->middleware('admin');
 Route::put('/dashboard/agenda/{agenda:id}', [DashboardAgendaController::class, 'update'])->middleware('admin');
