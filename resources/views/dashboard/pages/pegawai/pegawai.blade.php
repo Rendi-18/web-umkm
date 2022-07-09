@@ -32,7 +32,6 @@
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-<<<<<<< HEAD
                     @if ($pegawais->count())
                         @foreach ($pegawais as $pegawai)
                             <tr>
@@ -41,12 +40,12 @@
                                     <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
                                         <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
                                             class="avatar avatar-xs pull-up img-container rounded" title=""
-                                            data-bs-original-title="#">
+                                            data-bs-original-title="{{ $pegawai->name }}">
                                             @if ($pegawai->image)
                                                 <img src="{{ asset('storage/' . $pegawai->image) }}" alt="Avatar"
                                                     class="img-fluid img-fi border-0t">
                                             @else
-                                                <img src="../img/avatars/5.png" alt="Avatar"
+                                                <img src="../img/avatars/blank_avatars.png" alt="Avatar"
                                                     class="img-fluid img-fit border-0">
                                             @endif
                                         </li>
@@ -77,47 +76,6 @@
                                                 </button>
                                             </form>
                                         </div>
-=======
-                    @foreach ($pegawais as $pegawai)
-                        <tr>
-                            <td>{{ $pegawai->id }}</td>
-                            <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-xs pull-up img-container rounded" title=""
-                                        data-bs-original-title="{{ $pegawai->name }}">
-                                        @if ($pegawai->image)
-                                            <img src="{{ asset('storage/' . $pegawai->image) }}" alt="Avatar"
-                                                class="img-fluid img-fi border-0t">
-                                        @else
-                                            <img src="../img/avatars/blank_avatars.png" alt="Avatar"
-                                                class="img-fluid img-fit border-0">
-                                        @endif
-                                    </li>
-                                </ul>
-                            </td>
-                            <td><span class="badge bg-label-primary me-1">{{ $pegawai->classification }}</span>
-                            </td>
-                            <td>{{ $pegawai->nip }}</td>
-                            <td>{{ $pegawai->name }}</td>
-                            <td>{{ $pegawai->position }}</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="/dashboard/pegawai/{{ $pegawai->id }}/edit"><i
-                                                class="bx bx-edit-alt me-1"></i>
-                                            Edit</a>
-                                        <form id="userDelete-form" action="/dashboard/pegawai/{{ $pegawai->id }}"
-                                            method="post">
-                                            @method('delete')
-                                            @csrf
-                                            <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
-                                                <i class="bx bx-trash me-1"></i> Hapus
-                                            </button>
-                                        </form>
->>>>>>> 0689a623bbedd2cf97f2b4d87750090e757e6b84
                                     </div>
                                 </td>
                             </tr>
