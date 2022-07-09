@@ -52,7 +52,7 @@ class DashboardJasaKoperasiController extends Controller
         $validatedData['koperasi_id'] = $koperasi->id;
         JasaKoperasi::create($validatedData);
 
-        return redirect('/dashboard/koperasi/' . $koperasi->id . '/koperasi-jasa')->with('success', 'New Product has been added!');
+        return redirect('/dashboard/koperasi/' . $koperasi->id . '/koperasi-jasa')->with('success', 'New Service has been added!');
     }
 
     // Edit GET
@@ -94,7 +94,7 @@ class DashboardJasaKoperasiController extends Controller
         JasaKoperasi::where('id', $jasaKoperasi->id)
             ->update($validatedData);
 
-        return redirect('/dashboard/koperasi/' . $jasaKoperasi->koperasi->id . '/koperasi-jasa')->with('success', 'Jasa has been Updated');
+        return redirect('/dashboard/koperasi/' . $jasaKoperasi->koperasi->id . '/koperasi-jasa')->with('success', 'Service has been Updated');
     }
 
     // Unggulan PUT
@@ -110,7 +110,7 @@ class DashboardJasaKoperasiController extends Controller
         JasaKoperasi::where('id', $jasaKoperasi->id)
             ->update($validatedData);
 
-        return redirect('/dashboard/koperasi/' . $jasaKoperasi->koperasi->id . '/koperasi-jasa')->with('successUnggulan', 'Poduct has been edit');
+        return redirect('/dashboard/koperasi/' . $jasaKoperasi->koperasi->id . '/koperasi-jasa')->with('successUnggulan', 'Service has been edit');
     }
 
     // Delete DELETE
@@ -120,6 +120,6 @@ class DashboardJasaKoperasiController extends Controller
             Storage::delete($jasaKoperasi->image);
         }
         JasaKoperasi::destroy($jasaKoperasi->id);
-        return redirect('/dashboard/koperasi/' . $jasaKoperasi->koperasi->id . '/koperasi-jasa')->with('success', 'Product telah dihapus');
+        return redirect('/dashboard/koperasi/' . $jasaKoperasi->koperasi->id . '/koperasi-jasa')->with('success', 'Service telah dihapus');
     }
 }

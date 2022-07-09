@@ -16,7 +16,7 @@ class DashboardKoperasiController extends Controller
     public function index()
     {
 
-        $koperasis = Koperasi::latest()->get();
+        $koperasis = Koperasi::latest();
 
         if (request('search')) {
             $koperasis->where('name', 'like', '%' . request('search') . '%')->get();
@@ -25,7 +25,7 @@ class DashboardKoperasiController extends Controller
         return view(
             'dashboard.pages.koperasi',
             [
-                'koperasi' => $koperasis,
+                'koperasi' => $koperasis->get(),
             ]
         );
     }

@@ -26,7 +26,6 @@ class DashboardUmkmController extends Controller
             'dashboard.pages.umkm',
             [
                 'umkms' => $umkms->get(),
-                // 'title' => ''
             ]
         );
     }

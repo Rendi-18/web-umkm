@@ -9,11 +9,19 @@ use Illuminate\Support\Facades\Storage;
 
 class DashboardPegawaiController extends Controller
 {
+
     // Index GET
     public function index()
     {
+
+        $pegawais = Pegawai::latest();
+
+        if (request('search')) {
+            $pegawais->where('name', 'like', '%' . request('search') . '%')->get();
+        }
+
         return view('dashboard.pages.pegawai.index', [
-            'pegawais' => Pegawai::latest()->get()
+            'pegawais' => $pegawais->get()
         ]);
     }
 

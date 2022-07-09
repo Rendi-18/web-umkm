@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Izin;
+use App\Models\Koperasi;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -12,9 +13,27 @@ class DashboardPengajuanController extends Controller
 {
     public function index()
     {
+        $izins = Izin::latest();
+        $umkms = Umkm::latest();
+        $koperasis = Koperasi::latest();
+
+        if (request('search')) {
+            $izins->where('name', 'like', '%' . request('search') . '%')->get();
+        }
+        if (request('searchUmkm')) {
+            $umkms->where('name', 'like', '%' . request('searchUmkm') . '%')->get();
+        }
+        if (request('searchKoperasi')) {
+            $koperasis->where('name', 'like', '%' . request('searchKoperasi') . '%')->get();
+        }
+
+
+
+
         return view('dashboard.pages.pengajuan.index', [
-            'umkms' => Umkm::latest()->get(),
-            'izins' => Izin::latest()->get()
+            'umkms' => $umkms->get(),
+            'izins' => $izins->get(),
+            'koperasis' => $koperasis->get()
         ]);
     }
 

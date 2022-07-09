@@ -14,7 +14,7 @@
                 </div>
             @endif
 
-            @include('dashboard.pages.pegawai.pegawai')
+            @include('dashboard.pages.pegawai.pegawai', ['pegawais' => $pegawais])
         </div>
         {{-- footer --}}
         @include('dashboard.components.footer')

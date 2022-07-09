@@ -6,13 +6,23 @@ use App\Http\Controllers\Controller;
 use App\Models\CategoryIzin;
 use App\Models\Izin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardUserIzinController extends Controller
 {
     public function surat()
     {
+
+
+        $id = Auth::user()->id;
+        $izins = Izin::where('user_id', $id);
+
+        if (request('search')) {
+            $izins->where('name', 'like', '%' . request('search') . '%')->get();
+        }
+
         return view('dashboard.pages.izin.index', [
-            // 'title' => '',
+            'izins' => $izins->get(),
             'categories' => CategoryIzin::all()
         ]);
     }

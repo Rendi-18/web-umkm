@@ -5,7 +5,7 @@
     <div class="content-wrapper ">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
-            @include('dashboard.pages.izin.surat')
+            @include('dashboard.pages.izin.surat', ['izins' => $izins, 'categories' => $categories])
         </div>
 
         {{-- footer --}}

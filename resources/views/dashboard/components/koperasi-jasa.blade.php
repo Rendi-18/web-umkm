@@ -40,7 +40,7 @@
                                 </span>
                                 Layanan
                             </p>
-                            <form action="/dashboard/umkm-service/{{ $service->id }}/unggulan" method="post">
+                            <form action="/dashboard/koperasi-jasa/{{ $service->id }}/unggulan" method="post">
                                 @method('put')
                                 @csrf
                                 <input type="hidden" class="btn-check" id="btncheck2" value="0" name="isUnggulan"

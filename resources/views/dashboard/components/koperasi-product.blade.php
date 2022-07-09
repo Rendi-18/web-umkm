@@ -10,12 +10,14 @@
         </div>
     </div>
 
+    {{-- Flash Message --}}
     @if (session()->has('successUnggulan'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('successUnggulan') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
+
     <div class="row">
         @if ($products->where('isUnggulan')->count())
             @foreach ($products->where('isUnggulan') as $product)
