@@ -1,5 +1,64 @@
 <section id="regist-koperasi">
-    <h4 class="col-6 fw-bold py-3 mb-2">Agenda Dinas</h4>
+    <h4 class="col-6 fw-bold mb-2">Agenda Dinas</h4>
+    <div class="col-12 mb-5">
+        <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Data/</span>Agenda</h4>
+        <div class="card">
+            <h5 class="card-header">Tabel Agenda Dinas</h5>
+            <form action="/dashboard/umkm" method="get" class="d-flex mx-4 mb-2">
+                <input class="form-control me-2" type="text" name="search" id="search" placeholder="Search"
+                    aria-label="Search" value="{{ request('search') }}">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+            <div class="table-responsive text-nowrap">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nama Agenda</th>
+                            <th>Lokasi</th>
+                            <th>Tanggal Pelaksanaan</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                        {{-- @foreach (Auth::user()->izin as $izin) --}}
+                        <tr>
+                            <td>ID</td>
+                            <td>Nama Agenda</td>
+                            <td>lokasi Agenda</td>
+                            <td>
+                                <span class="badge bg-label-primary me-1">
+                                    <strong>Tanggal Pelaksanaan</strong>
+                                </span>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                        data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" target="_blank" href="#" download><i
+                                                class='bx bx-edit  me-1'></i>
+                                            Edit</a>
+                                        <form id="userDelete-form" action="#" method="post">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
+                                                <i class="bx bx-x me-1"></i> Hapus
+                                            </button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        {{-- @endforeach --}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     <div class="row g-4 mb-5">
         <div class="col-lg-12">
             <div class="row">
@@ -76,7 +135,8 @@
                                             </div>
 
                                             <div class="button-wrapper">
-                                                <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                                <label for="upload" class="btn btn-primary me-2 mb-4"
+                                                    tabindex="0">
                                                     <span class="d-none d-sm-block">Upload new photo</span>
                                                     <i class="bx bx-upload d-block d-sm-none"></i>
                                                     <input type="hidden" name="oldImage" value="">
@@ -90,7 +150,8 @@
                                                         </div>
                                                     @enderror
                                                 </label>
-                                                <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                                                <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -132,61 +193,5 @@
             </div>
         </div>
     </div>
-    <div class="col-12 mb-5">
-        <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Data/</span>Agenda</h4>
-        <div class="card">
-            <h5 class="card-header">Tabel Agenda Dinas</h5>
-            <form action="/dashboard/umkm" method="get" class="d-flex mx-4 mb-2">
-                <input class="form-control me-2" type="text" name="search" id="search" placeholder="Search"
-                    aria-label="Search" value="{{ request('search') }}">
-                <button class="btn btn-outline-primary" type="submit">Search</button>
-            </form>
-            <div class="table-responsive text-nowrap">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nama Agenda</th>
-                            <th>Lokasi</th>
-                            <th>Tanggal Pelaksanaan</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-border-bottom-0">
-                        {{-- @foreach (Auth::user()->izin as $izin) --}}
-                        <tr>
-                            <td>ID</td>
-                            <td>Nama Agenda</td>
-                            <td>lokasi Agenda</td>
-                            <td><span class="badge bg-label-primary me-1"><strong>Tanggal
-                                        Pelaksanaan</strong></span>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" target="_blank" href="#" download><i
-                                                class='bx bx-edit  me-1'></i>
-                                            Edit</a>
-                                        <form id="userDelete-form" action="#" method="post">
-                                            @method('delete')
-                                            @csrf
-                                            <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
-                                                <i class="bx bx-x me-1"></i> Hapus
-                                            </button>
-                                        </form>
 
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        {{-- @endforeach --}}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 </section>

@@ -22,7 +22,7 @@
                                         class="d-block img-fluid img-fit img-preview mx-auto d-block"
                                         id="uploadedAvatar">
                                 @else
-                                    <img src="/img/elements/2.jpg" alt="user-avatar"
+                                    <img src="/img/avatars/blank_avatars.png" alt="user-avatar"
                                         class="img-preview d-block img-fluid img-fit mx-auto d-block"
                                         id="uploadedAvatar">
                                 @endif

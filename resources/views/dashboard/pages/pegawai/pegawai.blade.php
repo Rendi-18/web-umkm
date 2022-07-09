@@ -39,12 +39,12 @@
                                 <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
                                     <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
                                         class="avatar avatar-xs pull-up img-container rounded" title=""
-                                        data-bs-original-title="#">
+                                        data-bs-original-title="{{ $pegawai->name }}">
                                         @if ($pegawai->image)
                                             <img src="{{ asset('storage/' . $pegawai->image) }}" alt="Avatar"
                                                 class="img-fluid img-fi border-0t">
                                         @else
-                                            <img src="../img/avatars/5.png" alt="Avatar"
+                                            <img src="../img/avatars/blank_avatars.png" alt="Avatar"
                                                 class="img-fluid img-fit border-0">
                                         @endif
                                     </li>

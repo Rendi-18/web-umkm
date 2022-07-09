@@ -59,9 +59,9 @@
                 @include('dashboard.components.pengajuanSurat')
             </div> --}}
 
-            {{-- <div id="website" class="">
+            <div id="website" class="">
                 @include('dashboard\pages\website\index')
-            </div> --}}
+            </div>
 
 
 
@@ -80,9 +80,9 @@
                 @include('dashboard.pages.pesan.detail-pesan')
             </div> --}}
 
-            <div id="pesan" class="mt-3">
+            {{-- <div id="pesan" class="mt-3">
                 @include('dashboard.pages.pesan.pesan')
-            </div>
+            </div> --}}
 
 
 

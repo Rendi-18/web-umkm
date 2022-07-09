@@ -8,7 +8,7 @@
             <div class="col-xxl">
                 <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="mb-0">Form Tambah Pegawai</h5> <small class="text-muted float-end">PAstikan Data yang
+                        <h5 class="mb-0">Form Tambah Pegawai</h5> <small class="text-muted float-end">Pastikan Data yang
                             anda masukkan sudah benar</small>
                     </div>
                     <div class="card-body">
@@ -70,6 +70,13 @@
                                 <label class="col-sm-2 col-form-label" for="description">Foto Agenda</label>
                                 <div class="col-sm-10 px-3 pl-5">
                                     <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                        <div class="img-container img-container-sm rounded">
+
+                                            <img src="/img/avatars/blank_avatars.png" alt="user-avatar"
+                                                class="img-preview d-block img-fluid img-fit mx-auto d-block"
+                                                id="uploadedAvatar">
+
+                                        </div>
                                         <div class="button-wrapper">
                                             <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                                 <span class="d-none d-sm-block">Upload new photo</span>
@@ -88,6 +95,7 @@
                                             <img src="" class="mt-3 img-fluid img-preview" alt="">
                                             <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
