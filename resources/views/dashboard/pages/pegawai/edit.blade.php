@@ -76,11 +76,11 @@
                                                 <span class="d-none d-sm-block">Upload new photo</span>
                                                 <i class="bx bx-upload d-block d-sm-none"></i>
 
-                                                <input type="file"
+                                                <input type="hidden" name="oldImage" value="{{ $pegawai->image }}">
+                                                <input type="file" id="upload"
                                                     class="account-file-input @error('image') is-invalid @enderror"
-                                                    id="image" placeholder="Foto" name="image"
-                                                    value="{{ old('image', $pegawai->image) }}" required
-                                                    onchange="previewImage()">
+                                                    accept="image/png, image/jpeg" name="image" hidden
+                                                    onchange="previewImageUmkm()">
                                                 @error('image')
                                                     <div class="invalid-feedback text-light">
                                                         {{ $message }}

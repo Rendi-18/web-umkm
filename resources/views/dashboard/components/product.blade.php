@@ -1,7 +1,7 @@
 <section id="product-card" class="">
     <div class="row py-3 mb-4">
         <div class="col-6">
-            <h4 class="fw-bold">Produk Unggulan {{ $umkm->name }}</h4>
+            <h4 class="fw-bold">Produk Unggulan {{ $products[0]->umkm->name }}</h4>
         </div>
         {{-- <div class="col-6 d-flex ">
             <button type="button" class="btn btn-primary ms-auto">

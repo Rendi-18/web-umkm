@@ -69,82 +69,67 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="image">Foto Produk</label>
-                                {{-- <div class="col-sm-10">
-                                    <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                        id="image" placeholder="Foto" name="image" value="{{ old('image') }}"
-                                        required onchange="previewImage()">
-                                    <input type="hidden" name="oldImage" value="{{ $product->image }}">
-                                    @if ($product->image)
-                                        <img src="{{ asset('storage/' . $product->image) }}"
-                                            class="mt-3 img-fluid img-preview" alt="">
-                                    @else
-                                        <img class="mt-3 img-fluid img-preview" alt="">
-                                    @endif
-                                    @error('image')
+                                <label class="col-sm-2 col-form-label" for="description">Foto Product</label>
+                                <div class="col-sm-10 px-3 pl-5">
+                                    <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                        <div class="button-wrapper">
+                                            <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                                <span class="d-none d-sm-block">Upload new photo</span>
+                                                <i class="bx bx-upload d-block d-sm-none"></i>
+
+                                                <input type="hidden" name="oldImage" value="{{ $product->image }}">
+                                                <input type="file" id="upload"
+                                                    class="account-file-input @error('image') is-invalid @enderror"
+                                                    accept="image/png, image/jpeg" name="image" hidden
+                                                    onchange="previewImageUmkm()">
+                                                @error('image')
+                                                    <div class="invalid-feedback text-light">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </label>
+                                            <div class="img-container img-container-sm rounded-circle">
+                                                @if ($product->image)
+                                                    <img src="{{ asset('storage/' . $product->image) }}"
+                                                        alt="user-avatar"
+                                                        class="d-block img-fluid img-fit img-preview mx-auto d-block"
+                                                        id="uploadedAvatar">
+                                                @else
+                                                    <img src="/img/elements/2.jpg" alt="user-avatar"
+                                                        class="img-preview d-block img-fluid img-fit mx-auto d-block"
+                                                        id="uploadedAvatar">
+                                                @endif
+                                            </div>
+                                            <img src="" class="mt-3 img-fluid img-preview" alt="">
+                                            <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="description">Deskripsi</label>
+                                <div class="col-sm-10">
+                                    <input type="hidden" class="form-control @error('description') is-invalid @enderror"
+                                        id="description" placeholder="Deskripsi" name="description"
+                                        value="{{ old('description', $product->description) }}" required>
+                                    <trix-editor input="description"></trix-editor>
+                                    @error('description')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                </div> --}}
-                                {{-- <div class="col-sm-10 d-flex align-items-start align-items-sm-center gap-4 "> --}}
-
-                                {{-- Image --}}
-                                <div class="img-container img-container-sm rounded-circle">
-                                    @if ($product->image)
-                                        <img src="{{ asset('storage/' . $product->image) }}" alt="user-avatar"
-                                            class="d-block img-fluid img-fit img-preview mx-auto d-block"
-                                            id="uploadedAvatar">
-                                    @else
-                                        <img src="/img/elements/2.jpg" alt="user-avatar"
-                                            class="img-preview d-block img-fluid img-fit mx-auto d-block"
-                                            id="uploadedAvatar">
-                                    @endif
-                                </div>
-
-                                <div class="button-wrapper">
-                                    <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
-                                        <span class="d-none d-sm-block">Upload new photo</span>
-                                        <i class="bx bx-upload d-block d-sm-none"></i>
-                                        <input type="hidden" name="oldImage" value="{{ $product->image }}">
-                                        <input type="file" id="upload"
-                                            class="account-file-input @error('image') is-invalid @enderror"
-                                            accept="image/png, image/jpeg" name="image" hidden
-                                            onchange="previewImageUmkm()">
-                                        @error('image')
-                                            <div class="invalid-feedback text-light">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </label>
-                                    <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
                                 </div>
                             </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="description">Deskripsi</label>
-                        <div class="col-sm-10">
-                            <input type="hidden" class="form-control @error('description') is-invalid @enderror"
-                                id="description" placeholder="Deskripsi" name="description"
-                                value="{{ old('description', $product->description) }}" required>
-                            <trix-editor input="description"></trix-editor>
-                            @error('description')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
 
-                    <div class="row justify-content-end">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Send</button>
-                        </div>
+                            <div class="row justify-content-end">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Send</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
-    </div>
-    </section>
+        </section>
     </div>
 @endsection
