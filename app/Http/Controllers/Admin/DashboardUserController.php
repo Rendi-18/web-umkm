@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardUserController extends Controller
 {
@@ -69,7 +70,12 @@ class DashboardUserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view(
+            'dashboard.pages.user.edit',
+            [
+                'user' => $user,
+            ]
+        );
     }
 
     /**
@@ -81,7 +87,33 @@ class DashboardUserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $rules = [
+            'name' => 'required',
+            'username' => 'required',
+            'phonenumber' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'image' => 'image|file|max:1024',
+        ];
+
+        if ($request->email != $user->email) {
+            $rules['email'] = 'required|unique:users';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        // Image
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('img/' . $user->username . '/profile');
+        }
+
+        User::where('id', $user->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/user')->with('success', 'User has been Updated');
     }
 
     /**

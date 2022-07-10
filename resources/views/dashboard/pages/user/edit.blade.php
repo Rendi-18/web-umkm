@@ -19,7 +19,7 @@
                         <div class="card mb-4">
                             <h5 class="card-header py-3">Profile Details</h5>
                             <!-- Account -->
-                            <form id="formAccountSettings" action="/dashboard/profile/edit" method="POST"
+                            <form id="formAccountSettings" action="/dashboard/user/{{ $user->id }}" method="POST"
                                 enctype="multipart/form-data">
                                 @method('put')
                                 @csrf

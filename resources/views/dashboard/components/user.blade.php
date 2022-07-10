@@ -60,7 +60,8 @@
                                                 <i class="bx bx-dots-vertical-rounded"></i>
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="javascript:void(0);"><i
+                                                <a class="dropdown-item"
+                                                    href="/dashboard/user/{{ $user->id }}/edit"><i
                                                         class="bx bx-edit-alt me-1"></i>
                                                     Edit</a>
                                                 <form id="userDelete-form" action="/dashboard/user/{{ $user->id }}"
