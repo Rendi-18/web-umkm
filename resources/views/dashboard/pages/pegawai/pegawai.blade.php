@@ -1,7 +1,7 @@
 <section id="pegawai-table" class="">
     <div class="row py-3 mb-4">
         <div class="col-6">
-            <h4 class="fw-bold">Tabel Pegawai</h4>
+            <h4 class="fw-bold">Data Pegawai</h4>
         </div>
         <div class="col-6 d-flex ">
             <a class="ms-auto" href="/dashboard/pegawai/create">

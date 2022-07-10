@@ -1,6 +1,6 @@
 <section>
-    <div class="col-12 mb-5">
-        <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Pesan/</span> Pesan Pengunjung</h4>
+    <div class="col-12">
+        <h4 class="col-6 fw-bold py-3 mb-2">Pesan Pengunjung</h4>
         <div class="card">
             <h5 class="card-header">Tabel Pesan Pengunjung</h5>
             <div class="table-responsive text-nowrap">

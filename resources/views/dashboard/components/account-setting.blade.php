@@ -1,19 +1,22 @@
 <section id="account-setting">
-
-
-    <h4 class="fw-bold py-3 mb-4">
-        <span class="text-muted fw-light">Account Settings /</span> Account
-    </h4>
+    <nav aria-label="breadcrumb" class="fw-bold py-1 mb-4">
+        <ol class="breadcrumb breadcrumb-style2 mb-0">
+            <li class="breadcrumb-item">
+                <a href="javascript:void(0);">Account Setting</a>
+            </li>
+            <li class="breadcrumb-item active">Account </li>
+        </ol>
+    </nav>
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-4">
-                <h5 class="card-header">Profile Details</h5>
+                <h5 class="card-header py-3">Profile Details</h5>
                 <!-- Account -->
                 <form id="formAccountSettings" action="/dashboard/profile/edit" method="POST"
                     enctype="multipart/form-data">
                     @method('put')
                     @csrf
-                    <div class="card-body">
+                    <div class="card-body py-3">
                         <div class="d-flex align-items-start align-items-sm-center gap-4 ">
                             {{-- Image --}}
                             <div class="img-container img-container-sm rounded-circle">

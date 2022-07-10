@@ -1,7 +1,6 @@
 <section id="regist-koperasi">
-    <h4 class="col-6 fw-bold mb-2">Agenda Dinas</h4>
+    <h4 class="col-6 fw-bold py-3 mb-2">Agenda Dinas</h4>
     <div class="col-12 mb-5">
-        <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Data/</span>Agenda</h4>
         <div class="card">
             <h5 class="card-header">Tabel Agenda Dinas</h5>
             <form action="/dashboard/agenda" method="get" class="d-flex mx-4 mb-2">
@@ -71,6 +70,8 @@
             <div class="row">
                 <div class="col-lg mb-4">
                     <div class="card mb-4">
+                        <h5 class="card-header">Form Penambahan Agenda</h5>
+
                         <div class="card-body">
                             <form class="" action="/dashboard/agenda" method="POST"
                                 enctype="multipart/form-data">

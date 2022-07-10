@@ -13,7 +13,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            {{-- @can('admin')
+            @can('admin')
                 <div id="dashboard" class="">
                     @include('dashboard.components.comp1', [
                         'umkms' => $umkms,
@@ -30,7 +30,7 @@
                         'koperasis' => Auth::user()->koperasi,
                     ])
                 </div>
-            @endcan --}}
+            @endcan
 
 
 

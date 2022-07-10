@@ -1,10 +1,11 @@
 <section id="regist-koperasi">
-    <h4 class="col-6 fw-bold py-3 mb-2">Pengajuan Surat</h4>
-    <div class="row g-4 mb-5">
+    <h4 class="col-6 fw-bold pb-2 mb-2">Pengajuan Surat</h4>
+    <div class="row g-4 mb-3">
         <div class="col-lg-12">
             <div class="row">
-                <div class="col-lg mb-4">
-                    <div class="card mb-4">
+                <div class="col-lg">
+                    <div class="card">
+                        <h5 class="card-header">Form Pengajuan Perizinan</h5>
                         <div class="card-body">
                             <form class="" action="/dashboard/izin/surat" method="POST"
                                 enctype="multipart/form-data">

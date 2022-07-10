@@ -1,9 +1,19 @@
 @extends('layouts.dashboard')
 @section('content')
     <section id="form-regist-koperasi" class="container">
-        <h4 class="col-6 fw-bold py-3 mb-4"><span class="text-muted fw-light">From/</span> Registrasi</h4>
 
         <div class="col-xxl">
+            <nav aria-label="breadcrumb ">
+                <ol class="breadcrumb breadcrumb-style2 my-3 mb-4">
+                    <li class="breadcrumb-item">
+                        <a href="javascript:void(0);">Pengajuan</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="javascript:void(0);">Registrasi</a>
+                    </li>
+                    <li class="breadcrumb-item active">Koperasi</li>
+                </ol>
+            </nav>
             <div class="card mb-4">
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <h5 class="mb-0">Registrasi Koperasi</h5> <small class="text-muted float-end">Pastikan data yang anda
@@ -159,7 +169,7 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 form-label" for="description">Deskripsi</label>
                             <div class="col-sm-10">
-                                <div class="input-group input-group-merge d-flex-row">
+                                <div class="input-group input-group-merge d-flex-row flex-column">
                                     <input type="hidden" name="description" id="description"
                                         class="form-control phone-mask @error('description') is-invalid @enderror"
                                         placeholder="Description" aria-label="658 799 8941"

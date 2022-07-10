@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('phonenumber');
             $table->string('address');
             $table->string('map');
-            $table->string('iframe');
+            $table->text('iframe');
             $table->timestamps();
         });
     }

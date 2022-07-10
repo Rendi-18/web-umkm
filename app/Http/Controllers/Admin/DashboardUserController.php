@@ -22,7 +22,7 @@ class DashboardUserController extends Controller
             $users->where('name', 'like', '%' . request('search') . '%')->get();
         }
         return view(
-            'dashboard.pages.user',
+            'dashboard.pages.user.user',
             [
                 'users' => $users->get(),
             ]

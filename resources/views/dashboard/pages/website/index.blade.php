@@ -8,17 +8,7 @@
         <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">
                 <section id="identity">
-                    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Koperasi/</span> Profile</h4>
-
-                    <div aria-label="breadcrumb" class="g-2 mb-2">
-                        <ol class="breadcrumb breadcrumb-style2 mb-0">
-                            <li class="breadcrumb-item">
-                                <a href="javascript:void(0);">Dashboard</a>
-                            </li>
-                            <li class="breadcrumb-item">Website </li>
-                            <li class="breadcrumb-item active">Website Setting</li>
-                        </ol>
-                    </div>
+                    <h4 class="col-6 fw-bold py-3 mb-2">Website Setting</h4>
                     <div class="row mb-5">
                         <div class="col-md-12">
                             <div class="card mb-4">
@@ -167,8 +157,7 @@
                                                 <input class="form-control @error('iframe') is-invalid @enderror"
                                                     type="text" id="iframe" name="iframe"
                                                     value="{{ old('map', $website[0]->iframe) }}">
-                                                <div class="form-text"> You can use letters, numbers &amp; periods
-                                                </div>
+                                                <div class="form-text"> Salin link embed iframe dari google maps</div>
                                                 @error('iframe')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -179,7 +168,8 @@
 
 
                                             <div class="mt-2">
-                                                <button type="submit" class="btn btn-primary me-2">Save
+                                                <button type="submit" class="btn btn-primary me-2"> <i
+                                                        class="bx bx-save"></i> Save
                                                     changes</button>
                                                 {{-- <button type="reset" class="btn btn-outline-secondary">Cancel</button> --}}
                                             </div>
