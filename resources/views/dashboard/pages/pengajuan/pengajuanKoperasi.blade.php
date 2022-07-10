@@ -32,13 +32,29 @@
                                                     <strong>20202056</strong>
                                                 </td>
                                                 <td>
-                                                    <strong>Koperasi</strong>
+                                                    <strong>{{ $koperasi->categoryKoperasi->category }}</strong>
                                                 </td>
                                                 <td>
                                                     <strong>{{ $koperasi->name }}</strong>
                                                 </td>
                                                 <td>{{ $koperasi->user->name }}</td>
-                                                <td><span class="badge bg-label-warning me-1">Pending</span></td>
+                                                <td>
+                                                    @if ($koperasi->status == 0)
+                                                        <div class="spinner-border spinner-border-sm text-warning"
+                                                            role="status">
+                                                            <span class="visually-hidden">Loading...</span>
+                                                        </div><span
+                                                            class="ms-2 badge bg-label-warning me-1">Pending</span>
+                                                    @elseif ($koperasi->status == 1)
+                                                        <span class="text-info"><strong><i
+                                                                    class="bx bx-check me-1"></i></strong></span>
+                                                        <span class="badge bg-label-info me-1">Aproved</span>
+                                                    @else
+                                                        <span class="text-danger"><strong>
+                                                                <i class="bx bx-x me-1"></i></strong></span>
+                                                        <span class="badge bg-label-danger me-1">Ditolak</span>
+                                                    @endif
+                                                </td>
                                                 <td>
                                                     <div class="dropdown">
                                                         <button type="button"
@@ -47,21 +63,29 @@
                                                             <i class="bx bx-dots-vertical-rounded"></i>
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-check me-1"></i>
-                                                                Aprove</a>
                                                             <form id="userDelete-form"
-                                                                action="/dashboard/user/{{ $koperasi->id }}"
+                                                                action="/dashboard/pengajuan/koperasi/{{ $koperasi->id }}"
                                                                 method="post">
-                                                                @method('delete')
+                                                                @method('put')
                                                                 @csrf
+                                                                <input type="hidden" name="status" value="1">
                                                                 <button class="dropdown-item"
-                                                                    onclick="return confirm('Apa anda yakin user dinonaktifkan secara permanen?')">
+                                                                    onclick="return confirm('Apa anda yakin?')">
+                                                                    <i class="bx bx-check me-1"></i> aproved
+                                                                </button>
+                                                            </form>
+                                                            <form id="userDelete-form"
+                                                                action="/dashboard/pengajuan/koperasi/{{ $koperasi->id }}"
+                                                                method="post">
+                                                                @method('put')
+                                                                @csrf
+                                                                <input type="hidden" name="status" value="2">
+                                                                <button class="dropdown-item"
+                                                                    onclick="return confirm('Apa anda yakin?')">
                                                                     <i class="bx bx-x me-1"></i> Unaproved
                                                                 </button>
                                                             </form>
                                                         </div>
-                                                    </div>
                                                 </td>
                                             </tr>
                                         @endforeach

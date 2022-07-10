@@ -19,7 +19,12 @@
             </li>
         </ul>
     </li>
-    <li class="menu-item {{ Request::is('dashboard/profile') ? 'active open' : '' }}">
+    <li
+        class="menu-item
+    {{ Request::is('dashboard/izin*') ? 'active open' : '' }}
+    {{ Request::is('dashboard/register/umkm') ? 'active open' : '' }}
+    {{ Request::is('dashboard/register/koperasi') ? 'active open' : '' }}
+    ">
         <a href="/dashboard/profile" class="menu-link menu-toggle ">
             <i class="menu-icon tf-icons bx bx-paper-plane"></i>
             <div data-i18n="Pengajuan">Pengajuan</div>
@@ -32,9 +37,16 @@
             </li>
         </ul>
         <ul class="menu-sub ">
-            <li class="menu-item {{ Request::is('dashboard/izin*') ? 'active' : '' }}">
-                <a href="/dashboard/izin/register" class="menu-link ">
+            <li class="menu-item {{ Request::is('dashboard/register/umkm') ? 'active' : '' }}">
+                <a href="/dashboard/register/umkm" class="menu-link ">
                     <div data-i18n="Pengajuan Surat">Pengajuan UMKM</div>
+                </a>
+            </li>
+        </ul>
+        <ul class="menu-sub ">
+            <li class="menu-item {{ Request::is('dashboard/register/koperasi') ? 'active' : '' }}">
+                <a href="/dashboard/register/koperasi" class="menu-link ">
+                    <div data-i18n="Pengajuan Surat">Pengajuan Koperasi</div>
                 </a>
             </li>
         </ul>
@@ -44,12 +56,12 @@
         <span class="menu-header-text">UMKM</span>
     </li>
 
-    @foreach (Auth::user()->umkm as $umkm)
-        @if ($umkm->count())
-            <li class="menu-item {{ Request::is('dashboard/umkm/' . $umkm->id . '*') ? 'active open' : '' }}">
+    @if (Auth::user()->umkm->where('status', 1)->count())
+        @foreach (Auth::user()->umkm->where('status', 1) as $umkm)
+            <li class="menu-item {{ Request::is('dashboard/umkm/' . $umkm->id . '/*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-store"></i>
-                    <div data-i18n="Account Settings">U{{ $umkm->name }}</div>
+                    <div data-i18n="Account Settings">{{ $umkm->name }}</div>
                 </a>
                 <ul class="menu-sub">
                     <li
@@ -72,21 +84,21 @@
                     </li>
                 </ul>
             </li>
-        @else
-            <li class="menu-item">
-                <a href="/dashboard" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-no-entry"></i>
-                    <div data-i18n="Analytics">Anda Belum Memiliki UMKM</div>
-                </a>
-            </li>
-        @endif
-    @endforeach
-    <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">Koperasi</span>
-    </li>
+        @endforeach
+    @else
+        <li class="menu-item">
+            <a href="/dashboard" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-no-entry"></i>
+                <div data-i18n="Analytics">Anda Belum Memiliki UMKM</div>
+            </a>
+        </li>
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Koperasi</span>
+        </li>
+    @endif
 
-    @foreach (Auth::user()->koperasi as $koperasi)
-        @if ($koperasi->count())
+    @if (Auth::user()->koperasi->where('status', 1)->count())
+        @foreach (Auth::user()->koperasi->where('status', 1) as $koperasi)
             <li
                 class="menu-item {{ Request::is('dashboard/koperasi/' . $koperasi->id . '*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -124,13 +136,13 @@
                     </li>
                 </ul>
             </li>
-        @else
-            <li class="menu-item">
-                <a href="#" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-no-entry"></i>
-                    <div data-i18n="Analytics">Anda Belum Memiliki Koperasi</div>
-                </a>
-            </li>
-        @endif
-    @endforeach
+        @endforeach
+    @else
+        <li class="menu-item">
+            <a href="#" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-no-entry"></i>
+                <div data-i18n="Analytics">Anda Belum Memiliki Koperasi</div>
+            </a>
+        </li>
+    @endif
 </ul>

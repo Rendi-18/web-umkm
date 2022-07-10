@@ -127,7 +127,7 @@
                                     <input type="text" name="address" id="address" class="form-control phone-mask "
                                         placeholder="Address" aria-label="658 799 8941"
                                         aria-describedby="basic-icon-default-address" value="Bandar Lampung" required>
-                                    @error('address')
+                                    @error('city')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

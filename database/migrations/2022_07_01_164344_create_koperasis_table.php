@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('member')->nullable();
             $table->string('employee')->nullable();
             $table->string('image')->nullable();
-            $table->boolean('isActive')->default(false);
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

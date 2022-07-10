@@ -39,7 +39,21 @@
                                     </td>
                                     <td>{{ $umkm->address }}</td>
                                     <td>{{ $umkm->user->name }}</td>
-                                    <td><span class="badge bg-label-primary me-1">Active</span></td>
+                                    <td>
+                                        @if ($umkm->status == 0)
+                                            <div class="spinner-border spinner-border-sm text-warning" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div><span class="ms-2 badge bg-label-warning me-1">Pending</span>
+                                        @elseif ($umkm->status == 1)
+                                            <span class="text-info"><strong><i
+                                                        class="bx bx-check me-1"></i></strong></span>
+                                            <span class="badge bg-label-info me-1">Aproved</span>
+                                        @else
+                                            <span class="text-danger"><strong>
+                                                    <i class="bx bx-x me-1"></i></strong></span>
+                                            <span class="badge bg-label-danger me-1">Ditolak</span>
+                                        @endif
+                                    </td>
                                     <td>
                                         <div class="dropdown">
                                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow"

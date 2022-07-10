@@ -13,8 +13,17 @@ class DashboardProductKoperasiController extends Controller
     // GET
     public function index(Koperasi $koperasi)
     {
+
+        $id = $koperasi->id;
+        $products = ProductKoperasi::where('koperasi_id', $id);
+
+        if (request('search')) {
+            $products->where('name', 'like', '%' . request('search') . '%')->get();
+        }
+
         return view('dashboard.pages.koperasi-product.index', [
-            'products' => $koperasi->product,
+            'products' => $products->get(),
+            'koperasi' => $koperasi
         ]);
     }
 

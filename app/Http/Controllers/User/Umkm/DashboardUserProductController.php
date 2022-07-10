@@ -14,11 +14,19 @@ class DashboardUserProductController extends Controller
     // Read GET
     public function index(Umkm $umkm)
     {
+        $id = $umkm->id;
+        $products = Product::where('umkm_id', $id);
+
+        if (request('search')) {
+            $products->where('name', 'like', '%' . request('search') . '%')->get();
+        }
+
         $this->authorize(ability: 'view', arguments: $umkm);
         return view(
             'dashboard.pages.umkm-product.index',
             [
-                'products' => $umkm->product,
+                'products' => $products->get(),
+                'umkm' => $umkm
                 // 'title' => 'product'
             ]
         );

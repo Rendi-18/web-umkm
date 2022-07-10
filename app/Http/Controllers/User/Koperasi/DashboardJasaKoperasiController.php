@@ -6,15 +6,26 @@ use App\Http\Controllers\Controller;
 use App\Models\JasaKoperasi;
 use Illuminate\Http\Request;
 use App\Models\Koperasi;
+use App\Models\ProductKoperasi;
 use Illuminate\Support\Facades\Storage;
 
 class DashboardJasaKoperasiController extends Controller
 {
+
     // GET
     public function index(Koperasi $koperasi)
     {
+
+        $id = $koperasi->id;
+        $services = JasaKoperasi::where('koperasi_id', $id);
+
+        if (request('search')) {
+            $services->where('name', 'like', '%' . request('search') . '%')->get();
+        }
+
         return view('dashboard.pages.koperasi-jasa.index', [
-            'services' => $koperasi->jasa,
+            'services' => $services->get(),
+            'koperasi' => $koperasi
         ]);
     }
 

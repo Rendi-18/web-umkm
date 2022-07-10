@@ -7,7 +7,10 @@
 
         <div class="container-xxl flex-grow-1 container-p-y">
             <div id="dashboard" class="">
-                @include('dashboard.components.koperasi-jasa')
+                @include('dashboard.components.koperasi-jasa', [
+                    'koperasi' => $koperasi,
+                    'services' => $services,
+                ])
             </div>
         </div>
         <!-- footer -->

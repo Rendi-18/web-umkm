@@ -37,7 +37,7 @@ class DashboardPengajuanController extends Controller
         ]);
     }
 
-    public function aproved(Request $request, Umkm $umkm)
+    public function aprovedUmkm(Request $request, Umkm $umkm)
     {
         $rules = [
             'status' => 'required',
@@ -50,6 +50,22 @@ class DashboardPengajuanController extends Controller
             ->update($validatedData);
 
         return redirect('/dashboard/pengajuan')->with('success', 'UMKM has been Updated');
+    }
+
+
+    public function aprovedKoperasi(Request $request, Koperasi $koperasi)
+    {
+        $rules = [
+            'status' => 'required',
+        ];
+
+        $validatedData = $request->validate($rules);
+        $validatedData['id'] = $koperasi->id;
+
+        Koperasi::where('id', $koperasi->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/pengajuan')->with('success', 'Kooperasi has been Updated');
     }
 
     public function izin(Request $request, Izin $izin)

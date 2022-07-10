@@ -6,7 +6,10 @@
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
             <div id="dashboard" class="">
-                @include('dashboard.components.koperasi-product', ['products' => $products])
+                @include('dashboard.components.koperasi-product', [
+                    'products' => $products,
+                    'koperasi' => $koperasi,
+                ])
             </div>
         </div>
         {{-- footer --}}

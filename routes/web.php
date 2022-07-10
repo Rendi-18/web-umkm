@@ -54,13 +54,15 @@ Route::get('/dashboard/profile', [DashboardController::class, 'edit'])->middlewa
 Route::put('/dashboard/profile/edit', [DashboardController::class, 'update'])->middleware('auth');
 Route::delete('/dashboard/profile', [DashboardController::class, 'destroy'])->middleware('auth');
 
+// Dashboard pengajuan
 Route::get('/dashboard/izin/surat', [DashboardUserIzinController::class, 'surat'])->middleware('auth');
 Route::post('/dashboard/izin/surat', [DashboardUserIzinController::class, 'suratStore'])->middleware('auth');
 Route::delete('/dashboard/izin/surat/{izin}', [DashboardUserIzinController::class, 'suratDestroy'])->middleware('auth');
 
-
-
-Route::get('/dashboard/izin/register', [DashboardUserIzinController::class, 'register'])->middleware('auth');
+Route::get('/dashboard/register/umkm', [DashboardUserIzinController::class, 'umkm'])->middleware('auth');
+Route::post('/dashboard/register/umkm', [DashboardUserIzinController::class, 'umkmStore'])->middleware('auth');
+Route::get('/dashboard/register/koperasi', [DashboardUserIzinController::class, 'koperasi'])->middleware('auth');
+Route::post('/dashboard/register/koperasi', [DashboardUserIzinController::class, 'koperasiStore'])->middleware('auth');
 
 // Dashboard User UMKM Product
 Route::get('/dashboard/umkm/{umkm:id}/umkm-product', [DashboardUserProductController::class, 'index'])->middleware('auth');
@@ -110,7 +112,8 @@ Route::get('/dashboard/comp', [DashboardController::class, 'comp'])->middleware(
 
 
 // Pengajuan UMKM
-Route::put('/dashboard/pengajuan/umkm/{umkm}', [DashboardPengajuanController::class, 'aproved'])->middleware('admin');
+Route::put('/dashboard/pengajuan/umkm/{umkm}', [DashboardPengajuanController::class, 'aprovedUmkm'])->middleware('admin');
+Route::put('/dashboard/pengajuan/koperasi/{koperasi}', [DashboardPengajuanController::class, 'aprovedKoperasi'])->middleware('admin');
 Route::put('/dashboard/pengajuan/{izin}/izin', [DashboardPengajuanController::class, 'izin'])->middleware('admin');
 
 // Pegawai

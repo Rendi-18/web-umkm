@@ -27,7 +27,7 @@
                 </div>
                 <div class="mb-4">
                     <a class="btn btn-primary"
-                        href="https://mail.google.com/mail/u/axtomy9@gmail.com/?view=cm&to={{ $pesan->subject }}&su=SUBJECT&body=BODY"
+                        href="https://mail.google.com/mail/u/axtomy9@gmail.com/?view=cm&to={{ $pesan->email }}&su=SUBJECT&body=BODY"
                         target="_blank"><span>
                             <i class="bx bx-mail-send "></i>&nbsp; Balas pesan
                         </span>

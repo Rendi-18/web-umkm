@@ -1,45 +1,28 @@
 @extends('layouts.dashboard')
-
 @section('content')
-    <section id="form-edit" class="container">
-        <h4 class="col-6 fw-bold py-3 mb-4"><span class="text-muted fw-light">From/</span> Edit profile</h4>
-
-
+    <section id="form-regist-koperasi" class="container">
+        <h4 class="col-6 fw-bold py-3 mb-4"><span class="text-muted fw-light">From/</span> Registrasi</h4>
 
         <div class="col-xxl">
             <div class="card mb-4">
                 <div class="card-header d-flex align-items-center justify-content-between">
-                    <h5 class="mb-0">Edit Profile</h5> <small class="text-muted float-end">Pastikan data yang anda
+                    <h5 class="mb-0">Registrasi Koperasi</h5> <small class="text-muted float-end">Pastikan data yang anda
                         masukkan benar</small>
                 </div>
                 <div class="card-body">
-                    <form action="/dashboard/umkm/{{ $umkm->id }}/umkm-profile" method="POST"
-                        enctype="multipart/form-data">
-                        @method('put')
+                    <form action="/dashboard/register/koperasi" method="POST" enctype="multipart/form-data">
                         @csrf
-
                         {{-- Image --}}
                         <div class="py-3 px-3 pl-5">
                             <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                <div class="img-container img-container-sm rounded-circle">
-                                    @if ($umkm->image)
-                                        <img src="{{ asset('storage/' . $umkm->image) }}" alt="user-avatar"
-                                            class="d-block img-fluid img-fit img-preview mx-auto d-block"
-                                            id="uploadedAvatar">
-                                    @else
-                                        <img src="/img/portfolio/portfolio-7.jpg" alt="user-avatar"
-                                            class="d-block img-fluid img-fit img-preview mx-auto d-block"
-                                            id="uploadedAvatar">
-                                    @endif
-                                </div>
-
+                                <img src="/img/elements/2.jpg" alt="user-avatar" class="d-block rounded-circle img-preview"
+                                    height="100" width="100" id="uploadedAvatar">
                                 <div class="button-wrapper">
                                     <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                                         <span class="d-none d-sm-block">Upload new photo</span>
                                         <i class="bx bx-upload d-block d-sm-none"></i>
-                                        <input type="hidden" name="oldImage" value="{{ $umkm->image }}">
-                                        <input type="file" id="upload"
-                                            class="account-file-input @error('image') is-invalid @enderror"
+                                        <input type="hidden" name="oldImage" value="">
+                                        <input type="file" id="upload" class="account-file-input "
                                             accept="image/png, image/jpeg" name="image" hidden
                                             onchange="previewImageUmkm()">
                                         @error('image')
@@ -56,16 +39,13 @@
 
                         {{-- NIB/NIK --}}
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="nib">NIB</label>
+                            <label class="col-sm-2 col-form-label" for="nib">NIK</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text "><i class="bx bx-barcode"></i></span>
-                                    <input type="text" name="nib"
-                                        class="form-control @error('nib') is-invalid @enderror" id="nib"
-                                        placeholder="Name" aria-label="John Doe"
-                                        aria-describedby="basic-icon-default-fullname2"
-                                        value="{{ old('nib', $umkm->nib) }}" required>
-                                    @error('nib')
+                                    <input type="text" name="nik" class="form-control" id="nik"
+                                        placeholder="Nomor Induk Koperasi" value="{{ old('nik') }}" required>
+                                    @error('nik')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -77,15 +57,13 @@
 
                         {{-- Name --}}
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="nib">Nama</label>
+                            <label class="col-sm-2 col-form-label" for="name">Nama Koperasi</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text "><i class="bx bx-store-alt"></i></span>
-                                    <input type="text" name="name"
-                                        class="form-control @error('name') is-invalid @enderror" id="name"
-                                        placeholder="Name" aria-label="John Doe"
-                                        aria-describedby="basic-icon-default-fullname2"
-                                        value="{{ old('name', $umkm->name) }}" required>
+                                    <input type="text" name="name" class="form-control " id="name"
+                                        placeholder="Nama" aria-describedby="basic-icon-default-fullname2"
+                                        value="{{ old('name') }}" required>
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -94,6 +72,27 @@
                                 </div>
                             </div>
                         </div>
+
+                        {{-- category --}}
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="name-koperasi">Jenis Koperasi</label>
+                            <div class="col-sm-10">
+                                <div class="input-group input-group-merge">
+                                    <span class="input-group-text "><i class='bx bx-building-house'></i></span>
+                                    <select class="form-select" id="category_koperasi_id" name="category_koperasi_id">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->category }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('category_koperasi_id')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
 
                         {{-- Phonenumber --}}
                         <div class="row mb-3">
@@ -105,8 +104,8 @@
                                     <input type="text" name="phonenumber" id="phonenumber"
                                         class="form-control phone-mask @error('phonenumber') is-invalid @enderror"
                                         placeholder="+62" aria-label="658 799 8941"
-                                        aria-describedby="basic-icon-default-phone2"
-                                        value="{{ old('phonenumber', $umkm->phonenumber) }}" required>
+                                        aria-describedby="basic-icon-default-phone2" value="{{ old('phonenumber') }}"
+                                        required>
                                     @error('phonenumber')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -118,14 +117,15 @@
 
                         {{-- City --}}
                         <div class="row mb-3">
-                            <label class="col-sm-2 form-label" for="address">Kota/Kabupaten</label>
+                            <label class="col-sm-2 form-label" for="city">Kota/Kabupaten</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-merge">
                                     <span id="basic-icon-default-address" class="input-group-text"><i
                                             class='bx bx-buildings'></i></span>
-                                    <input type="text" name="address" id="address" class="form-control phone-mask "
-                                        placeholder="Address" aria-label="658 799 8941"
-                                        aria-describedby="basic-icon-default-address" value="Bandar Lampung" required>
+                                    <input type="text" name="city" id="city" class="form-control phone-mask "
+                                        placeholder="Kota/Kabupaten" aria-label=""
+                                        aria-describedby="basic-icon-default-address" value="{{ old('city') }}"
+                                        required>
                                     @error('city')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -144,9 +144,8 @@
                                             class="bx bx-map-alt"></i></span>
                                     <input type="text" name="address" id="address"
                                         class="form-control phone-mask @error('address') is-invalid @enderror"
-                                        placeholder="Address" aria-label="658 799 8941"
-                                        aria-describedby="basic-icon-default-address"
-                                        value="{{ old('address', $umkm->address) }}" required>
+                                        placeholder="Alamat" aria-label="" aria-describedby="basic-icon-default-address"
+                                        value="{{ old('address') }}" required>
                                     @error('address')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -160,12 +159,12 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 form-label" for="description">Deskripsi</label>
                             <div class="col-sm-10">
-                                <div class="input-group input-group-merge">
+                                <div class="input-group input-group-merge d-flex-row">
                                     <input type="hidden" name="description" id="description"
                                         class="form-control phone-mask @error('description') is-invalid @enderror"
                                         placeholder="Description" aria-label="658 799 8941"
-                                        aria-describedby="basic-icon-default-address"
-                                        value="{{ old('descriprion', $umkm->description) }}" required>
+                                        aria-describedby="basic-icon-default-address" value="{{ old('description') }}"
+                                        required>
                                     <trix-editor input="description"></trix-editor>
                                     @error('description')
                                         <div class="invalid-feedback">
