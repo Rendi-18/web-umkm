@@ -1,12 +1,8 @@
-<div class="row py-3 mb-4">
+<div class="row py-3 mb-2">
     <div class="col-6">
         <h4 class="fw-bold">Daftar UMKM & Koperasi</h4>
     </div>
-    <div class="col-6 d-flex ms-auto justify-content-end">
-        <button type="button" class="btn btn-primary ">
-            <span class="tf-icons bx bx-plus"></span>&nbsp; Daftarkan UMKM
-        </button>
-    </div>
+
 </div>
 
 <div class="row g-4 mb-5">

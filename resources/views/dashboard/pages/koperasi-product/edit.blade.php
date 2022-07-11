@@ -3,9 +3,17 @@
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
         <section id="product-form-create" class="">
-            <h4 class="fw-bold py-3 mb-4">
-                <span class="text-muted fw-light">Product /</span> Form Edit Product
-            </h4>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-style2 py-3 mb-4">
+                    <li class="breadcrumb-item">
+                        <a href="javascript:void(0);">Koperasi</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/dashboard/koperasi-product/{{ $product->id }}">Product</a>
+                    </li>
+                    <li class="breadcrumb-item active">Edit</li>
+                </ol>
+            </nav>
             <div class="col-xxl">
                 <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
@@ -71,23 +79,7 @@
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="image">Foto Produk</label>
-                                {{-- <div class="col-sm-10">
-                                    <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                        id="image" placeholder="Foto" name="image" value="{{ old('image') }}"
-                                        required onchange="previewImage()">
-                                    <input type="hidden" name="oldImage" value="{{ $product->image }}">
-                                    @if ($product->image)
-                                        <img src="{{ asset('storage/' . $product->image) }}"
-                                            class="mt-3 img-fluid img-preview" alt="">
-                                    @else
-                                        <img class="mt-3 img-fluid img-preview" alt="">
-                                    @endif
-                                    @error('image')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div> --}}
+
                                 <div class="col-sm-10 d-flex align-items-start align-items-sm-center gap-4 ">
                                     {{-- Image --}}
 
@@ -97,7 +89,7 @@
                                                 class="d-block img-fluid img-fit img-preview mx-auto d-block"
                                                 id="uploadedAvatar">
                                         @else
-                                            <img src="/img/elements/2.jpg" alt="user-avatar"
+                                            <img src="/img/temp/box-product.png" alt="user-avatar"
                                                 class="img-preview d-block img-fluid img-fit mx-auto d-block"
                                                 id="uploadedAvatar">
                                         @endif

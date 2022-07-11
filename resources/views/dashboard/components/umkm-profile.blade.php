@@ -1,15 +1,15 @@
 <section id="profile">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">UMKM/</span> Edit profile</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">UMKM/</span> Profile</h4>
     <div class="row g-4 mb-5">
         <div class="col-lg-12">
             <div class="card">
                 <div class="row">
                     <div class="col-4 py-5 px-5 pl-5">
-                        <div class="img-container img-container-md rounded-circle">
+                        <div class="img-container img-container-kp rounded-circle">
                             @if ($umkm->image)
                                 <img src="{{ asset('storage/' . $umkm->image) }}" class="img-pr img-fluid img-fit">
                             @else
-                                <img src="/img/portfolio/portfolio-7.jpg" class="img-pr img-fluid img-fit">
+                                <img src="/img/temp/store-temp.png" class="img-pr img-fluid img-fit">
                             @endif
                         </div>
 
@@ -17,14 +17,14 @@
                     <div class="col-8 py-5 px-5 pl-5">
                         <h3>{{ $umkm->name }}</h3>
                         <div class="row">
-                            <div class="col-12 text-truncate mw-100">
-                                <h6>{!! $umkm->description !!}</h6>
+                            <div class="col-12">
+                                <h6>{!! Str::limit($umkm->description, 200) !!}</h6>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-4">
-                                <h6><i class="bx bx-barcode"></i> : 8008808056</h6>
+                                <h6><i class="bx bx-barcode"></i> : {{ $umkm->nib }}</h6>
                             </div>
                             <div class="col-8">
                                 <h6><i class="bx bx-phone"></i> : {{ $umkm->phonenumber }}</h6>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="row">
                             <div class="col-4">
-                                <h6><i class="bx bx-buildings"></i> : Bandar Lampung</h6>
+                                <h6><i class="bx bx-buildings"></i> : {{ $umkm->city }}</h6>
                             </div>
                             <div class="col-8">
                                 <h6><i class="bx bx-map-alt"></i> : {{ $umkm->address }}</h6>

@@ -88,16 +88,30 @@
                             {{-- Foto --}}
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="image">Foto Layanan</label>
-                                <div class="col-sm-10">
-                                    <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                        id="image" placeholder="Foto" name="image" value="" required
-                                        onchange="previewImage()">
-                                    <img src="" class="mt-3 img-fluid img-preview" alt="">
-                                    @error('image')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                <div class="col-sm-10 d-flex align-items-start align-items-sm-center gap-4 ">
+                                    <div class="img-container img-container-sm rounded">
+                                        <img src="/img/temp/service-temp.png" alt="user-avatar"
+                                            class="img-preview d-block img-fluid img-fit mx-auto d-block"
+                                            id="uploadedAvatar">
+                                    </div>
+
+                                    <div class="button-wrapper">
+                                        <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                            <span class="d-none d-sm-block">Upload new photo</span>
+                                            <i class="bx bx-upload d-block d-sm-none"></i>
+                                            <input type="hidden" name="oldImage" value="{{ old('image') }}">
+                                            <input type="file" id="upload"
+                                                class="account-file-input @error('image') is-invalid @enderror"
+                                                accept="image/png, image/jpeg" name="image" hidden
+                                                onchange="previewImageUmkm()">
+                                            @error('image')
+                                                <div class="invalid-feedback text-light">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </label>
+                                        <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                                    </div>
                                 </div>
                             </div>
                             {{-- Deskripsi --}}

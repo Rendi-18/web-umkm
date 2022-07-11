@@ -97,6 +97,10 @@
         </li>
     @endif
 
+    <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Koperasi</span>
+    </li>
+
     @if (Auth::user()->koperasi->where('status', 1)->count())
         @foreach (Auth::user()->koperasi->where('status', 1) as $koperasi)
             <li

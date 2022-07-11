@@ -10,8 +10,6 @@
                             diciptakan. Jadi, jangan
                             pernah berhenti <span class="fw-bold">Berusaha.</span>
                         </p>
-
-
                     </div>
                 </div>
                 <div class="col-sm-5 text-center text-sm-left">
@@ -91,6 +89,7 @@
         </div>
     </div>
 </div>
+
 <div class="row">
     <!-- Total Revenue -->
     <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">

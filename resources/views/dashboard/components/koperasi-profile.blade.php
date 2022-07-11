@@ -9,7 +9,7 @@
                             @if ($koperasi->image)
                                 <img src="{{ asset('storage/' . $koperasi->image) }}" class="img-pr img-fluid img-fit">
                             @else
-                                <img src="/img/portfolio/portfolio-7.jpg" class="img-pr img-fluid img-fit">
+                                <img src="/img/temp/store-temp.png" class="img-pr img-fluid img-fit">
                             @endif
                         </div>
 
@@ -17,8 +17,8 @@
                     <div class="col-8 py-5 px-5 pl-5">
                         <h3>{{ $koperasi->name }}</h3>
                         <div class="row">
-                            <div class="col-12 text-truncate">
-                                <h6 class="text-truncate mw-100">{!! $koperasi->description !!}</h6>
+                            <div class="col-12 ">
+                                <h6>{!! Str::limit($koperasi->description, 200) !!}</h6>
                             </div>
                         </div>
 
@@ -37,7 +37,7 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col-4">
-                                <h6><i class="bx bx-buildings"></i> : Bandar Lampung !!sampel</h6>
+                                <h6><i class="bx bx-buildings"></i> : {{ $koperasi->city }}</h6>
                             </div>
                             <div class="col-8">
                                 <h6><i class="bx bx-map-alt"></i> : {{ $koperasi->address }}</h6>
@@ -46,13 +46,24 @@
                         <div class="row">
                             <div class="col-4">
                                 <h6 class="mb-1">Anggota</h6>
-                                <h6><i class="bx bx-group"></i> : 50 Anggota !!sampel</h6>
+                                <h6><i class="bx bx-group"></i> :
+                                    @if ($koperasi->member)
+                                        {{ $koperasi->member }}
+                                    @else
+                                        -
+                                    @endif
+                                </h6>
                             </div>
                             <div class="col-8">
                                 <h6 class="mb-1">Karyawan</h6>
                                 <h6><i class="bx
-                                    bxs-group"></i> : 12 Karyawan
-                                    !!sampel</h6>
+                                    bxs-group"></i> :
+                                    @if ($koperasi->employee)
+                                        {{ $koperasi->employee }}
+                                    @else
+                                        -
+                                    @endif
+                                </h6>
                             </div>
                         </div>
                         <hr>
@@ -83,7 +94,8 @@
                     <div class="card h-100">
                         <div class="img-container img-container-prd card-img-top">
                             @if ($jasa->image)
-                                <img class="" src="{{ asset('storage/' . $jasa->image) }}" alt="Card image cap">
+                                <img class="" src="{{ asset('storage/' . $jasa->image) }}"
+                                    alt="Card image cap">
                             @else
                                 <img class="card-img-top" src="/img/portfolio/portfolio-7.jpg" alt="Card image cap">
                             @endif

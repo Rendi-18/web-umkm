@@ -20,7 +20,7 @@
                         <tr>
                             <th>NIK</th>
                             <th>Name</th>
-                            <th>Alamat</th>
+                            <th>Kabupaten/Kota</th>
                             <th>Owner</th>
                             <th>Status</th>
                             <th>Actions</th>
@@ -31,13 +31,13 @@
                             @foreach ($koperasis as $koperasi)
                                 <tr>
                                     <td>
-                                        <strong>20202056</strong>
+                                        <strong>{{ $koperasi->nik }}</strong>
 
                                     </td>
                                     <td>
-                                        <strong>{{ $koperasi->name }}</strong>
+                                        <strong>{{ Str::limit($koperasi->name, 20) }}</strong>
                                     </td>
-                                    <td>{{ $koperasi->address }}</td>
+                                    <td>{{ $koperasi->city }}</td>
                                     <td>{{ $koperasi->user->name }}</td>
                                     <td>
                                         @if ($koperasi->status == 0)

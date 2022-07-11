@@ -9,7 +9,7 @@
                 <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
             <div class="table-responsive text-nowrap">
-                <table class="table table-hover">
+                <table class="table table-hover" id="tabel-surat">
                     <thead>
                         <tr>
                             <th>Id</th>

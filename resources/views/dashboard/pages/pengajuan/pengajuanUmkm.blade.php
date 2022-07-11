@@ -17,7 +17,6 @@
                                 <thead>
                                     <tr>
                                         <th>NIB</th>
-                                        <th>Jenis</th>
                                         <th>Name</th>
                                         <th>Owner</th>
                                         <th>Status</th>
@@ -33,10 +32,7 @@
                                                     <strong>{{ $umkm->nib }}</strong>
                                                 </td>
                                                 <td>
-                                                    <strong>{{ $umkm->jenis }}</strong>
-                                                </td>
-                                                <td>
-                                                    <strong>{{ $umkm->name }}</strong>
+                                                    <strong>{{ Str::limit($umkm->name, 20) }}</strong>
                                                 </td>
                                                 <td>{{ $umkm->user->name }}</td>
                                                 <td>

@@ -1,4 +1,3 @@
-{{-- component umkm --}}
 <div class="row">
     <div class="col-lg-8 mb-4 order-0">
         <div class="card justify-content-end h-100">
@@ -11,8 +10,6 @@
                             diciptakan. Jadi, jangan
                             pernah berhenti <span class="fw-bold">Berusaha.</span>
                         </p>
-
-
                     </div>
                 </div>
                 <div class="col-sm-5 text-center text-sm-left">
@@ -25,66 +22,79 @@
             </div>
         </div>
     </div>
-    <div class=" row col-lg-4 col-md-4 order-1 mb-4">
-        <div class="col-lg-6 col-md-12 col-6">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column">
-                    <div class="card-title d-flex align-items-start justify-content-between">
-                        <div class="avatar flex-shrink-0">
-                            <div class="icon-alt bg-label-success rounded">
-                                <i class="bx bx-store text-success"></i>
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                <a class="dropdown-item" href="javascript:void(0);">View
-                                    More</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <span class="fw-semibold d-block mb-1">UMKM & Koperasi</span>
-                    <small class="text-success fw-semibold mb-0 mt-auto">
-                        <div class="spinner-border-sm spinner-grow text-success" role="status">
-                            <span class="visually-hidden">Loading... </span>
-                        </div> <span class="ps-2">{{ $umkms->count() + $koperasis->count() }}</span>
-                    </small>
+    <div class="col-lg-4 col-md-4 order-1">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                <div class="icon-alt bg-label-success rounded">
+                                    <i class="bx bx-store text-success"></i>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                    <a class="dropdown-item" href="javascript:void(0);">View
+                                        More</a>
+                                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1">UMKM & Koperasi</span>
+                        <h4 class="card-title mb-2">Total</h4>
+                        <small class="text-success fw-semibold mb-0 mt-auto">
+                            <div class="spinner-border-sm spinner-grow text-success" role="status">
+                                <span class="visually-hidden">Loading... </span>
+                            </div> <span class="ps-2">{{ $umkms->where('status', 1)->count() }}</span>
+                        </small>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6 col-md-12 col-6">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column">
-                    <div class="card-title d-flex align-items-start justify-content-between">
-                        <div class="avatar flex-shrink-0">
-                            <div class="icon-alt bg-label-info rounded">
-                                <i class='bx bx-package text-info'></i>
+            <div class="col-lg-6 col-md-12 col-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                <div class="icon-alt bg-label-info rounded">
+                                    <i class="bx bx-package text-info"></i>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
+                                    <a class="dropdown-item" href="javascript:void(0);">View
+                                        More</a>
+                                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="dropdown">
-                            <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                                <a class="dropdown-item" href="javascript:void(0);">View
-                                    More</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                        <span class="fw-semibold d-block mb-1">Produk</span>
+                        <h4 class="card-title mb-2">Total</h4>
+                        <small class="text-info fw-semibold mb-0 mt-auto">
+                            <div class="spinner-border-sm spinner-grow text-info" role="status">
+                                <span class="visually-hidden">Loading... </span>
                             </div>
-                        </div>
+                            <span class="ps-2">
+
+                                @foreach ($umkms as $umkm)
+                                    @foreach ($umkm->product as $product)
+                                        {{ $jml += $product->count() }}
+                                    @endforeach
+                                @endforeach
+                                {{ $jml }}
+
+                            </span>
+                        </small>
                     </div>
-                    <span class="fw-semibold d-block mb-1">Produk</span>
-                    <h3 class="card-title mb-2">Total</h3>
-                    <small class="text-info fw-semibold mb-0 mt-auto">
-                        <div class="spinner-border-sm spinner-grow text-info" role="status">
-                            <span class="visually-hidden">Loading... </span>
-                        </div> <span class="ps-2">6000</span>
-                    </small>
                 </div>
             </div>
         </div>

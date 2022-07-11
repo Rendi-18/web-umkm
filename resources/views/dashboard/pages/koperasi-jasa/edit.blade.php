@@ -74,14 +74,13 @@
 
                                 <div class="col-sm-10 d-flex align-items-start align-items-sm-center gap-4 ">
                                     {{-- Image --}}
-
                                     <div class="img-container img-container-sm rounded-circle">
                                         @if ($service->image)
                                             <img src="{{ asset('storage/' . $service->image) }}" alt="user-avatar"
                                                 class="d-block img-fluid img-fit img-preview mx-auto d-block"
                                                 id="uploadedAvatar">
                                         @else
-                                            <img src="/img/elements/2.jpg" alt="user-avatar"
+                                            <img src="/img/temp/service-temp.png" alt="user-avatar"
                                                 class="img-preview d-block img-fluid img-fit mx-auto d-block"
                                                 id="uploadedAvatar">
                                         @endif

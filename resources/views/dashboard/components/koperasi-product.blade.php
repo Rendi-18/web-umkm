@@ -28,7 +28,7 @@
                                 <img class="" src="{{ asset('storage/' . $product->image) }}"
                                     alt="Card image cap">
                             @else
-                                <img class="card-img-top img-fluid" src="/img/portfolio/portfolio-7.jpg"
+                                <img class="card-img-top img-fluid" src="/img/temp/product-temp.png"
                                     alt="Card image cap">
                             @endif
                         </div>
@@ -114,7 +114,7 @@
                                                 <img src="{{ asset('storage/' . $product->image) }}" alt="Avatar"
                                                     class="img-fluid img-fi border-0t">
                                             @else
-                                                <img src="/img/portfolio/portfolio-7.jpg" alt="Avatar"
+                                                <img src="/img/temp/product-temp.png" alt="Avatar"
                                                     class="img-fluid img-fit border-0">
                                             @endif
                                         </li>

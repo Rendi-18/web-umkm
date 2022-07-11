@@ -3,7 +3,17 @@
 @section('content')
     <!-- Content wrapper -->
     <section id="form-edit" class="container">
-        <h4 class="col-6 fw-bold py-3 mb-4"><span class="text-muted fw-light">From/</span> Edit profile</h4>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-style2 py-3 mb-4">
+                <li class="breadcrumb-item">
+                    <a href="javascript:void(0);">Koperasi</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/dashboard/koperasi/{{ $koperasi->id }}/koperasi-profile">Profile</a>
+                </li>
+                <li class="breadcrumb-item active">Edit</li>
+            </ol>
+        </nav>
 
 
 
@@ -28,7 +38,7 @@
                                             class="d-block img-fluid img-fit img-preview mx-auto d-block"
                                             id="uploadedAvatar">
                                     @else
-                                        <img src="/img/portfolio/portfolio-7.jpg" alt="user-avatar"
+                                        <img src="/img/temp/store-temp.png" alt="user-avatar"
                                             class="d-block img-fluid img-fit img-preview mx-auto d-block"
                                             id="uploadedAvatar">
                                     @endif
@@ -163,8 +173,8 @@
                             <div class="col-sm-10">
                                 <div class="input-group input-group-merge">
                                     <span id="basic-icon-default-member" class="input-group-text"><i
-                                            class="bx bx-map-alt"></i></span>
-                                    <input type="text" name="member" id="member"
+                                            class="bx bx-group"></i></span>
+                                    <input type="number" name="member" id="member"
                                         class="form-control phone-mask @error('member') is-invalid @enderror"
                                         placeholder="member" aria-label="member"
                                         aria-describedby="basic-icon-default-member"
@@ -184,8 +194,8 @@
                             <div class="col-sm-10">
                                 <div class="input-group input-group-merge">
                                     <span id="basic-icon-default-employee" class="input-group-text"><i
-                                            class="bx bx-map-alt"></i></span>
-                                    <input type="text" name="employee" id="employee"
+                                            class="bx bxs-group"></i></span>
+                                    <input type="number" name="employee" id="employee"
                                         class="form-control phone-mask @error('employee') is-invalid @enderror"
                                         placeholder="Karyawan" aria-label="658 799 8941"
                                         aria-describedby="basic-icon-default-employee"

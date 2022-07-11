@@ -3,13 +3,21 @@
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
         <section id="product-form-create" class="">
-            <h4 class="fw-bold py-3 mb-4">
-                <span class="text-muted fw-light">Product /</span> Form Edit Product
-            </h4>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-style2 py-3 mb-4">
+                    <li class="breadcrumb-item">
+                        <a href="javascript:void(0);">UMKM</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/dashboard/umkm-product/{{ $product->id }}">Product</a>
+                    </li>
+                    <li class="breadcrumb-item active">Edit</li>
+                </ol>
+            </nav>
             <div class="col-xxl">
                 <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="mb-0">Form Edit Product</h5> <small class="text-muted float-end">Default label</small>
+                        <h5 class="mb-0">Form Edit Product</h5>
                     </div>
                     <div class="card-body">
                         <form action="/dashboard/umkm-product/{{ $product->id }}" method="POST"
@@ -77,7 +85,7 @@
                                                 class="d-block img-fluid img-fit img-preview mx-auto d-block"
                                                 id="uploadedAvatar">
                                         @else
-                                            <img src="/img/elements/2.jpg" alt="user-avatar"
+                                            <img src="/img/temp/product-temp.png" alt="user-avatar"
                                                 class="img-preview d-block img-fluid img-fit mx-auto d-block"
                                                 id="uploadedAvatar">
                                         @endif

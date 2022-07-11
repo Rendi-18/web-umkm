@@ -20,7 +20,7 @@
                         <tr>
                             <th>NIB</th>
                             <th>Name</th>
-                            <th>Kabupaten</th>
+                            <th>Kabupaten/Kota</th>
                             <th>Owner</th>
                             <th>Status</th>
                             <th>Actions</th>
@@ -31,13 +31,13 @@
                             @foreach ($umkms as $umkm)
                                 <tr>
                                     <td>
-                                        <strong>202056</strong>
+                                        <strong>{{ $umkm->nib }}</strong>
 
                                     </td>
                                     <td>
-                                        <strong>{{ $umkm->name }}</strong>
+                                        <strong>{{ Str::limit($umkm->name, 20) }}</strong>
                                     </td>
-                                    <td>{{ $umkm->address }}</td>
+                                    <td>{{ $umkm->city }}</td>
                                     <td>{{ $umkm->user->name }}</td>
                                     <td>
                                         @if ($umkm->status == 0)

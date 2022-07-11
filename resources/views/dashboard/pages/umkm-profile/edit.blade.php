@@ -2,8 +2,17 @@
 
 @section('content')
     <section id="form-edit" class="container">
-        <h4 class="col-6 fw-bold py-3 mb-4"><span class="text-muted fw-light">From/</span> Edit profile</h4>
-
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-style2 py-3 mb-4">
+                <li class="breadcrumb-item">
+                    <a href="javascript:void(0);">UMKM</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/dashboard/umkm/{{ $umkm->id }}/umkm-profile">Profile</a>
+                </li>
+                <li class="breadcrumb-item active">Edit</li>
+            </ol>
+        </nav>
 
 
         <div class="col-xxl">
@@ -27,7 +36,7 @@
                                             class="d-block img-fluid img-fit img-preview mx-auto d-block"
                                             id="uploadedAvatar">
                                     @else
-                                        <img src="/img/portfolio/portfolio-7.jpg" alt="user-avatar"
+                                        <img src="/img/temp/store-temp.png" alt="user-avatar"
                                             class="d-block img-fluid img-fit img-preview mx-auto d-block"
                                             id="uploadedAvatar">
                                     @endif
