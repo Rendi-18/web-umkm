@@ -13,8 +13,8 @@
                             <input class="input-no-border m-2" type="text"
                                 placeholder="Masukkan Nama UMKM/Unit Koperasi" name="search"
                                 value="{{ request('search') }}" id="search">
-                            <button class="btn btn-dark rounded-pill shadow-sm" type="submit" id="button-addon2"><i
-                                    class="bx bx-search"></i> Search</button>
+                            <button class="btn btn-primary rounded-pill shadow-sm" type="submit" id="button-addon2"><i
+                                    class="bx bx-search"></i></button>
                         </div>
                     </form>
                 </div>

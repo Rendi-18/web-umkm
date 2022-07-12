@@ -3,11 +3,7 @@
         <div class="col-6">
             <h4 class="fw-bold">Produk Unggulan {{ $koperasi->name }}</h4>
         </div>
-        <div class="col-6 d-flex ">
-            <button type="button" class="btn btn-primary ms-auto">
-                <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Produk Unggulan
-            </button>
-        </div>
+
     </div>
 
     {{-- Flash Message --}}
@@ -38,7 +34,7 @@
                             <h5 class="card-title">Product Name</h5>
                             <p class="card-text"><span class="text-success"><i class="bx bx-money"></i>
                                 </span>{{ $product->price }}</p>
-                            </span>Product Price</p>
+
                             <form action="/dashboard/koperasi-product/{{ $product->id }}/unggulan" method="post">
                                 @method('put')
                                 @csrf

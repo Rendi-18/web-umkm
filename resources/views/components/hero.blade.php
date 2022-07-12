@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                 data-aos="fade-up" data-aos-delay="200">
-                <h1>Sistem Basis Data Utama</h1>
+                <h1>{{ $website[0]->longsitename }}</h1>
                 <h2>Koperasi & UMKM Provinsi Lampung</h2>
                 <div class="d-flex justify-content-center justify-content-lg-start">
                     <img src="/img/logo-lampung.png" class="img-logo-d" alt="">

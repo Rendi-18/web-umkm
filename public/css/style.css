@@ -42,7 +42,7 @@ h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #008080;
+  background: var(--bs-dark-green);
 }
 
 #preloader:before {
@@ -50,7 +50,7 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #008080;
+  border: 6px solid var(--bs-dark-green);
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
@@ -146,7 +146,7 @@ h6 {
 }
 
 .header-search {
-  background: #008080;
+  background: var(--bs-dark-green);
 }
 
 /*--------------------------------------------------------------
@@ -197,7 +197,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #00ffba;
+  color: var(--bs-green);
 }
 
 .navbar .getstarted,
@@ -214,7 +214,7 @@ h6 {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #00ffba;
+  background: var(--bs-green);
 }
 
 .navbar .dropdown ul {
@@ -358,7 +358,7 @@ h6 {
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
   margin: 15px;
-  color: #008080;
+  color: var(--bs-dark-green);
 }
 
 .navbar-mobile .dropdown ul {
@@ -401,7 +401,7 @@ h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: #008080;
+  background: var(--bs-dark-green);
 }
 
 #hero .container {
@@ -433,7 +433,7 @@ h6 {
   transition: 0.5s;
   margin: 10px 0 0 0;
   color: #fff;
-  background: #00ffba;
+  background: var(--bs-green);
 }
 
 #hero .btn-get-started:hover {
@@ -558,7 +558,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #008080;
+  color: var(--bs-dark-green);
 }
 
 .section-title h2::before {
@@ -578,7 +578,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #00ffba;
+  background: var(--bs-green);
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -1148,9 +1148,9 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Team
+# Employee
 --------------------------------------------------------------*/
-.team .member {
+.employee .member {
   position: relative;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -1159,32 +1159,32 @@ section {
   transition: 0.5s;
 }
 
-.team .member .pic {
+.employee .member .pic {
   overflow: hidden;
   width: 180px;
   border-radius: 50%;
 }
 
-.team .member .pic img {
+.employee .member .pic img {
   transition: ease-in-out 0.3s;
 }
 
-.team .member:hover {
+.employee .member:hover {
   transform: translateY(-10px);
 }
 
-.team .member .member-info {
+.employee .member .member-info {
   padding-left: 30px;
 }
 
-.team .member h4 {
+.employee .member h4 {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
   color: var(--bs-dark-green);
 }
 
-.team .member span {
+.employee .member span {
   display: block;
   font-size: 15px;
   padding-bottom: 10px;
@@ -1192,7 +1192,7 @@ section {
   font-weight: 500;
 }
 
-.team .member span::after {
+.employee .member span::after {
   content: "";
   position: absolute;
   display: block;
@@ -1203,19 +1203,19 @@ section {
   left: 0;
 }
 
-.team .member p {
+.employee .member p {
   margin: 10px 0 0 0;
   font-size: 14px;
 }
 
-.team .member .social {
+.employee .member .social {
   margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.team .member .social a {
+.employee .member .social a {
   transition: ease-in-out 0.3s;
   display: flex;
   align-items: center;
@@ -1226,21 +1226,21 @@ section {
   background: #eff2f8;
 }
 
-.team .member .social a i {
+.employee .member .social a i {
   color: var(--bs-dark-green);
   font-size: 16px;
   margin: 0 2px;
 }
 
-.team .member .social a:hover {
+.employee .member .social a:hover {
   background: var(--bs-green);
 }
 
-.team .member .social a:hover i {
+.employee .member .social a:hover i {
   color: #fff;
 }
 
-.team .member .social a+a {
+.employee .member .social a+a {
   margin-left: 8px;
 }
 
@@ -1713,7 +1713,7 @@ section {
   padding: 0;
   line-height: 1;
   font-weight: 600;
-  color: #008080;
+  color: var(--bs-dark-green);
 }
 
 #search .container form {
@@ -1741,7 +1741,7 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #00ffba;
+  background: var(--bs-green);
   color: #fff;
   transition: 0.3s;
   border-radius: 50px;
@@ -1749,7 +1749,16 @@ section {
 }
 
 #search .container form input[type=submit]:hover {
-  background: #008080;
+  background: var(--bs-dark-green);
+}
+
+#search .btn {
+  background: var(--bs-green);
+  border: none;
+}
+
+#search .btn:hover {
+  background: var(--bs-dark-green);
 }
 
 @media (max-width: 991px) {
@@ -1979,7 +1988,7 @@ section {
 
 #identity span .val {
   font-weight: 600;
-  color: #008080;
+  color: var(--bs-dark-green);
 }
 
 .identity .image-identity {
@@ -2020,4 +2029,12 @@ section {
 
 .prod-container .jdl {
   margin: 1.2% 0;
+}
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+.text-justify {
+  text-align: justify;
 }

@@ -8,8 +8,7 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     {{-- Favicons --}}
-    <link href="/img/favicon.png" rel="icon">
-    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/img/favicon/favicon.ico" rel="icon">
 
     {{-- Google Fonts --}}
     <link

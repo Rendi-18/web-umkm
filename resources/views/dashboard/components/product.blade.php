@@ -3,11 +3,7 @@
         <div class="col-6">
             <h4 class="fw-bold">Produk Unggulan {{ $umkm->name }}</h4>
         </div>
-        {{-- <div class="col-6 d-flex ">
-            <button type="button" class="btn btn-primary ms-auto">
-                <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Produk Unggulan
-            </button>
-        </div> --}}
+
     </div>
 
     @if (session()->has('successUnggulan'))

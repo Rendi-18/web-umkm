@@ -3,11 +3,7 @@
         <div class="col-6">
             <h4 class="fw-bold">Layanan Unggulan {{ $koperasi->name }} </h4>
         </div>
-        <div class="col-6 d-flex ">
-            <button type="button" class="btn btn-primary ms-auto">
-                <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Layanan Unggulan
-            </button>
-        </div>
+
     </div>
 
     @if (session()->has('successUnggulan'))

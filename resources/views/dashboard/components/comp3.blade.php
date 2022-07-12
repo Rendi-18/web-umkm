@@ -85,12 +85,12 @@
                             </div>
                             <span class="ps-2">
 
-                                @foreach ($umkms as $umkm)
+                                {{-- @foreach ($umkms as $umkm)
                                     @foreach ($umkm->product as $product)
                                         {{ $jml += $product->count() }}
                                     @endforeach
                                 @endforeach
-                                {{ $jml }}
+                                {{ $jml }} --}}
 
                             </span>
                         </small>

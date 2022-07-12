@@ -4,17 +4,16 @@
 
         <div class="section-title">
             <h2>Services</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
-                sit in iste officiis commodi quidem hic quas.</p>
+            <p>Sibadu membantu para pengusaha medaftarkan usahanya dalam data kepemerintahan, serta memberikan akses
+                terhadap pengajuan surat izi usaha yang di perlukan secara oline</p>
         </div>
 
         <div class="row">
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box">
                     <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                    <h4><a href="">Lorem Ipsum</a></h4>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                    <h4><a href="">Pendataan</a></h4>
+                    <p>Pendataan Usaha kedalam data pemerintahan</p>
                 </div>
             </div>
 
@@ -22,8 +21,8 @@
                 data-aos-delay="200">
                 <div class="icon-box">
                     <div class="icon"><i class="bx bx-file"></i></div>
-                    <h4><a href="">Sed ut perspici</a></h4>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                    <h4><a href="">Perizinan</a></h4>
+                    <p>Pengajuan perizinan secara online kepada dinas pemerintahan</p>
                 </div>
             </div>
 
@@ -31,8 +30,8 @@
                 data-aos-delay="300">
                 <div class="icon-box">
                     <div class="icon"><i class="bx bx-tachometer"></i></div>
-                    <h4><a href="">Magni Dolores</a></h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                    <h4><a href="">Pemasaran</a></h4>
+                    <p>Membantu pemasaran produk serta layanan yang dimiliki UMKM ataupun KOPERASI</p>
                 </div>
             </div>
 
@@ -40,8 +39,8 @@
                 data-aos-delay="400">
                 <div class="icon-box">
                     <div class="icon"><i class="bx bx-layer"></i></div>
-                    <h4><a href="">Nemo Enim</a></h4>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                    <h4><a href="">Pusat Informasi</a></h4>
+                    <p>Pusat informasi mengenai agenda dinas serta kebijakan terbaru</p>
                 </div>
             </div>
 
