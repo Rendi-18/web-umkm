@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Koperasi;
+use App\Models\Pegawai;
 use App\Models\Product;
 use App\Models\Umkm;
 use App\Models\Website;
@@ -15,7 +16,8 @@ class HomeController extends Controller
         return view('pages.home', [
             'umkms' => Umkm::orderBy('created_at', 'desc')->take(8)->get(),
             'koperasis' => Koperasi::orderBy('created_at', 'desc')->take(8)->get(),
-            'website' => Website::latest()->get()
+            'website' => Website::latest()->get(),
+            'pegawais' => Pegawai::latest()->take(4)->get()
         ]);
     }
     public function search()

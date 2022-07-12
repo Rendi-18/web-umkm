@@ -8,6 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    @php
+        $website = DB::table('websites')->get();
+    @endphp
+
     <title>{{ $website[0]->title }} Dashboard</title>
 
     @include('configs.css-dashboard')
