@@ -1162,11 +1162,15 @@ section {
 .employee .member .pic {
   overflow: hidden;
   width: 180px;
+  height: 180px;
   border-radius: 50%;
 }
 
 .employee .member .pic img {
   transition: ease-in-out 0.3s;
+  object-fit: cover;
+  object-position: center center;
+  height: 100%;
 }
 
 .employee .member:hover {

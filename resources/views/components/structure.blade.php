@@ -17,19 +17,13 @@
                             @if ($pegawai->image)
                                 <img src="{{ asset('storage/' . $pegawai->image) }}" class="img-fluid" alt="">
                             @else
-                                <img src="/img/team/team-1.jpg" class="img-fluid" alt="">
+                                <img src="img\portfolio\portfolio-9.jpg" class="img-fluid" alt="">
                             @endif
                         </div>
                         <div class="member-info">
                             <h4>{{ $pegawai->name }}</h4>
                             <span>{{ $pegawai->position }}</span>
                             <p>{{ $pegawai->classification }}</p>
-                            <div class="social">
-                                <a href=""><i class="ri-twitter-fill"></i></a>
-                                <a href=""><i class="ri-facebook-fill"></i></a>
-                                <a href=""><i class="ri-instagram-fill"></i></a>
-                                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                            </div>
                         </div>
                     </div>
                 </div>

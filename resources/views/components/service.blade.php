@@ -3,7 +3,7 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Services</h2>
+            <h2>Layanan Kami</h2>
             <p>Sibadu membantu para pengusaha medaftarkan usahanya dalam data kepemerintahan, serta memberikan akses
                 terhadap pengajuan surat izi usaha yang di perlukan secara oline</p>
         </div>
