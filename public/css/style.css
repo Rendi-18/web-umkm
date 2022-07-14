@@ -1777,8 +1777,53 @@ section {
   max-height: 40px;
 }
 
+#input-g .m-initial {
+  margin: initial;
+  margin-right: -1px !important;
+}
+
+#input-g form label.x {
+  border: 1px solid #ced4da;
+  justify-content: center center;
+  background: white;
+
+}
+
+#input-g form label.active {
+  border: 1px solid #ced4da;
+  justify-content: center center;
+  background: white;
+}
+
 .shad-none:focus {
   box-shadow: none;
+}
+
+.itm-s {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  margin-right: -1px;
+  border-radius: .375rem;
+}
+
+.itm-e {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  margin-right: -1px;
+  border-radius: .375rem;
+}
+
+label.active {
+  background: var(--bs-green) !important;
+}
+
+label.active span {
+  color: white;
+  font-weight: bold;
+}
+
+#search-p #search {
+  padding-top: 1rem !important;
 }
 
 

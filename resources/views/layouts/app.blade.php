@@ -32,6 +32,7 @@
     </a>
 
     @include('configs.js')
+    @include('components.footer')
 
 </body>
 

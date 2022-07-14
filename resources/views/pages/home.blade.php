@@ -9,6 +9,5 @@
         @include('components.umkm')
         @include('components.structure')
         @include('components.contact')
-        @include('components.footer')
     </main>
 @endsection

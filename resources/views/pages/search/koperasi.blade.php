@@ -10,11 +10,11 @@
                     <li>Inner Page</li>
                 </ol>
                 <h2>Search</h2>
-                @include('components.search')
-                <section id="card-um" class="card-um">
-                    <ul id="card-um-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                        <li data-filter=".filter-koperasi" class="filter-active">KOPERASI</li>
-                    </ul>
+                <div id="search-p">
+                    @include('components.search')
+                </div>
+
+                <div id="card-um" class="card-um">
                     @if ($koperasis->count())
                         <div class="row card-um-container" data-aos="fade-up" data-aos-delay="200">
                             @foreach ($koperasis as $koperasi)
@@ -36,7 +36,7 @@
                     @else
                         <h1 class="text-center">Not Found :(</h1>
                     @endif
-                </section>
+                </div>
                 <div class="d-flex justify-content-center pt-3">
                     {{ $koperasis->links('components.paginator') }}
                 </div>

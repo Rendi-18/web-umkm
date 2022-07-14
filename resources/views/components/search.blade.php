@@ -1,7 +1,7 @@
 <!-- ======= Search Section ======= -->
 <section id="search" class="why-us section-bg">
     <div class="container" data-aos="fade-up">
-        <div class="section-title {{ Request::is('search') ? 'd-none' : '' }}">
+        <div class="section-title {{ Request::is('search*') ? 'd-none' : '' }}">
             <h2>Search</h2>
         </div>
         <div class="row-content">
@@ -11,30 +11,40 @@
                     <div id="input-g"class="input-group">
                         @if (Request::is('search/umkm*'))
                             <form action="/search/umkm" method="get" id="formSearch" class="row p-0 input-group">
-                                <select class="form-select input-no-border col-3 shad-none"
-                                    placeholder="Masukkan Nama UMKM/Unit Koperasi" name="search"
-                                    value="{{ request('search') }}" id="search">
-                                    <option>Default select</option>
+                                <div role="group" aria-label="Basic radio toggle button group"
+                                    class="col-3 row p-0 m-initial">
                                     @if (Request::is('search/umkm*'))
-                                        <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                            id="umkmSearch">UMKM</option>
-                                        <option class="list-group-item dropdown-item d-flex align-items-center"
+                                        <label
+                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex active"id="umkmSearch"
+                                            for="umkmSearch">
+                                            <span class="m-auto">UMKM</span>
+                                        </label>
+                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
                                             id="koperasiSearch">
-                                            Koperasi</option>
+                                            <span class="m-auto">Koperasi</span>
+                                        </label>
                                     @elseif (Request::is('search/koperasi*'))
-                                        <option class="list-group-item dropdown-item d-flex align-items-center"
-                                            id="umkmSearch">
-                                            UMKM</option>
-                                        <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                            id="koperasiSearch">Koperasi</option>
+                                        <label
+                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            for="umkmSearch">
+                                            <span class="m-auto">UMKM</span>
+                                        </label>
+                                        <label class="x btn-outline-primary shad-none col-6 d-flex active"
+                                            for="koperasiSearch" id="koperasiSearch">
+                                            <span class="m-auto">Koperasi</span>
+                                        </label>
                                     @else
-                                        <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                            id="umkmSearch">UMKM</option>
-                                        <option class="list-group-item dropdown-item d-flex align-items-center"
+                                        <label
+                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            for="umkmSearch">
+                                            <span class="m-auto">UMKM</span>
+                                        </label>
+                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
                                             id="koperasiSearch">
-                                            Koperasi</option>
+                                            <span class="m-auto">Koperasi</span>
+                                        </label>
                                     @endif
-                                </select>
+                                </div>
                                 <input type="text" class="col-6 form-control shad-none">
                                 <button class="col-3 form-control shad-none" type="submit">
                                     <i class="bx bx-search"></i>
@@ -42,30 +52,40 @@
                             </form>
                         @elseif (Request::is('search/koperasi*'))
                             <form action="/search/koperasi" method="get" id="formSearch" class="row p-0 input-group">
-                                <select class="form-select input-no-border col-3 shad-none"
-                                    placeholder="Masukkan Nama UMKM/Unit Koperasi" name="search"
-                                    value="{{ request('search') }}" id="search">
-                                    <option>Default select</option>
+                                <div role="group" aria-label="Basic radio toggle button group"
+                                    class="col-3 row p-0 m-initial">
                                     @if (Request::is('search/umkm*'))
-                                        <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                            id="umkmSearch">UMKM</option>
-                                        <option class="list-group-item dropdown-item d-flex align-items-center"
+                                        <label
+                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex active"id="umkmSearch"
+                                            for="umkmSearch">
+                                            <span class="m-auto">UMKM</span>
+                                        </label>
+                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
                                             id="koperasiSearch">
-                                            Koperasi</option>
+                                            <span class="m-auto">Koperasi</span>
+                                        </label>
                                     @elseif (Request::is('search/koperasi*'))
-                                        <option class="list-group-item dropdown-item d-flex align-items-center"
-                                            id="umkmSearch">
-                                            UMKM</option>
-                                        <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                            id="koperasiSearch">Koperasi</option>
+                                        <label
+                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            for="umkmSearch">
+                                            <span class="m-auto">UMKM</span>
+                                        </label>
+                                        <label class="x btn-outline-primary shad-none col-6 d-flex active"
+                                            for="koperasiSearch" id="koperasiSearch">
+                                            <span class="m-auto">Koperasi</span>
+                                        </label>
                                     @else
-                                        <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                            id="umkmSearch">UMKM</option>
-                                        <option class="list-group-item dropdown-item d-flex align-items-center"
+                                        <label
+                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            for="umkmSearch">
+                                            <span class="m-auto">UMKM</span>
+                                        </label>
+                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
                                             id="koperasiSearch">
-                                            Koperasi</option>
+                                            <span class="m-auto">Koperasi</span>
+                                        </label>
                                     @endif
-                                </select>
+                                </div>
                                 <input type="text" class="col-6 form-control shad-none">
                                 <button class="col-3 form-control shad-none" type="submit">
                                     <i class="bx bx-search"></i>
@@ -73,30 +93,40 @@
                             </form>
                         @else
                             <form action="/search/umkm" method="get" id="formSearch" class="row p-0 input-group">
-                                <select class="form-select input-no-border col-3 shad-none"
-                                    placeholder="Masukkan Nama UMKM/Unit Koperasi" name="search"
-                                    value="{{ request('search') }}" id="search">
-                                    <option>Default select</option>
+                                <div role="group" aria-label="Basic radio toggle button group"
+                                    class="col-3 row p-0 m-initial">
                                     @if (Request::is('search/umkm*'))
-                                        <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                            id="umkmSearch">UMKM</option>
-                                        <option class="list-group-item dropdown-item d-flex align-items-center"
+                                        <label
+                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex active"id="umkmSearch"
+                                            for="umkmSearch">
+                                            <span class="m-auto">UMKM</span>
+                                        </label>
+                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
                                             id="koperasiSearch">
-                                            Koperasi</option>
+                                            <span class="m-auto">Koperasi</span>
+                                        </label>
                                     @elseif (Request::is('search/koperasi*'))
-                                        <option class="list-group-item dropdown-item d-flex align-items-center"
-                                            id="umkmSearch">
-                                            UMKM</option>
-                                        <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                            id="koperasiSearch">Koperasi</option>
+                                        <label
+                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            for="umkmSearch">
+                                            <span class="m-auto">UMKM</span>
+                                        </label>
+                                        <label class="x btn-outline-primary shad-none col-6 d-flex active"
+                                            for="koperasiSearch" id="koperasiSearch">
+                                            <span class="m-auto">Koperasi</span>
+                                        </label>
                                     @else
-                                        <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                            id="umkmSearch">UMKM</option>
-                                        <option class="list-group-item dropdown-item d-flex align-items-center"
-                                            id="koperasiSearch">
-                                            Koperasi</option>
+                                        <label
+                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            for="umkmSearch">
+                                            <span class="m-auto">UMKM</span>
+                                        </label>
+                                        <label class="x btn-outline-primary shad-none col-6 d-flex"
+                                            for="koperasiSearch" id="koperasiSearch">
+                                            <span class="m-auto">Koperasi</span>
+                                        </label>
                                     @endif
-                                </select>
+                                </div>
                                 <input type="text" class="col-6 form-control shad-none">
                                 <button class="col-3 form-control shad-none" type="submit">
                                     <i class="bx bx-search"></i>
