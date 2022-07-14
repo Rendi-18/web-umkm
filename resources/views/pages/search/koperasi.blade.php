@@ -13,26 +13,22 @@
                 @include('components.search')
                 <section id="card-um" class="card-um">
                     <ul id="card-um-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-umkm">UMKM</li>
-                        <li data-filter=".filter-koperasi">KOPERASI</li>
+                        <li data-filter=".filter-koperasi" class="filter-active">KOPERASI</li>
                     </ul>
-                    @if ($umkms->count())
+                    @if ($koperasis->count())
                         <div class="row card-um-container" data-aos="fade-up" data-aos-delay="200">
-                            @foreach ($umkms as $umkm)
-                                <div
-                                    class="col-xl-3 col-6 c0 card-um-item filter-app @if ($umkm->category->category == 'UMKM') , filter-umkm @else filter-koperasi @endif">
+                            @foreach ($koperasis as $koperasi)
+                                <div class="col-xl-3 col-6 c0 card-um-item filter-app">
                                     <div class="card-um-img"><img src="/img/portfolio/portfolio-2.jpg" class="img-fluid"
                                             alt="">
                                     </div>
                                     <div class="card-um-info">
-                                        <h4>{{ $umkm->name }}</h4>
-                                        <p>{{ $umkm->category->category }}</p>
+                                        <h4>{{ $koperasi->name }}</h4>
                                         <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                            class="card-um-lightbox preview-link" title="{{ $umkm->description }}"><i
+                                            class="card-um-lightbox preview-link" title="{{ $koperasi->description }}"><i
                                                 class="bx bx-plus"></i></a>
-                                        <a href="/umkm/{{ $umkm->slug }}" class="details-link" title="More Details"><i
-                                                class="bx bx-link"></i></a>
+                                        <a href="/koperasi/{{ $koperasi->slug }}" class="details-link"
+                                            title="More Details"><i class="bx bx-link"></i></a>
                                     </div>
                                 </div>
                             @endforeach
@@ -42,7 +38,7 @@
                     @endif
                 </section>
                 <div class="d-flex justify-content-center pt-3">
-                    {{ $umkms->links('components.paginator') }}
+                    {{ $koperasis->links('components.paginator') }}
                 </div>
         </section>
 

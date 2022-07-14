@@ -44,7 +44,8 @@ Auth::routes();
 
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/search', [HomeController::class, 'search'])->name('search');
+Route::get('/search/umkm', [HomeController::class, 'searchUmkm'])->name('search.umkm');
+Route::get('/search/koperasi', [HomeController::class, 'searchKoperasi'])->name('search.koperasi');
 Route::get('/umkm/{umkm}', [HomeController::class, 'umkm'])->name('umkm');
 Route::get('/koperasi/{koperasi}', [HomeController::class, 'koperasi'])->name('koperasi');
 

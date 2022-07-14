@@ -255,3 +255,20 @@
   });
 
 })()
+
+// Search
+const umkmSearch = document.getElementById('umkmSearch')
+const koperasiSearch = document.getElementById('koperasiSearch')
+const formSearch = document.getElementById('formSearch')
+
+umkmSearch.addEventListener('click', function () {
+  umkmSearch.classList.add('active')
+  koperasiSearch.classList.remove('active')
+  formSearch.action = '/search/umkm';
+})
+
+koperasiSearch.addEventListener('click', function () {
+  koperasiSearch.classList.add("active")
+  umkmSearch.classList.remove("active")
+  formSearch.action = '/search/koperasi';
+})

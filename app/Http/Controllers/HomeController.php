@@ -20,7 +20,7 @@ class HomeController extends Controller
             'pegawais' => Pegawai::latest()->take(4)->get()
         ]);
     }
-    public function search()
+    public function searchUmkm()
     {
         $umkms = Umkm::latest();
 
@@ -30,10 +30,24 @@ class HomeController extends Controller
                 ->orwhere('address', 'like', '%' . request('search') . '%');
         }
 
-        return view('pages.search', [
+        return view('pages.search.umkm', [
             'umkms' => $umkms->paginate(12)->withQueryString()
         ]);
     }
+
+    public function searchKoperasi()
+    {
+        $koperasis = Koperasi::latest();
+
+        if (request('search')) {
+            $koperasis->where('name', 'like', '%' . request('search') . '%');
+        }
+
+        return view('pages.search.koperasi', [
+            'koperasis' => $koperasis->paginate(12)->withQueryString()
+        ]);
+    }
+
     public function umkm(Umkm $umkm)
     {
         return view('pages.umkm', [
