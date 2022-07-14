@@ -1720,7 +1720,7 @@ section {
   color: var(--bs-dark-green);
 }
 
-#search .container form {
+/* #search .container form {
   margin-top: 30px;
   background: #fff;
   padding: 6px 10px;
@@ -1728,12 +1728,12 @@ section {
   border-radius: 50px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
   text-align: left;
-}
+} */
 
 #search .container form input[type=text] {
-  border: 0;
+
   padding: 4px 8px;
-  width: calc(98.395% - 100px);
+  width: calc(60.395% - 100px);
 }
 
 #search .container form input[type=submit] {
@@ -1764,6 +1764,23 @@ section {
 #search .btn:hover {
   background: var(--bs-dark-green);
 }
+
+#input-g {
+  max-height: 40px;
+}
+
+#input-g select {
+  max-height: 40px;
+}
+
+#input-g form {
+  max-height: 40px;
+}
+
+.shad-none:focus {
+  box-shadow: none;
+}
+
 
 @media (max-width: 991px) {
   #search p {
