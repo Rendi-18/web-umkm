@@ -2,3 +2,17 @@
 .input-no-border:focus {
     outline: none !important;
 }
+
+.modal-backdrop {
+    display: none !important;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    z-index: 999;
+}

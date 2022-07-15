@@ -101,7 +101,7 @@
                                             <span class="col-12 d-flex">
                                                 <i class="bx bx-money bx-burst my-auto"></i>
                                                 &nbsp;Harga &nbsp;
-                                                <span class="my-auto">: RP {{ $product->price }}</span>
+                                                <span class="my-auto">: @currency($product->price)</span>
                                             </span>
                                             <span class="col-12 d-flex">
                                                 <i class='bx bx-cuboid bx-burst my-auto'></i>
@@ -109,7 +109,7 @@
                                                 <span class="my-auto">: {{ $product->weight }} Kg</span>
                                             </span>
                                             <span class="btn mt-3 col-12" data-bs-toggle="modal"
-                                                data-bs-target="#modalproduct{{ $product->id }}">Detail</span>
+                                                data-bs-target="#exampleModal{{ $product->id }}">Detail</span>
                                         </div>
 
 

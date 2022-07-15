@@ -20,7 +20,7 @@ class ProductKoperasiFactory extends Factory
             'koperasi_id' => mt_rand(1, 50),
             'slug' => $this->faker->slug(),
             'name' => $this->faker->sentence(mt_rand(1, 3)),
-            'price' => "100.000",
+            'price' => "100000",
             'weight' => mt_rand(5, 40),
             'description' => $this->faker->sentence(mt_rand(5, 9)),
         ];

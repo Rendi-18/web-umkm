@@ -31,9 +31,8 @@
         <i class="bi bi-arrow-up-short"></i>
     </a>
 
-    @include('configs.js')
     @include('components.footer')
-
+    @include('configs.js')
 </body>
 
 </html>
