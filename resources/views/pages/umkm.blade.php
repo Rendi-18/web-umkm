@@ -85,9 +85,9 @@
                                 </div> --}}
                             </div>
                             @foreach ($umkm->product as $product)
-                                @include('components/modalProduct')
                                 <div class="col-xl-3 col-md-6 d-flex align-items-stretch my-4 mt-xl-0 rounded"
                                     data-aos="zoom-in" data-aos-delay="100">
+
                                     <div class="product-card p-4">
                                         @if ($product->image)
                                             <img src="{{ asset('storage/' . $product->image) }}" alt="user-avatar"
@@ -111,11 +111,9 @@
                                             <span class="btn mt-3 col-12" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal{{ $product->id }}">Detail</span>
                                         </div>
-
-
-
                                     </div>
                                 </div>
+                                @include('components/modalProduct')
                                 {{-- <div class="mb-2">
                             {{ $product->name }}
                             {{ $product->weight }}
