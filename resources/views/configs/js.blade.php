@@ -12,7 +12,7 @@
     <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="/vendor/php-email-form/validate.js"></script>
+    {{-- <script src="/vendor/php-email-form/validate.js"></script> --}}
 
     <!-- Template Main JS File -->
     <script src="/js/main.js"></script>

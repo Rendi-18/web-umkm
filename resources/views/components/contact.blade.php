@@ -38,6 +38,7 @@
             </div>
 
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+
                 <form action="/" method="post" role="form" class="php-email-form">
                     @csrf
                     <div class="row">
@@ -82,11 +83,13 @@
                             </div>
                         @enderror
                     </div>
-                    <div class="my-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                    </div>
+                    @if (session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                    @endif
                     <div class="text-center"><button type="submit">Send Message</button></div>
                 </form>
             </div>
