@@ -1,6 +1,14 @@
 <section>
     <div class="col-12">
         <h4 class="col-6 fw-bold py-3 mb-2">Pesan Pengunjung</h4>
+        {{-- Flash --}}
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="card">
             <h5 class="card-header">Tabel Pesan Pengunjung</h5>
             <div class="table-responsive text-nowrap">
