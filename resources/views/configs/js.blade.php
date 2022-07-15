@@ -14,6 +14,7 @@
     <script src="/vendor/waypoints/noframework.waypoints.js"></script>
     {{-- <script src="/vendor/php-email-form/validate.js"></script> --}}
 
+
     <!-- Template Main JS File -->
+    <script src="/js/script.js"></script>
     <script src="/js/main.js"></script>
-    <script src="/js/scirpt.js"></script>

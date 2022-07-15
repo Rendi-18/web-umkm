@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('date');
             $table->string('image')->nullable();
-            $table->string('content');
+            $table->text('content');
             $table->timestamps();
         });
     }

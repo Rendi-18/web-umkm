@@ -7,6 +7,7 @@ use App\Models\Pegawai;
 use App\Models\Product;
 use App\Models\Umkm;
 use App\Models\Website;
+use App\Models\Agenda;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,7 +18,8 @@ class HomeController extends Controller
             'umkms' => Umkm::orderBy('created_at', 'desc')->take(8)->get(),
             'koperasis' => Koperasi::orderBy('created_at', 'desc')->take(8)->get(),
             'website' => Website::latest()->get(),
-            'pegawais' => Pegawai::latest()->take(4)->get()
+            'pegawais' => Pegawai::latest()->take(4)->get(),
+            'agendas' => Agenda::latest()->take(4)->get()
         ]);
     }
     public function searchUmkm()

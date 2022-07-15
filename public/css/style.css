@@ -1,6 +1,8 @@
 :root {
   --bs-green: #00ffba;
   --bs-dark-green: #008080;
+  --ts-dark-green: rgba(00, 80, 80, 0.9);
+
 }
 
 
@@ -1027,11 +1029,11 @@ section {
   z-index: 3;
   right: 15px;
   transition: all 0.3s;
-  background: rgba(55, 81, 126, 0.8);
+  background: var(--ts-dark-green);
   padding: 10px 15px;
 }
 
-.card-um .card-um-item .card-um-info h4 {
+.card-um .card-um-item .card-um-info h5 {
   font-size: 18px;
   color: #fff;
   font-weight: 600;
@@ -1795,6 +1797,16 @@ section {
   background: white;
 }
 
+#input-g .col-7 {
+  flex: 0 0 auto;
+  width: 58.33333333%;
+}
+
+#input-g .col-2 {
+  flex: 0 0 auto;
+  width: 16.66666667%;
+}
+
 .shad-none:focus {
   box-shadow: none;
 }
@@ -2096,6 +2108,59 @@ label.active span {
 .prod-container .jdl {
   margin: 1.2% 0;
 }
+
+.product span i {
+  color: var(--bs-dark-green);
+}
+
+.product span.btn {
+  border: none;
+  font-weight: bold;
+  color: white;
+  background: var(--bs-dark-green);
+  animation-duration: 0.9s;
+}
+
+.product span.btn:active {
+  color: var(--bs-dark-green);
+  background: var(--bs-green);
+  transform: scale(1.02);
+  animation-duration: 0.9s;
+}
+
+
+/*--------------------------------------------------------------
+# Swipe
+--------------------------------------------------------------*/
+.swiper {
+  width: 100%;
+  max-height: fit-content;
+}
+
+.swiper .swiper-pagination-bullet-active-main {
+  background: var(--bs-green);
+}
+
+a.swiper-slide {
+  color: #444444;
+}
+
+.swiper-button-prev {
+  color: var(--bs-green)
+}
+
+.swiper-button-next {
+  color: var(--bs-green)
+}
+
+.swiper-button-prev:active {
+  color: var(--bs-dark-green)
+}
+
+.swiper-button-next:active {
+  color: var(--bs-dark-green)
+}
+
 
 /*--------------------------------------------------------------
 # Utilities
