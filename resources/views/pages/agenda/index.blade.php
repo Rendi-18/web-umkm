@@ -22,10 +22,10 @@
                                     <div class="col-lg-8 row">
                                         <p>Cari Agenda Dinas</p>
                                         <div id="input-g"class="input-group">
-                                            <form action="/search/umkm" method="get" id="formSearch"
+                                            <form action="/agenda" method="get" id="formSearch"
                                                 class="row p-0 input-group">
-                                                <input type="text" class="col-6 form-control shad-none" value="#"
-                                                    name="search">
+                                                <input type="text" class="col-6 form-control shad-none" name="search"
+                                                    value="{{ request('search') }}">
                                                 <button
                                                     class="col-3
                                     form-control shad-none"

@@ -9,10 +9,16 @@ class AgendaController extends Controller
 {
     public function agenda()
     {
+
+        $agendas = Agenda::latest();
+        if (request('search')) {
+            $agendas->where('name', 'like', '%' . request('search') . '%');
+        }
+
         return view(
             'pages.agenda.index',
             [
-                'agendas' => Agenda::latest()->get()
+                'agendas' => $agendas
             ]
         );
     }
