@@ -24,26 +24,44 @@
                                         <div id="input-g"class="input-group">
                                             <form action="/agenda" method="get" id="formSearch"
                                                 class="row p-0 input-group">
-                                                <input type="text" class="col-6 form-control shad-none" name="search"
+                                                <input type="text" class="col-10 form-control shad-none" name="search"
                                                     value="{{ request('search') }}">
-                                                <button
-                                                    class="col-3
-                                    form-control shad-none"
-                                                    type="submit">
+                                                <button class="col-2 form-control shad-none" type="submit">
                                                     <i class="bx bx-search"></i>
                                                 </button>
                                             </form>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-
                 </div>
-
                 <div id="card-um" class="card-um">
+                    <div class="row">
+                        xxx
+                        @foreach ($agendas as $agenda)
+                            <div class="col-lg-6 my-4">
+                                <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+                                    <div class="pic rounded">
+                                        @if ($agenda->image)
+                                            <img src="{{ asset('storage/' . $agenda->image) }}" class="img-fluid"
+                                                alt="">
+                                        @else
+                                            <img src="img\portfolio\portfolio-9.jpg" class="img-fluid" alt="">
+                                        @endif
+                                    </div>
+                                    <div class="member-info col-lg">
+                                        <h4>{{ $agenda->name }}</h4>
+                                        <small>{{ date('d F Y', strtotime($agenda->date)) }}</small>
+                                        <span>{{ $agenda->location }}</span>
+                                        <span class="text-justify">{!! Str::limit($agenda->content, 110) !!}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
                 </div>
             </div>
         </section>
