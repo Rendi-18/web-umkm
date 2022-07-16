@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Umkm;
 use App\Models\Website;
 use App\Models\Agenda;
+use App\Models\JasaKoperasi;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,8 +16,8 @@ class HomeController extends Controller
     public function index()
     {
         return view('pages.home', [
-            'umkms' => Umkm::orderBy('created_at', 'desc')->take(8)->get(),
-            'koperasis' => Koperasi::orderBy('created_at', 'desc')->take(8)->get(),
+            'umkms' => Umkm::orderBy('created_at', 'desc')->where('status', 1)->take(8)->get(),
+            'koperasis' => Koperasi::orderBy('created_at', 'desc')->where('status', 1)->take(8)->get(),
             'website' => Website::latest()->get(),
             'pegawais' => Pegawai::latest()->take(4)->get(),
             'agendas' => Agenda::latest()->take(4)->get()
@@ -33,7 +34,7 @@ class HomeController extends Controller
         }
 
         return view('pages.search.umkm', [
-            'umkms' => $umkms->paginate(12)->withQueryString()
+            'umkms' => $umkms->where('status', 1)->paginate(12)->withQueryString()
         ]);
     }
 
@@ -46,14 +47,59 @@ class HomeController extends Controller
         }
 
         return view('pages.search.koperasi', [
-            'koperasis' => $koperasis->paginate(12)->withQueryString()
+            'koperasis' => $koperasis->where('status', 1)->paginate(12)->withQueryString()
         ]);
     }
 
     public function umkm(Umkm $umkm)
     {
-        return view('pages.umkm', [
-            'umkm' => $umkm,
+
+        if ($umkm->status != 1) {
+            abort(404);
+        }
+        return view('pages.umkm.index', [
+            'umkm' => $umkm
+        ]);
+    }
+
+    public function product(Product $product)
+    {
+        if ($product->umkm->status != 1) {
+            abort(404);
+        }
+        return view('pages.umkm.product', [
+            'product' => $product,
+        ]);
+    }
+
+
+    public function koperasi(Koperasi $koperasi)
+    {
+        if ($koperasi->status != 1) {
+            abort(404);
+        }
+        return view('pages.koperasi', [
+            'koperasi' => $koperasi,
+        ]);
+    }
+
+    public function jasaKoperasi(JasaKoperasi $jasaKoperasi)
+    {
+        if ($jasaKoperasi->koperasi->status != 1) {
+            abort(404);
+        }
+        return view('pages.koperasi.jasa', [
+            'jasaKoperasi' => $jasaKoperasi,
+        ]);
+    }
+
+    public function productKoperasi(JasaKoperasi $productKoperasi)
+    {
+        if ($productKoperasi->koperasi->status != 1) {
+            abort(404);
+        }
+        return view('pages.koperasi.product', [
+            'productKoperasi' => $productKoperasi,
         ]);
     }
 }
