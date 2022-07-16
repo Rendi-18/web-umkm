@@ -45,8 +45,11 @@
                                         </label>
                                     @endif
                                 </div>
-                                <input type="text" class="col-6 form-control shad-none">
-                                <button class="col-3 form-control shad-none" type="submit">
+                                <input type="text" class="col-6 form-control shad-none"
+                                    value="{{ request('search') }}" name="search">
+                                <button class="col-3
+                                    form-control shad-none"
+                                    type="submit">
                                     <i class="bx bx-search"></i>
                                 </button>
                             </form>
@@ -86,7 +89,8 @@
                                         </label>
                                     @endif
                                 </div>
-                                <input type="text" class="col-6 form-control shad-none">
+                                <input type="text" class="col-6 form-control shad-none"
+                                    value="{{ request('search') }}" name="search">
                                 <button class="col-3 form-control shad-none" type="submit">
                                     <i class="bx bx-search"></i>
                                 </button>
@@ -117,7 +121,7 @@
                                         </label>
                                     @else
                                         <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex active"id="umkmSearch"
                                             for="umkmSearch">
                                             <span class="m-auto">UMKM</span>
                                         </label>
@@ -127,7 +131,8 @@
                                         </label>
                                     @endif
                                 </div>
-                                <input type="text" class="col-6 form-control shad-none">
+                                <input type="text" class="col-6 form-control shad-none"
+                                    value="{{ request('search') }}" name="search">
                                 <button class="col-3 form-control shad-none" type="submit">
                                     <i class="bx bx-search"></i>
                                 </button>
