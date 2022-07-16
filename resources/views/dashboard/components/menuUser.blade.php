@@ -92,9 +92,6 @@
                 <div data-i18n="Analytics">Anda Belum Memiliki UMKM</div>
             </a>
         </li>
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Koperasi</span>
-        </li>
     @endif
 
     <li class="menu-header small text-uppercase">

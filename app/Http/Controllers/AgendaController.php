@@ -18,7 +18,7 @@ class AgendaController extends Controller
         return view(
             'pages.agenda.index',
             [
-                'agendas' => $agendas
+                'agendas' => $agendas->get()
             ]
         );
     }
