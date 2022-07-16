@@ -10,130 +10,24 @@
                 <div class="col-lg-8 row">
                     <p class="text-center">Temukan UMKM & Unit Koperasi Di sekitar anda</p>
                     <div id="input-g">
-                        @if (Request::is('search/umkm*'))
-                            <form action="/search/umkm" method="get" id="formSearch" class="row p-0 input-group">
-                                <div role="group" aria-label="Basic radio toggle button group"
-                                    class="col-3 row p-0 m-initial">
-                                    @if (Request::is('search/umkm*'))
-                                        <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex active"id="umkmSearch"
-                                            for="umkmSearch">
-                                            <span class="m-auto">UMKM</span>
-                                        </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
-                                            id="koperasiSearch">
-                                            <span class="m-auto">Koperasi</span>
-                                        </label>
-                                    @elseif (Request::is('search/koperasi*'))
-                                        <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
-                                            for="umkmSearch">
-                                            <span class="m-auto">UMKM</span>
-                                        </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex active"
-                                            for="koperasiSearch" id="koperasiSearch">
-                                            <span class="m-auto">Koperasi</span>
-                                        </label>
-                                    @else
-                                        <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
-                                            for="umkmSearch">
-                                            <span class="m-auto">UMKM</span>
-                                        </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
-                                            id="koperasiSearch">
-                                            <span class="m-auto">Koperasi</span>
-                                        </label>
-                                    @endif
-                                </div>
-                                <input type="text" class="col-7 form-control shad-none">
-                                <button class="col-2 form-control shad-none" type="submit">
-                                    <i class="bx bx-search"></i>
-                                </button>
-                            </form>
-                        @elseif (Request::is('search/koperasi*'))
-                            <form action="/search/koperasi" method="get" id="formSearch" class="row p-0 input-group">
-                                <div role="group" aria-label="Basic radio toggle button group"
-                                    class="col-3 row p-0 m-initial">
-                                    @if (Request::is('search/umkm*'))
-                                        <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex active"id="umkmSearch"
-                                            for="umkmSearch">
-                                            <span class="m-auto">UMKM</span>
-                                        </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
-                                            id="koperasiSearch">
-                                            <span class="m-auto">Koperasi</span>
-                                        </label>
-                                    @elseif (Request::is('search/koperasi*'))
-                                        <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
-                                            for="umkmSearch">
-                                            <span class="m-auto">UMKM</span>
-                                        </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex active"
-                                            for="koperasiSearch" id="koperasiSearch">
-                                            <span class="m-auto">Koperasi</span>
-                                        </label>
-                                    @else
-                                        <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
-                                            for="umkmSearch">
-                                            <span class="m-auto">UMKM</span>
-                                        </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
-                                            id="koperasiSearch">
-                                            <span class="m-auto">Koperasi</span>
-                                        </label>
-                                    @endif
-                                </div>
-                                <input type="text" class="col-7 form-control shad-none">
-                                <button class="col-2 form-control shad-none" type="submit">
-                                    <i class="bx bx-search"></i>
-                                </button>
-                            </form>
-                        @else
-                            <form action="/search/umkm" method="get" id="formSearch" class="row p-0 input-group">
-                                <div role="group" aria-label="Basic radio toggle button group"
-                                    class="col-3 row p-0 m-initial">
-                                    @if (Request::is('search/umkm*'))
-                                        <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex active"id="umkmSearch"
-                                            for="umkmSearch">
-                                            <span class="m-auto">UMKM</span>
-                                        </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
-                                            id="koperasiSearch">
-                                            <span class="m-auto">Koperasi</span>
-                                        </label>
-                                    @elseif (Request::is('search/koperasi*'))
-                                        <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
-                                            for="umkmSearch">
-                                            <span class="m-auto">UMKM</span>
-                                        </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex active"
-                                            for="koperasiSearch" id="koperasiSearch">
-                                            <span class="m-auto">Koperasi</span>
-                                        </label>
-                                    @else
-                                        <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
-                                            for="umkmSearch">
-                                            <span class="m-auto">UMKM</span>
-                                        </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex"
-                                            for="koperasiSearch" id="koperasiSearch">
-                                            <span class="m-auto">Koperasi</span>
-                                        </label>
-                                    @endif
-                                </div>
-                                <input type="text" class="col-7 form-control shad-none">
-                                <button class="col-2 form-control shad-none" type="submit">
-                                    <i class="bx bx-search"></i>
-                                </button>
-                            </form>
-                        @endif
+                        <form action="/search/umkm" method="get" id="formSearch" class="row p-0 input-group">
+                            <div role="group" aria-label="Basic radio toggle button group"
+                                class="col-3 row p-0 m-initial">
+                                <label class="x btn-outline-primary shad-none col-6 itm-s d-flex active" id="umkmSearch"
+                                    for="umkmSearch">
+                                    <span class="m-auto">UMKM</span>
+                                </label>
+                                <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
+                                    id="koperasiSearch">
+                                    <span class="m-auto">Koperasi</span>
+                                </label>
+                            </div>
+                            <input type="text" class="col-7 form-control shad-none" name="search"
+                                value="{{ request('search') }}">
+                            <button class="col-2 form-control shad-none" type="submit">
+                                <i class="bx bx-search"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -172,8 +66,7 @@
                 <div class="col-lg-3 col-6 card-um-item filter-koperasi">
                     <div class="card-um-img shadow-sm">
                         @if ($koperasi->image)
-                            <img src="{{ asset('storage/' . $koperasi->image) }}" alt="user-avatar"
-                                class="img-fluid">
+                            <img src="{{ asset('storage/' . $koperasi->image) }}" alt="user-avatar" class="img-fluid">
                         @else
                             <img src="/img/temp/store-temp.png" alt="user-avatar" class="img-fluid">
                         @endif
