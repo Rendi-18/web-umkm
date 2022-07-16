@@ -4,10 +4,10 @@
     <main id="main">
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
-
                 <ol>
-                    <li><a href="index.html">Home</a></li>
-                    <li>Inner Page</li>
+                    <li><a href="/">Home</a></li>
+                    <li>Search</li>
+                    <li>UMKM</li>
                 </ol>
                 <h2>Search</h2>
                 <div id="search-p">
@@ -43,8 +43,6 @@
         </section>
 
 
-    </main><!-- End #main -->
-
-
     </main>
+    <!-- End #main -->
 @endsection

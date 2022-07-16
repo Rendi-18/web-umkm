@@ -15,12 +15,12 @@ body {
 }
 
 a {
-  color: #47b2e4;
+  color: var(--bs-green);
   text-decoration: none;
 }
 
 a:hover {
-  color: #73c5eb;
+  color: var(--ts-dark-green);
   text-decoration: none;
 }
 
@@ -31,6 +31,10 @@ h4,
 h5,
 h6 {
   font-family: "Jost", sans-serif;
+}
+
+.bg-prd {
+  background-color: #f3f5fa;
 }
 
 /*--------------------------------------------------------------
@@ -106,7 +110,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #6bc1e9;
+  background: var(--ts-dark-green);
   color: #fff;
 }
 
@@ -2069,6 +2073,11 @@ label.active span {
   color: var(--bs-dark-green);
 }
 
+#identity span .val-g {
+  font-weight: 600;
+  color: var(--bs-green);
+}
+
 .identity .image-identity {
   overflow: hidden;
   width: 100%;
@@ -2084,6 +2093,11 @@ label.active span {
 
 .identity .image-identity img:hover {
   transform: scale(1.15);
+}
+
+.identity .container .detail-prd.row {
+  min-height: 300px !important;
+
 }
 
 /*--------------------------------------------------------------
@@ -2113,7 +2127,11 @@ label.active span {
   color: var(--bs-dark-green);
 }
 
-.product span.btn {
+.product span i.bxs-star {
+  color: var(--bs-green);
+}
+
+.product a.btn {
   border: none;
   font-weight: bold;
   color: white;
@@ -2121,11 +2139,22 @@ label.active span {
   animation-duration: 0.9s;
 }
 
-.product span.btn:active {
+.product a.btn:active {
+  transform: scale(0.97) !important;
+  animation-duration: 1.5s !important;
+}
+
+.product a.btn:hover {
   color: var(--bs-dark-green);
   background: var(--bs-green);
   transform: scale(1.02);
   animation-duration: 0.9s;
+}
+
+.product div.col-8 span p,
+div.col-4 span h6 {
+  font-weight: bold;
+  margin: 0;
 }
 
 
@@ -2168,4 +2197,8 @@ a.swiper-slide {
 
 .text-justify {
   text-align: justify;
+}
+
+span i.bx {
+  vertical-align: -.125em;
 }

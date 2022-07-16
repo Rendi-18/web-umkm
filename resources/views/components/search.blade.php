@@ -139,61 +139,6 @@
                             </form>
                         @endif
                     </div>
-
-                    {{-- <div class="col-lg-9 input-group justify-content-between">
-                        <select id="defaultSelect" class="form-select input-no-border">
-                            <option>Default select</option>
-                            @if (Request::is('search/umkm*'))
-                                <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                    id="umkmSearch">UMKM</option>
-                                <option class="list-group-item dropdown-item d-flex align-items-center"
-                                    id="koperasiSearch">
-                                    Koperasi</option>
-                            @elseif (Request::is('search/koperasi*'))
-                                <option class="list-group-item dropdown-item d-flex align-items-center" id="umkmSearch">
-                                    UMKM</option>
-                                <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                    id="koperasiSearch">Koperasi</option>
-                            @else
-                                <option class="list-group-item active dropdown-item d-flex align-items-center"
-                                    id="umkmSearch">UMKM</option>
-                                <option class="list-group-item dropdown-item d-flex align-items-center"
-                                    id="koperasiSearch">
-                                    Koperasi</option>
-                            @endif
-                        </select>
-                        @if (Request::is('search/umkm*'))
-                            <form action="/search/umkm" method="get" id="formSearch" class="p-0">
-                                <div class="input-group justify-content-between">
-                                    <input class="input-no-border m-2" type="text"
-                                        placeholder="Masukkan Nama UMKM/Unit Koperasi" name="search"
-                                        value="{{ request('search') }}" id="search">
-                                    <button class="btn btn-primary rounded-pill shadow-sm" type="submit"
-                                        id="button-addon2"><i class="bx bx-search"></i></button>
-                                </div>
-                            </form>
-                        @elseif (Request::is('search/koperasi*'))
-                            <form action="/search/koperasi" method="get" id="formSearch" class="p-0">
-                                <div class="input-group justify-content-between">
-                                    <input class="input-no-border m-2" type="text"
-                                        placeholder="Masukkan Nama UMKM/Unit Koperasi" name="search"
-                                        value="{{ request('search') }}" id="search">
-                                    <button class="btn btn-primary rounded-pill shadow-sm" type="submit"
-                                        id="button-addon2"><i class="bx bx-search"></i></button>
-                                </div>
-                            </form>
-                        @else
-                            <form action="/search/umkm" method="get" id="formSearch" class="p-0">
-                                <div class="input-group justify-content-between">
-                                    <input class="input-no-border m-2" type="text"
-                                        placeholder="Masukkan Nama UMKM/Unit Koperasi" name="search"
-                                        value="{{ request('search') }}" id="search">
-                                    <button class="btn btn-primary rounded-pill shadow-sm" type="submit"
-                                        id="button-addon2"><i class="bx bx-search"></i></button>
-                                </div>
-                            </form>
-                        @endif
-                    </div> --}}
                 </div>
             </div>
         </div>
