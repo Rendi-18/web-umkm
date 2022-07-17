@@ -2170,7 +2170,8 @@ div.col-4 span h6 {
   background: var(--bs-green);
 }
 
-a.swiper-slide {
+a.swiper-slide,
+a.agenda-card {
   color: #444444;
 }
 
