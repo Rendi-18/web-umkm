@@ -9,6 +9,7 @@ use App\Models\Umkm;
 use App\Models\Website;
 use App\Models\Agenda;
 use App\Models\JasaKoperasi;
+use App\Models\ProductKoperasi;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -93,9 +94,9 @@ class HomeController extends Controller
         ]);
     }
 
-    public function productKoperasi(JasaKoperasi $productKoperasi)
+    public function productKoperasi(ProductKoperasi $productKoperasi)
     {
-        if ($productKoperasi->koperasi->status != 1) {
+        if ($productKoperasi->koperasi->status != 0) {
             abort(404);
         }
         return view('pages.koperasi.product', [
