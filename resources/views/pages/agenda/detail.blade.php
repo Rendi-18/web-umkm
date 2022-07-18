@@ -5,21 +5,32 @@
             <div class="container h-100">
                 <ol>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/">UMKM</a></li>
-                    <li>Produk</li>
+                    <li><a href="/agenda">Agenda</a></li>
                 </ol>
-                <h2>{{ $agenda->name }}</h2>
+                <h2>Agenda Dinas</h2>
             </div>
         </section>
-        <section id="dagendas">
+        <section id="d-agendas">
             <div class="container">
                 <div class="row">
-                    <div>
-                        <img src="img\portfolio\portfolio-3.jpg" class="img-fluid">
+                    <div class=" container-lg img-container d-flex flex-column align-items-center">
+                        <h2><strong>{{ $agenda->name }}</strong></h2>
+                        <img src="/img/portfolio/portfolio-2.jpg" class="img-fluid">
+                        <div class="row  my-2 w-100">
+                            <hr class="w-100 border-2 opacity-50 mb-2">
+                            <div class="img-title d-flex w-100">
+                                <h6 class="me-auto">{{ $agenda->location }}</h6>
+                                <h6 class="ms-auto">{{ date('d F Y', strtotime($agenda->date)) }}</h6>
+                            </div>
+                            <hr class="w-100 border-2 opacity-50">
+                        </div>
                     </div>
-
+                    <div class="container">
+                        <p>{!! $agenda->content !!} </p>
+                    </div>
                 </div>
             </div>
         </section>
+        @include('components.agenda')
     </main>
 @endsection

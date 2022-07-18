@@ -25,10 +25,12 @@ class AgendaController extends Controller
 
     public function detail(Agenda $agenda)
     {
+        $agendas = Agenda::latest();
         return view(
             'pages.agenda.detail',
             [
-                'agenda' => $agenda
+                'agenda' => $agenda,
+                'agendas' => $agendas->get()
             ]
         );
     }
