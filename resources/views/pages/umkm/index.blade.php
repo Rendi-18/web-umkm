@@ -134,7 +134,8 @@
                                                 &nbsp;Berat &nbsp;
                                                 <span class="my-auto">: {{ $product->weight }} Kg</span>
                                             </span>
-                                            <a href="/umkm/product/{{ $product->id }}" class="btn mt-3 col-12">Detail</a>
+                                            <a href="/umkm/product/{{ $product->slug }}"
+                                                class="btn mt-3 col-12">Detail</a>
                                         </div>
                                     </div>
                                 </div>

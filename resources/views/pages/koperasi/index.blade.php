@@ -199,7 +199,7 @@
                                                 &nbsp;Berat &nbsp;
                                                 <span class="my-auto">: {{ $product->weight }} Kg</span>
                                             </span>
-                                            <a href="/koperasi/product/{{ $product->id }}"
+                                            <a href="/koperasi/product/{{ $product->slug }}"
                                                 class="btn mt-3 col-12">Detail</a>
                                         </div>
                                     </div>
