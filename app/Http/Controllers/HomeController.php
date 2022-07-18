@@ -96,7 +96,7 @@ class HomeController extends Controller
 
     public function productKoperasi(ProductKoperasi $productKoperasi)
     {
-        if ($productKoperasi->koperasi->status != 0) {
+        if ($productKoperasi->koperasi->status != 1) {
             abort(404);
         }
         return view('pages.koperasi.product', [
