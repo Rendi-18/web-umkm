@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User\Izin;
 use App\Http\Controllers\Controller;
 use App\Models\CategoryIzin;
 use App\Models\CategoryKoperasi;
+use Illuminate\Support\Str;
 use App\Models\Izin;
 use App\Models\Koperasi;
 use App\Models\Umkm;
@@ -74,6 +75,7 @@ class DashboardUserIzinController extends Controller
             'image' => 'image|file|max:1024',
         ]);
 
+        $validatedData['slug'] = Str::snake($request->name);
         // Image
         if ($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('img/' . Auth::user()->username . '/umkm');
@@ -106,6 +108,8 @@ class DashboardUserIzinController extends Controller
             'description' => 'required',
             'image' => 'image|file|max:1024',
         ]);
+
+        $validatedData['slug'] = Str::snake($request->name);
 
         // Image
         if ($request->file('image')) {

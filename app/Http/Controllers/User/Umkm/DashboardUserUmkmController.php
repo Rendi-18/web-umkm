@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User\Umkm;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Umkm;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -51,6 +52,9 @@ class DashboardUserUmkmController extends Controller
 
 
         $validatedData = $request->validate($rules);
+        if ($request->name != $umkm->name) {
+            $validatedData['slug'] = Str::snake($request->name);
+        }
         $validatedData['user_id'] = auth()->user()->id;
 
         if ($request->file('image')) {

@@ -26,19 +26,6 @@
                             @method('put')
                             @csrf
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="slug">Slug</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('slug') is-invalid @enderror"
-                                        id="slug" placeholder="Slug" name="slug"
-                                        value="{{ old('slug', $product->slug) }}" required>
-                                    @error('slug')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="name">Nama Product</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control @error('name') is-invalid @enderror"

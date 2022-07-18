@@ -16,20 +16,6 @@
                             enctype="multipart/form-data">
                             @method('put')
                             @csrf
-
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="slug">Nama Layanan</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('slug') is-invalid @enderror"
-                                        id="slug" placeholder="Nama" name="slug"
-                                        value="{{ old('slug', $service->slug) }}" required>
-                                    @error('slug')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="name">Nama Layanan</label>
                                 <div class="col-sm-10">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User\Koperasi;
 
 use App\Http\Controllers\Controller;
 use App\Models\Koperasi;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -49,6 +50,9 @@ class DashboardUserKoperasiController extends Controller
 
 
         $validatedData = $request->validate($rules);
+        if ($request->name != $koperasi->name) {
+            $validatedData['slug'] = Str::snake($request->name);
+        }
         $validatedData['user_id'] = auth()->user()->id;
 
         if ($request->file('image')) {

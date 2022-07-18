@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User\Koperasi;
 
 use App\Http\Controllers\Controller;
 use App\Models\Koperasi;
+use Illuminate\Support\Str;
 use App\Models\ProductKoperasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -45,12 +46,10 @@ class DashboardProductKoperasiController extends Controller
         // return $request;
         $validatedData = $request->validate([
             'name' => 'required',
-            'slug' => 'required|unique:product_koperasis',
             'price' => 'required',
             'weight' => 'required',
             'image' => 'image|file|max:1024',
             'description' => 'required',
-            'koperasi_id' => 'required',
         ]);
 
         // Image
@@ -58,6 +57,7 @@ class DashboardProductKoperasiController extends Controller
             $validatedData['image'] = $request->file('image')->store('img/' . $koperasi->user->username . '/product_koperasi');
         }
 
+        $validatedData['slug'] = Str::snake($request->name);
         $validatedData['koperasi_id'] = $koperasi->id;
         ProductKoperasi::create($validatedData);
 
@@ -84,11 +84,11 @@ class DashboardProductKoperasiController extends Controller
             'image' => 'image|file|max:1024',
         ];
 
-        if ($request->slug != $productKoperasi->slug) {
-            $rules['slug'] = 'required|unique:product_koperasis';
-        }
-
         $validatedData = $request->validate($rules);
+
+        if ($request->name != $productKoperasi->name) {
+            $validatedData['slug'] = Str::snake($request->name);
+        }
         $validatedData['koperasi_id'] = $productKoperasi->koperasi->id;
 
         // Image

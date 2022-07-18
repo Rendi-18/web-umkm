@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\JasaKoperasi;
 use Illuminate\Http\Request;
 use App\Models\Koperasi;
+use Illuminate\Support\Str;
 use App\Models\ProductKoperasi;
 use Illuminate\Support\Facades\Storage;
 
@@ -47,12 +48,10 @@ class DashboardJasaKoperasiController extends Controller
         // return $request;
         $validatedData = $request->validate([
             'name' => 'required',
-            'slug' => 'required|unique:jasa_koperasis',
             'service' => 'required',
             'needs' => 'required',
             'image' => 'image|file|max:1024',
             'description' => 'required',
-            'koperasi_id' => 'required',
         ]);
 
         // Image
@@ -60,6 +59,7 @@ class DashboardJasaKoperasiController extends Controller
             $validatedData['image'] = $request->file('image')->store('img/' . $koperasi->user->username . '/jasa_koperasi');
         }
 
+        $validatedData['slug'] = Str::snake($request->name);
         $validatedData['koperasi_id'] = $koperasi->id;
         JasaKoperasi::create($validatedData);
 
@@ -86,11 +86,11 @@ class DashboardJasaKoperasiController extends Controller
             'image' => 'image|file|max:1024',
         ];
 
-        if ($request->slug != $jasaKoperasi->slug) {
-            $rules['slug'] = 'required|unique:jasa_koperasis';
-        }
-
         $validatedData = $request->validate($rules);
+
+        if ($request->name != $jasaKoperasi->name) {
+            $validatedData['slug'] = Str::snake($request->name);
+        }
         $validatedData['koperasi_id'] = $jasaKoperasi->koperasi->id;
 
         // Image

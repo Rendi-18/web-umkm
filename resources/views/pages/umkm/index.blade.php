@@ -91,7 +91,7 @@
                                                         <h6>Unggulan</h6>
                                                     </span>
                                                 </div>
-                                                <a href="/umkm/product/{{ $product->id }}"
+                                                <a href="/umkm/product/{{ $product->slug }}"
                                                     class="btn mt-3 col-12">Detail</a>
                                             </div>
                                         </div>

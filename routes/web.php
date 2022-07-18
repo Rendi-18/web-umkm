@@ -45,11 +45,11 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/search/umkm', [HomeController::class, 'searchUmkm'])->name('search.umkm');
 Route::get('/search/koperasi', [HomeController::class, 'searchKoperasi'])->name('search.koperasi');
-Route::get('/umkm/{umkm}', [HomeController::class, 'umkm'])->name('umkm');
-Route::get('/umkm/product/{product}', [HomeController::class, 'product'])->name('umkm');
-Route::get('/koperasi/{koperasi}', [HomeController::class, 'koperasi'])->name('koperasi');
-Route::get('/koperasi/jasa/{jasaKoperasi}', [HomeController::class, 'jasaKoperasi'])->name('koperasi');
-Route::get('/koperasi/product/{productKoperasi}', [HomeController::class, 'productKoperasi'])->name('koperasi');
+Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
+Route::get('/umkm/product/{product:slug}', [HomeController::class, 'product'])->name('umkm');
+Route::get('/koperasi/{koperasi:slug}', [HomeController::class, 'koperasi'])->name('koperasi');
+Route::get('/koperasi/jasa/{jasaKoperasi:slug}', [HomeController::class, 'jasaKoperasi'])->name('koperasi');
+Route::get('/koperasi/product/{productKoperasi:slug}', [HomeController::class, 'productKoperasi'])->name('koperasi');
 
 //  Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');

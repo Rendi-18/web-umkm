@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User\Umkm;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Umkm;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -48,18 +49,14 @@ class DashboardUserProductController extends Controller
     // Create PUT
     public function store(Request $request, Umkm $umkm)
     {
-        // Image Name
-        // $file_name = $request->image->getClientOriginalName();
-
         // return $request;
         $validatedData = $request->validate([
             'name' => 'required',
-            'slug' => 'required|unique:products',
             'price' => 'required',
             'weight' => 'required',
             'image' => 'image|file|max:1024',
             'description' => 'required',
-            'umkm_id' => 'required',
+
         ]);
 
         // Image
@@ -67,6 +64,7 @@ class DashboardUserProductController extends Controller
             $validatedData['image'] = $request->file('image')->store('img/' . $umkm->user->username . '/product');
         }
 
+        $validatedData['slug'] = Str::snake($request->name);
         $validatedData['umkm_id'] = $umkm->id;
         Product::create($validatedData);
 
@@ -94,11 +92,11 @@ class DashboardUserProductController extends Controller
             'image' => 'image|file|max:1024',
         ];
 
-        if ($request->slug != $product->slug) {
-            $rules['slug'] = 'required|unique:products';
-        }
-
         $validatedData = $request->validate($rules);
+
+        if ($request->name != $product->name) {
+            $validatedData['slug'] = Str::snake($request->name);
+        }
         $validatedData['umkm_id'] = $product->umkm->id;
 
         // Image

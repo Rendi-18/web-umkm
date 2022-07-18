@@ -156,7 +156,7 @@
                                                         <h6>Unggulan</h6>
                                                     </span>
                                                 </div>
-                                                <a href="/koperasi/product/{{ $product->id }}"
+                                                <a href="/koperasi/product/{{ $product->slug }}"
                                                     class="btn mt-3 col-12">Detail</a>
                                             </div>
                                         </div>

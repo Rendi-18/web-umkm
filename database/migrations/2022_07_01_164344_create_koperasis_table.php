@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreignId('category_koperasi_id');
+            $table->string('slug')->unique();
             $table->string('name')->unique();
             $table->string('nik');
             $table->text('description');

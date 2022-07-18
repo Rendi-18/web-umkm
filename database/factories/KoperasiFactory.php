@@ -19,6 +19,7 @@ class KoperasiFactory extends Factory
         return [
             'user_id' => mt_rand(1, 6),
             'nik' => '12345678',
+            'slug' => $this->faker->slug(),
             'name' => $this->faker->sentence(mt_rand(1, 4)),
             'category_koperasi_id' => mt_rand(1, 3),
             'phonenumber' => $this->faker->phoneNumber(),

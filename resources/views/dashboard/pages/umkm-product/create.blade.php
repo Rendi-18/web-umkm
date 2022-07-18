@@ -15,7 +15,7 @@
                         <form action="/dashboard/umkm/{{ $umkm->id }}/umkm-product" method="POST"
                             enctype="multipart/form-data">
                             @csrf
-                            <div class="row mb-3">
+                            {{-- <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="umkm_id">Id UMKM</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control @error('umkm_id') is-invalid @enderror"
@@ -27,20 +27,7 @@
                                         </div>
                                     @enderror
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="slug">Slug</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('slug') is-invalid @enderror"
-                                        id="slug" placeholder="Slug" name="slug" value="{{ old('slug') }}"
-                                        required>
-                                    @error('slug')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            </div>
+                            </div> --}}
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="name">Nama Product</label>
                                 <div class="col-sm-10">

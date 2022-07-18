@@ -65,7 +65,7 @@
                                     <h5>Layanan Lainnya</h5>
                                 </div>
                             </div>
-                            @foreach ($jasaKoperasi->koperasi->product as $service)
+                            @foreach ($jasaKoperasi->koperasi->jasa as $service)
                                 <div class="col-xl-3 col-md-6 d-flex align-items-stretch my-4 mt-xl-0 rounded"
                                     data-aos="zoom-in" data-aos-delay="100">
 
@@ -82,14 +82,14 @@
                                             <span class="col-12 d-flex">
                                                 <i class="bx bx-chart bx-burst my-auto"></i>
                                                 &nbsp;
-                                                <span class="my-auto">{{ $service->name }}</span>
+                                                <span class="my-auto">{{ $service->service }}</span>
                                             </span>
                                             <span class="col-12 d-flex">
                                                 <i class="bx bx-donate-heart bx-burst my-auto"></i>
                                                 &nbsp;
                                                 <span class="my-auto">{{ $service->needs }}</span>
                                             </span>
-                                            <a href="/koperasi/jasa/{{ $service->id }}"
+                                            <a href="/koperasi/jasa/{{ $service->slug }}"
                                                 class="btn mt-3 col-12">Detail</a>
                                         </div>
                                     </div>

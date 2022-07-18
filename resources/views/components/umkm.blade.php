@@ -57,7 +57,7 @@
                             class="card-um-lightbox preview-link" title="{{ $umkm->description }}"><i
                                 class="bx bx-plus"></i></a>
 
-                        <a href="/umkm/{{ $umkm->id }}" class="details-link" title="More Details"><i
+                        <a href="/umkm/{{ $umkm->slug }}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                         <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
                             class="card-um-lightbox preview-link" title="{{ $koperasi->description }}"><i
                                 class="bx bx-plus"></i></a>
-                        <a href="/koperasi/{{ $koperasi->id }}" class="details-link" title="More Details"><i
+                        <a href="/koperasi/{{ $koperasi->slug }}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
                     </div>
                 </div>

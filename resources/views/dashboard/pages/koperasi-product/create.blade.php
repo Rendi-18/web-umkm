@@ -16,7 +16,7 @@
                             enctype="multipart/form-data">
                             <form action="#" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div class="row mb-3 d-none">
+                                {{-- <div class="row mb-3 d-none">
                                     <label class="col-sm-2 col-form-label" for="koperasi_id">Id KOPERASI</label>
                                     <div class="col-sm-10">
                                         <input type="hidden"
@@ -28,20 +28,7 @@
                                             </div>
                                         @enderror
                                     </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="slug">Slug</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control @error('slug') is-invalid @enderror"
-                                            id="slug" placeholder="Slug" name="slug" value="{{ old('slug') }}"
-                                            required>
-                                        @error('slug')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div>
+                                </div> --}}
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label" for="name">Nama Product</label>
                                     <div class="col-sm-10">
@@ -113,9 +100,9 @@
                                     <label class="col-sm-2 col-form-label" for="description">Deskripsi</label>
                                     <div class="col-sm-10">
                                         <input type="hidden"
-                                            class="form-control @error('description') is-invalid @enderror"
-                                            id="description" placeholder="Deskripsi" name="description"
-                                            value="{{ old('description') }}" required>
+                                            class="form-control @error('description') is-invalid @enderror" id="description"
+                                            placeholder="Deskripsi" name="description" value="{{ old('description') }}"
+                                            required>
                                         <trix-editor input="description"></trix-editor>
                                         @error('description')
                                             <div class="invalid-feedback">
