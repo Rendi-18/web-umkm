@@ -78,7 +78,7 @@ class HomeController extends Controller
         if ($koperasi->status != 1) {
             abort(404);
         }
-        return view('pages.koperasi', [
+        return view('pages.koperasi.index', [
             'koperasi' => $koperasi,
         ]);
     }
