@@ -45,7 +45,7 @@
             </div>
         </section>
         <section id="product" class="product">
-            @if ($koperasi->service->count())
+            @if ($koperasi->jasa->count())
                 <div class="container" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
 
@@ -55,7 +55,7 @@
                                     <h5>Layanan Koperasiu</h5>
                                 </div>
                             </div>
-                            @foreach ($koperasi->service as $product)
+                            @foreach ($koperasi->jasa as $service)
                                 <div class="col-xl-3 col-md-6 d-flex align-items-stretch my-4 mt-xl-0 rounded"
                                     data-aos="zoom-in" data-aos-delay="100">
 
@@ -72,14 +72,15 @@
                                             <span class="col-12 d-flex">
                                                 <i class="bx bx-money bx-burst my-auto"></i>
                                                 &nbsp;Harga &nbsp;
-                                                <span class="my-auto">: @currency($service->needs)</span>
+                                                <span class="my-auto">: {{ $service->needs }}</span>
                                             </span>
                                             <span class="col-12 d-flex">
                                                 <i class='bx bx-cuboid bx-burst my-auto'></i>
                                                 &nbsp;Berat &nbsp;
                                                 <span class="my-auto">: {{ $service->needs }}</span>
                                             </span>
-                                            <a href="/umkm/service/{{ $service->id }}" class="btn mt-3 col-12">Detail</a>
+                                            <a href="/koperasi/jasa/{{ $service->id }}"
+                                                class="btn mt-3 col-12">Detail</a>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +138,7 @@
                                                         <h6>Unggulan</h6>
                                                     </span>
                                                 </div>
-                                                <a href="/umkm/product/{{ $product->id }}"
+                                                <a href="/koperasi/product/{{ $product->id }}"
                                                     class="btn mt-3 col-12">Detail</a>
                                             </div>
                                         </div>
@@ -180,7 +181,7 @@
                                                 &nbsp;Berat &nbsp;
                                                 <span class="my-auto">: {{ $product->weight }} Kg</span>
                                             </span>
-                                            <a href="/umkm/product/{{ $product->id }}"
+                                            <a href="/koperasi/product/{{ $product->id }}"
                                                 class="btn mt-3 col-12">Detail</a>
                                         </div>
                                     </div>
