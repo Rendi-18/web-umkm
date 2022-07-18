@@ -6,7 +6,7 @@
             <div class="container h-100">
                 <ol>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/">UMKM</a></li>
+                    <li><a href="/umkm/{{ $product->umkm->id }}">UMKM</a></li>
                     <li>Produk</li>
                 </ol>
                 <h2>{{ $product->umkm->name }}</h2>

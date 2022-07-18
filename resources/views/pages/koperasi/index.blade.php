@@ -22,18 +22,41 @@
                         <h2>{{ $koperasi->name }}</h2>
                         <p>{{ $koperasi->description }}</p>
                         <div class="row">
-                            <span class="col-4"><i class="bi bi-person"></i> Pemilik : <span
+                            <span class="col-6">
+                                <i class="bi bi-upc-scan"></i> NIK : <span class="val">{{ $koperasi->nik }}</span>
+                            </span>
+                            <span class="col-6">
+                                <i class="bx ri-service-line"></i> Koperasi <span
+                                    class="val">{{ $koperasi->categoryKoperasi->category }}</span>
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span class="col-6"><i class="bi bi-person"></i> Pemilik : <span
                                     class="val">{{ $koperasi->user->name }}</span>
                             </span>
-                            <span class="col-4"><i class="bi bi-telephone"></i> No HP :
+                            <span class="col-6"><i class="bi bi-telephone"></i> No HP :
                                 <span class="val">{{ $koperasi->user->phonenumber }}</span></span>
                         </div>
                         <div class="row">
-                            <span class="col-4"><i class="bi bi-bag"></i> Product : <span
-                                    class="val">{{ $koperasi->product->count() }}</span>
+                            <span class="col-6"><i class="bx bx-group"></i> Member :
+                                <span class="val">
+                                    @if ($koperasi->member)
+                                        {{ $koperasi->member }}
+                                    @else
+                                        -
+                                    @endif
+
+                                </span>
                             </span>
-                            <span class="col-4"><i class="bi bi-person-check"></i> Bergabung :
-                                <span class="val">{{ $koperasi->created_at->diffForHumans() }}</span>
+                            <span class="col-6"><i class="bx bxs-group"></i> Karyawan :
+                                <span class="val">
+                                    @if ($koperasi->employee)
+                                        {{ $koperasi->employee }}
+                                    @else
+                                        -
+                                    @endif
+
+                                </span>
                             </span>
                         </div>
                         <div class="row">
@@ -52,7 +75,7 @@
                         <div class="row prod-container col-12">
                             <div class="row jdl p-0">
                                 <div class="col-6 justify-conten-right">
-                                    <h5>Layanan Koperasiu</h5>
+                                    <h5>Layanan Koperasi</h5>
                                 </div>
                             </div>
                             @foreach ($koperasi->jasa as $service)
@@ -70,14 +93,9 @@
                                         <h4>{{ Str::limit($service->name, 15, '...') }}</h4>
                                         <div class="row">
                                             <span class="col-12 d-flex">
-                                                <i class="bx bx-money bx-burst my-auto"></i>
-                                                &nbsp;Harga &nbsp;
-                                                <span class="my-auto">: {{ $service->needs }}</span>
-                                            </span>
-                                            <span class="col-12 d-flex">
-                                                <i class='bx bx-cuboid bx-burst my-auto'></i>
-                                                &nbsp;Berat &nbsp;
-                                                <span class="my-auto">: {{ $service->needs }}</span>
+                                                <i class="bx bx-donate-heart bx-burst my-auto"></i>
+                                                &nbsp;
+                                                <span class="my-auto">{{ $service->needs }}</span>
                                             </span>
                                             <a href="/koperasi/jasa/{{ $service->id }}"
                                                 class="btn mt-3 col-12">Detail</a>
