@@ -25,14 +25,14 @@
                             <span class="col-4"><i class="bi bi-person"></i> Pemilik : <span
                                     class="val">{{ $umkm->user->name }}</span>
                             </span>
-                            <span class="col-4"><i class="bi bi-telephone"></i> No HP :
+                            <span class="col-8"><i class="bi bi-telephone"></i> No HP :
                                 <span class="val">{{ $umkm->user->phonenumber }}</span></span>
                         </div>
                         <div class="row">
                             <span class="col-4"><i class="bi bi-bag"></i> Product : <span
                                     class="val">{{ $umkm->product->count() }}</span>
                             </span>
-                            <span class="col-4"><i class="bi bi-person-check"></i> Bergabung :
+                            <span class="col-8"><i class="bi bi-person-check"></i> Bergabung :
                                 <span class="val">{{ $umkm->created_at->diffForHumans() }}</span>
                             </span>
                         </div>

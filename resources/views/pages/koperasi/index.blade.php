@@ -45,6 +45,52 @@
             </div>
         </section>
         <section id="product" class="product">
+            @if ($koperasi->service->count())
+                <div class="container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+
+                        <div class="row prod-container col-12">
+                            <div class="row jdl p-0">
+                                <div class="col-6 justify-conten-right">
+                                    <h5>Layanan Koperasiu</h5>
+                                </div>
+                            </div>
+                            @foreach ($koperasi->service as $product)
+                                <div class="col-xl-3 col-md-6 d-flex align-items-stretch my-4 mt-xl-0 rounded"
+                                    data-aos="zoom-in" data-aos-delay="100">
+
+                                    <div class="product-card p-4">
+                                        @if ($service->image)
+                                            <img src="{{ asset('storage/' . $service->image) }}" alt="user-avatar"
+                                                class="img-fluid" id="uploadedAvatar">
+                                        @else
+                                            <img src="/img/temp/service-temp.png" alt="user-avatar" class="img-fluid"
+                                                id="uploadedAvatar">
+                                        @endif
+                                        <h4>{{ Str::limit($service->name, 15, '...') }}</h4>
+                                        <div class="row">
+                                            <span class="col-12 d-flex">
+                                                <i class="bx bx-money bx-burst my-auto"></i>
+                                                &nbsp;Harga &nbsp;
+                                                <span class="my-auto">: @currency($service->needs)</span>
+                                            </span>
+                                            <span class="col-12 d-flex">
+                                                <i class='bx bx-cuboid bx-burst my-auto'></i>
+                                                &nbsp;Berat &nbsp;
+                                                <span class="my-auto">: {{ $service->needs }}</span>
+                                            </span>
+                                            <a href="/umkm/service/{{ $service->id }}" class="btn mt-3 col-12">Detail</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                </div>
+            @else
+                <h1 class="text-center">Not Found :(</h1>
+            @endif
             @if ($koperasi->product->count())
                 <div class="container" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
@@ -134,7 +180,8 @@
                                                 &nbsp;Berat &nbsp;
                                                 <span class="my-auto">: {{ $product->weight }} Kg</span>
                                             </span>
-                                            <a href="/umkm/product/{{ $product->id }}" class="btn mt-3 col-12">Detail</a>
+                                            <a href="/umkm/product/{{ $product->id }}"
+                                                class="btn mt-3 col-12">Detail</a>
                                         </div>
                                     </div>
                                 </div>

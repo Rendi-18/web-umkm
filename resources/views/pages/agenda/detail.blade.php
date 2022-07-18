@@ -13,9 +13,16 @@
         <section id="d-agendas">
             <div class="container">
                 <div class="row">
-                    <div class=" container-lg img-container d-flex flex-column align-items-center">
+                    <div class=" container-lg title-container d-flex flex-column align-items-center">
                         <h2><strong>{{ $agenda->name }}</strong></h2>
-                        <img src="/img/portfolio/portfolio-2.jpg" class="img-fluid">
+                        <div class="img-container d-flex flex-column align-items-center">
+                            @if ($agenda->image)
+                                <img src="{{ asset('storage/' . $agenda->image) }}" class="img-fluid">
+                            @else
+                                <img src="/img/temp/agenda-temp.png" class="img-fluid">
+                                {{-- <img src="/img/portfolio/portfolio-9.jpg" class="img-fluid"> --}}
+                            @endif
+                        </div>
                         <div class="row  my-2 w-100">
                             <hr class="w-100 border-2 opacity-50 mb-2">
                             <div class="img-title d-flex w-100">

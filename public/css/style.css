@@ -2195,13 +2195,24 @@ a.agenda-card {
 /*--------------------------------------------------------------
 # DAgendas
 --------------------------------------------------------------*/
-#d-agendas .img-container {
+#d-agendas .title-container {
   max-height: 50%;
   width: 75%;
   height: auto;
 }
 
-#d-agendas .img-container img {}
+#d-agendas .img-container {
+  overflow: hidden;
+  width: 100%;
+  height: 20rem !important;
+}
+
+#d-agendas .img-container img {
+  size: cover;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
 
 
 /*--------------------------------------------------------------

@@ -21,7 +21,7 @@
                                         <img src="{{ asset('storage/' . $agenda->image) }}" class="img-fluid"
                                             alt="">
                                     @else
-                                        <img src="img\portfolio\portfolio-9.jpg" class="img-fluid" alt="">
+                                        <img src="img\temp\agenda-temp.png" class="img-fluid" alt="">
                                     @endif
                                 </div>
                                 <div class="member-info col-lg">

@@ -17,7 +17,7 @@
                             @if ($pegawai->image)
                                 <img src="{{ asset('storage/' . $pegawai->image) }}" class="img-fluid" alt="">
                             @else
-                                <img src="img\portfolio\portfolio-9.jpg" class="img-fluid" alt="">
+                                <img src="img\temp\user-temp.png" class="img-fluid" alt="">
                             @endif
                         </div>
                         <div class="member-info">
