@@ -6,7 +6,7 @@
         @include('components.agenda')
         @include('components.about')
         @include('components.service')
-        {{-- @include('components.search') --}}
+        @include('components.regist')
         @include('components.umkm')
         @include('components.structure')
         @include('components.contact')

@@ -169,9 +169,9 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 form-label" for="description">Deskripsi</label>
                             <div class="col-sm-10">
-                                <div class="input-group input-group-merge">
+                                <div class="input-group input-group-merge d-flex-row flex-column">
                                     <input type="hidden" name="description" id="description"
-                                        class="form-control phone-mask @error('description') is-invalid @enderror"
+                                        class="form-control @error('description') is-invalid @enderror"
                                         placeholder="Description" aria-label="658 799 8941"
                                         aria-describedby="basic-icon-default-address"
                                         value="{{ old('descriprion', $umkm->description) }}" required>

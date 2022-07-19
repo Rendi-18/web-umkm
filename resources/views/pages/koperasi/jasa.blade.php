@@ -54,7 +54,7 @@
                                     </span>
                                 </div>
                                 <h6>Deskripsi Layanan</h6>
-                                <p>{{ $jasaKoperasi->description }} </p>
+                                <p>{!! $jasaKoperasi->description !!} </p>
                             </div>
                         </div>
                     </div>

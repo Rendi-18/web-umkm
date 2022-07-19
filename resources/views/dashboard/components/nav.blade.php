@@ -7,20 +7,10 @@
     </div>
 
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-        {{-- <!-- Search -->
-                            <div class="navbar-nav align-items-center">
-                                <div class="nav-item d-flex align-items-center">
-                                    <i class="bx bx-search fs-4 lh-0"></i>
-                                    <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
-                                        aria-label="Search..." />
-                                </div>
-                            </div>
-                            <!-- /Search --> --}}
         <div class="align-items-start">
             <h4 class="fw-bold mb-0">Dashboard</h4>
         </div>
         <ul class="navbar-nav flex-row align-items-center ms-auto">
-            <!-- Place this tag where you want the button to render. -->
             <h5 class="mb-0 me-2">{{ auth()->user()->name }}</h5>
 
             <!-- User -->

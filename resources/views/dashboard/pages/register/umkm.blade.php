@@ -29,7 +29,7 @@
                             {{-- Image --}}
                             <div class="py-3 px-3 pl-5">
                                 <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                    <img src="/img/elements/2.jpg" alt="user-avatar"
+                                    <img src="/img/temp/store-temp.png" alt="user-avatar"
                                         class="d-block rounded-circle img-preview" height="100" width="100"
                                         id="uploadedAvatar">
                                     <div class="button-wrapper">
