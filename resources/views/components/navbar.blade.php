@@ -10,14 +10,22 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                <li><a class="nav-link scrollto" href="#card-um">UMKM</a></li>
-                <li><a class="nav-link scrollto" href="#team">Struktur</a></li>
+                @if (Request::is('home'))
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="#card-um">UMKM & Koperasi</a></li>
+                    <li><a class="nav-link scrollto" href="#employee">Struktur</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                @else
+                    <li><a class="nav-link scrollto active" href="/#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="/#services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="/#card-um">Search</a></li>
+                    <li><a class="nav-link scrollto" href="/#employee">Struktur</a></li>
+                    <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+                @endif
 
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
                 @auth
                     <li class="dropdown">
                         <a href="#">
@@ -40,21 +48,6 @@
                             </form>
                         </ul>
                     </li>
-                    {{-- @auth
-                    <li>
-                        <a class="getstarted" href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-                    </li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                    <li>
-                        <a class="getstarted" href="/dashboard">
-                            {{ Auth::user()->username }}
-                        </a>
-                    </li> --}}
                 @else
                     <li>
                         <a class="getstarted" href="/login">Login</a>
