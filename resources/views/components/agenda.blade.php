@@ -21,27 +21,28 @@
                                         <img src="{{ asset('storage/' . $agenda->image) }}" class="img-fluid"
                                             alt="">
                                     @else
-                                        <img src="img\temp\agenda-temp.png" class="img-fluid" alt="">
+                                        <img src="/img/temp/agenda-temp.png" class="img-fluid" alt="">
                                     @endif
                                 </div>
                                 <div class="member-info col-lg">
                                     <h4>{{ $agenda->name }}</h4>
                                     <small>{{ date('d F Y', strtotime($agenda->date)) }}</small>
                                     <span>{{ $agenda->location }}</span>
-                                    <span class="text-justify">{!! Str::limit($agenda->content, 110) !!}</span>
+                                    {!! Str::limit($agenda->content, 110) !!}
                                 </div>
                             </div>
                         </div>
+                    </a>
+                @endforeach
             </div>
-            </a>
-            @endforeach
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
 
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
     </div>
     </div>
     </div>

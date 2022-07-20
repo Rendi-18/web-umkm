@@ -138,7 +138,7 @@
                                     <div class="col-sm-10 px-3 pl-5">
                                         <div class="d-flex align-items-start align-items-sm-center gap-4">
                                             <div class="img-container img-container-sm rounded">
-                                                <img src="/img/portfolio/portfolio-7.jpg" alt="user-avatar"
+                                                <img src="/img/temp/agenda-temp.png" alt="user-avatar"
                                                     class="d-block img-fluid img-fit img-preview mx-auto d-block"
                                                     id="uploadedAvatar">
                                             </div>
