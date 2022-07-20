@@ -7,8 +7,13 @@
                     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
                     anim id est laborum.</p>
             </div>
-            <div class="col-lg-3 cta-btn-container text-center"> <a class="cta-btn align-middle"
-                    href="/dashboard/register/umkm">Daftar</a></div>
+            <div class="row">
+                <div class="col-lg-3 cta-btn-container text-center"> <a class="cta-btn align-middle"
+                        href="/dashboard/register/umkm">Daftar UMKM</a></div>
+                <div class="col-lg-3 cta-btn-container text-center"> <a class="cta-btn align-middle"
+                        href="/dashboard/register/koperasi">Daftar Koperasi</a></div>
+            </div>
+
         </div>
     </div>
 </section>

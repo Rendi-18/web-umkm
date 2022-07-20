@@ -203,6 +203,12 @@ Temp
   box-shadow: inset 0px 0px 10px 0px #00000038;
 }
 
+@media (max-width: 768px) {
+  .img-container-kp {
+    width: 10.25rem;
+    height: 10.25rem;
+  }
+}
 
 /* Table 
 *****************************************************************************
@@ -214,4 +220,8 @@ Temp
 
 td .text-truncate {
   max-width: 50vh;
+}
+
+.input-group.input-group-merge.d-flex-row.flex-column {
+  overflow: auto;
 }

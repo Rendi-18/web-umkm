@@ -12,13 +12,13 @@
                     <div id="input-g">
                         <form action="/search/umkm" method="get" id="formSearch" class="row p-0 input-group">
                             <div role="group" aria-label="Basic radio toggle button group"
-                                class="col-3 row p-0 m-initial">
-                                <label class="x btn-outline-primary shad-none col-6 itm-s d-flex active" id="umkmSearch"
-                                    for="umkmSearch">
+                                class="col-3 row p-0 m-initial itm-s">
+                                <label class="x btn-outline-primary shad-none col-lg-6 col-12  d-flex active"
+                                    id="umkmSearch" for="umkmSearch">
                                     <span class="m-auto">UMKM</span>
                                 </label>
-                                <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
-                                    id="koperasiSearch">
+                                <label class="x btn-outline-primary shad-none col-lg-6 col-12 d-flex"
+                                    for="koperasiSearch" id="koperasiSearch">
                                     <span class="m-auto">Koperasi</span>
                                 </label>
                             </div>

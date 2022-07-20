@@ -15,32 +15,33 @@
                                     class="col-3 row p-0 m-initial">
                                     @if (Request::is('search/umkm*'))
                                         <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex active"id="umkmSearch"
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12 itm-s d-flex active"id="umkmSearch"
                                             for="umkmSearch">
                                             <span class="m-auto">UMKM</span>
                                         </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
-                                            id="koperasiSearch">
+                                        <label class="x btn-outline-primary shad-none col-lg-6 col-12 itm-e d-flex"
+                                            for="koperasiSearch" id="koperasiSearch">
                                             <span class="m-auto">Koperasi</span>
                                         </label>
                                     @elseif (Request::is('search/koperasi*'))
                                         <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12 itm-s d-flex "id="umkmSearch"
                                             for="umkmSearch">
                                             <span class="m-auto">UMKM</span>
                                         </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex active"
+                                        <label
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12 itm-e d-flex active"
                                             for="koperasiSearch" id="koperasiSearch">
                                             <span class="m-auto">Koperasi</span>
                                         </label>
                                     @else
                                         <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12 itm-s d-flex "id="umkmSearch"
                                             for="umkmSearch">
                                             <span class="m-auto">UMKM</span>
                                         </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
-                                            id="koperasiSearch">
+                                        <label class="x btn-outline-primary shad-none col-lg-6 col-12 itm-e d-flex"
+                                            for="koperasiSearch" id="koperasiSearch">
                                             <span class="m-auto">Koperasi</span>
                                         </label>
                                     @endif
@@ -59,32 +60,33 @@
                                     class="col-3 row p-0 m-initial">
                                     @if (Request::is('search/umkm*'))
                                         <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex active"id="umkmSearch"
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12 itm-s d-flex active"id="umkmSearch"
                                             for="umkmSearch">
                                             <span class="m-auto">UMKM</span>
                                         </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
-                                            id="koperasiSearch">
+                                        <label class="x btn-outline-primary shad-none col-lg-6 col-12 itm-e d-flex"
+                                            for="koperasiSearch" id="koperasiSearch">
                                             <span class="m-auto">Koperasi</span>
                                         </label>
                                     @elseif (Request::is('search/koperasi*'))
                                         <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12 itm-s d-flex "id="umkmSearch"
                                             for="umkmSearch">
                                             <span class="m-auto">UMKM</span>
                                         </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex active"
+                                        <label
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12 itm-e d-flex active"
                                             for="koperasiSearch" id="koperasiSearch">
                                             <span class="m-auto">Koperasi</span>
                                         </label>
                                     @else
                                         <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12 itm-s d-flex "id="umkmSearch"
                                             for="umkmSearch">
                                             <span class="m-auto">UMKM</span>
                                         </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
-                                            id="koperasiSearch">
+                                        <label class="x btn-outline-primary shad-none col-lg-6 col-12 itm-e d-flex"
+                                            for="koperasiSearch" id="koperasiSearch">
                                             <span class="m-auto">Koperasi</span>
                                         </label>
                                     @endif
@@ -101,31 +103,32 @@
                                     class="col-3 row p-0 m-initial">
                                     @if (Request::is('search/umkm*'))
                                         <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex active"id="umkmSearch"
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12 itm-s d-flex active"id="umkmSearch"
                                             for="umkmSearch">
                                             <span class="m-auto">UMKM</span>
                                         </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex" for="koperasiSearch"
-                                            id="koperasiSearch">
+                                        <label class="x btn-outline-primary shad-none col-lg-6 col-12 itm-e d-flex"
+                                            for="koperasiSearch" id="koperasiSearch">
                                             <span class="m-auto">Koperasi</span>
                                         </label>
                                     @elseif (Request::is('search/koperasi*'))
                                         <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex "id="umkmSearch"
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12  itm-s d-flex "id="umkmSearch"
                                             for="umkmSearch">
                                             <span class="m-auto">UMKM</span>
                                         </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex active"
+                                        <label
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12 itm-e d-flex active"
                                             for="koperasiSearch" id="koperasiSearch">
                                             <span class="m-auto">Koperasi</span>
                                         </label>
                                     @else
                                         <label
-                                            class="x btn-outline-primary shad-none col-6 itm-s d-flex active"id="umkmSearch"
+                                            class="x btn-outline-primary shad-none col-lg-6 col-12 itm-s d-flex active"id="umkmSearch"
                                             for="umkmSearch">
                                             <span class="m-auto">UMKM</span>
                                         </label>
-                                        <label class="x btn-outline-primary shad-none col-6 d-flex"
+                                        <label class="x btn-outline-primary shad-none col-lg-6 col-12 itm-e d-flex"
                                             for="koperasiSearch" id="koperasiSearch">
                                             <span class="m-auto">Koperasi</span>
                                         </label>

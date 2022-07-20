@@ -4,8 +4,8 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="row">
-                    <div class="col-4 py-5 px-5 pl-5">
-                        <div class="img-container img-container-kp rounded-circle">
+                    <div class="col-lg-4 p-lg-5 pl-lg-5 p-xs-2 d-flex">
+                        <div class="img-container img-container-kp rounded-circle m-auto">
                             @if ($umkm->image)
                                 <img src="{{ asset('storage/' . $umkm->image) }}" class="img-pr img-fluid img-fit">
                             @else
@@ -14,7 +14,7 @@
                         </div>
 
                     </div>
-                    <div class="col-8 py-5 px-5 pl-5">
+                    <div class="col--lg-8 py-5 px-5 pl-5">
                         <h3>{{ $umkm->name }}</h3>
                         <div class="row">
                             <div class="col-12">
@@ -23,18 +23,18 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-lg-4 col-6">
                                 <h6><i class="bx bx-barcode"></i> : {{ $umkm->nib }}</h6>
                             </div>
-                            <div class="col-8">
+                            <div class="col-lg-8 col-6">
                                 <h6><i class="bx bx-phone"></i> : {{ $umkm->phonenumber }}</h6>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-lg-4 col-6">
                                 <h6><i class="bx bx-buildings"></i> : {{ $umkm->city }}</h6>
                             </div>
-                            <div class="col-8">
+                            <div class="col-lg-8 col-6">
                                 <h6><i class="bx bx-map-alt"></i> : {{ $umkm->address }}</h6>
                             </div>
                         </div>
@@ -55,7 +55,8 @@
             </div>
             <div class="col-6 d-flex">
                 <a href="/dashboard/umkm/{{ $umkm->id }}/umkm-product" class="btn btn-primary ms-auto">
-                    <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Produk Unggulan
+                    <i class="tf-icons bx bx-plus"></i><span class="d-none d-sm-block">&nbsp; Tambah Produk
+                        Unggulan</span>
                 </a>
             </div>
         </div>

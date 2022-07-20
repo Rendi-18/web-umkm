@@ -323,7 +323,7 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(40, 58, 90, 0.9);
+  background: rgba(40, 58, 58, 0.9);
   transition: 0.3s;
   z-index: 999;
 }
@@ -969,7 +969,6 @@ section {
   .cta .cta-btn-container {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
   }
 }
 
@@ -1037,7 +1036,7 @@ section {
   padding: 10px 15px;
 }
 
-.card-um .card-um-item .card-um-info h5 {
+.card-um .card-um-item .card-um-info h4 {
   font-size: 18px;
   color: #fff;
   font-weight: 600;
@@ -1823,10 +1822,8 @@ section {
 }
 
 .itm-e {
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-  margin-right: -1px;
-  border-radius: .375rem;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
 label.active {
@@ -1842,11 +1839,32 @@ label.active span {
   padding-top: 1rem !important;
 }
 
+@media (max-width: 768px) {
+  .itm-s {
+    border-bottom-left-radius: 0 !important;
+
+  }
+
+  .itm-s span {
+    font-size: 12px;
+  }
+
+  .itm-e {
+    border-top-left-radius: 0 !important;
+    margin-right: -1px;
+    border-radius: .375rem;
+  }
+
+  .itm-e span {
+    font-size: 12px;
+  }
+}
 
 @media (max-width: 991px) {
   #search p {
     font-size: 14px;
   }
+
 }
 
 /*--------------------------------------------------------------
@@ -2080,7 +2098,7 @@ label.active span {
 
 .identity .image-identity {
   overflow: hidden;
-  width: 100%;
+  /* width: 100%; */
   height: 300px !important;
 }
 

@@ -9,26 +9,14 @@
             <div class="col-xxl">
                 <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="mb-0">Form Tambah Product</h5> <small class="text-muted float-end">Default label</small>
+                        <h5 class="mb-0">Form Tambah Product</h5> <small class="text-muted float-end">Selalu Pastikan data
+                            yang anda masukkan sudah benar</small>
                     </div>
                     <div class="card-body">
                         <form action="/dashboard/koperasi/{{ $koperasi->id }}/koperasi-product" method="POST"
                             enctype="multipart/form-data">
                             <form action="#" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                {{-- <div class="row mb-3 d-none">
-                                    <label class="col-sm-2 col-form-label" for="koperasi_id">Id KOPERASI</label>
-                                    <div class="col-sm-10">
-                                        <input type="hidden"
-                                            class="form-control @error('koperasi_id') is-invalid @enderror" id="koperasi_id"
-                                            placeholder="Id Umkm" name="koperasi_id" value="{{ $koperasi->id }}" required>
-                                        @error('koperasi_id')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div> --}}
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label" for="name">Nama Product</label>
                                     <div class="col-sm-10">
@@ -72,7 +60,7 @@
                                     <label class="col-sm-2 col-form-label" for="image">Foto Produk</label>
                                     <div class="col-sm-10 d-flex align-items-start align-items-sm-center gap-4 ">
                                         <div class="img-container img-container-sm rounded">
-                                            <img src="/img/temp/box-product.png" alt="user-avatar"
+                                            <img src="/img/temp/product-temp.png" alt="user-avatar"
                                                 class="img-preview d-block img-fluid img-fit mx-auto d-block"
                                                 id="uploadedAvatar">
                                         </div>

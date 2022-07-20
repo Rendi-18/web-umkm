@@ -84,7 +84,8 @@
             </div>
             <div class="col-6 d-flex">
                 <a href="/dashboard/koperasi/{{ $koperasi->id }}/koperasi-jasa" class="btn btn-primary ms-auto">
-                    <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Layanan Unggulan
+                    <i class="tf-icons bx bx-plus d-lg-none "></i><span class="d-none d-sm-block"><i
+                            class="tf-icons bx bx-plus"></i>&nbsp; Tambah Layanan Unggulan</span>
                 </a>
             </div>
         </div>

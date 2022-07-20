@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-8 mb-4 order-0">
+    <div class="col-lg-10 mb-4 order-0">
         <div class="card justify-content-end h-100">
             <div class="d-flex align-items-end row">
                 <div class="col-sm-7">
@@ -23,9 +23,9 @@
         </div>
     </div>
 
-    <div class="col-lg-4 col-md-4 order-1">
+    <div class="col-lg-2 col-md-2 order-1">
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-6 mb-4">
+            <div class="col-lg-12 col-md-12 col-6 mb-4">
                 <div class="card h-100">
                     <div class="card-body d-flex flex-column">
                         <div class="card-title d-flex align-items-start justify-content-between">
@@ -56,47 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12 col-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-body d-flex flex-column">
-                        <div class="card-title d-flex align-items-start justify-content-between">
-                            <div class="avatar flex-shrink-0">
-                                <div class="icon-alt bg-label-info rounded">
-                                    <i class="bx bx-package text-info"></i>
-                                </div>
-                            </div>
-                            <div class="dropdown">
-                                <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                                    <a class="dropdown-item" href="javascript:void(0);">View
-                                        More</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                </div>
-                            </div>
-                        </div>
-                        <span class="fw-semibold d-block mb-1">Produk</span>
-                        <h4 class="card-title mb-2">Total</h4>
-                        <small class="text-info fw-semibold mb-0 mt-auto">
-                            <div class="spinner-border-sm spinner-grow text-info" role="status">
-                                <span class="visually-hidden">Loading... </span>
-                            </div>
-                            <span class="ps-2">
 
-                                {{-- @foreach ($umkms as $umkm)
-                                    @foreach ($umkm->product as $product)
-                                        {{ $jml += $product->count() }}
-                                    @endforeach
-                                @endforeach
-                                {{ $jml }} --}}
-
-                            </span>
-                        </small>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -167,8 +127,8 @@
                                                 <a class="dropdown-item" href="javascript:void(0);"><i
                                                         class="bx bx-edit-alt me-1"></i>
                                                     Edit</a>
-                                                <form id="umkmDelete-form"
-                                                    action="/dashboard/umkm/{{ $umkm->id }}" method="post">
+                                                <form id="umkmDelete-form" action="/dashboard/umkm/{{ $umkm->id }}"
+                                                    method="post">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="dropdown-item"

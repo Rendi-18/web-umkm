@@ -1,6 +1,6 @@
 <section id="product-card" class="">
     <div class="row py-3 mb-4">
-        <div class="col-6">
+        <div class="col-lg-6">
             <h4 class="fw-bold">Produk Unggulan {{ $umkm->name }}</h4>
         </div>
 
@@ -66,7 +66,8 @@
         <div class="col-6 d-flex ">
             <a class="ms-auto" href="/dashboard/umkm/{{ $umkm->id }}/umkm-product/create">
                 <button type="button" class="btn btn-primary ">
-                    <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Produk
+                    <i class="tf-icons bx bx-plus d-lg-none "></i><span class="d-none d-sm-block"><i
+                            class="tf-icons bx bx-plus"></i>&nbsp; Tambah Produk</span>
                 </button>
             </a>
         </div>

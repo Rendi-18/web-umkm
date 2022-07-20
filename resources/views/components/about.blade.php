@@ -35,7 +35,6 @@
                     koperasi dan UKM di Provinsi Lampung terhadap kontribusi pembangunan untuk peningkatan kesejahteraan
                     masyarakat Provinsi Lampung secara berkelanjutan.
                 </p>
-                <a href="#" class="btn-learn-more">Learn More</a>
             </div>
         </div>
 

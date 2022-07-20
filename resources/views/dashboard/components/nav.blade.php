@@ -11,7 +11,7 @@
             <h4 class="fw-bold mb-0">Dashboard</h4>
         </div>
         <ul class="navbar-nav flex-row align-items-center ms-auto">
-            <h5 class="mb-0 me-2">{{ auth()->user()->name }}</h5>
+            <h5 class="mb-0 me-2 d-none d-lg-block">{{ auth()->user()->name }}</h5>
 
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -21,7 +21,7 @@
                             <img src="{{ asset('storage/' . auth()->user()->image) }}" alt
                                 class="w-px-40 h-auto rounded-circle img-fluid img-fit" />
                         @else
-                            <img src="/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle img-fit" />
+                            <img src="/img/temp/user-temp.png" alt class="w-px-40 h-auto rounded-circle img-fit" />
                         @endif
                     </div>
                 </a>
@@ -35,7 +35,7 @@
                                             <img src="{{ asset('storage/' . auth()->user()->image) }}" alt
                                                 class="w-px-40 h-auto rounded-circle img-fit" />
                                         @else
-                                            <img src="/img/avatars/1.png" alt
+                                            <img src="/img/temp/user-temp.png" alt
                                                 class="w-px-40 h-auto rounded-circle img-fit" />
                                         @endif
                                     </div>

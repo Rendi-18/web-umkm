@@ -72,7 +72,8 @@
         <div class="col-6 d-flex ">
             <a class="ms-auto" href="/dashboard/koperasi/{{ $koperasi->id }}/koperasi-jasa/create">
                 <button type="button" class="btn btn-primary ">
-                    <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Layanan
+                    <i class="tf-icons bx bx-plus d-lg-none "></i><span class="d-none d-sm-block"><i
+                            class="tf-icons bx bx-plus"></i>&nbsp; Tambah Layanan</span>
                 </button>
             </a>
         </div>
@@ -153,7 +154,7 @@
                                                     <input type="hidden" name="isUnggulan" value="1">
                                                     <button class="dropdown-item"
                                                         onclick="return confirm('Apa anda yakin?')">
-                                                        <i class="bx bxl-service-hunt me-1"></i> Unggulkan
+                                                        <i class="bx bx-star me-1"></i> Unggulkan
                                                     </button>
                                                 </form>
                                             @endif

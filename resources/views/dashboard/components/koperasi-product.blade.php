@@ -71,7 +71,8 @@
         <div class="col-6 d-flex ">
             <a class="ms-auto" href="/dashboard/koperasi/{{ $koperasi->id }}/koperasi-product/create">
                 <button type="button" class="btn btn-primary ">
-                    <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Produk
+                    <i class="tf-icons bx bx-plus d-lg-none "></i><span class="d-none d-sm-block"><i
+                            class="tf-icons bx bx-plus"></i>&nbsp; Tambah Produk</span>
                 </button>
             </a>
         </div>

@@ -71,7 +71,7 @@
                                 <label class="col-sm-2 col-form-label" for="image">Foto Produk</label>
                                 <div class="col-sm-10 d-flex align-items-start align-items-sm-center gap-4 ">
                                     <div class="img-container img-container-sm rounded">
-                                        <img src="/img/temp/box-product.png" alt="user-avatar"
+                                        <img src="/img/temp/product-temp.png" alt="user-avatar"
                                             class="img-preview d-block img-fluid img-fit mx-auto d-block"
                                             id="uploadedAvatar">
                                     </div>
