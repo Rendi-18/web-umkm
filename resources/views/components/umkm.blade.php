@@ -1,7 +1,6 @@
 <!-- ======= card-um Section ======= -->
 <section id="card-um" class="card-um">
     <div class="container" data-aos="fade-up">
-
         <div class="section-title p-0">
             <h2>UMKM & KOPERASI</h2>
         </div>
@@ -12,12 +11,12 @@
                     <div id="input-g">
                         <form action="/search/umkm" method="get" id="formSearch" class="row p-0 input-group">
                             <div role="group" aria-label="Basic radio toggle button group"
-                                class="col-3 row p-0 m-initial itm-s">
-                                <label class="x btn-outline-primary shad-none col-lg-6 col-12  d-flex active"
+                                class="col-3 row p-0 m-initial ">
+                                <label class="x btn-outline-primary shad-none col-lg-6 col-12  itm-s d-flex active"
                                     id="umkmSearch" for="umkmSearch">
                                     <span class="m-auto">UMKM</span>
                                 </label>
-                                <label class="x btn-outline-primary shad-none col-lg-6 col-12 d-flex"
+                                <label class="x btn-outline-primary shad-none col-lg-6 col-12 itm-e d-flex"
                                     for="koperasiSearch" id="koperasiSearch">
                                     <span class="m-auto">Koperasi</span>
                                 </label>
@@ -32,13 +31,11 @@
                 </div>
             </div>
         </div>
-
         <ul id="card-um-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-umkm">UMKM</li>
             <li data-filter=".filter-koperasi">KOPERASI</li>
         </ul>
-
         <div class="row card-um-container" data-aos="fade-up" data-aos-delay="200">
             @foreach ($umkms as $umkm)
                 <div class="col-lg-3 col-6 card-um-item filter-umkm">
@@ -51,11 +48,11 @@
                     </div>
 
                     <div class="card-um-info">
-                        <h5>{{ Str::limit($umkm->name, 20) }}</h5>
+                        <h4>{{ Str::limit($umkm->name, 15) }}</h4>
 
                         <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
                             class="card-um-lightbox preview-link" title="{{ $umkm->description }}"><i
-                                class="bx bx-plus"></i></a>
+                                class="bx bx-detail"></i></a>
 
                         <a href="/umkm/{{ $umkm->slug }}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
@@ -72,10 +69,10 @@
                         @endif
                     </div>
                     <div class="card-um-info">
-                        <h5>{{ Str::limit($koperasi->name, 20) }}</h5>
+                        <h4>{{ Str::limit($koperasi->name, 15) }}</h4>
                         <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
                             class="card-um-lightbox preview-link" title="{{ $koperasi->description }}"><i
-                                class="bx bx-plus"></i></a>
+                                class="bx bx-detail"></i></a>
                         <a href="/koperasi/{{ $koperasi->slug }}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
                     </div>
@@ -83,4 +80,5 @@
             @endforeach
         </div>
     </div>
-</section><!-- End Portfolio Section -->
+</section>
+<!-- End Portfolio Section -->

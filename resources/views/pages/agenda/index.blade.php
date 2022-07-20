@@ -41,30 +41,29 @@
                     <div class="container" data-aos="fade-up">
                         <div class="row">
                             @foreach ($agendas as $agenda)
-                                <div class="col-lg-6 my-2">
+                                <div class="col-lg-6 my-2 p-2">
                                     <a href="agenda/{{ $agenda->id }}" class="agenda-card">
-                                        <div class="member d-flex align-items-start" data-aos="zoom-in"
+                                        <div class="member d-flex align-items-start p-4" data-aos="zoom-in"
                                             data-aos-delay="100">
                                             <div class="pic rounded">
                                                 @if ($agenda->image)
                                                     <img src="{{ asset('storage/' . $agenda->image) }}" class="img-fluid"
                                                         alt="">
                                                 @else
-                                                    <img src="img\portfolio\portfolio-9.jpg" class="img-fluid"
-                                                        alt="">
+                                                    <img src="img\temp\agenda-temp.png" class="img-fluid" alt="">
                                                 @endif
                                             </div>
-                                            <div class="member-info col-lg">
+                                            <div class="member-info col-lg ps-2">
                                                 <h4>{{ $agenda->name }}</h4>
                                                 <small>{{ date('d F Y', strtotime($agenda->date)) }}</small>
                                                 <span>{{ $agenda->location }}</span>
                                                 {!! Str::limit($agenda->content, 110) !!}
                                             </div>
                                         </div>
-
+                                    </a>
                                 </div>
-                        </div></a>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </section>
         </section>

@@ -4,32 +4,33 @@
 
         <div class="section-title">
             <h2>Pegawai</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
-                sit in iste officiis commodi quidem hic quas.</p>
+            <p>Data Pegawai Dinas Koperasi UMKM Lampung</p>
         </div>
 
         <div class="row">
             @foreach ($pegawais as $pegawai)
-                <div class="col-lg-6 my-4">
-                    <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="pic">
-                            @if ($pegawai->image)
-                                <img src="{{ asset('storage/' . $pegawai->image) }}" class="img-fluid" alt="">
-                            @else
-                                <img src="img\temp\user-temp.png" class="img-fluid" alt="">
-                            @endif
+                <div class="col-lg-6 my-lg-2 my-1 px-2">
+                    <div class="member align-items-start p-2 p-lg-4 d-flex" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="col-4 d-flex">
+                            <div class="m-auto pic">
+                                @if ($pegawai->image)
+                                    <img src="{{ asset('storage/' . $pegawai->image) }}" class="img-fluid"
+                                        alt="">
+                                @else
+                                    <img src="img\temp\user-temp.png" class="img-fluid" alt="">
+                                @endif
+                            </div>
+
                         </div>
-                        <div class="member-info">
-                            <h4>{{ $pegawai->name }}</h4>
+                        <div class="col-6 ps-lg-2 member-info">
+                            <h5>{{ $pegawai->name }}</h5>
                             <span>{{ $pegawai->position }}</span>
                             <p>{{ $pegawai->classification }}</p>
                         </div>
                     </div>
                 </div>
             @endforeach
-
         </div>
-
     </div>
-</section><!-- End Team Section -->
+</section>
+<!-- End Team Section -->

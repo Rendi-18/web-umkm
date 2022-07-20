@@ -12,21 +12,30 @@
             <div class="col-lg-5 d-flex align-items-stretch">
                 <div class="info">
                     <div class="address">
-                        <i class="bi bi-geo-alt"></i>
-                        <h4>Location:</h4>
-                        <p>{{ $website[0]->address }}</p>
+                        <a href="https://www.google.co.id/maps/place/Dinas+Koperasi+Dan+UMKM/@-5.4334082,105.2588081,21z/data=!4m5!3m4!1s0x2e40da31475e767d:0x6a6f0108ae6b67e2!8m2!3d-5.4334035!4d105.2587503"
+                            target="_blank">
+                            <i class="bi bi-geo-alt"></i>
+                            <h4>Location:</h4>
+                            <p>{{ $website[0]->address }}</p>
+                        </a>
                     </div>
-
                     <div class="email">
-                        <i class="bi bi-envelope"></i>
-                        <h4>Email:</h4>
-                        <p>{{ $website[0]->email }}</p>
+                        <a href="https://mail.google.com/mail/u/axtomy9@gmail.com/?view=cm&to={{ $website[0]->email }}&su=SUBJECT&body=BODY"
+                            target="_blank">
+                            <i class="bi bi-envelope"></i>
+                            <h4>Email:</h4>
+                            <p>{{ $website[0]->email }}</p>
+                        </a>
+
                     </div>
 
                     <div class="phone">
-                        <i class="bi bi-phone"></i>
-                        <h4>Call:</h4>
-                        <p>{{ $website[0]->phonenumber }}</p>
+                        <a href="tel:{{ $website[0]->phonenumber }}">
+                            <i class="bi bi-phone"></i>
+                            <h4>Call:</h4>
+                            <p>{{ $website[0]->phonenumber }}</p>
+                        </a>
+
                     </div>
 
                     <iframe src="{{ $website[0]->iframe }}" frameborder="0"
