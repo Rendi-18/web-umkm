@@ -94,6 +94,8 @@ class DashboardUmkmController extends Controller
      */
     public function destroy(Umkm $umkm)
     {
-        //
+        Umkm::destroy($umkm->id);
+
+        return redirect('/dashboard/umkm')->with('success', 'UMKM telah dinonaktifkan');
     }
 }

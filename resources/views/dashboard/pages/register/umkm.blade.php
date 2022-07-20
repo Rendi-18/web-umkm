@@ -95,7 +95,7 @@
                                     <div class="input-group input-group-merge">
                                         <span id="basic-icon-default-phone2" class="input-group-text"><i
                                                 class="bx bx-phone"></i></span>
-                                        <input type="text" name="phonenumber" id="phonenumber"
+                                        <input type="number" name="phonenumber" id="phonenumber"
                                             class="form-control phone-mask @error('phonenumber') is-invalid @enderror"
                                             placeholder="+62" aria-label="658 799 8941"
                                             aria-describedby="basic-icon-default-phone2" value="{{ old('phonenumber') }}"

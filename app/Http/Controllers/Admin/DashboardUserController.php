@@ -126,6 +126,6 @@ class DashboardUserController extends Controller
     {
         User::destroy($user->id);
 
-        return redirect('/dashboard')->with('successUser', $user->name . ' telah dinonaktifkan');
+        return redirect('/dashboard/user')->with('successUser', $user->name . ' telah dinonaktifkan');
     }
 }

@@ -93,6 +93,8 @@ class DashboardKoperasiController extends Controller
      */
     public function destroy(Koperasi $koperasi)
     {
-        //
+        Koperasi::destroy($koperasi->id);
+
+        return redirect('/dashboard/koperasi')->with('success', 'Koperasi telah dinonaktifkan');
     }
 }

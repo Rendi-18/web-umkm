@@ -15,7 +15,7 @@
     <div class="row">
         @if ($services->where('isUnggulan')->count())
             @foreach ($services->where('isUnggulan') as $service)
-                <div class="col-3">
+                <div class="col-lg-3 col-6 mb-3">
                     <div class="card h-100">
                         <div class="img-container img-container-prd card-img-top">
                             @if ($service->image)
@@ -29,10 +29,10 @@
 
                         <div class="card-body">
                             <h5 class="card-title">{{ $service->name }}</h5>
-                            <h5 class="card-title">Layanan Name</h5>
+                            <p class="card-text mb-1">{{ $service->service }}</p>
                             <p class="card-text">
                                 <span class="text-success">
-                                    <i class="bx bx-layer"></i>
+                                    <i class="bx bx-star"></i>
                                 </span>
                                 Layanan
                             </p>
@@ -42,7 +42,7 @@
                                 <input type="hidden" class="btn-check" id="btncheck2" value="0" name="isUnggulan"
                                     autocomplete="off">
                                 <button class="btn btn-outline-primary" for="btncheck2"
-                                    onclick="return confirm('Apa anda yakin?')"><i class='bx bxl-service-hunt'></i>
+                                    onclick="return confirm('Apa anda yakin?')"><i class='bx bx-star'></i>
                                     Hilangkan
                                 </button>
                             </form>

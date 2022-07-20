@@ -46,13 +46,12 @@
                                                     <img src="{{ asset('storage/' . $user->image) }}" alt="Avatar"
                                                         class="img-fluid img-fi border-0t">
                                                 @else
-                                                    <img src="/img/avatars/5.png" alt="Avatar"
+                                                    <img src="/img/temp/user-temp.png" alt="Avatar"
                                                         class="img-fluid img-fit border-0">
                                                 @endif
                                             </li>
                                         </ul>
                                     </td>
-                                    <td><span class="badge bg-label-primary me-1">Active</span></td>
                                     <td>
                                         <div class="dropdown">
                                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
@@ -60,10 +59,10 @@
                                                 <i class="bx bx-dots-vertical-rounded"></i>
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item"
+                                                {{-- <a class="dropdown-item"
                                                     href="/dashboard/user/{{ $user->id }}/edit"><i
                                                         class="bx bx-edit-alt me-1"></i>
-                                                    Edit</a>
+                                                    Edit</a> --}}
                                                 <form id="userDelete-form" action="/dashboard/user/{{ $user->id }}"
                                                     method="post">
                                                     @method('delete')

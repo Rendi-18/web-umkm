@@ -81,7 +81,7 @@
                         <small class="text-info fw-semibold mb-0 mt-auto">
                             <div class="spinner-border-sm spinner-grow text-info" role="status">
                                 <span class="visually-hidden">Loading... </span>
-                            </div> <span class="ps-2">6000</span>
+                            </div> <span class="ps-2">{{ $koperasis->where('status', 1)->count() }}</span>
                         </small>
                     </div>
                 </div>

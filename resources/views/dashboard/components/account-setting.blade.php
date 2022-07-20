@@ -96,7 +96,7 @@
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text">(+62)</span>
                                     <input class="form-control @error('phonenumber') is-invalid @enderror"
-                                        type="text" id="phonenumber" name="phonenumber"
+                                        type="number" id="phonenumber" name="phonenumber"
                                         value="{{ old('phonenumber', $user->phonenumber) }}">
                                     @error('phonenumber')
                                         <div class="invalid-feedback">

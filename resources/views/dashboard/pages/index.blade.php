@@ -26,8 +26,14 @@
             @else
                 <div id="umkm">
                     @include('dashboard.components.comp3', [
-                        'umkms' => Auth::user()->umkm,
-                        'koperasis' => Auth::user()->koperasi,
+                        'umkmUser' => $umkmUser,
+                        'koperasiUser' => $koperasiUser,
+                    ])
+                </div>
+                <div id="koperasi">
+                    @include('dashboard.components.comp4', [
+                        'umkmUser' => $umkmUser,
+                        'koperasiUser' => $koperasiUser,
                     ])
                 </div>
             @endcan
