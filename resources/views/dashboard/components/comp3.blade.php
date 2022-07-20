@@ -51,7 +51,7 @@
                         <small class="text-success fw-semibold mb-0 mt-auto">
                             <div class="spinner-border-sm spinner-grow text-success" role="status">
                                 <span class="visually-hidden">Loading... </span>
-                            </div> <span class="ps-2">{{ $umkms->where('status', 1)->count() }}</span>
+                            </div> <span class="ps-2">{{ $umkmUser->where('status', 1)->count() }}</span>
                         </small>
                     </div>
                 </div>
@@ -64,18 +64,18 @@
 
 <!-- Table UMKM -->
 <div class="row">
-    @if (session()->has('successUser'))
+    @if (session()->has('successUmkm'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('successUser') }}
+            {{ session('successUmkm') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
     <div class="col-lg tabel-user">
         <div class="card mb-4">
             <h5 class="card-header">Tabel UMKM </h5>
-            <form action="/dashboard/umkm" method="get" class="d-flex mx-4 mb-2">
-                <input class="form-control me-2" type="text" name="search" id="search" placeholder="Search"
-                    aria-label="Search" value="{{ request('search') }}">
+            <form action="/dashboard" method="get" class="d-flex mx-4 mb-2">
+                <input class="form-control me-2" type="text" name="searchUmkm" id="search" placeholder="Search"
+                    aria-label="Search" value="{{ request('searchUmkm') }}">
                 <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
             <div class="table-responsive text-nowrap">
@@ -90,9 +90,9 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    @if ($umkms->count())
+                    @if ($umkmUser->count())
                         <tbody class="table-border-bottom-0">
-                            @foreach ($umkms as $umkm)
+                            @foreach ($umkmUser as $umkm)
                                 <tr>
                                     <td>
                                         <strong>{{ $umkm->nib }}</strong>
@@ -124,10 +124,12 @@
                                                 <i class="bx bx-dots-vertical-rounded"></i>
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="javascript:void(0);"><i
+                                                {{-- <a class="dropdown-item"
+                                                    href="/dashboard/umkm/{{ $umkm->id }}/umkm-profile"><i
                                                         class="bx bx-edit-alt me-1"></i>
-                                                    Edit</a>
-                                                <form id="umkmDelete-form" action="/dashboard/umkm/{{ $umkm->id }}"
+                                                    Edit</a> --}}
+                                                <form id="umkmDelete-form"
+                                                    action="/dashboard/umkm/{{ $umkm->id }}/umkm-profile"
                                                     method="post">
                                                     @method('delete')
                                                     @csrf

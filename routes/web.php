@@ -80,11 +80,14 @@ Route::get('/dashboard/umkm-product/{product:id}/edit', [DashboardUserProductCon
 Route::get('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/umkm/{umkm:id}/umkm-profile/edit', [DashboardUserUmkmController::class, 'edit'])->middleware('auth');
 Route::put('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmController::class, 'update'])->middleware('auth');
+Route::delete('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmController::class, 'destroy'])->middleware('auth');
 
 // Dashboard User Koperasi Profile
 Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-profile', [DashboardUserKoperasiController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-profile/edit', [DashboardUserKoperasiController::class, 'edit'])->middleware('auth');
 Route::put('/dashboard/koperasi/{koperasi:id}/koperasi-profile', [DashboardUserKoperasiController::class, 'update'])->middleware('auth');
+Route::delete('/dashboard/koperasi/{koperasi:id}/koperasi-profile', [DashboardUserKoperasiController::class, 'destroy'])->middleware('auth');
+
 
 // Dashboard User Koperasi Product
 Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-product', [DashboardProductKoperasiController::class, 'index'])->middleware('auth');

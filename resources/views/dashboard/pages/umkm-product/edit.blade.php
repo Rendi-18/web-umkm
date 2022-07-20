@@ -40,7 +40,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="price">Harga</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('price') is-invalid @enderror"
+                                    <input type="number" class="form-control @error('price') is-invalid @enderror"
                                         id="price" placeholder="Harga" name="price"
                                         value="{{ old('price', $product->price) }}" required>
                                     @error('price')
@@ -53,7 +53,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="weight">Berat</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('weight') is-invalid @enderror"
+                                    <input type="number" class="form-control @error('weight') is-invalid @enderror"
                                         id="weight" placeholder="Berat" name="weight"
                                         value="{{ old('weight', $product->weight) }}" required>
                                     @error('weight')

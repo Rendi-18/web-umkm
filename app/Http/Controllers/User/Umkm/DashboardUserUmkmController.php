@@ -70,4 +70,14 @@ class DashboardUserUmkmController extends Controller
 
         return redirect('/dashboard/umkm/' . $umkm->id . '/umkm-profile')->with('success', 'Profile has been Updated');
     }
+
+    // Delete DELETE
+    public function destroy(Umkm $umkm)
+    {
+        if ($umkm->image) {
+            Storage::delete($umkm->image);
+        }
+        Umkm::destroy($umkm->id);
+        return redirect('/dashboard')->with('successUmkm', 'UMKM telah dinonaktifkan');
+    }
 }

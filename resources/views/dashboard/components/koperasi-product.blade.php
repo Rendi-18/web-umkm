@@ -17,7 +17,7 @@
     <div class="row">
         @if ($products->where('isUnggulan')->count())
             @foreach ($products->where('isUnggulan') as $product)
-                <div class="col-3">
+                <div class="col-lg-3 col-6 mb-3">
                     <div class="card h-100">
                         <div class="img-container img-container-prd card-img-top">
                             @if ($product->image)
@@ -31,9 +31,8 @@
 
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->name }}</h5>
-                            <h5 class="card-title">Product Name</h5>
                             <p class="card-text"><span class="text-success"><i class="bx bx-money"></i>
-                                </span>{{ $product->price }}</p>
+                                </span>@currency($product->price)</p>
 
                             <form action="/dashboard/koperasi-product/{{ $product->id }}/unggulan" method="post">
                                 @method('put')
@@ -41,7 +40,7 @@
                                 <input type="hidden" class="btn-check" id="btncheck2" value="0" name="isUnggulan"
                                     autocomplete="off">
                                 <button class="btn btn-outline-primary" for="btncheck2"
-                                    onclick="return confirm('Apa anda yakin?')"><i class='bx bxl-product-hunt'></i>
+                                    onclick="return confirm('Apa anda yakin?')"><i class='bx bx-star'></i>
                                     Hilangkan
                                 </button>
                             </form>
@@ -123,7 +122,7 @@
                                         <span class="badge bg-label-danger me-1">Unggulan</span>
                                     @endif
                                 </td>
-                                <td>{{ $product->price }}</td>
+                                <td>@currency($product->price)</td>
                                 <td>{{ $product->weight }} Kg</td>
                                 <td>
                                     <div class="dropdown">
@@ -154,7 +153,7 @@
                                                         <input type="hidden" name="isUnggulan" value="1">
                                                         <button class="dropdown-item"
                                                             onclick="return confirm('Apa anda yakin?')">
-                                                            <i class="bx bxl-product-hunt me-1"></i> Unggulkan
+                                                            <i class="bx bx-star me-1"></i> Unggulkan
                                                         </button>
                                                     </form>
                                                 @endif

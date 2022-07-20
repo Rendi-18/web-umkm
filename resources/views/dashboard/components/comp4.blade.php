@@ -1,17 +1,17 @@
 <!-- Table User -->
 <div class="row">
-    @if (session()->has('successUser'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('successUser') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
     <div class="col-lg tabel-user">
+        @if (session()->has('successKoperasi'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('successKoperasi') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <div class="card mb-4">
             <h5 class="card-header">Tabel Koperasi </h5>
-            <form action="/dashboard/koperasi" method="get" class="d-flex mx-4 mb-2">
-                <input class="form-control me-2" type="text" name="search" id="search" placeholder="Search"
-                    aria-label="Search" value="{{ request('search') }}">
+            <form action="/dashboard" method="get" class="d-flex mx-4 mb-2">
+                <input class="form-control me-2" type="text" name="searchKoperasi" id="search"
+                    placeholder="Search" aria-label="Search" value="{{ request('searchKoperasi') }}">
                 <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
             <div class="table-responsive text-nowrap">
@@ -27,8 +27,8 @@
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        @if ($koperasis->count())
-                            @foreach ($koperasis as $koperasi)
+                        @if ($koperasiUser->count())
+                            @foreach ($koperasiUser as $koperasi)
                                 <tr>
                                     <td>
                                         <strong>{{ $koperasi->nik }}</strong>
@@ -65,11 +65,12 @@
                                                         class="bx bx-edit-alt me-1"></i>
                                                     Edit</a> --}}
                                                 <form id="userDelete-form"
-                                                    action="/dashboard/koperasi/{{ $koperasi->id }}" method="post">
+                                                    action="/dashboard/koperasi/{{ $koperasi->id }}/koperasi-profile"
+                                                    method="post">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="dropdown-item"
-                                                        onclick="return confirm('Apa anda yakin user dinonaktifkan secara permanen?')">
+                                                        onclick="return confirm('Apa anda yakin?')">
                                                         <i class="bx bx-trash me-1"></i> Nonaktikan
                                                     </button>
                                                 </form>

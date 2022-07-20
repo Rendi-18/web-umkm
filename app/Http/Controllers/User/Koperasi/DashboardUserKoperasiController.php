@@ -68,4 +68,14 @@ class DashboardUserKoperasiController extends Controller
 
         return redirect('/dashboard/koperasi/' . $koperasi->id . '/koperasi-profile')->with('success', 'Profile has been Updated');
     }
+
+    // Delete DELETE
+    public function destroy(Koperasi $koperasi)
+    {
+        if ($koperasi->image) {
+            Storage::delete($koperasi->image);
+        }
+        Koperasi::destroy($koperasi->id);
+        return redirect('/dashboard')->with('successKoperasi', 'Koperasi telah dinonaktifkan');
+    }
 }

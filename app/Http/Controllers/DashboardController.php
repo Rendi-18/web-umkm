@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Izin;
+use App\Models\Koperasi;
 use App\Models\User;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
@@ -13,12 +14,32 @@ class DashboardController extends Controller
 {
     public function index()
     {
+
+        $id = Auth::user()->id;
+        $umkm = Umkm::where('user_id', $id);
+
+        if (request('searchUmkm')) {
+            $umkm->where('name', 'like', '%' . request('searchUmkm') . '%')->get();
+        }
+
+        $koperasi = Koperasi::where('user_id', $id);
+
+        if (request('searchKoperasi')) {
+            $koperasi->where('name', 'like', '%' . request('searchKoperasi') . '%')->get();
+        }
+
+
         return view(
             'dashboard.pages.index',
             [
                 // 'title' => '',
                 'umkms' => Umkm::latest()->get(),
+                'koperasis' => Koperasi::latest()->get(),
                 'users' => User::latest()->get(),
+
+
+                'umkmUser' => $umkm->get(),
+                'koperasiUser' => $koperasi->get()
             ]
         );
     }
