@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Izin;
 use App\Models\Koperasi;
+use App\Models\Pesan;
 use App\Models\User;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
@@ -36,6 +37,7 @@ class DashboardController extends Controller
                 'umkms' => Umkm::latest()->get(),
                 'koperasis' => Koperasi::latest()->get(),
                 'users' => User::latest()->get(),
+                'pesans' => Pesan::latest()->get(),
 
 
                 'umkmUser' => $umkm->get(),
