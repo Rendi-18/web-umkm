@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('position');
             $table->string('classification');
             $table->string('nip');
+            $table->text('description');
             $table->timestamps();
         });
     }

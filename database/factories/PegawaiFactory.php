@@ -21,6 +21,7 @@ class PegawaiFactory extends Factory
             'position' => $this->faker->sentence(1, 3),
             'classification' => $this->faker->sentence(1, 2),
             'nip' => '12345678',
+            'description' => $this->faker->sentence(3, 5),
         ];
     }
 }
