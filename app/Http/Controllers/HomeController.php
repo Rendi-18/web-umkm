@@ -103,4 +103,24 @@ class HomeController extends Controller
             'productKoperasi' => $productKoperasi,
         ]);
     }
+
+    public function pegawai()
+    {
+        $pegawais = Pegawai::latest();
+
+        if (request('search')) {
+            $pegawais->where('name', 'like', '%' . request('search') . '%')->get();
+        }
+
+        return view('pages.pegawai.index', [
+            'pegawais' => $pegawais->get(),
+        ]);
+    }
+
+    public function pegawaiDetail(Pegawai $pegawai)
+    {
+        return view('pages.pegawai.detail', [
+            'pegawai' => $pegawai,
+        ]);
+    }
 }
