@@ -1,141 +1,109 @@
+@php
+$website = DB::table('websites')->get();
+@endphp
 @extends('Layouts.login')
 @section('content')
-    <!-- REGISTRASION -->
-    <div class="" id="pills-profile">
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-            <div class="row">
+    <div class="authentication-inner col-lg-8 col-12">
+        <!-- Register -->
+        <div class="card">
+            <div class="card-body">
+                <!-- Logo -->
+                <div class="app-brand justify-content-center">
+                    <a href="index.html" class="app-brand-link gap-2">
+                        <span class="app-brand-logo demo">
 
-                <!-- Username -->
-                <div class="col-lg-6 mb-4">
-                    <div class="shadow-in-log input-group">
-                        <div class="bx_ic input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-0">
-                                <i class="fa fa-user text-muted"></i>
-                            </span>
-                        </div>
-                        <input id="username" type="text" name="username" placeholder="Username"
-                            class="border-0 form-control bg-white border-0 @error('username') is-invalid @enderror"
-                            value="{{ old('username') }}" required autocomplete="username">
+                            <img src="img\favicon\icon.svg" alt="">
 
+                        </span>
+                        <span class="app-brand-text demo text-body fw-bolder">{{ $website[0]->sitename }}</span>
+                    </a>
+                </div>
+                <h4 class="mb-2">Mulai kelola Koperasi UMKM anda 🚀</h4>
+                <p class="mb-4">Kelola data dan perizinan lebih mudah!</p>
+
+                <form id="formAuthentication" class="mb-3 row" action="index.html" method="POST">
+                    @csrf
+                    <div class="mb-3 col-lg-6 col-12">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" id="username"
+                            name="username" placeholder="Masukkan username" autofocus="" value="{{ old('username') }}"
+                            required autocomplete="username">
                         @error('username')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
-                </div>
-
-                <!-- Name -->
-                <div class=" col-lg-6 mb-4">
-                    <div class="shadow-in-log input-group">
-                        <div class=" input-group-prepend">
-                            <span class="input-group-text bg-white px-4  border-0">
-                                <i class="fa fa-user text-muted"></i>
-                            </span>
-                        </div>
-                        <input id="name" type="text" name="name" placeholder="Name"
-                            class="border-0 form-control bg-white border-0 @error('name') is-invalid @enderror"
-                            value="{{ old('name') }}" required autocomplete="name">
-
+                    <div class="mb-3 col-lg-6 col-12">
+                        <label for="name" class="form-label">Nama</label>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                            name="name" placeholder="Masukkan name" autofocus="" value="{{ old('name') }}" required
+                            autocomplete="name">
                         @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
-                </div>
-
-                <!-- Email Address -->
-                <div class=" col-lg-12 mb-4">
-                    <div class="shadow-in-log input-group">
-                        <div class="bx_ic input-group-prepend">
-                            <span class="input-group-text bg-white px-4  border-0">
-                                <i class="fa fa-envelope text-muted"></i>
-                            </span>
-                        </div>
-                        <input id="email" type="email" name="email" placeholder="Email Address"
-                            class="border-0 form-control bg-white border-0 @error('email') is-invalid @enderror"
-                            value="{{ old('email') }}" required autocomplete="email">
-
+                    <div class="mb-3 col-lg-6 col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
+                            name="email" placeholder="Enter your email" value="{{ old('email') }}" required
+                            autocomplete="email">
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
-                </div>
-
-                <!-- Phone Number -->
-                <div class="col-lg-12 mb-4">
-                    <div class="shadow-in-log input-group">
-                        <div class="bx_ic input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-0">
-                                <i class="fa fa-phone-square text-muted"></i>
-                            </span>
-                        </div>
-
-                        <input id="phonenumber" type="number" name="phonenumber" placeholder="Phone Number"
-                            class="border-0 form-control bg-white border-0 @error('phonenumber') is-invalid @enderror"
+                    <div class="mb-3 col-lg-6 col-12">
+                        <label for="phonenumber" class="form-label">No. Telp</label>
+                        <input type="number" class="form-control @error('phonenumber') is-invalid @enderror"
+                            id="phonenumber" name="phonenumber" placeholder="Enter your phonenumber"
                             value="{{ old('phonenumber') }}" required autocomplete="phonenumber">
-
                         @error('phonenumber')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
-                </div>
-
-                <!-- Password -->
-                <div class="input-group col-lg-6 mb-4">
-                    <div class="shadow-in-log input-group">
-                        <div class="bx_ic input-group-prepend">
-                            <span class="input-group-text bg-white px-4  border-0">
-                                <i class="fa fa-lock text-muted"></i>
-                            </span>
+                    <div class="mb-3 form-password-toggle col-lg-6 col-12">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="input-group input-group-merge">
+                            <input type="password" id="password" class="form-control" name="password"
+                                placeholder="············" aria-describedby="password" value="{{ old('password') }}"
+                                required autocomplete="password">
+                            <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                         </div>
-                        <input id="password" type="password" name="password" placeholder="Password"
-                            class="border-0 form-control bg-white border-0 @error('password') is-invalid @enderror"
-                            value="{{ old('password') }}" required autocomplete="new-password">
-
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
-
-                </div>
-
-                <!-- Password Confirmation -->
-                <div class="input-group col-lg-6 mb-4">
-                    <div class="shadow-in-log input-group">
-                        <div class="bx_ic input-group-prepend">
-                            <span class="input-group-text bg-white px-4  border-0">
-                                <i class="fa fa-lock text-muted"></i>
-                            </span>
+                    <div class="mb-3 form-password-toggle col-lg-6 col-12">
+                        <label class="form-label" for="password">Konfirmasi Password</label>
+                        <div class="input-group input-group-merge">
+                            <input type="password" id="password-confirm" class="form-control" name="password_confirmation"
+                                placeholder="············" aria-describedby="password" value="{{ old('password') }}"
+                                required autocomplete="new-password">
+                            <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                         </div>
-                        <input id="password-confirm" type="password" name="password_confirmation"
-                            placeholder="Confirm Password" class="form-control bg-white border-0" required
-                            autocomplete="new-password">
                     </div>
-                </div>
 
-                <!-- Submit Button -->
-                <div class="form-group col-lg-12 mx-auto mb-0">
-                    <button type="submit" class="btn btn-primary btn-submit btn-block py-2 border-0 font-weight-bold">
-                        Register
+                    <button class="btn btn-primary d-grid w-100">
+                        Sign up
                     </button>
-                </div>
+                </form>
 
-                <!-- Already Registered -->
-                <div class="text-center w-100 mt-3">
-                    <p class="text-muted font-weight-bold">Already Registered?
-                        <a class="text-primary ml-2 btl" id="pills-home-tab" href="/login">Login</a>
-                    </p>
-                </div>
+                <p class="text-center">
+                    <span>Sudah Memiliki akun?</span>
+                    <a href="/login">
+                        <span>Sign in</span>
+                    </a>
+                </p>
             </div>
-        </form>
+        </div>
+        <!-- /Register -->
     </div>
 @endsection

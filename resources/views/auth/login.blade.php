@@ -1,67 +1,80 @@
+@php
+$website = DB::table('websites')->get();
+@endphp
 @extends('Layouts.login')
 @section('content')
-    <!-- LOGIN -->
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-        @if (session()->has('LoginError'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ session('LoginError') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-            <div class="row">
+    <div class="authentication-inner auth-ex">
+        <!-- Register -->
+        <div class="card">
+            <div class="card-body">
+                <!-- Logo -->
+                <div class="app-brand justify-content-center">
+                    <a href="index.html" class="app-brand-link gap-2">
+                        <span class="app-brand-logo demo">
 
-                <!-- Email Address -->
-                <div class=" col-lg-12 mb-4">
-                    <div class="shadow-in-log input-group">
-                        <div class="bx_ic input-group-prepend">
-                            <span class="input-group-text bg-white px-4  border-0">
-                                <i class="fa fa-envelope text-muted"></i>
-                            </span>
-                        </div>
-                        <input id="email" type="email" name="email" placeholder="Email Address"
-                            class="form-control bg-white border-0 @error('email') is-invalid @enderror" name="email"
-                            value="{{ old('email') }}" required autocomplete="email" autofocus">
-                    </div>
-                </div>
+                            <img src="img\favicon\icon.svg" alt="">
 
-                <!-- Password -->
-                <div class="col-lg-12 mb-4">
-                    <div class="shadow-in-log input-group">
-                        <div class="bx_ic input-group-prepend">
-                            <span class="input-group-text bg-white px-4  border-0">
-                                <i class="fa fa-lock text-muted"></i>
-                            </span>
-                        </div>
-                        <input id="password" type="password" name="password" placeholder="Password"
-                            class="form-control bg-white border-0 @error('password') is-invalid @enderror" name="password"
-                            required autocomplete="current-password"">
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="form-group col-lg-12 mx-auto mb-0">
-                    <button type="submit" class="btn btn-submit btn-primary btn-block py-2 border-0 font-weight-bold">
-                        Login
-                    </button>
-
-                </div>
-            </div>
-        </form>
-        <!-- Dont have an account -->
-        <div class="text-center w-100 d-flex justify-content-between mt-3">
-            <p class="text-muted font-weight-bold">Dont have an account?
-                <a class="text-primary ml-2 btr" href="/register" id="pills-profile-tab">Register
-                </a>
-            </p>
-            <p class="text-muted font-weight-bold">
-                @if (Route::has('password.request'))
-                    <a class="text-primary ml-2 btr" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
+                        </span>
+                        <span class="app-brand-text demo text-body fw-bolder">{{ $website[0]->sitename }}</span>
                     </a>
+                </div>
+                @if (session()->has('LoginError'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('LoginError') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 @endif
-            </p>
+                <!-- /Logo -->
+
+                <h4 class="mb-2">Selamat datang di <strong>{{ $website[0]->sitename }}</strong> 👋</h4>
+                <p class="mb-4">Silahkan Masuk dengan akun Anda</p>
+
+                <form id="formAuthentication" class="mb-3" method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control @error('email') is-invalid @enderror" id="email"
+                            name="email" placeholder="Masukkan Email" autofocus="" value="{{ old('email') }}" required
+                            autocomplete="email" autofocus>
+                    </div>
+                    <div class="mb-3 form-password-toggle">
+                        <div class="d-flex justify-content-between">
+                            <label class="form-label" for="password">Password</label>
+
+                            @if (Route::has('password.request'))
+                                <a href="{{ route('password.request') }}">
+                                    <small>Forgot Password?</small>
+                                </a>
+                            @endif
+                        </div>
+                        <div class="input-group input-group-merge">
+                            <input type="password" id="password"
+                                class="form-control @error('password') is-invalid @enderror" name="password" required
+                                autocomplete="current-password" placeholder="············" aria-describedby="password">
+                            <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="remember-me">
+                            <label class="form-check-label" for="remember-me">
+                                Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                    </div>
+                </form>
+
+                <p class="text-center">
+                    <span>Belum memiliki akun?</span>
+                    <a href="/register">
+                        <span>Create an account</span>
+                    </a>
+                </p>
+            </div>
         </div>
+        <!-- /Register -->
     </div>
 @endsection
