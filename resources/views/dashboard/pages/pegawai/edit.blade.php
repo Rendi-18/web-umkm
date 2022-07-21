@@ -115,9 +115,24 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="description">Deskripsi</label>
+                                <div class="col-sm-10">
+                                    <input type="hidden" class="form-control @error('description') is-invalid @enderror"
+                                        id="description" placeholder="Deskripsi" name="description"
+                                        value="{{ old('description', $pegawai->description) }}" required>
+                                    <trix-editor input="description"></trix-editor>
+                                    @error('description')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
                             <div class="row justify-content-end">
                                 <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-primary "><i class="bx bx-send ms-1"></i> &nbsp;
+                                    <button type="submit" class="btn btn-primary "><i class="bx bx-send ms-1"></i>
+                                        &nbsp;
                                         Send</button>
                                 </div>
                             </div>

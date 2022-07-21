@@ -42,6 +42,7 @@ class DashboardPegawaiController extends Controller
             'position' => 'required',
             'nip' => 'required',
             'classification' => 'required',
+            'description' => 'required',
             'image' => 'image|file|max:1024',
         ]);
 
@@ -69,6 +70,7 @@ class DashboardPegawaiController extends Controller
             'name' => 'required',
             'position' => 'required',
             'nip' => 'required',
+            'description' => 'required',
             'classification' => 'required',
             'image' => 'image|file|max:1024',
         ];
