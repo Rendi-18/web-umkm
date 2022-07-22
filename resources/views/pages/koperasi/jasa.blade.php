@@ -7,7 +7,7 @@
                 <ol>
                     <li><a href="/">Home</a></li>
                     <li><a href="/koperasi/{{ $jasaKoperasi->koperasi->id }}">Koperasi</a></li>
-                    <li>Produk</li>
+                    <li>Layanan</li>
                 </ol>
                 <h2>{{ $jasaKoperasi->koperasi->name }}</h2>
                 <section id="identity" class="identity mt-0">

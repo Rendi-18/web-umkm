@@ -5,10 +5,9 @@
             <div class="container">
                 <ol>
                     <li><a href="/">Home</a></li>
-                    <li>Search</li>
                     <li>Agenda</li>
                 </ol>
-                <h2>Search</h2>
+                <h2>Agenda Dinas</h2>
                 <div id="search-p">
                     <!-- ======= Search Section ======= -->
                     <section id="search" class="why-us section-bg">

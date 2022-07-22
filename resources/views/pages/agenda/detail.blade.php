@@ -6,8 +6,9 @@
                 <ol>
                     <li><a href="/">Home</a></li>
                     <li><a href="/agenda">Agenda</a></li>
+                    <li>Agenda Dinas</li>
                 </ol>
-                <h2>Agenda Dinas</h2>
+                <h2>{{ $agenda->name }}</h2>
             </div>
         </section>
         <section id="d-agendas">

@@ -24,8 +24,10 @@
                         </div>
                         <div class="col-6 ps-lg-2 member-info">
                             <h5>{{ $pegawai->name }}</h5>
-                            <span>{{ $pegawai->position }}</span>
                             <p>{{ $pegawai->classification }}</p>
+                            <span>{{ $pegawai->position }}</span>
+                            <p>{{ $pegawai->description }}</p>
+
                         </div>
                     </div>
                 </div>

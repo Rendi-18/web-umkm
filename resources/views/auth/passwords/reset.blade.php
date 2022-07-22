@@ -69,9 +69,7 @@ $website = DB::table('websites')->get();
                         <button class="btn btn-primary d-grid w-100" type="submit">Reset Password</button>
                     </div>
                 </form>
-
             </div>
         </div>
-        <!-- /Register -->
     </div>
 @endsection
