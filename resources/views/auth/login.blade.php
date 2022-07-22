@@ -43,7 +43,7 @@ $website = DB::table('websites')->get();
 
                             @if (Route::has('password.request'))
                                 <a href="{{ route('password.request') }}">
-                                    <small>Forgot Password?</small>
+                                    <small>Lupa Password?</small>
                                 </a>
                             @endif
                         </div>
@@ -70,7 +70,7 @@ $website = DB::table('websites')->get();
                 <p class="text-center">
                     <span>Belum memiliki akun?</span>
                     <a href="/register">
-                        <span>Create an account</span>
+                        <span>Buat akun</span>
                     </a>
                 </p>
             </div>

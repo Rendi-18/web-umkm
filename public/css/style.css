@@ -12,6 +12,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  min-height: 100vh;
 }
 
 a {
@@ -1884,6 +1885,8 @@ label.active span {
 #footer {
   font-size: 14px;
   background: var(--bs-dark-green);
+  position: absolute;
+  min-width: 100%;
 }
 
 #footer .footer-newsletter {
