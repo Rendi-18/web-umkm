@@ -6,12 +6,11 @@
             <script>
                 document.write(new Date().getFullYear());
             </script>
-            <a href="#" target="_blank" class="footer-link fw-bolder">🧾 SIBADU</a>
+            <a href="/" target="_blank" class="footer-link fw-bolder">🧾 SIBADU</a>
             .All rights reserved.
         </div>
         <div>
-            <a href="#" target="_blank" class="footer-link me-4">Support</a>
-            <a href="#" target="_blank" class="footer-link me-4">Contact Us</a>
+            <a href="/#contact" target="_blank" class="footer-link me-4">Contact Us</a>
         </div>
     </div>
 </footer>

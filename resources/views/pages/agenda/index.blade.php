@@ -20,7 +20,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8 row">
                                         <p>Cari Agenda Dinas</p>
-                                        <div id="input-g"class="input-group">
+                                        <div id="input-g"class="input-group justify-content-center">
                                             <form action="/agenda" method="get" id="formSearch"
                                                 class="row p-0 input-group">
                                                 <input type="text" class="col-10 form-control shad-none" name="search"

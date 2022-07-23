@@ -8,7 +8,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 row">
                     <p>Temukan UMKM & Unit Koperasi Di sekitar anda</p>
-                    <div id="input-g"class="input-group">
+                    <div id="input-g"class="input-group justify-content-center">
                         @if (Request::is('search/umkm*'))
                             <form action="/search/umkm" method="get" id="formSearch" class="row p-0 input-group">
                                 <div role="group" aria-label="Basic radio toggle button group"

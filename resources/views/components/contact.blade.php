@@ -3,7 +3,7 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Hibungi Kami</h2>
+            <h2>Hubungi Kami</h2>
 
         </div>
 
@@ -12,8 +12,7 @@
             <div class="col-lg-5 d-flex align-items-stretch">
                 <div class="info">
                     <div class="address">
-                        <a href="https://www.google.co.id/maps/place/Dinas+Koperasi+Dan+UMKM/@-5.4334082,105.2588081,21z/data=!4m5!3m4!1s0x2e40da31475e767d:0x6a6f0108ae6b67e2!8m2!3d-5.4334035!4d105.2587503"
-                            target="_blank">
+                        <a href="{{ $website[0]->map }}" target="_blank">
                             <i class="bi bi-geo-alt"></i>
                             <h4>Location:</h4>
                             <p>{{ $website[0]->address }}</p>

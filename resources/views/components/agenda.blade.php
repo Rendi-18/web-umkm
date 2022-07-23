@@ -21,7 +21,12 @@
                                         <img src="/img/temp/agenda-temp.png" class="img-fluid" alt="">
                                     @endif
                                 </div>
-                                <div class="member-info col-lg px-2">
+                                <div class="member-info col-lg px-2 d-block d-sm-none ">
+                                    <h4>{{ $agenda->name }}</h4>
+                                    <small>{{ date('d F Y', strtotime($agenda->date)) }}</small>
+                                    <span>{{ $agenda->location }}</span>
+                                </div>
+                                <div class="member-info col-lg px-2 d-none d-lg-block">
                                     <h4>{{ $agenda->name }}</h4>
                                     <small>{{ date('d F Y', strtotime($agenda->date)) }}</small>
                                     <span>{{ $agenda->location }}</span>
