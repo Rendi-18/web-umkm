@@ -38,6 +38,9 @@
                             @endforeach
                         </div>
                     </div>
+                    <div class="d-flex justify-content-center pt-3">
+                        {{ $pegawais->links('components.paginator') }}
+                    </div>
                 </section>
         </section>
     </main>

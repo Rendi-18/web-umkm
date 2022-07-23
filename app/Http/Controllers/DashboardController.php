@@ -29,13 +29,12 @@ class DashboardController extends Controller
             $koperasi->where('name', 'like', '%' . request('searchKoperasi') . '%')->get();
         }
 
-
         return view(
             'dashboard.pages.index',
             [
                 // 'title' => '',
-                'umkms' => Umkm::latest()->get(),
-                'koperasis' => Koperasi::latest()->get(),
+                'umkms' => Umkm::latest()->paginate(8, ['*'], 'umkms'),
+                'koperasis' => Koperasi::latest()->paginate(8, ['*'], 'koperasis'),
                 'users' => User::latest()->get(),
                 'pesans' => Pesan::latest()->get(),
 

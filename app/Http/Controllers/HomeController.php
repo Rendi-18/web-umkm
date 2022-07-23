@@ -113,7 +113,7 @@ class HomeController extends Controller
         }
 
         return view('pages.pegawai.index', [
-            'pegawais' => $pegawais->get(),
+            'pegawais' => $pegawais->paginate(6),
         ]);
     }
 

@@ -6,7 +6,7 @@
 </div>
 
 <div class="row g-4 mb-5">
-    @foreach (Auth::user()->umkm as $umkm)
+    @foreach ($umkms as $umkm)
         <div class="col-lg-3 col-6">
             <div class="card h-100">
                 <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
@@ -18,7 +18,12 @@
             </div>
         </div>
     @endforeach
-    @foreach (Auth::user()->koperasi as $koperasi)
+    <div class="d-flex justify-content-center pt-3">
+        {{ $umkms->appends([
+                'koperasis' => $koperasis->currentPage(),
+            ])->links('components.paginator') }}
+    </div>
+    @foreach ($koperasis as $koperasi)
         <div class="col-lg-3 col-6">
             <div class="card h-100">
                 <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
@@ -30,6 +35,11 @@
             </div>
         </div>
     @endforeach
+    <div class="d-flex justify-content-center pt-3">
+        {{ $koperasis->appends([
+                'umkms' => $umkms->currentPage(),
+            ])->links('components.paginator') }}
+    </div>
 
 
 </div>
