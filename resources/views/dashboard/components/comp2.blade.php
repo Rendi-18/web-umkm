@@ -9,7 +9,11 @@
     @foreach ($umkms as $umkm)
         <div class="col-lg-3 col-6">
             <div class="card h-100">
-                <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
+                @if ($umkm->image)
+                    <img src="{{ asset('storage/' . $umkm->image) }}" class="img-fluid">
+                @else
+                    <img src="/img/temp/store-temp.png" class="img-fluid">
+                @endif
                 <div class="card-body">
                     <h5 class="card-title fw-bold">{{ $umkm->name }}</h5>
                     <h6>{{ $umkm->city }}</h6>
@@ -26,7 +30,11 @@
     @foreach ($koperasis as $koperasi)
         <div class="col-lg-3 col-6">
             <div class="card h-100">
-                <img class="card-img-top" src="/img/elements/2.jpg" alt="Card image cap">
+                @if ($umkm->image)
+                    <img src="{{ asset('storage/' . $koperasi->image) }}" class="img-fluid">
+                @else
+                    <img src="/img/temp/store-temp.png" class="img-fluid">
+                @endif
                 <div class="card-body">
                     <h5 class="card-title fw-bold">{{ $koperasi->name }}</h5>
                     <h6>{{ $koperasi->city }}</h6>

@@ -2159,6 +2159,7 @@ label.active span {
   color: var(--bs-dark-green);
 }
 
+
 .product span i.bxs-star {
   color: var(--bs-green);
 }
@@ -2188,6 +2189,21 @@ div.col-4 span h6 {
   font-weight: bold;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .product .product-card h4 {
+    font-size: 20px;
+  }
+
+  .product .product-card .row {
+    font-size: 13px;
+  }
+
+  .product .product-card .row a {
+    font-size: 13px;
+  }
+}
+
 
 
 /*--------------------------------------------------------------

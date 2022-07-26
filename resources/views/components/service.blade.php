@@ -4,8 +4,8 @@
 
         <div class="section-title">
             <h2>Layanan Kami</h2>
-            <p>Sibadu membantu para pengusaha medaftarkan usahanya dalam data kepemerintahan, serta memberikan akses
-                terhadap pengajuan surat izi usaha yang di perlukan secara oline</p>
+            <p>Sibadu membantu para pengusaha mendaftarkan usahanya dalam data kepemerintahan, serta memberikan akses
+                terhadap pengajuan surat izin usaha yang di perlukan secara online</p>
         </div>
 
         <div class="row">

@@ -49,11 +49,15 @@
 
                     <div class="card-um-info">
                         <h4>{{ Str::limit($umkm->name, 15) }}</h4>
-
-                        <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                            class="card-um-lightbox preview-link" title="{{ $umkm->description }}"><i
-                                class="bx bx-detail"></i></a>
-
+                        @if ($umkm->image)
+                            <a href="{{ asset('storage/' . $umkm->image) }}" data-gallery="portfolioGallery"
+                                class="card-um-lightbox preview-link" title="{{ $umkm->description }}"><i
+                                    class="bx bx-detail"></i></a>
+                        @else
+                            <a href="/img/temp/store-temp.png" data-gallery="portfolioGallery"
+                                class="card-um-lightbox preview-link" title="{{ $umkm->description }}"><i
+                                    class="bx bx-detail"></i></a>
+                        @endif
                         <a href="/umkm/{{ $umkm->slug }}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
                     </div>
@@ -70,9 +74,15 @@
                     </div>
                     <div class="card-um-info">
                         <h4>{{ Str::limit($koperasi->name, 15) }}</h4>
-                        <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                            class="card-um-lightbox preview-link" title="{{ $koperasi->description }}"><i
-                                class="bx bx-detail"></i></a>
+                        @if ($koperasi->image)
+                            <a href="{{ asset('storage/' . $koperasi->image) }}" data-gallery="portfolioGallery"
+                                class="card-um-lightbox preview-link" title="{!! $koperasi->description !!}"><i
+                                    class="bx bx-detail"></i></a>
+                        @else
+                            <a href="/img/temp/store-temp.png" data-gallery="portfolioGallery"
+                                class="card-um-lightbox preview-link" title="{!! $koperasi->description !!}"><i
+                                    class="bx bx-detail"></i></a>
+                        @endif
                         <a href="/koperasi/{{ $koperasi->slug }}" class="details-link" title="More Details"><i
                                 class="bx bx-link"></i></a>
                     </div>

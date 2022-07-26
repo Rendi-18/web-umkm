@@ -43,105 +43,103 @@
         </section>
         <section id="product" class="product">
 
-            <div class="container" data-aos="fade-up" data-aos-delay="200">
-                <div class="row">
-                    @if ($umkm->product->where('isUnggulan')->count())
-                        <div class="row prod-container col-12">
-                            <div class="row">
-                                <div class="col-6 justify-conten-start">
-                                    <h5>Product Unggulan</h5>
-                                </div>
-
+            <div class="container d-flex" data-aos="fade-up" data-aos-delay="200">
+                @if ($umkm->product->where('isUnggulan')->count())
+                    <div class="row prod-container col-12 m-auto">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 justify-conten-start">
+                                <h5>Product Unggulan</h5>
                             </div>
 
-                            @foreach ($umkm->product->where('isUnggulan') as $product)
-                                <div class="col-xl-3 col-md-6 d-flex align-items-stretch my-4 mt-xl-0 rounded"
-                                    data-aos="zoom-in" data-aos-delay="100">
-
-                                    <div class="product-card p-4">
-                                        @if ($product->image)
-                                            <img src="{{ asset('storage/' . $product->image) }}" alt="user-avatar"
-                                                class="img-fluid" id="uploadedAvatar">
-                                        @else
-                                            <img src="/img/temp/product-temp.png" alt="user-avatar" class="img-fluid"
-                                                id="uploadedAvatar">
-                                        @endif
-                                        <h4>{{ Str::limit($product->name, 15, '...') }}</h4>
-                                        <div class="row">
-                                            <div class="col-8 row">
-                                                <span class="col-12 d-flex">
-                                                    <i class="bx bx-money bx-burst my-auto"></i>
-                                                    <p>&nbsp;Harga</p>
-                                                </span>
-                                                <span class="my-auto">@currency($product->price)</span>
-                                                <div class="my-2"></div>
-                                                <span class="d-flex">
-                                                    <i class='bx bx-cuboid bx-burst my-auto'></i>
-                                                    <p>&nbsp;Berat</p>
-                                                </span>
-                                                <span class="my-auto">{{ $product->weight }} Kg</span>
-                                            </div>
-                                            <div class="col-4 row justify-content-center d-flex">
-                                                <span class="col-12 d-flex justify-content-center">
-                                                    <i class="bx bxs-star bx-tada bx-lg my-auto"></i>
-                                                </span>
-                                                <span class="col-12 d-flex justify-content-center">
-                                                    <h6>Unggulan</h6>
-                                                </span>
-                                            </div>
-                                            <a href="/umkm/product/{{ $product->slug }}"
-                                                class="btn mt-3 col-12">Detail</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
                         </div>
-                    @endif
 
+                        @foreach ($umkm->product->where('isUnggulan') as $product)
+                            <div class="col-lg-3 col-6 d-flex align-items-stretch my-4 mt-xl-0 rounded" data-aos="zoom-in"
+                                data-aos-delay="100">
 
-
-                    <div class="row prod-container col-12">
-                        <div class="row jdl p-0">
-                            <div class="col-6 justify-conten-right">
-                                <h5>Product Terbaru</h5>
-                            </div>
-                        </div>
-                        @if ($umkm->product->count())
-                            @foreach ($umkm->product as $product)
-                                <div class="col-xl-3 col-md-6 d-flex align-items-stretch my-4 mt-xl-0 rounded"
-                                    data-aos="zoom-in" data-aos-delay="100">
-
-                                    <div class="product-card p-4">
-                                        @if ($product->image)
-                                            <img src="{{ asset('storage/' . $product->image) }}" alt="user-avatar"
-                                                class="img-fluid" id="uploadedAvatar">
-                                        @else
-                                            <img src="/img/temp/product-temp.png" alt="user-avatar" class="img-fluid"
-                                                id="uploadedAvatar">
-                                        @endif
-                                        <h4>{{ Str::limit($product->name, 15, '...') }}</h4>
-                                        <div class="row">
+                                <div class="product-card p-4">
+                                    @if ($product->image)
+                                        <img src="{{ asset('storage/' . $product->image) }}" alt="user-avatar"
+                                            class="img-fluid" id="uploadedAvatar">
+                                    @else
+                                        <img src="/img/temp/product-temp.png" alt="user-avatar" class="img-fluid"
+                                            id="uploadedAvatar">
+                                    @endif
+                                    <h4>{{ Str::limit($product->name, 15, '...') }}</h4>
+                                    <div class="row">
+                                        <div class="col-8 row">
                                             <span class="col-12 d-flex">
                                                 <i class="bx bx-money bx-burst my-auto"></i>
-                                                &nbsp;Harga &nbsp;
-                                                <span class="my-auto">: @currency($product->price)</span>
+                                                <span class="d-none d-lg-block">&nbsp;Harga :</span>&nbsp
+                                                <span class="my-auto">@currency($product->price)</span>
                                             </span>
-                                            <span class="col-12 d-flex">
+                                            <div class="col-12 my-2"></div>
+                                            <span class="d-flex">
                                                 <i class='bx bx-cuboid bx-burst my-auto'></i>
-                                                &nbsp;Berat &nbsp;
-                                                <span class="my-auto">: {{ $product->weight }} Kg</span>
+                                                <span class="d-none d-lg-block">&nbsp;Berat :</span>&nbsp
+                                                <span class="my-auto">{{ $product->weight }} Kg</span>
                                             </span>
-                                            <a href="/umkm/product/{{ $product->slug }}"
-                                                class="btn mt-3 col-12">Detail</a>
                                         </div>
+                                        <div class="col-4 row justify-content-center d-flex">
+                                            <span class="col-12 d-flex justify-content-center">
+                                                <i class="bx bxs-star bx-tada bx-lg my-auto"></i>
+                                            </span>
+                                            <span class="col-12 d-flex justify-content-center">
+                                                <h6>Unggulan</h6>
+                                            </span>
+                                        </div>
+                                        <a href="/umkm/product/{{ $product->slug }}" class="btn mt-3 col-12">Detail</a>
                                     </div>
                                 </div>
-                            @endforeach
-                        @else
-                            <h1 class="text-center">Not Found :(</h1>
-                        @endif
+                            </div>
+                        @endforeach
                     </div>
+                @endif
+
+
+            </div>
+            <div class="container d-flex" data-aos="fade-up" data-aos-delay="200">
+                <div class="row prod-container col-12 m-auto">
+                    <div class="row jdl p-0">
+                        <div class="col-6 justify-conten-right">
+                            <h5>Product Terbaru</h5>
+                        </div>
+                    </div>
+                    @if ($umkm->product->count())
+                        @foreach ($umkm->product as $product)
+                            <div class="col-lg-3 col-6 d-flex align-items-stretch my-4 mt-xl-0 rounded" data-aos="zoom-in"
+                                data-aos-delay="100">
+
+                                <div class="product-card p-4">
+                                    @if ($product->image)
+                                        <img src="{{ asset('storage/' . $product->image) }}" alt="user-avatar"
+                                            class="img-fluid" id="uploadedAvatar">
+                                    @else
+                                        <img src="/img/temp/product-temp.png" alt="user-avatar" class="img-fluid"
+                                            id="uploadedAvatar">
+                                    @endif
+                                    <h4>{{ Str::limit($product->name, 15, '...') }}</h4>
+                                    <div class="row">
+                                        <span class="col-12 d-flex">
+                                            <i class="bx bx-money bx-burst my-auto"></i>
+                                            <span class="d-none d-lg-block">&nbsp;Harga &nbsp;</span>
+                                            <span class="my-auto">: @currency($product->price)</span>
+                                        </span>
+                                        <span class="col-12 d-flex">
+                                            <i class='bx bx-cuboid bx-burst my-auto'></i>
+                                            <span class="d-none d-lg-block">&nbsp;Berat &nbsp;</span>
+                                            <span class="my-auto">: {{ $product->weight }} Kg</span>
+                                        </span>
+                                        <a href="/umkm/product/{{ $product->slug }}" class="btn mt-3 col-12">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <h1 class="text-center">Not Found :(</h1>
+                    @endif
                 </div>
+            </div>
             </div>
         </section>
     </main>
