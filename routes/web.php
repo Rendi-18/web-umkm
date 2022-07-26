@@ -18,13 +18,11 @@ use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\User\Umkm\DashboardUserUmkmController;
 use App\Http\Controllers\User\Umkm\DashboardUserProductController;
 
-// User Koperasi
-use App\Http\Controllers\User\Koperasi\DashboardUserKoperasiController;
-use App\Http\Controllers\User\Koperasi\DashboardProductKoperasiController;
-use App\Http\Controllers\User\Koperasi\DashboardJasaKoperasiController;
-
 // User Izin
 use App\Http\Controllers\User\Izin\DashboardUserIzinController;
+
+// User Izin
+use App\Http\Controllers\User\Dana\DashboardDanaController;
 
 
 /*
@@ -50,10 +48,6 @@ Route::get('/search/koperasi', [HomeController::class, 'searchKoperasi'])->name(
 Route::get('/umkm/{umkm:slug}', [HomeController::class, 'umkm'])->name('umkm');
 Route::get('/umkm/product/{product:slug}', [HomeController::class, 'product'])->name('umkm');
 
-// Route::get('/koperasi/{koperasi:slug}', [HomeController::class, 'koperasi'])->name('koperasi');
-// Route::get('/koperasi/jasa/{jasaKoperasi:slug}', [HomeController::class, 'jasaKoperasi'])->name('koperasi');
-// Route::get('/koperasi/product/{productKoperasi:slug}', [HomeController::class, 'productKoperasi'])->name('koperasi');
-
 Route::get('/pegawai', [HomeController::class, 'pegawai'])->name('pegawai');
 Route::get('/pegawai/{pegawai:id}', [HomeController::class, 'pegawaiDetail'])->name('pegawai');
 
@@ -68,10 +62,11 @@ Route::get('/dashboard/izin/surat', [DashboardUserIzinController::class, 'surat'
 Route::post('/dashboard/izin/surat', [DashboardUserIzinController::class, 'suratStore'])->middleware('auth');
 Route::delete('/dashboard/izin/surat/{izin}', [DashboardUserIzinController::class, 'suratDestroy'])->middleware('auth');
 
+Route::get('/dashboard/bantuan/dana', [DashboardDanaController::class, 'index'])->middleware('auth');
+Route::post('/dashboard/bantuan/dana', [DashboardDanaController::class, 'create'])->middleware('auth');
+
 Route::get('/dashboard/register/umkm', [DashboardUserIzinController::class, 'umkm'])->middleware('auth');
 Route::post('/dashboard/register/umkm', [DashboardUserIzinController::class, 'umkmStore'])->middleware('auth');
-// Route::get('/dashboard/register/koperasi', [DashboardUserIzinController::class, 'koperasi'])->middleware('auth');
-// Route::post('/dashboard/register/koperasi', [DashboardUserIzinController::class, 'koperasiStore'])->middleware('auth');
 
 // Dashboard User UMKM Product
 Route::get('/dashboard/umkm/{umkm:id}/umkm-product', [DashboardUserProductController::class, 'index'])->middleware('auth');
@@ -87,31 +82,6 @@ Route::get('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmControlle
 Route::get('/dashboard/umkm/{umkm:id}/umkm-profile/edit', [DashboardUserUmkmController::class, 'edit'])->middleware('auth');
 Route::put('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmController::class, 'update'])->middleware('auth');
 Route::delete('/dashboard/umkm/{umkm:id}/umkm-profile', [DashboardUserUmkmController::class, 'destroy'])->middleware('auth');
-
-// Dashboard User Koperasi Profile
-// Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-profile', [DashboardUserKoperasiController::class, 'index'])->middleware('auth');
-// Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-profile/edit', [DashboardUserKoperasiController::class, 'edit'])->middleware('auth');
-// Route::put('/dashboard/koperasi/{koperasi:id}/koperasi-profile', [DashboardUserKoperasiController::class, 'update'])->middleware('auth');
-// Route::delete('/dashboard/koperasi/{koperasi:id}/koperasi-profile', [DashboardUserKoperasiController::class, 'destroy'])->middleware('auth');
-
-
-// Dashboard User Koperasi Product
-// Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-product', [DashboardProductKoperasiController::class, 'index'])->middleware('auth');
-// Route::post('/dashboard/koperasi/{koperasi:id}/koperasi-product', [DashboardProductKoperasiController::class, 'store'])->middleware('auth');
-// Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-product/create', [DashboardProductKoperasiController::class, 'create'])->middleware('auth');
-// Route::put('/dashboard/koperasi-product/{productKoperasi:id}', [DashboardProductKoperasiController::class, 'update'])->middleware('auth');
-// Route::put('/dashboard/koperasi-product/{productKoperasi:id}/unggulan', [DashboardProductKoperasiController::class, 'isUnggulan'])->middleware('auth');
-// Route::delete('/dashboard/koperasi-product/{productKoperasi:id}', [DashboardProductKoperasiController::class, 'destroy'])->middleware('auth');
-// Route::get('/dashboard/koperasi-product/{productKoperasi:id}/edit', [DashboardProductKoperasiController::class, 'edit'])->middleware('auth');
-
-// Dashboard User Koperasi Jasa
-// Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-jasa', [DashboardJasaKoperasiController::class, 'index'])->middleware('auth');
-// Route::post('/dashboard/koperasi/{koperasi:id}/koperasi-jasa', [DashboardJasaKoperasiController::class, 'store'])->middleware('auth');
-// Route::get('/dashboard/koperasi/{koperasi:id}/koperasi-jasa/create', [DashboardJasaKoperasiController::class, 'create'])->middleware('auth');
-// Route::put('/dashboard/koperasi-jasa/{jasaKoperasi:id}', [DashboardJasaKoperasiController::class, 'update'])->middleware('auth');
-// Route::put('/dashboard/koperasi-jasa/{jasaKoperasi:id}/unggulan', [DashboardJasaKoperasiController::class, 'isUnggulan'])->middleware('auth');
-// Route::delete('/dashboard/koperasi-jasa/{jasaKoperasi:id}', [DashboardJasaKoperasiController::class, 'destroy'])->middleware('auth');
-// Route::get('/dashboard/koperasi-jasa/{jasaKoperasi:id}/edit', [DashboardJasaKoperasiController::class, 'edit'])->middleware('auth');
 
 // Dashboard Admin
 Route::resource('/dashboard/user', DashboardUserController::class)->middleware('admin');
@@ -156,7 +126,3 @@ Route::post('/', [DashboardPesanController::class, 'store']);
 
 Route::get('/agenda', [AgendaController::class, 'agenda']);
 Route::get('/agenda/{agenda:id}', [AgendaController::class, 'detail']);
-// Route::resource('/dashboard/pengajuan', DashboardKoperasiController::class)->middleware('admin');
-
-//Dashboard User
-// Route::get('/', [DashboardController::class, 'index'])->name('home');
