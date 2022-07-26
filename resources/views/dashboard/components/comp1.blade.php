@@ -122,8 +122,8 @@
             <div class="card-body d-flex flex-column">
                 <div class="card-title d-flex align-items-start justify-content-between">
                     <div class="avatar flex-shrink-0">
-                        <div class="icon-alt bg-label-info rounded">
-                            <i class="bx bx-store-alt text-info"></i>
+                        <div class="icon-alt bg-label-warning rounded">
+                            <i class="bx bx-time text-warning"></i>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -139,11 +139,11 @@
                     </div>
                 </div>
                 <span class="fw-semibold d-block mb-1">Total</span>
-                <h4 class="card-title mb-2">Koperasi</h4>
-                <small class="text-info fw-semibold mb-0 mt-auto">
-                    <div class="spinner-border-sm spinner-grow text-info" role="status">
+                <h4 class="card-title mb-2">Permohonan</h4>
+                <small class="text-warning fw-semibold mb-0 mt-auto">
+                    <div class="spinner-border-sm spinner-grow text-warning" role="status">
                         <span class="visually-hidden">Loading... </span>
-                    </div> <span class="ps-2">{{ $koperasis->where('status', 1)->count() }}</span>
+                    </div> <span class="ps-2">{{ $umkms->where('status', 0)->count() }}</span>
                 </small>
             </div>
         </div>

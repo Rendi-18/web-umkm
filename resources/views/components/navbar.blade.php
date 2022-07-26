@@ -24,8 +24,7 @@
                             href="/agenda">Agenda</a></li>
                     <li><a class="nav-link scrollto" href="/#about">About</a></li>
                     <li><a class="nav-link scrollto {{ Request::is('search*') ? 'active' : '' }}"
-                            href="/search/umkm">UMKM
-                            & Koperasi</a></li>
+                            href="/search/umkm">UMKM</a></li>
                     <li><a class="nav-link scrollto {{ Request::is('pegawai*') ? 'active' : '' }}"
                             href="/pegawai">Kepegawaian</a></li>
                     <li><a class="nav-link scrollto " href="/#contact">Contact</a></li>

@@ -30,67 +30,13 @@
                         'koperasiUser' => $koperasiUser,
                     ])
                 </div>
-                <div id="koperasi">
+                {{-- <div id="koperasi">
                     @include('dashboard.components.comp4', [
                         'umkmUser' => $umkmUser,
                         'koperasiUser' => $koperasiUser,
                     ])
-                </div>
+                </div> --}}
             @endcan
-
-
-
-
-            {{-- <div id="users" class="d-none">
-                @include('dashboard.components.user', ['users' => $users])
-            </div>
-            <div id="umkm">
-                @include('dashboard.components.umkm', ['umkms' => $umkms])
-            </div> --}}
-            {{-- <div id="koperasi">
-                @include('dashboard.components.koperasi')
-            </div> --}}
-
-
-            {{-- USER --}}
-            {{-- <div id="regist-umkm">
-                @include('dashboard.components.registUmkm')
-            </div>
-            <div id="regist-koperasi">
-                @include('dashboard.components.registKoperasi')
-            </div> --}}
-
-
-            {{-- <div id="regist-koperasi" class="">
-                @include('dashboard.components.pengajuanSurat')
-            </div> --}}
-
-            {{-- <div id="website" class="">
-                @include('dashboard\pages\website\index')
-            </div> --}}
-
-
-
-            {{-- Pegawai --}}
-            {{-- <div class="container-xxl flex-grow-1 container-p-y">
-                @include('dashboard.pages.pegawai.pegawai')
-            </div> --}}
-
-            {{-- Agenda --}}
-            {{-- <div id="agenda" class="">
-                @include('dashboard.pages.agenda.agenda')
-            </div> --}}
-
-            {{-- pesan
-            <div id="detail-pesan" class="">
-                @include('dashboard.pages.pesan.detail-pesan')
-            </div> --}}
-
-            {{-- <div id="pesan" class="mt-3">
-                @include('dashboard.pages.pesan.pesan')
-            </div> --}}
-
-
 
         </div>
         {{-- footer --}}

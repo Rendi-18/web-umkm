@@ -1,4 +1,4 @@
-<section id="pengajuan">
+{{-- <section id="pengajuan">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pengajuan/</span>Pengajuan
         Koperasi</h4>
     <div class="row g-4">
@@ -103,4 +103,4 @@
         </div>
     </div>
 
-</section>
+</section> --}}

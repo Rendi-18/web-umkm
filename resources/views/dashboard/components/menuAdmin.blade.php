@@ -43,13 +43,6 @@
                 </a>
             </li>
         </ul>
-        {{-- <ul class="menu-sub">
-            <li class="menu-item {{ Request::is('dashboard/website*') ? 'active' : '' }}"">
-                <a href="/dashboard/website" class="menu-link">
-                    <div data-i18n="Without menu">Content</div>
-                </a>
-            </li>
-        </ul> --}}
         <ul class="menu-sub">
             <li class="menu-item {{ Request::is('dashboard/pegawai*') ? 'active' : '' }}">
                 <a href="/dashboard/pegawai" class="menu-link">
@@ -84,7 +77,7 @@
     </li>
 
     <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">UMKM & KOPERASI</span>
+        <span class="menu-header-text">UMKM</span>
     </li>
 
     <li class="menu-item {{ Request::is('dashboard/umkm*') ? 'active open' : '' }}">
@@ -100,7 +93,7 @@
             </li>
         </ul>
     </li>
-    <li class="menu-item  {{ Request::is('dashboard/koperasi*') ? 'active open' : '' }}">
+    {{-- <li class="menu-item  {{ Request::is('dashboard/koperasi*') ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-store-alt"></i>
             <div data-i18n="Account Settings">KOPERASI</div>
@@ -112,7 +105,7 @@
                 </a>
             </li>
         </ul>
-    </li>
+    </li> --}}
     <li class="menu-item {{ Request::is('dashboard/pengajuan*') ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-list-check"></i>

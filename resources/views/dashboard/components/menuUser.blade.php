@@ -23,7 +23,7 @@
         class="menu-item
     {{ Request::is('dashboard/izin*') ? 'active open' : '' }}
     {{ Request::is('dashboard/register/umkm') ? 'active open' : '' }}
-    {{ Request::is('dashboard/register/koperasi') ? 'active open' : '' }}
+    {{-- {{ Request::is('dashboard/register/koperasi') ? 'active open' : '' }} --}}
     ">
         <a href="/dashboard/profile" class="menu-link menu-toggle ">
             <i class="menu-icon tf-icons bx bx-paper-plane"></i>
@@ -43,13 +43,13 @@
                 </a>
             </li>
         </ul>
-        <ul class="menu-sub ">
+        {{-- <ul class="menu-sub ">
             <li class="menu-item {{ Request::is('dashboard/register/koperasi') ? 'active' : '' }}">
                 <a href="/dashboard/register/koperasi" class="menu-link ">
                     <div data-i18n="Pengajuan Surat">Pengajuan Koperasi</div>
                 </a>
             </li>
-        </ul>
+        </ul> --}}
     </li>
 
     <li class="menu-header small text-uppercase">
@@ -94,7 +94,7 @@
         </li>
     @endif
 
-    <li class="menu-header small text-uppercase">
+    {{-- <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Koperasi</span>
     </li>
 
@@ -145,5 +145,5 @@
                 <div data-i18n="Analytics">Anda Belum Memiliki Koperasi</div>
             </a>
         </li>
-    @endif
+    @endif --}}
 </ul>

@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+{{-- @extends('layouts.dashboard')
 
 @section('content')
     <!-- Content wrapper -->
@@ -24,4 +24,4 @@
         <div class="content-backdrop fade"></div>
     </div>
     <!-- Content wrapper -->
-@endsection
+@endsection --}}

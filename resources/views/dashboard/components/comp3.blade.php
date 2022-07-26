@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="fw-semibold d-block mb-1">UMKM & Koperasi</span>
+                        <span class="fw-semibold d-block mb-1">UMKM</span>
                         <h4 class="card-title mb-2">Total</h4>
                         <small class="text-success fw-semibold mb-0 mt-auto">
                             <div class="spinner-border-sm spinner-grow text-success" role="status">

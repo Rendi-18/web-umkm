@@ -27,7 +27,7 @@
                 'koperasis' => $koperasis->currentPage(),
             ])->links('components.paginator') }}
     </div>
-    @foreach ($koperasis as $koperasi)
+    {{-- @foreach ($koperasis as $koperasi)
         <div class="col-lg-3 col-6">
             <div class="card h-100">
                 @if ($umkm->image)
@@ -47,7 +47,7 @@
         {{ $koperasis->appends([
                 'umkms' => $umkms->currentPage(),
             ])->links('components.paginator') }}
-    </div>
+    </div> --}}
 
 
 </div>

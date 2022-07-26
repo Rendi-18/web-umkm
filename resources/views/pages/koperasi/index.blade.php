@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
     <main id="main">
@@ -158,9 +158,6 @@
                                 </div>
                             </div>
                         @endforeach
-                        {{-- @else
-                            <div class="col-12 m-4 d-flex">
-                                <h3 class="m-auto">UMKM ini Belum Memiliki Produk Unggulan :)</h3> --}}
 
                     </div>
                 </div>
@@ -215,4 +212,4 @@
 
         </section>
     </main>
-@endsection
+@endsection --}}
