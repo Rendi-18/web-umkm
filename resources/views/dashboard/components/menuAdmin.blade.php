@@ -93,19 +93,7 @@
             </li>
         </ul>
     </li>
-    {{-- <li class="menu-item  {{ Request::is('dashboard/koperasi*') ? 'active open' : '' }}">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-store-alt"></i>
-            <div data-i18n="Account Settings">KOPERASI</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item {{ Request::is('dashboard/koperasi*') ? 'active' : '' }}">
-                <a href="/dashboard/koperasi" class="menu-link">
-                    <div data-i18n="Without menu">Data KOPERASI</div>
-                </a>
-            </li>
-        </ul>
-    </li> --}}
+
     <li class="menu-item {{ Request::is('dashboard/pengajuan*') ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-list-check"></i>

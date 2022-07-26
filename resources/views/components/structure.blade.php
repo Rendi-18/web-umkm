@@ -4,7 +4,7 @@
 
         <div class="section-title">
             <h2>Pegawai</h2>
-            <p>Data Pegawai Dinas Koperasi UMKM Lampung</p>
+            <p>Data Pegawai Dinas Koperasi & UMKM Profinsi Lampung</p>
         </div>
 
         <div class="row">

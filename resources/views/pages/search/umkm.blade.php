@@ -7,7 +7,6 @@
                 <ol>
                     <li><a href="/">Home</a></li>
                     <li>Search</li>
-                    <li>UMKM</li>
                 </ol>
                 <h2>Search</h2>
                 <div id="search-p">

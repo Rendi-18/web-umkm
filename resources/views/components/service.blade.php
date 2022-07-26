@@ -31,7 +31,7 @@
                 <div class="icon-box py-4 px-3 rounded w-100">
                     <div class="icon"><i class="bx bx-tachometer"></i></div>
                     <h4>Pemasaran</h4>
-                    <p>Membantu pemasaran produk serta layanan yang dimiliki UMKM ataupun KOPERASI</p>
+                    <p>Membantu pemasaran produk yang dimiliki UMKM</p>
                 </div>
             </div>
 

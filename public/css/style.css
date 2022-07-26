@@ -2274,3 +2274,7 @@ a.agenda-card {
 span i.bx {
   vertical-align: -.125em;
 }
+
+.mh-100vh {
+  min-height: 100vh;
+}

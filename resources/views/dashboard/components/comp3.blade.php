@@ -124,10 +124,6 @@
                                                 <i class="bx bx-dots-vertical-rounded"></i>
                                             </button>
                                             <div class="dropdown-menu">
-                                                {{-- <a class="dropdown-item"
-                                                    href="/dashboard/umkm/{{ $umkm->id }}/umkm-profile"><i
-                                                        class="bx bx-edit-alt me-1"></i>
-                                                    Edit</a> --}}
                                                 <form id="umkmDelete-form"
                                                     action="/dashboard/umkm/{{ $umkm->id }}/umkm-profile"
                                                     method="post">
