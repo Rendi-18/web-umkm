@@ -1,6 +1,6 @@
 <div class="row py-3 mb-2">
     <div class="col-6">
-        <h4 class="fw-bold">Daftar UMKM & Koperasi</h4>
+        <h4 class="fw-bold">Daftar UMKM</h4>
     </div>
 
 </div>
@@ -23,9 +23,7 @@
         </div>
     @endforeach
     <div class="d-flex justify-content-center pt-3">
-        {{ $umkms->appends([
-                'koperasis' => $koperasis->currentPage(),
-            ])->links('components.paginator') }}
+        {{ $umkms->links('components.paginator') }}
     </div>
     {{-- @foreach ($koperasis as $koperasi)
         <div class="col-lg-3 col-6">

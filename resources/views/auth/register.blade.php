@@ -9,7 +9,7 @@ $website = DB::table('websites')->get();
             <div class="card-body">
                 <!-- Logo -->
                 <div class="app-brand justify-content-center">
-                    <a href="index.html" class="app-brand-link gap-2">
+                    <a href="/" class="app-brand-link gap-2">
                         <span class="app-brand-logo demo">
 
                             <img src="img\favicon\icon.svg" alt="">
@@ -21,7 +21,7 @@ $website = DB::table('websites')->get();
                 <h4 class="mb-2">Mulai kelola Koperasi UMKM anda 🚀</h4>
                 <p class="mb-4">Kelola data dan perizinan lebih mudah!</p>
 
-                <form id="formAuthentication" class="mb-3 row" action="index.html" method="POST">
+                <form id="formAuthentication" class="mb-3 row" action="/register" method="POST">
                     @csrf
                     <div class="mb-3 col-lg-6 col-12">
                         <label for="username" class="form-label">Username</label>
