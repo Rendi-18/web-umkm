@@ -7,7 +7,7 @@
         <div class="container-xxl flex-grow-1 container-p-y">
             @include('dashboard.pages.pengajuan.pengajuanSurat', ['izins' => $izins])
             @include('dashboard.pages.pengajuan.pengajuanUmkm', ['umkms' => $umkms])
-            {{-- @include('dashboard.pages.pengajuan.pengajuanKoperasi', ['koperasis' => $koperasis]) --}}
+            @include('dashboard.pages.pengajuan.pengajuanbantuan')
         </div>
         {{-- footer --}}
         @include('dashboard.components.footer')

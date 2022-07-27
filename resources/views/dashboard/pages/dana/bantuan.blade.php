@@ -1,5 +1,5 @@
 <section id="regist-koperasi">
-    <h4 class="col-6 fw-bold pb-2 mb-2">Pengajuan Bantuan Dana</h4>
+    <h4 class="col-6 fw-bold pb-2 mb-2">Pengajuan Bantuan</h4>
 
     {{-- Flash Message --}}
     @if (session()->has('success'))
@@ -14,14 +14,14 @@
             <div class="row">
                 <div class="col-lg">
                     <div class="card">
-                        <h5 class="card-header">Form Pengajuan Bantuan Dana</h5>
+                        <h5 class="card-header">Form Pengajuan Bantuan</h5>
                         <div class="card-body">
-                            <form class="" action="/dashboard/bantuan/dana" method="POST"
+                            <form class="" action="/dashboard/bantuan/bantuan" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 {{-- NIB/NIK --}}
                                 <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="nib">NIK/NIB</label>
+                                    <label class="col-sm-2 col-form-label" for="nib">NIB</label>
                                     <div class="col-sm-10">
                                         <div class="input-group input-group-merge">
                                             <span class="input-group-text "><i class="bx bx-barcode"></i></span>
@@ -79,43 +79,55 @@
                                     </div>
                                 </div>
 
+                                {{-- Jenis --}}
+                                <div class="row mb-3">
+                                    <label class="col-sm-2 col-form-label" for="jenis">Phone No</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group input-group-merge">
+                                            <span id="basic-icon-default-phone2" class="input-group-text"><i
+                                                    class="bx bx-copy-alt"></i></span>
+                                            <select class="form-select phone-mask @error('jenis') is-invalid @enderror"
+                                                id="jenis" required>
+                                                <option selected="">Jenis Bantuan...</option>
+                                                <option value="1">Bantuan Dana</option>
+                                                <option value="2">Penyuluhan</option>
+                                                <option value="3">Lainnya..</option>
+                                            </select>
+                                            @error('jenis')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
                                 {{-- File --}}
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label" for="image">Proposal</label>
                                     <div class="col-sm-10 d-flex align-items-start align-items-sm-center gap-4 ">
-                                        <div class="img-container img-container-sm rounded">
-                                            <img src="/img/temp/product-temp.png" alt="user-avatar"
-                                                class="img-preview d-block img-fluid img-fit mx-auto d-block"
-                                                id="uploadedAvatar">
-                                        </div>
-
-                                        <div class="button-wrapper">
-                                            <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
-                                                <span class="d-none d-sm-block">Upload Proposal</span>
-                                                <i class="bx bx-upload d-block d-sm-none"></i>
-                                                <input type="hidden" name="oldImage" value="{{ old('image') }}">
-                                                <input type="file" id="upload"
-                                                    class="account-file-input @error('image') is-invalid @enderror"
-                                                    name="image" hidden onchange="previewImageUmkm()">
-                                                @error('image')
-                                                    <div class="invalid-feedback text-light">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </label>
-                                            <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                                        <div class="input-group">
+                                            <input type="file"
+                                                class="form-control @error('fileproposal') is-invalid @enderror"
+                                                id="fileproposal"accept=".pdf" required>
+                                            <label class="input-group-text" for="fileproposal">Upload</label>
+                                            @error('fileproposal')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
 
                                 {{-- tambahan --}}
                                 <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="description">Izin lain</label>
+                                    <label class="col-sm-2 col-form-label" for="description">Deskripsi</label>
                                     <div class="col-sm-10">
                                         <div class="input-group input-group-merge flex-column">
                                             <input type="hidden" name="description" id="description"
                                                 class="form-control phone-mask @error('description') is-invalid @enderror"
-                                                placeholder="Tulis disini izin lain yang anda butuhkan"
+                                                placeholder="Tulis disini deskripsi yang anda butuhkan"
                                                 aria-describedby="basic-icon-default-address"
                                                 value="{{ old('description') }}" required>
                                             <trix-editor input="description"></trix-editor>
@@ -145,88 +157,92 @@
         </div>
     </div>
     <div class="col-12 mb-5">
-        <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Data/</span> Pengajuan Bantuan Dana</h4>
+        <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Data/</span> Pengajuan Bantuan</h4>
         <div class="card">
-            <h5 class="card-header">Tabel Pengajuan Bantuan Dana</h5>
+            <h5 class="card-header">Tabel Pengajuan Bantuan</h5>
             <form action="/dashboard/izin/surat" method="get" class="d-flex mx-4 mb-2">
                 <input class="form-control me-2" type="text" name="search" id="search" placeholder="Search"
                     aria-label="Search" value="{{ request('search') }}">
                 <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
             <div class="table-responsive text-nowrap">
-                {{-- <table class="table table-hover">
+                <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Id</th>
                             <th>NIB</th>
-                            <th>Nama</th>
+                            <th>Nama UMKM</th>
                             <th>Phone No</th>
-                            <th>Kategori Perizinan</th>
-                            <th>Izin lain</th>
+                            <th>Jenis Bantuan</th>
+                            <th>Deskripsi</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        @if ($izins->count())
-                            @foreach ($izins as $izin)
-                                <tr>
-                                    <td>{{ $izin->id }}</td>
-                                    <td><strong>{{ $izin->nib }}</strong></td>
-                                    <td>{{ $izin->name }}</td>
-                                    <td>{{ $izin->phonenumber }}</td>
-                                    <td><span
-                                            class="badge bg-label-primary me-1"><strong>{{ $izin->category->category }}</strong></span>
-                                    </td>
-                                    <td>{!! $izin->description !!}</td>
-                                    <td>
-                                        @if ($izin->status == 0)
-                                            <div class="spinner-border spinner-border-sm text-warning" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                            </div><span class="ms-2 badge bg-label-warning me-1">Pending</span>
-                                        @elseif ($izin->status == 1)
-                                            <span class="text-info"><strong><i
-                                                        class="bx bx-check me-1"></i></strong></span>
-                                            <span class="badge bg-label-info me-1">Aproved</span>
-                                        @else
-                                            <span class="text-danger"><strong>
-                                                    <i class="bx bx-x me-1"></i></strong></span>
-                                            <span class="badge bg-label-danger me-1">Ditolak</span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                data-bs-toggle="dropdown">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
+                        {{-- @if ($izins->count())
+                            @foreach ($izins as $izin) --}}
+                        <tr>
+                            <td><strong>NIB</strong></td>
+                            <td>Nama</td>
+                            <td>NO Telp</td>
+                            <td>
+                                <span class="badge bg-label-primary me-1">
+                                    <strong>Jenis bantuan</strong>
+                                </span>
+                            </td>
+                            <td>{{ Str::Limit('penyuluhan', 15) }}</td>
+                            <td>
+                                {{-- @if ($izin->status == 0) --}}
+                                <div class="spinner-border spinner-border-sm text-warning" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div><span class="ms-2 badge bg-label-warning me-1">Pending</span>
+                                {{-- @elseif ($izin->status == 1)
+                                    <span class="text-info"><strong><i class="bx bx-check me-1"></i></strong></span>
+                                    <span class="badge bg-label-info me-1">Aproved</span>
+                                @else
+                                    <span class="text-danger"><strong>
+                                            <i class="bx bx-x me-1"></i></strong></span>
+                                    <span class="badge bg-label-danger me-1">Ditolak</span>
+                                @endif --}}
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                        data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item"target="_blank" href="">
+                                            <i class='bx bx-edit'></i>
+                                            Edit
+                                        </a>
+                                        <form id="userDelete-form" action="/dashboard/izin/surat/...."
+                                            method="post">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
+                                                <i class="bx bx-x-circle"></i> Batalkan
                                             </button>
-                                            <div class="dropdown-menu">
-                                                <form id="userDelete-form"
-                                                    action="/dashboard/izin/surat/{{ $izin->id }}"
-                                                    method="post">
-                                                    @method('delete')
-                                                    @csrf
-                                                    <button class="dropdown-item"
-                                                        onclick="return confirm('Apa anda yakin?')">
-                                                        <i class="bx bx-x me-1"></i> Batalkan
-                                                    </button>
-                                                </form>
-                                                <a class="dropdown-item" target="_blank"
-                                                    @if ($izin->file) @else
+                                        </form>
+                                        {{-- <a class="dropdown-item" target="_blank"
+                                            @if ($izin->file) @else
                                             disabled @endif
-                                                    href="{{ asset('storage/' . $izin->file) }}" download><i
-                                                        class='bx bx-down-arrow-circle'></i>
-                                                    Download</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                            href="{{ asset('storage/' . $izin->file) }}" download><i
+                                                class='bx bx-down-arrow-circle'></i>
+                                            Download</a> --}}
+                                        <a class="dropdown-item" target="_blank" href="" download>
+                                            <i class='bx bx-down-arrow-circle'></i>
+                                            Download</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        {{-- @endforeach
                         @else
                             <h1 class="text-center mt-5 mb-5">Izin not found :)</h1>
-                        @endif
+                        @endif --}}
                     </tbody>
-                </table> --}}
+                </table>
             </div>
         </div>
     </div>

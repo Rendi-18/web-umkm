@@ -37,6 +37,13 @@
             </li>
         </ul>
         <ul class="menu-sub ">
+            <li class="menu-item {{ Request::is('dashboard/bantuan*') ? 'active' : '' }}">
+                <a href="/dashboard/bantuan/dana" class="menu-link ">
+                    <div data-i18n="Pengajuan Surat">Pengajuan Bantuan</div>
+                </a>
+            </li>
+        </ul>
+        <ul class="menu-sub ">
             <li class="menu-item {{ Request::is('dashboard/register/umkm') ? 'active' : '' }}">
                 <a href="/dashboard/register/umkm" class="menu-link ">
                     <div data-i18n="Pengajuan Surat">Pengajuan UMKM</div>
