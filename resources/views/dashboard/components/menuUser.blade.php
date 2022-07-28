@@ -38,7 +38,7 @@
         </ul>
         <ul class="menu-sub ">
             <li class="menu-item {{ Request::is('dashboard/bantuan*') ? 'active' : '' }}">
-                <a href="/dashboard/bantuan/dana" class="menu-link ">
+                <a href="/dashboard/bantuan" class="menu-link ">
                     <div data-i18n="Pengajuan Surat">Pengajuan Bantuan</div>
                 </a>
             </li>

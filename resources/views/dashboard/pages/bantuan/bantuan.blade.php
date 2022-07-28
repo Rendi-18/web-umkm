@@ -30,7 +30,7 @@
                                                 class="form-control @error('name') is-invalid @enderror"" id="name"
                                                 placeholder="Nama" aria-describedby="basic-icon-default-fullname2"
                                                 value="{{ old('name-nib') }}" required> --}}
-                                            <select id="name-nib" name="name-nib"
+                                            <select id="name-nib" name="user_id"
                                                 class="form-select @error('name-nib') is-invalid @enderror">
                                                 <option selected>Pilih Nama UMKM</option>
                                                 <option value="1">One</option>

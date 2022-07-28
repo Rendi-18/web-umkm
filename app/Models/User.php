@@ -59,4 +59,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Izin::class, 'user_id');
     }
+    public function bantuan()
+    {
+        return $this->hasMany(User::class, 'user_id');
+    }
 }

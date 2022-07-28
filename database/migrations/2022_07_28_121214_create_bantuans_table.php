@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('bantuans', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('phonenumber');
             $table->string('bantuan');
             $table->string('file')->nullable();

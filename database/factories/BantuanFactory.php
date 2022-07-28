@@ -17,7 +17,7 @@ class BantuanFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => mt_rand(1, 5),
+            'user_id' => mt_rand(1, 6),
             'bantuan' => 'Skin Legend',
             'phonenumber' => $this->faker->phoneNumber(),
             'description' => $this->faker->sentence(mt_rand(5, 9)),

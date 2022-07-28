@@ -11,8 +11,8 @@ class Bantuan extends Model
 
     protected $guarded = ['id'];
 
-    public function umkm()
+    public function user()
     {
-        return $this->belongsTo(Umkm::class, 'umkm_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
