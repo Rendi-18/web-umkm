@@ -81,18 +81,14 @@
 
                                 {{-- Jenis --}}
                                 <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="jenis">Phone No</label>
+                                    <label class="col-sm-2 col-form-label" for="jenis">Jenis Bantuan</label>
                                     <div class="col-sm-10">
                                         <div class="input-group input-group-merge">
                                             <span id="basic-icon-default-phone2" class="input-group-text"><i
                                                     class="bx bx-copy-alt"></i></span>
-                                            <select class="form-select phone-mask @error('jenis') is-invalid @enderror"
-                                                id="jenis" required>
-                                                <option selected="">Jenis Bantuan...</option>
-                                                <option value="1">Bantuan Dana</option>
-                                                <option value="2">Penyuluhan</option>
-                                                <option value="3">Lainnya..</option>
-                                            </select>
+                                            <input type="text" name="jenis" id="jenis"
+                                                class="form-control phone-mask @error('jenis') is-invalid @enderror"
+                                                placeholder="Jenis Bantuan.." value="{{ old('jenis') }}" required>
                                             @error('jenis')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}

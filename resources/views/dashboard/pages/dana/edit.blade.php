@@ -28,7 +28,7 @@
                                             <input type="text" name="nib"
                                                 class="form-control @error('nib') is-invalid @enderror" id="nib"
                                                 placeholder="Nomor Induk Koperasi" value="{{ old('nib') }}" required>
-                                            @error('name')
+                                            @error('nib')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -86,13 +86,9 @@
                                         <div class="input-group input-group-merge">
                                             <span id="basic-icon-default-phone2" class="input-group-text"><i
                                                     class="bx bx-copy-alt"></i></span>
-                                            <select class="form-select phone-mask @error('jenis') is-invalid @enderror"
-                                                id="jenis" required>
-                                                <option selected="">Jenis Bantuan...</option>
-                                                <option value="1">Bantuan Dana</option>
-                                                <option value="2">Penyuluhan</option>
-                                                <option value="3">Lainnya..</option>
-                                            </select>
+                                            <input type="text" name="jenis" id="jenis"
+                                                class="form-control phone-mask @error('jenis') is-invalid @enderror"
+                                                placeholder="Jenis Bantuan.." value="{{ old('jenis') }}" required>
                                             @error('jenis')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
