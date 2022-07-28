@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('bantuans', function (Blueprint $table) {
             $table->id();
-            $table->string('umkm');
+            $table->string('user_id');
             $table->string('phonenumber');
             $table->string('bantuan');
             $table->string('file')->nullable();
+            $table->string('accept')->nullable();
             $table->text('description');
             $table->timestamps();
         });
