@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('phonenumber');
             $table->string('bantuan');
             $table->string('file')->nullable();
+            $table->string('accept')->nullable();
             $table->text('description');
             $table->timestamps();
         });
