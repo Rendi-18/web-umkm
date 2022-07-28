@@ -15,4 +15,9 @@ class Bantuan extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function umkm()
+    {
+        return $this->belongsTo(Umkm::class, 'umkm_id');
+    }
 }

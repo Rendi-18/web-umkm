@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('bantuans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('umkm_id');
             $table->string('phonenumber');
             $table->string('bantuan');
             $table->string('file')->nullable();
             $table->string('accept')->nullable();
             $table->text('description');
+            $table->string('status')->default(false);
             $table->timestamps();
         });
     }

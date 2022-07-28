@@ -30,54 +30,66 @@
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        {{-- @if ($izins->count())
-                            @foreach ($izins as $izin) --}}
-                        <tr>
-                            <td><strong>NIB</strong></td>
-                            <td>Nama</td>
-                            <td>NO Telp</td>
-                            <td>
-                                <span class="badge bg-label-primary me-1">
-                                    <strong>Jenis bantuan</strong>
-                                </span>
-                            </td>
-                            <td>{{ Str::Limit('penyuluhan', 15) }}</td>
-                            <td>
-                                {{-- @if ($izin->status == 0) --}}
-                                <div class="spinner-border spinner-border-sm text-warning" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div><span class="ms-2 badge bg-label-warning me-1">Pending</span>
-                                {{-- @elseif ($izin->status == 1)
-                                    <span class="text-info"><strong><i class="bx bx-check me-1"></i></strong></span>
-                                    <span class="badge bg-label-info me-1">Aproved</span>
-                                @else
-                                    <span class="text-danger"><strong>
-                                            <i class="bx bx-x me-1"></i></strong></span>
-                                    <span class="badge bg-label-danger me-1">Ditolak</span>
-                                @endif --}}
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <button type="button" class="dropdown-item" data-bs-toggle="modal"
-                                            data-bs-target="#backDropModal">
-                                            <i class="bx bx-check me-1"></i>Aprove
-                                        </button>
+                        @if ($bantuans->count())
+                            @foreach ($bantuans as $bantuan)
+                                <tr>
+                                    <td><strong>{{ $bantuan->umkm->nib }}</strong></td>
+                                    <td>{{ $bantuan->umkm->name }}</td>
+                                    <td>{{ $bantuan->umkm->phonenumber }}</td>
+                                    <td>
+                                        <span class="badge bg-label-primary me-1">
+                                            <strong>{{ $bantuan->bantuan }}</strong>
+                                        </span>
+                                    </td>
+                                    <td>{{ Str::Limit($bantuan->description, 15) }}</td>
+                                    <td>
+                                        @if ($bantuan->status == 0)
+                                            <div class="spinner-border spinner-border-sm text-warning" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div><span class="ms-2 badge bg-label-warning me-1">Pending</span>
+                                        @elseif ($bantuan->status == 1)
+                                            <span class="text-info"><strong><i
+                                                        class="bx bx-check me-1"></i></strong></span>
+                                            <span class="badge bg-label-info me-1">Aproved</span>
+                                        @else
+                                            <span class="text-danger"><strong>
+                                                    <i class="bx bx-x me-1"></i></strong></span>
+                                            <span class="badge bg-label-danger me-1">Ditolak</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                                data-bs-toggle="dropdown">
+                                                <i class="bx bx-dots-vertical-rounded"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                                                    data-bs-target="#backDropModal">
+                                                    <i class="bx bx-check me-1"></i>Aprove
+                                                </button>
 
-                                        <button class="dropdown-item" href="#"><i class='bx bx-x me-1'></i>
-                                            Tolak</button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        {{-- @endforeach
+                                                <form id="userDelete-form dropdown-item"
+                                                    action="/dashboard/pengajuan/{{ $bantuan->id }}/bantuan"
+                                                    method="post">
+                                                    @method('put')
+                                                    @csrf
+                                                    <input type="hidden" name="status" value="2">
+                                                    <button class="dropdown-item"
+                                                        onclick="return confirm('Apa anda yakin?')">
+                                                        <i class="bx bx-x me-1"></i> Tolak
+                                                    </button>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                        @include('dashboard.components.modalsformBantuan')
+                                    </td>
+                                </tr>
+                            @endforeach
                         @else
-                            <h1 class="text-center mt-5 mb-5">Izin not found :)</h1>
-                        @endif --}}
+                            <h1 class="text-center mt-5 mb-5">Bantuan not found :)</h1>
+                        @endif
                     </tbody>
                 </table>
             </div>

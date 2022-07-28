@@ -1,5 +1,14 @@
 <section id="regist-koperasi">
     <h4 class="col-6 fw-bold pb-2 mb-2">Pengajuan Surat</h4>
+
+    {{-- Flash Message --}}
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <div class="row g-4 mb-3">
         <div class="col-lg-12">
             <div class="row">
@@ -190,12 +199,13 @@
                                                         <i class="bx bx-x me-1"></i> Batalkan
                                                     </button>
                                                 </form>
-                                                <a class="dropdown-item" target="_blank"
-                                                    @if ($izin->file) @else
-                                            disabled @endif
-                                                    href="{{ asset('storage/' . $izin->file) }}" download><i
-                                                        class='bx bx-down-arrow-circle'></i>
-                                                    Download</a>
+                                                @if ($izin->file)
+                                                    <a class="dropdown-item" target="_blank"
+                                                        href="{{ asset('storage/' . $izin->file) }}" download><i
+                                                            class='bx bx-down-arrow-circle'></i>
+                                                        Download
+                                                    </a>
+                                                @endif
                                             </div>
                                         </div>
                                     </td>

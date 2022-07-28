@@ -18,6 +18,7 @@ class BantuanFactory extends Factory
     {
         return [
             'user_id' => mt_rand(1, 6),
+            'umkm_id' => mt_rand(1, 50),
             'bantuan' => 'Skin Legend',
             'phonenumber' => $this->faker->phoneNumber(),
             'description' => $this->faker->sentence(mt_rand(5, 9)),

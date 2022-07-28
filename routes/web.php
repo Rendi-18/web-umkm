@@ -63,7 +63,8 @@ Route::post('/dashboard/izin/surat', [DashboardUserIzinController::class, 'surat
 Route::delete('/dashboard/izin/surat/{izin}', [DashboardUserIzinController::class, 'suratDestroy'])->middleware('auth');
 
 Route::get('/dashboard/bantuan', [DashboardBantuanController::class, 'index'])->middleware('auth');
-Route::post('/dashboard/bantuan', [DashboardBantuanController::class, 'create'])->middleware('auth');
+Route::post('/dashboard/bantuan', [DashboardBantuanController::class, 'store'])->middleware('auth');
+Route::delete('/dashboard/bantuan/{bantuan:id}', [DashboardBantuanController::class, 'destroy'])->middleware('auth');
 
 Route::get('/dashboard/register/umkm', [DashboardUserIzinController::class, 'umkm'])->middleware('auth');
 Route::post('/dashboard/register/umkm', [DashboardUserIzinController::class, 'umkmStore'])->middleware('auth');
@@ -97,6 +98,7 @@ Route::get('/dashboard/comp', [DashboardController::class, 'comp'])->middleware(
 Route::put('/dashboard/pengajuan/umkm/{umkm}', [DashboardPengajuanController::class, 'aprovedUmkm'])->middleware('admin');
 Route::put('/dashboard/pengajuan/koperasi/{koperasi}', [DashboardPengajuanController::class, 'aprovedKoperasi'])->middleware('admin');
 Route::put('/dashboard/pengajuan/{izin}/izin', [DashboardPengajuanController::class, 'izin'])->middleware('admin');
+Route::put('/dashboard/pengajuan/{bantuan}/bantuan', [DashboardPengajuanController::class, 'bantuan'])->middleware('admin');
 
 // Pegawai
 Route::get('/dashboard/pegawai', [DashboardPegawaiController::class, 'index'])->middleware('admin');

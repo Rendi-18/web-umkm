@@ -61,6 +61,6 @@ class User extends Authenticatable
     }
     public function bantuan()
     {
-        return $this->hasMany(User::class, 'user_id');
+        return $this->hasMany(Bantuan::class, 'user_id');
     }
 }
