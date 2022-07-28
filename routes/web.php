@@ -22,7 +22,7 @@ use App\Http\Controllers\User\Umkm\DashboardUserProductController;
 use App\Http\Controllers\User\Izin\DashboardUserIzinController;
 
 // User Izin
-use App\Http\Controllers\User\Dana\DashboardDanaController;
+use App\Http\Controllers\User\Bantuan\DashboardBantuanController;
 
 
 /*
@@ -62,8 +62,8 @@ Route::get('/dashboard/izin/surat', [DashboardUserIzinController::class, 'surat'
 Route::post('/dashboard/izin/surat', [DashboardUserIzinController::class, 'suratStore'])->middleware('auth');
 Route::delete('/dashboard/izin/surat/{izin}', [DashboardUserIzinController::class, 'suratDestroy'])->middleware('auth');
 
-Route::get('/dashboard/bantuan/dana', [DashboardDanaController::class, 'index'])->middleware('auth');
-Route::post('/dashboard/bantuan/dana', [DashboardDanaController::class, 'create'])->middleware('auth');
+Route::get('/dashboard/bantuan', [DashboardBantuanController::class, 'index'])->middleware('auth');
+Route::post('/dashboard/bantuan', [DashboardBantuanController::class, 'create'])->middleware('auth');
 
 Route::get('/dashboard/register/umkm', [DashboardUserIzinController::class, 'umkm'])->middleware('auth');
 Route::post('/dashboard/register/umkm', [DashboardUserIzinController::class, 'umkmStore'])->middleware('auth');

@@ -16,7 +16,7 @@
                     <div class="card">
                         <h5 class="card-header">Form Pengajuan Bantuan</h5>
                         <div class="card-body">
-                            <form class="" action="/dashboard/bantuan/bantuan" method="POST"
+                            <form class="" action="/dashboard/bantuan" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 {{-- NIB/NIK --}}
