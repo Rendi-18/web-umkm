@@ -1,14 +1,15 @@
 <section id="regist-koperasi">
-    <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Pengajuan/</span>Pengajuan Bantuan</h4>
-    {{-- Flash Message --}}
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
     <div class="col-12 mb-5">
         <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Data/</span> Pengajuan Bantuan</h4>
+
+        {{-- Flash Message --}}
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="card">
             <h5 class="card-header">Tabel Pengajuan Bantuan</h5>
             <form action="/dashboard/izin/surat" method="get" class="d-flex mx-4 mb-2">
@@ -35,13 +36,13 @@
                                 <tr>
                                     <td><strong>{{ $bantuan->umkm->nib }}</strong></td>
                                     <td>{{ $bantuan->umkm->name }}</td>
-                                    <td>{{ $bantuan->umkm->phonenumber }}</td>
+                                    <td>{{ $bantuan->phonenumber }}</td>
                                     <td>
                                         <span class="badge bg-label-primary me-1">
                                             <strong>{{ $bantuan->bantuan }}</strong>
                                         </span>
                                     </td>
-                                    <td>{{ Str::Limit($bantuan->description, 15) }}</td>
+                                    <td>{!! Str::Limit($bantuan->description, 15) !!}</td>
                                     <td>
                                         @if ($bantuan->status == 0)
                                             <div class="spinner-border spinner-border-sm text-warning" role="status">
@@ -80,6 +81,13 @@
                                                         <i class="bx bx-x me-1"></i> Tolak
                                                     </button>
                                                 </form>
+                                                @if ($bantuan->file)
+                                                    <a class="dropdown-item" target="_blank"
+                                                        href="{{ asset('storage/' . $bantuan->file) }}" download><i
+                                                            class='bx bx-down-arrow-circle'></i>
+                                                        Download
+                                                    </a>
+                                                @endif
 
                                             </div>
                                         </div>

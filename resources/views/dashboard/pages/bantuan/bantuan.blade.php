@@ -213,7 +213,7 @@
                                                 </form>
                                                 @if ($bantuan->accept)
                                                     <a class="dropdown-item " target="_blank"
-                                                        href="{{ asset('storage/' . $bantuan->file) }}" download><i
+                                                        href="{{ asset('storage/' . $bantuan->accept) }}" download><i
                                                             class='bx bx-down-arrow-circle'></i>
                                                         Download</a>
                                                 @endif
