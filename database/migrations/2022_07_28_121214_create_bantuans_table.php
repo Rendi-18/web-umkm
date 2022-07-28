@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('bantuans', function (Blueprint $table) {
             $table->id();
-            $table->string('umkm');
+            $table->string('user_id');
             $table->string('phonenumber');
             $table->string('bantuan');
             $table->string('file')->nullable();
