@@ -19,37 +19,26 @@
                             <form class="" action="/dashboard/bantuan/bantuan" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
-                                {{-- NIB/NIK --}}
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="nib">NIB</label>
-                                    <div class="col-sm-10">
-                                        <div class="input-group input-group-merge">
-                                            <span class="input-group-text "><i class="bx bx-barcode"></i></span>
-                                            <input type="text" name="nib"
-                                                class="form-control @error('nib') is-invalid @enderror" id="nib"
-                                                placeholder="Nomor Induk Koperasi" value="{{ old('nib') }}" required>
-                                            @error('nib')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-
 
                                 {{-- Name --}}
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label" for="name">Nama
-                                        UMKM</label>
+                                        UMKM / NIB</label>
                                     <div class="col-sm-10">
                                         <div class="input-group input-group-merge">
                                             <span class="input-group-text "><i class="bx bx-store-alt"></i></span>
-                                            <input type="text" name="name"
+                                            {{-- <input type="text" name="name"
                                                 class="form-control @error('name') is-invalid @enderror"" id="name"
                                                 placeholder="Nama" aria-describedby="basic-icon-default-fullname2"
-                                                value="{{ old('name') }}" required>
-                                            @error('name')
+                                                value="{{ old('name-nib') }}" required> --}}
+                                            <select id="name-nib" name="name-nib"
+                                                class="form-select @error('name-nib') is-invalid @enderror">
+                                                <option selected>Default select</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                            @error('name-nib')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -139,8 +128,7 @@
 
                                 <div class="row justify-content-end">
                                     <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-primary"><span
-                                                class='bx bx-save'></span>
+                                        <button type="submit" class="btn btn-primary"><span class='bx bx-save'></span>
                                             &nbsp;
                                             Save</button>
                                     </div>

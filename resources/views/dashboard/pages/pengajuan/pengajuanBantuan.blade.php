@@ -63,26 +63,13 @@
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item"target="_blank" href="">
-                                            <i class='bx bx-edit'></i>
-                                            Edit
-                                        </a>
-                                        <form id="userDelete-form" action="/dashboard/izin/surat/...." method="post">
-                                            @method('delete')
-                                            @csrf
-                                            <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
-                                                <i class="bx bx-x-circle"></i> Batalkan
-                                            </button>
-                                        </form>
-                                        {{-- <a class="dropdown-item" target="_blank"
-                                            @if ($izin->file) @else
-                                            disabled @endif
-                                            href="{{ asset('storage/' . $izin->file) }}" download><i
-                                                class='bx bx-down-arrow-circle'></i>
-                                            Download</a> --}}
-                                        <a class="dropdown-item" target="_blank" href="" download>
-                                            <i class='bx bx-down-arrow-circle'></i>
-                                            Download</a>
+                                        <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                                            data-bs-target="#backDropModal">
+                                            <i class="bx bx-check me-1"></i>Aprove
+                                        </button>
+
+                                        <button class="dropdown-item" href="#"><i class='bx bx-x me-1'></i>
+                                            Tolak</button>
                                     </div>
                                 </div>
                             </td>

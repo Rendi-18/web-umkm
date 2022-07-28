@@ -19,37 +19,25 @@
                             <form class="" action="/dashboard/bantuan" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
-                                {{-- NIB --}}
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="nib">NIB</label>
-                                    <div class="col-sm-10">
-                                        <div class="input-group input-group-merge">
-                                            <span class="input-group-text "><i class="bx bx-barcode"></i></span>
-                                            <input type="text" name="nib"
-                                                class="form-control @error('nib') is-invalid @enderror" id="nib"
-                                                placeholder="Nomor Induk Koperasi" value="{{ old('nib') }}" required>
-                                            @error('name')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-
-
                                 {{-- Name --}}
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label" for="name">Nama
-                                        UMKM</label>
+                                        UMKM / NIB</label>
                                     <div class="col-sm-10">
                                         <div class="input-group input-group-merge">
                                             <span class="input-group-text "><i class="bx bx-store-alt"></i></span>
-                                            <input type="text" name="name"
+                                            {{-- <input type="text" name="name"
                                                 class="form-control @error('name') is-invalid @enderror"" id="name"
                                                 placeholder="Nama" aria-describedby="basic-icon-default-fullname2"
-                                                value="{{ old('name') }}" required>
-                                            @error('name')
+                                                value="{{ old('name-nib') }}" required> --}}
+                                            <select id="name-nib" name="name-nib"
+                                                class="form-select @error('name-nib') is-invalid @enderror">
+                                                <option selected>Pilih Nama UMKM</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                            @error('name-nib')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -208,12 +196,11 @@
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item"target="_blank" href="">
+                                        <a class="dropdown-item"target="_blank" href="/dashboard/bantuan/edit">
                                             <i class='bx bx-edit'></i>
                                             Edit
                                         </a>
-                                        <form id="userDelete-form" action="/dashboard/izin/surat/...."
-                                            method="post">
+                                        <form id="userDelete-form" action="/dashboard/bantuan" method="post">
                                             @method('delete')
                                             @csrf
                                             <button class="dropdown-item" onclick="return confirm('Apa anda yakin?')">
