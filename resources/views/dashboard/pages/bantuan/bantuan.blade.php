@@ -19,7 +19,7 @@
                             <form class="" action="/dashboard/bantuan" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
-                                {{-- NIB/NIK --}}
+                                {{-- NIB --}}
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label" for="nib">NIB</label>
                                     <div class="col-sm-10">

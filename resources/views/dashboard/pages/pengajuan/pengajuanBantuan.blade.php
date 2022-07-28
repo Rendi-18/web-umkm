@@ -1,6 +1,5 @@
 <section id="regist-koperasi">
-    <h4 class="col-6 fw-bold pb-2 mb-2">Pengajuan Bantuan</h4>
-
+    <h4 class="col-6 fw-bold py-3 mb-2"><span class="text-muted fw-light">Pengajuan/</span>Pengajuan Bantuan</h4>
     {{-- Flash Message --}}
     @if (session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
