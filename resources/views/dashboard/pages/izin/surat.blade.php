@@ -28,7 +28,7 @@
                                             <input type="text" name="nib"
                                                 class="form-control @error('nib') is-invalid @enderror" id="nib"
                                                 placeholder="Nomor Induk Koperasi" value="{{ old('nib') }}" required>
-                                            @error('name')
+                                            @error('nib')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>

@@ -1,143 +1,177 @@
-<section id="regist-koperasi">
-    <h4 class="col-6 fw-bold pb-2 mb-2">Pengajuan Bantuan</h4>
+@extends('layouts.dashboard')
+@section('content')
+    <!-- Content wrapper -->
+    <div class="content-wrapper ">
+        <!-- Content -->
+        <div class="container-xxl flex-grow-1 container-p-y">
+            <div id="dana">
+                <section id="regist-koperasi">
+                    <h4 class="col-6 fw-bold pb-2 mb-2">Pengajuan Bantuan</h4>
 
-    {{-- Flash Message --}}
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
+                    {{-- Flash Message --}}
+                    @if (session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
 
-    <div class="row g-4 mb-3">
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-lg">
-                    <div class="card">
-                        <h5 class="card-header">Form Edit Pengajuan Bantuan</h5>
-                        <div class="card-body">
-                            <form class="" action="/dashboard/bantuan/bantuan" method="POST"
-                                enctype="multipart/form-data">
-                                @csrf
-
-                                {{-- Name --}}
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="name">Nama
-                                        UMKM / NIB</label>
-                                    <div class="col-sm-10">
-                                        <div class="input-group input-group-merge">
-                                            <span class="input-group-text "><i class="bx bx-store-alt"></i></span>
-                                            {{-- <input type="text" name="name"
-                                                class="form-control @error('name') is-invalid @enderror"" id="name"
-                                                placeholder="Nama" aria-describedby="basic-icon-default-fullname2"
-                                                value="{{ old('name-nib') }}" required> --}}
-                                            <select id="name-nib" name="name-nib"
-                                                class="form-select @error('name-nib') is-invalid @enderror">
-                                                <option selected>Default select</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                            @error('name-nib')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
+                    <div class="row g-4 mb-3">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg">
+                                    <div class="card">
+                                        <h5 class="card-header">Form Pengajuan Bantuan</h5>
+                                        <div class="card-body">
+                                            <form class="" action="/dashboard/bantuan/{{ $bantuan->id }}"
+                                                method="POST" enctype="multipart/form-data">
+                                                @method('put')
+                                                @csrf
+                                                {{-- Name --}}
+                                                <div class="row mb-3">
+                                                    <label class="col-sm-2 col-form-label" for="name">Nama
+                                                        UMKM / NIB</label>
+                                                    <div class="col-sm-10">
+                                                        <div class="input-group input-group-merge">
+                                                            <span class="input-group-text "><i
+                                                                    class="bx bx-store-alt"></i></span>
+                                                            {{-- <input type="text" name="name"
+                                                            class="form-control @error('name') is-invalid @enderror"" id="name"
+                                                            placeholder="Nama" aria-describedby="basic-icon-default-fullname2"
+                                                            value="{{ old('name-nib') }}" required> --}}
+                                                            <select class="form-select" id="umkm_id" name="umkm_id">
+                                                                @foreach ($umkms as $umkm)
+                                                                    @if (old('umkm_id', $bantuan->umkm_id) == $umkm->id)
+                                                                        <option value="{{ $umkm->id }}" selected>
+                                                                            {{ $umkm->name }}
+                                                                            / ({{ $umkm->nib }})
+                                                                        </option>
+                                                                    @else
+                                                                        <option value="{{ $umkm->id }}">
+                                                                            {{ $umkm->name }}
+                                                                            / ({{ $umkm->nib }})</option>
+                                                                    @endif
+                                                                @endforeach
+                                                            </select>
+                                                            @error('name-nib')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            @enderror
+
+                                                {{-- Phonenumber --}}
+                                                <div class="row mb-3">
+                                                    <label class="col-sm-2 col-form-label" for="phonenumber">Phone
+                                                        No</label>
+                                                    <div class="col-sm-10">
+                                                        <div class="input-group input-group-merge">
+                                                            <span id="basic-icon-default-phone2" class="input-group-text"><i
+                                                                    class="bx bx-phone"></i></span>
+                                                            <input type="number" name="phonenumber" id="phonenumber"
+                                                                class="form-control phone-mask @error('phonenumber') is-invalid @enderror"
+                                                                placeholder="+62" aria-label="658 799 8941"
+                                                                aria-describedby="basic-icon-default-phone2"
+                                                                value="{{ old('phonenumber', $bantuan->phonenumber) }}"
+                                                                required>
+                                                            @error('phonenumber')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                {{-- Jenis --}}
+                                                <div class="row mb-3">
+                                                    <label class="col-sm-2 col-form-label" for="bantuan">Jenis
+                                                        Bantuan</label>
+                                                    <div class="col-sm-10">
+                                                        <div class="input-group input-group-merge">
+                                                            <span id="basic-icon-default-phone2" class="input-group-text"><i
+                                                                    class="bx bx-copy-alt"></i></span>
+                                                            <input type="text" name="bantuan" id="bantuan"
+                                                                class="form-control phone-mask @error('bantuan') is-invalid @enderror"
+                                                                placeholder="Jenis Bantuan.."
+                                                                value="{{ old('bantuan', $bantuan->bantuan) }}" required>
+                                                            @error('bantuan')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                {{-- File --}}
+                                                <div class="row mb-3">
+                                                    <label class="col-sm-2 col-form-label" for="image">Proposal</label>
+                                                    <div
+                                                        class="col-sm-10 d-flex align-items-start align-items-sm-center gap-4 ">
+                                                        <div class="input-group">
+                                                            <input type="hidden" name="oldDoc"
+                                                                value="{{ $bantuan->file }}">
+                                                            <input type="file"
+                                                                class="form-control @error('file') is-invalid @enderror"
+                                                                id="file"accept=".pdf" name="file" required>
+                                                            <label class="input-group-text" for="file">Upload</label>
+                                                            @error('file')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                {{-- tambahan --}}
+                                                <div class="row mb-3">
+                                                    <label class="col-sm-2 col-form-label"
+                                                        for="description">Deskripsi</label>
+                                                    <div class="col-sm-10">
+                                                        <div class="input-group input-group-merge flex-column">
+                                                            <input type="hidden" name="description" id="description"
+                                                                class="form-control phone-mask @error('description') is-invalid @enderror"
+                                                                placeholder="Tulis disini deskripsi yang anda butuhkan"
+                                                                aria-describedby="basic-icon-default-address"
+                                                                value="{{ old('description', $bantuan->description) }}"
+                                                                required>
+                                                            <trix-editor input="description"></trix-editor>
+                                                            @error('description')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row justify-content-end">
+                                                    <div class="col-sm-10">
+                                                        <button type="submit" class="btn btn-primary"><span
+                                                                class='bx bx-mail-send'></span>
+                                                            &nbsp;
+                                                            Send</button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
-
-                                {{-- Phonenumber --}}
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="phonenumber">Phone No</label>
-                                    <div class="col-sm-10">
-                                        <div class="input-group input-group-merge">
-                                            <span id="basic-icon-default-phone2" class="input-group-text"><i
-                                                    class="bx bx-phone"></i></span>
-                                            <input type="number" name="phonenumber" id="phonenumber"
-                                                class="form-control phone-mask @error('phonenumber') is-invalid @enderror"
-                                                placeholder="+62" aria-label="658 799 8941"
-                                                aria-describedby="basic-icon-default-phone2"
-                                                value="{{ old('phonenumber') }}" required>
-                                            @error('phonenumber')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {{-- Jenis --}}
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="jenis">Phone No</label>
-                                    <div class="col-sm-10">
-                                        <div class="input-group input-group-merge">
-                                            <span id="basic-icon-default-phone2" class="input-group-text"><i
-                                                    class="bx bx-copy-alt"></i></span>
-                                            <input type="text" name="jenis" id="jenis"
-                                                class="form-control phone-mask @error('jenis') is-invalid @enderror"
-                                                placeholder="Jenis Bantuan.." value="{{ old('jenis') }}" required>
-                                            @error('jenis')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {{-- File --}}
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="image">Proposal</label>
-                                    <div class="col-sm-10 d-flex align-items-start align-items-sm-center gap-4 ">
-                                        <div class="input-group">
-                                            <input type="file"
-                                                class="form-control @error('fileproposal') is-invalid @enderror"
-                                                id="fileproposal"accept=".pdf" required>
-                                            <label class="input-group-text" for="fileproposal">Upload</label>
-                                            @error('fileproposal')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {{-- tambahan --}}
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="description">Deskripsi</label>
-                                    <div class="col-sm-10">
-                                        <div class="input-group input-group-merge flex-column">
-                                            <input type="hidden" name="description" id="description"
-                                                class="form-control phone-mask @error('description') is-invalid @enderror"
-                                                placeholder="Tulis disini deskripsi yang anda butuhkan"
-                                                aria-describedby="basic-icon-default-address"
-                                                value="{{ old('description') }}" required>
-                                            <trix-editor input="description"></trix-editor>
-                                            @error('description')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="row justify-content-end">
-                                    <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-primary"><span class='bx bx-save'></span>
-                                            &nbsp;
-                                            Save</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
+
+        {{-- footer --}}
+        @include('dashboard.components.footer')
+
+        <div class="content-backdrop fade"></div>
     </div>
-</section>
+@endsection

@@ -64,6 +64,8 @@ Route::delete('/dashboard/izin/surat/{izin}', [DashboardUserIzinController::clas
 
 Route::get('/dashboard/bantuan', [DashboardBantuanController::class, 'index'])->middleware('auth');
 Route::post('/dashboard/bantuan', [DashboardBantuanController::class, 'store'])->middleware('auth');
+Route::get('/dashboard/bantuan/{bantuan:id}/edit', [DashboardBantuanController::class, 'edit'])->middleware('auth');
+Route::put('/dashboard/bantuan/{bantuan:id}', [DashboardBantuanController::class, 'update'])->middleware('auth');
 Route::delete('/dashboard/bantuan/{bantuan:id}', [DashboardBantuanController::class, 'destroy'])->middleware('auth');
 
 Route::get('/dashboard/register/umkm', [DashboardUserIzinController::class, 'umkm'])->middleware('auth');

@@ -198,7 +198,7 @@
                                             </button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item"target="_blank"
-                                                    href="/dashboard/bantuan/edit">
+                                                    href="/dashboard/bantuan/{{ $bantuan->id }}/edit">
                                                     <i class='bx bx-edit'></i>
                                                     Edit
                                                 </a>
