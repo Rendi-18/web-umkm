@@ -23,7 +23,7 @@
         class="menu-item
     {{ Request::is('dashboard/izin*') ? 'active open' : '' }}
     {{ Request::is('dashboard/register/umkm') ? 'active open' : '' }}
-    {{-- {{ Request::is('dashboard/register/koperasi') ? 'active open' : '' }} --}}
+    {{ Request::is('dashboard/bantuan') ? 'active open' : '' }}
     ">
         <a href="/dashboard/profile" class="menu-link menu-toggle ">
             <i class="menu-icon tf-icons bx bx-paper-plane"></i>
@@ -37,7 +37,7 @@
             </li>
         </ul>
         <ul class="menu-sub ">
-            <li class="menu-item {{ Request::is('dashboard/bantuan*') ? 'active' : '' }}">
+            <li class="menu-item {{ Request::is('dashboard/bantuan') ? 'active' : '' }}">
                 <a href="/dashboard/bantuan" class="menu-link ">
                     <div data-i18n="Pengajuan Surat">Pengajuan Bantuan</div>
                 </a>
