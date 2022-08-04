@@ -66,6 +66,11 @@
                                             </button>
                                             <div class="dropdown-menu">
                                                 <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                                                    data-bs-target="#backDropModalDetail">
+                                                    <i class="bx bx-detail me-1"></i>Detail
+                                                </button>
+
+                                                <button type="button" class="dropdown-item" data-bs-toggle="modal"
                                                     data-bs-target="#backDropModal">
                                                     <i class="bx bx-check me-1"></i>Aprove
                                                 </button>

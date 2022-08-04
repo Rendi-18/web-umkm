@@ -1,5 +1,4 @@
 <div class="col-lg-4 col-md-3">
-
     <div class="mt-3">
         <!-- Modal -->
         <div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1" style="display: none;"
@@ -37,10 +36,45 @@
                 </form>
             </div>
         </div>
+
+        <!-- Modal detail-->
+        <div class="modal fade" id="backDropModalDetail" data-bs-backdrop="static" tabindex="-1" style="display: none;"
+            aria-modal="false" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="backDropModalTitle">{{ $bantuan->umkm->name }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="mb-1"><strong>Nomor Iziz Berusaha</strong></h5>
+                                <p><strong>{{ $bantuan->umkm->nib }}</strong></p>
+                            </div>
+                            <div class="col-5">
+                                <h5 class="mb-1"><strong>No Telp</strong></h5>
+                                <p>{{ $bantuan->phonenumber }}</p>
+                            </div>
+                            <h5 class="mb-1"><strong>Jenis Bantuan</strong></h5>
+                            <p><strong>{{ $bantuan->bantuan }}</strong></p>
+                            <h5 class="mb-1">{{ $bantuan->description }}</h5>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="mt-3">
+{{-- <div class="mt-3">
     <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel"
         style="visibility: true;" aria-hidden="true">
         <div class="offcanvas-header">
@@ -56,4 +90,4 @@
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="offcanvas">Cancel</button>
         </div>
     </div>
-</div>
+</div> --}}
