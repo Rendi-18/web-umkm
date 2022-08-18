@@ -25,8 +25,8 @@ class Umkm extends Model
     {
         return $this->hasMany(Product::class, 'umkm_id');
     }
-    public function bantuan()
+    public function laporan()
     {
-        return $this->hasMany(Bantuan::class, 'umkm_id');
+        return $this->hasMany(Laporan::class, 'umkm_id');
     }
 }

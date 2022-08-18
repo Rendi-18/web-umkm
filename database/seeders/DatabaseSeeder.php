@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Bantuan;
 use App\Models\JasaKoperasi;
 use App\Models\Koperasi;
+use App\Models\Laporan;
 use App\Models\Pegawai;
 use App\Models\Product;
 use App\Models\ProductKoperasi;
@@ -23,10 +24,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            CategoryKoperasiSeeder::class,
-            CategoryIzinSeeder::class,
-        ]);
+        // $this->call([
+        //     CategoryKoperasiSeeder::class,
+        //     CategoryIzinSeeder::class,
+        // ]);
         User::create([
             'username' => 'ADMIN',
             'name' => 'ADMINSTRATOR',
@@ -55,6 +56,6 @@ class DatabaseSeeder extends Seeder
         // ProductKoperasi::factory(250)->create();
         // JasaKoperasi::factory(250)->create();
         Pegawai::factory(10)->create();
-        Bantuan::factory(100)->create();
+        Laporan::factory(100)->create();
     }
 }

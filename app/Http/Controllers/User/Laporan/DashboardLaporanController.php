@@ -1,33 +1,33 @@
 <?php
 
-namespace App\Http\Controllers\User\Bantuan;
+
+namespace App\Http\Controllers\User\Laporan;
 
 use App\Http\Controllers\Controller;
-use App\Models\Bantuan;
+use App\Models\Laporan;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-class DashboardBantuanController extends Controller
+class DashboardLaporanController extends Controller
 {
     public function index()
     {
         return view(
-            'dashboard.pages.bantuan.index',
+            'dashboard.pages.laporan.index',
             [
-                'bantuans' => Bantuan::all()
+                'bantuans' => Laporan::all()
             ]
         );
     }
-
     // store POST
     public function store(Request $request)
     {
         $validatedData = $request->validate([
             'phonenumber' => 'required',
             'umkm_id' => 'required',
-            'bantuan' => 'required',
+            'tahun' => 'required',
             'description' => 'required',
             'file' => 'file|max:2000',
         ]);
@@ -37,37 +37,35 @@ class DashboardBantuanController extends Controller
         }
 
         $validatedData['user_id'] = auth()->user()->id;
-        Bantuan::create($validatedData);
+        Laporan::create($validatedData);
 
-        return redirect('/dashboard/bantuan')->with('success', 'New Bantuan has been added!');
+        return redirect('/dashboard/laporan')->with('success', 'New laporan has been added!');
     }
-
-    public function edit(Bantuan $bantuan)
+    public function edit(Laporan $laporan)
     {
         return view(
-            'dashboard.pages.bantuan.edit',
+            'dashboard.pages.laporan.edit',
             [
-                'bantuan' => $bantuan,
+                'kaporan' => $laporan,
                 'umkms' => Umkm::all()
             ]
         );
     }
-
     // Edit PUT
-    public function update(Request $request, Bantuan $bantuan)
+    public function update(Request $request, Laporan $laporan)
     {
         $rules = [
             'phonenumber' => 'required',
             'umkm_id' => 'required',
-            'bantuan' => 'required',
+            'tahun' => 'required',
             'description' => 'required',
             'file' => 'file|max:2000',
         ];
 
         $validatedData = $request->validate($rules);
 
-        $validatedData['umkm_id'] = $bantuan->umkm->id;
-        $validatedData['user_id'] = $bantuan->user->id;
+        $validatedData['umkm_id'] = $laporan->umkm->id;
+        $validatedData['user_id'] = $laporan->user->id;
 
         // Image
         if ($request->file('file')) {
@@ -78,19 +76,19 @@ class DashboardBantuanController extends Controller
         }
 
 
-        Bantuan::where('id', $bantuan->id)
+        Laporan::where('id', $laporan->id)
             ->update($validatedData);
 
-        return redirect('/dashboard/bantuan')->with('success', 'Bantuan has been updated!');
+        return redirect('/dashboard/laporan')->with('success', 'Laporan has been updated!');
     }
 
     // Delete DELETE
-    public function destroy(Bantuan $bantuan)
+    public function destroy(Laporan $laporan)
     {
-        if ($bantuan->file) {
-            Storage::delete($bantuan->file);
+        if ($laporan->file) {
+            Storage::delete($laporan->file);
         }
-        Bantuan::destroy($bantuan->id);
-        return redirect('/dashboard/bantuan')->with('success', 'Bantuan telah dibatalkan');
+        Laporan::destroy($laporan->id);
+        return redirect('/dashboard/laporan')->with('success', 'Laporan telah dibatalkan');
     }
 }

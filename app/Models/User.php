@@ -55,12 +55,12 @@ class User extends Authenticatable
         return $this->hasMany(Koperasi::class, 'user_id');
     }
 
-    public function izin()
+    // public function izin()
+    // {
+    //     return $this->hasMany(Izin::class, 'user_id');
+    // }
+    public function laporan()
     {
-        return $this->hasMany(Izin::class, 'user_id');
-    }
-    public function bantuan()
-    {
-        return $this->hasMany(Bantuan::class, 'user_id');
+        return $this->hasMany(Laporan::class, 'user_id');
     }
 }

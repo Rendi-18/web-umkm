@@ -50,7 +50,7 @@
             <div data-i18n="Laporan">Laporan</div>
         </a>
         <ul class="menu-sub ">
-            <li class="menu-item {{ Request::is('dashboard/register/umkm') ? 'active' : '' }}">
+            <li class="menu-item {{ Request::is('dashboard/laporan') ? 'active' : '' }}">
                 <a href="/dashboard/laporan" class="menu-link ">
                     <div data-i18n="Laporan Tahunan">Laporan Tahunan</div>
                 </a>

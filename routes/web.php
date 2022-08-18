@@ -21,8 +21,8 @@ use App\Http\Controllers\User\Umkm\DashboardUserProductController;
 // User Izin
 use App\Http\Controllers\User\Izin\DashboardUserIzinController;
 
-// User Izin
-use App\Http\Controllers\User\Bantuan\DashboardBantuanController;
+// User laporan
+use App\Http\Controllers\User\Laporan\DashboardLaporanController;
 
 
 /*
