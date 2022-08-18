@@ -5,7 +5,7 @@
             aria-modal="false" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
                 <form class="modal-content" enctype="multipart/form-data" method="POST"
-                    action="/dashboard/pengajuan/{{ $bantuan->id }}/bantuan">
+                    action="/dashboard/pengajuan/{{ $laporan->id }}/laporan">
                     @method('put')
                     @csrf
                     <div class="modal-header">
@@ -15,10 +15,6 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="accept" class="form-label">Surat Bantuan</label>
-                            <input class="form-control @error('accept') is-invalid @enderror" type="file"
-                                id="accept" name="accept">
-                            <input class="form-control" type="hidden" id="oldDoc" multiple="" name="oldDoc"
-                                value="{{ $bantuan->accept }}">
                             <input class="form-control" type="hidden" id="status" multiple="" name="status"
                                 value="1">
                             @error('accept')
@@ -45,22 +41,22 @@
 
 
                     <div class="modal-header">
-                        <h5 class="modal-title" id="backDropModalTitle">{{ $bantuan->umkm->name }}</h5>
+                        <h5 class="modal-title" id="backDropModalTitle">{{ $laporan->umkm->name }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-6">
                                 <h5 class="mb-1"><strong>Nomor Iziz Berusaha</strong></h5>
-                                <p><strong>{{ $bantuan->umkm->nib }}</strong></p>
+                                <p><strong>{{ $laporan->umkm->nib }}</strong></p>
                             </div>
                             <div class="col-5">
                                 <h5 class="mb-1"><strong>No Telp</strong></h5>
-                                <p>{{ $bantuan->phonenumber }}</p>
+                                <p>{{ $laporan->phonenumber }}</p>
                             </div>
                             <h5 class="mb-1"><strong>Jenis Bantuan</strong></h5>
-                            <p><strong>{{ $bantuan->bantuan }}</strong></p>
-                            <h5 class="mb-1">{{ $bantuan->description }}</h5>
+                            <p><strong>{{ $laporan->laporan }}</strong></p>
+                            <h5 class="mb-1">{{ $laporan->description }}</h5>
                         </div>
 
                     </div>

@@ -18,7 +18,6 @@ class HomeController extends Controller
     {
         return view('pages.home', [
             'umkms' => Umkm::orderBy('created_at', 'desc')->where('status', 1)->take(8)->get(),
-            'koperasis' => Koperasi::orderBy('created_at', 'desc')->where('status', 1)->take(8)->get(),
             'website' => Website::latest()->get(),
             'pegawais' => Pegawai::latest()->take(4)->get(),
             'agendas' => Agenda::latest()->take(4)->get()
@@ -36,19 +35,6 @@ class HomeController extends Controller
 
         return view('pages.search.umkm', [
             'umkms' => $umkms->where('status', 1)->paginate(12)->withQueryString()
-        ]);
-    }
-
-    public function searchKoperasi()
-    {
-        $koperasis = Koperasi::latest();
-
-        if (request('search')) {
-            $koperasis->where('name', 'like', '%' . request('search') . '%');
-        }
-
-        return view('pages.search.koperasi', [
-            'koperasis' => $koperasis->where('status', 1)->paginate(12)->withQueryString()
         ]);
     }
 

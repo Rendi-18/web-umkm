@@ -46,7 +46,7 @@ class DashboardLaporanController extends Controller
         return view(
             'dashboard.pages.laporan.edit',
             [
-                'kaporan' => $laporan,
+                'laporan' => $laporan,
                 'umkms' => Umkm::all()
             ]
         );
@@ -72,7 +72,7 @@ class DashboardLaporanController extends Controller
             if ($request->oldDoc) {
                 Storage::delete($request->oldDoc);
             }
-            $validatedData['file'] = $request->file('file')->store('doc/' . Auth::user()->username);
+            $validatedData['file'] = $request->file('file')->store('doc/laporan/' . Auth::user()->username);
         }
 
 

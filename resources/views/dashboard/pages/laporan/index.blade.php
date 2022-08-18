@@ -5,7 +5,7 @@
     <div class="content-wrapper ">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
-            @include('dashboard.pages.laporan.laporanTahunan')
+            @include('dashboard.pages.laporan.laporan')
         </div>
         {{-- footer --}}
         @include('dashboard.components.footer')

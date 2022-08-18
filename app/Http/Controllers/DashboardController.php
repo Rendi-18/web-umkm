@@ -34,13 +34,11 @@ class DashboardController extends Controller
             [
                 // 'title' => '',
                 'umkms' => Umkm::latest()->paginate(8, ['*'], 'umkms'),
-                'koperasis' => Koperasi::latest()->paginate(8, ['*'], 'koperasis'),
                 'users' => User::latest()->get(),
                 'pesans' => Pesan::latest()->get(),
 
 
                 'umkmUser' => $umkm->get(),
-                'koperasiUser' => $koperasi->get()
             ]
         );
     }

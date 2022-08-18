@@ -108,7 +108,7 @@ Route::get('/dashboard/comp', [DashboardController::class, 'comp'])->middleware(
 Route::put('/dashboard/pengajuan/umkm/{umkm}', [DashboardPengajuanController::class, 'aprovedUmkm'])->middleware('admin');
 Route::put('/dashboard/pengajuan/koperasi/{koperasi}', [DashboardPengajuanController::class, 'aprovedKoperasi'])->middleware('admin');
 Route::put('/dashboard/pengajuan/{izin}/izin', [DashboardPengajuanController::class, 'izin'])->middleware('admin');
-Route::put('/dashboard/pengajuan/{bantuan}/bantuan', [DashboardPengajuanController::class, 'bantuan'])->middleware('admin');
+Route::put('/dashboard/pengajuan/laporan/{laporan}', [DashboardPengajuanController::class, 'laporan'])->middleware('admin');
 
 // Pegawai
 Route::get('/dashboard/pegawai', [DashboardPegawaiController::class, 'index'])->middleware('admin');

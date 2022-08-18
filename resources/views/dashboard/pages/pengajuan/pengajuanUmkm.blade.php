@@ -1,6 +1,15 @@
 <section id="pengajuan">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pengajuan/</span>Pengajuan
         UMKM</h4>
+
+    {{-- Flash Message --}}
+    @if (session()->has('successUMKM'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('successUMKM') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <div class="row g-4">
         <div class="col-lg-12">
             <div class="row">

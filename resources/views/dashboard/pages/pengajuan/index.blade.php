@@ -5,9 +5,8 @@
     <div class="content-wrapper ">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
-            @include('dashboard.pages.pengajuan.pengajuanSurat', ['izins' => $izins])
             @include('dashboard.pages.pengajuan.pengajuanUmkm', ['umkms' => $umkms])
-            @include('dashboard.pages.pengajuan.pengajuanbantuan')
+            @include('dashboard.pages.pengajuan.pengajuanLaporan', ['laporans' => $laporans])
         </div>
         {{-- footer --}}
         @include('dashboard.components.footer')
