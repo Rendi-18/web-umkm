@@ -27,15 +27,8 @@
                 <div id="umkm">
                     @include('dashboard.components.comp3', [
                         'umkmUser' => $umkmUser,
-                        'koperasiUser' => $koperasiUser,
                     ])
                 </div>
-                {{-- <div id="koperasi">
-                    @include('dashboard.components.comp4', [
-                        'umkmUser' => $umkmUser,
-                        'koperasiUser' => $koperasiUser,
-                    ])
-                </div> --}}
             @endcan
 
         </div>
