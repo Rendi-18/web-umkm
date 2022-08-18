@@ -92,6 +92,13 @@
                 </a>
             </li>
         </ul>
+        <ul class="menu-sub">
+            <li class="menu-item {{ Request::is('dashboard/umkm*') ? 'active' : '' }}">
+                <a href="/dashboard/umkm" class="menu-link">
+                    <div data-i18n="Without menu">Data Laporan Tahunan</div>
+                </a>
+            </li>
+        </ul>
     </li>
 
     <li class="menu-item {{ Request::is('dashboard/pengajuan*') ? 'active open' : '' }}">

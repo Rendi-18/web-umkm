@@ -58,15 +58,23 @@ Route::put('/dashboard/profile/edit', [DashboardController::class, 'update'])->m
 Route::delete('/dashboard/profile', [DashboardController::class, 'destroy'])->middleware('auth');
 
 // Dashboard pengajuan
-Route::get('/dashboard/izin/surat', [DashboardUserIzinController::class, 'surat'])->middleware('auth');
-Route::post('/dashboard/izin/surat', [DashboardUserIzinController::class, 'suratStore'])->middleware('auth');
-Route::delete('/dashboard/izin/surat/{izin}', [DashboardUserIzinController::class, 'suratDestroy'])->middleware('auth');
+// Route::get('/dashboard/izin/surat', [DashboardUserIzinController::class, 'surat'])->middleware('auth');
+// Route::post('/dashboard/izin/surat', [DashboardUserIzinController::class, 'suratStore'])->middleware('auth');
+// Route::delete('/dashboard/izin/surat/{izin}', [DashboardUserIzinController::class, 'suratDestroy'])->middleware('auth');
 
-Route::get('/dashboard/bantuan', [DashboardBantuanController::class, 'index'])->middleware('auth');
-Route::post('/dashboard/bantuan', [DashboardBantuanController::class, 'store'])->middleware('auth');
-Route::get('/dashboard/bantuan/{bantuan:id}/edit', [DashboardBantuanController::class, 'edit'])->middleware('auth');
-Route::put('/dashboard/bantuan/{bantuan:id}', [DashboardBantuanController::class, 'update'])->middleware('auth');
-Route::delete('/dashboard/bantuan/{bantuan:id}', [DashboardBantuanController::class, 'destroy'])->middleware('auth');
+// Route::get('/dashboard/bantuan', [DashboardBantuanController::class, 'index'])->middleware('auth');
+// Route::post('/dashboard/bantuan', [DashboardBantuanController::class, 'store'])->middleware('auth');
+// Route::get('/dashboard/bantuan/{bantuan:id}/edit', [DashboardBantuanController::class, 'edit'])->middleware('auth');
+// Route::put('/dashboard/bantuan/{bantuan:id}', [DashboardBantuanController::class, 'update'])->middleware('auth');
+// Route::delete('/dashboard/bantuan/{bantuan:id}', [DashboardBantuanController::class, 'destroy'])->middleware('auth');
+
+// Laporan Tahunan
+Route::get('/dashboard/laporan', [DashboardLaporanController::class, 'index'])->middleware('auth');
+Route::post('/dashboard/laporan', [DashboardLaporanController::class, 'store'])->middleware('auth');
+Route::get('/dashboard/laporan/{laporan:id}/edit', [DashboardLaporanController::class, 'edit'])->middleware('auth');
+Route::put('/dashboard/laporan/{laporan:id}', [DashboardLaporanController::class, 'update'])->middleware('auth');
+Route::delete('/dashboard/laporan/{laporan:id}', [DashboardLaporanController::class, 'destroy'])->middleware('auth');
+
 
 Route::get('/dashboard/register/umkm', [DashboardUserIzinController::class, 'umkm'])->middleware('auth');
 Route::post('/dashboard/register/umkm', [DashboardUserIzinController::class, 'umkmStore'])->middleware('auth');

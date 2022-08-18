@@ -3,7 +3,7 @@
         <div class="row d-flex">
             <div class="col-lg-9 text-center text-lg-start">
                 <h3>Daftarkan UMKM anda</h3>
-                <p>Mari daftarkan UMKM anda di SIBADU, aku kami membantu pengelolaan serta pengurusasn surat
+                <p>Mari daftarkan UMKM anda di SIBADU, kami membantu pengelolaan serta pengurusasn surat
                     izin yang anda perlukan</p>
             </div>
             <div class="row m-auto">
