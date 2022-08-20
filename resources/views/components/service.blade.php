@@ -20,9 +20,9 @@
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                 data-aos-delay="200">
                 <div class="icon-box py-4 px-3 rounded w-100">
-                    <div class="icon"><i class="bx bx-file"></i></div>
-                    <h4>Perizinan</h4>
-                    <p>Pengajuan perizinan secara online kepada dinas pemerintahan</p>
+                    <div class="icon"><i class='bx bx-donate-heart'></i></i></div>
+                    <h4>Program</h4>
+                    <p>Memberikan pelatihan serta pendampingan untuk meningkatkan mutu UMKM</p>
                 </div>
             </div>
 
